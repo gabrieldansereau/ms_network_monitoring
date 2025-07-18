@@ -1,0 +1,19 @@
+project:
+  type: manuscript
+  output-dir: docs
+
+notebook-links: global
+
+manuscript:
+  article: index.qmd
+
+lang: en-CA
+
+format:
+  html:
+    comments:
+      hypothesis: true
+  docx: default
+  cerg-typst: default
+execute:
+  freeze: true

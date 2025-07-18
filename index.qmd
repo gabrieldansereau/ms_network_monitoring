@@ -1,0 +1,38 @@
+---
+title: Network monitoring
+authors:
+  - name: Gabriel Dansereau
+    affiliation:
+        - ref: udem
+    email: gabriel.dansereau@umontreal.ca
+    roles:
+        - writing
+        - editing
+    corresponding: true
+affiliations:
+    - id: udem
+      name: Université de Montréal
+      department: Département de sciences biologiques
+      city: Montréal
+      region: QC
+      country: Canada
+bibliography: references.bib
+bibliographystyle: springer-basic-author-date
+abstract: Networks
+keywords:
+    - networks
+    - monitoring
+---
+
+# Introduction
+
+# Methods
+
+# Results
+
+# Discussion
+
+# References
+
+:::{#refs}
+:::
