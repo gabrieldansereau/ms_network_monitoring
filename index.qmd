@@ -249,5 +249,7 @@ monitoring. With the right target and optimization strategy, available
 information, such as species ranges, can guide observation network designs to
 monitor species interactions with a reasonable number of sites.
 
+# References
+
 ::: {#refs}
 :::
