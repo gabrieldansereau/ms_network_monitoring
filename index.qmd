@@ -145,7 +145,44 @@ generated BONs of 1 to 500 sites (at interval increments of 5 sites) using the
 three possible algorithms and optimization layers, with 100 replicates for every
 number of sites. For each BON generated, we extracted the number of unique
 realized interactions sampled across all sites (essentially the monitored degree
-for the focal species).
+for the focal species)
+
+## Efficiency
+
+Next, we aimed to verify whether our results were constant when replicating
+simulations with different simulated metawebs and species ranges. We ran 100
+independent simulations, each with 50 replicates for every number of sites (once
+again from 1 to 500 sites at interval increments of 5 sites). However, doing so
+raised the issue of how to describe and compare the efficiency of the simulated
+monitoring across samplers, optimization layers or focal species degree, given
+how the generated metawebs and landscapes might vary between independent
+simulations, and especially how to describe the relationship between the number
+of monitoring sites and the proportion of monitored interactions.
+
+Since the exact proportion of monitored interactions is known in our
+simulations, we used the following single-parameter equation which generates
+similar efficiency curves:
+
+$$
+p=\frac{x}{a + x}
+$$ {#eq-eff}
+
+where $p$ is the proportion of monitored interactions, $x$ is the number of
+sites in the BON and $a$ is the efficiency parameter we use for comparison.
+Here, $a$ is the single parameter describing the shape of the curve, and can be
+compared across samplers, optimization layers or focal species degree. The lower
+this parameter, the faster we reach a high proportion of monitored interactions.
+
+For each independent simulation, sampler and optimization layer option, we
+performed a grid search across possible values of $a$ to identify the curve
+yielding the best fit with the simulation's result. Upon exploratory analysis,
+we observed that searching for values of $a$ on an exponential scale allowed for
+more gradual control over the curve shape, and therefore we searched we searched
+directly for values of $e^a$ (effectively replacing $a$ by $e^a$ in @eq-eff). We
+performed a grid search of 10,000 evenly spaced values between -5 and 15 (limits
+chosen to go beyond the fitted values), and selected the value of $a$ yielding
+the curve minimizing the sum of squared errors to the values from the
+simulation.
 
 # Results
 
@@ -222,6 +259,12 @@ Also explored but not tested with all sampler/optimization layer possibilities
     efficient than species range
 -   Optimisation with richness of possible interactions for the focal species:
     same as species range, since they're essentially the same
+
+![](figures/efficiency_distribution.png)
+
+![](figures/efficiency_occupancy.png)
+
+![](figures/efficiency_comparison.png)
 
 # Discussion
 
