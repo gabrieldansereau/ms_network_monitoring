@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-CA" xml:lang="en-CA"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.22">
+<meta name="generator" content="quarto-1.8.23">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -52,7 +52,7 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-cd7454b418030687c631a6a7286fbe16.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-87a30bb52edbaa1f531be99b429da128.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -66,6 +66,35 @@ div.csl-indent {
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta name="citation_title" content="Network monitoring">
 <meta name="citation_abstract" content="Networks">
@@ -140,6 +169,7 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#evaluating-metaweb-sampling" id="toc-evaluating-metaweb-sampling" class="nav-link" data-scroll-target="#evaluating-metaweb-sampling">Evaluating metaweb sampling</a></li>
   <li><a href="#focal-sampling-on-single-species-optimization" id="toc-focal-sampling-on-single-species-optimization" class="nav-link" data-scroll-target="#focal-sampling-on-single-species-optimization">Focal sampling on single-species &amp; optimization</a></li>
+  <li><a href="#efficiency" id="toc-efficiency" class="nav-link" data-scroll-target="#efficiency">Efficiency</a></li>
   </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
@@ -188,7 +218,26 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="focal-sampling-on-single-species-optimization">Focal sampling on single-species &amp; optimization</h2>
 <p>In complement to the metaweb sampling approach, we also investigated the sampling efficiency on a single-species basis. We simulated a focal sampling where an observer would target one species and aim to retrieve all of its interactions (here known from the metaweb), but might have different information to optimize its sampling. Observation network design and efficiency needs to be evaluated beyond spatial balance, and also regarding their efficiency at meeting biodiversity monitoring objectives <span class="citation" data-cites="Norman2025AlgSel">(<a href="#ref-Norman2025AlgSel" role="doc-biblioref">Norman and Poisot 2025</a>)</span>. Thus, the idea of our focal sampling exploration is to represent a simplified case with a clear objective (retrieving a species’ interactions) and where we do have prior knowledge about the system, either through empirical data or model predictions, which can be used to optimize sampling.</p>
 <p>Optimizing focal sampling relies on two elements: the sampler algorithm used and the information provided for optimization. Species range represents an attainable level of information an interested observer could have, for instance based on expert knowledge or species distribution models. Therefore, we assumed the observer knew the species range across the landscape (presence or absence). We tested three sampling algorithms for comparison: simple random sampling (to represent uninformed sampling), weighted balanced acceptance sampling (aiming to balance sites across space while weighting favorably for species ranges) and uncertainty sampling (which targets locations with a higher value in the layer provided). Next, we tested three information layers for optimization: one with the focal species range (our attainable information knowledge for the observer), one with the location of realized interactions for the focal species (to represent a best-case scenario) and one with species richness across the landscape (to represent a holistic level of information for the system).</p>
-<p>Using the approach described in the previous section, we generated a single* set of metaweb, species ranges, and locations for realized interactions (*counter-verified with 10 separate sets, which yielded conceptually similar results). We selected the species with the highest degree (number of interactions) in the metaweb as the focal species for the simulation. We then generated BONs of 1 to 500 sites (at interval increments of 5 sites) using the three possible algorithms and optimization layers, with 100 replicates for every number of sites. For each BON generated, we extracted the number of unique realized interactions sampled across all sites (essentially the monitored degree for the focal species).</p>
+<p>Using the approach described in the previous section, we generated a single* set of metaweb, species ranges, and locations for realized interactions (*counter-verified with 10 separate sets, which yielded conceptually similar results). We selected the species with the highest degree (number of interactions) in the metaweb as the focal species for the simulation. We then generated BONs of 1 to 500 sites (at interval increments of 5 sites) using the three possible algorithms and optimization layers, with 100 replicates for every number of sites. For each BON generated, we extracted the number of unique realized interactions sampled across all sites (essentially the monitored degree for the focal species)</p>
+</section>
+<section id="efficiency" class="level2">
+<h2 class="anchored" data-anchor-id="efficiency">Efficiency</h2>
+<p>Next, we aimed to verify whether our results were constant when replicating simulations with different simulated metawebs and species ranges. We ran 100 independent simulations, each with 50 replicates for every number of sites (once again from 1 to 500 sites at interval increments of 5 sites). However, doing so raised the issue of how to describe and compare the efficiency of the simulated monitoring across samplers, optimization layers or focal species degree, given how the generated metawebs and landscapes might vary between independent simulations, and especially how to describe the relationship between the number of monitoring sites and the proportion of monitored interactions.</p>
+<p>Since the exact proportion of monitored interactions is known in our simulations, we used the following single-parameter equation which generates similar efficiency curves:</p>
+<p><span id="eq-eff"><span class="math display">\[
+p=\frac{x}{a + x}
+\tag{1}\]</span></span></p>
+<p>where <span class="math inline">\(p\)</span> is the proportion of monitored interactions, <span class="math inline">\(x\)</span> is the number of sites in the BON and <span class="math inline">\(a\)</span> is the efficiency parameter we use for comparison. Here, <span class="math inline">\(a\)</span> is the single parameter describing the shape of the curve, and can be compared across samplers, optimization layers or focal species degree. The lower this parameter, the faster we reach a high proportion of monitored interactions.</p>
+<p>For each independent simulation, sampler and optimization layer option, we performed a grid search across possible values of <span class="math inline">\(a\)</span> to identify the curve yielding the best fit with the simulation’s result. Upon exploratory analysis, we observed that searching for values of <span class="math inline">\(a\)</span> on an exponential scale allowed for more gradual control over the curve shape, and therefore we searched we searched directly for values of <span class="math inline">\(e^a\)</span> (effectively replacing <span class="math inline">\(a\)</span> by <span class="math inline">\(e^a\)</span> in <a href="#eq-eff" class="quarto-xref">Equation&nbsp;1</a>). We performed a grid search of 10,000 evenly spaced values between -5 and 15 (limits chosen to go beyond the fitted values), and selected the value of <span class="math inline">\(a\)</span> yielding the curve minimizing the sum of squared errors to the values from the simulation.</p>
+<p>To compare the efficiency curves within a given simulation (i.e., between samplers and optimization layers for a given metaweb and set of species ranges), we used the definite integral of <a href="#eq-eff" class="quarto-xref">Equation&nbsp;1</a> between 0 and <span class="math inline">\(k\)</span>, the maximum number of sampling sites in the landscape (10,000), which takes the form:</p>
+<p><span id="eq-eff-int"><span class="math display">\[
+\int\limits^{k}_{0} \frac{x}{a + x} \, \mathrm{d}x = a \ln\left(a\right) - a \ln\left(k + a\right) + k
+\tag{2}\]</span></span></p>
+<p>Using @eff_int, we can compute the difference in efficiency between two curves as the difference of integrals:</p>
+<p><span id="eq-eff-diff"><span class="math display">\[
+d_{1,2} = (a_1 \ln\left(a_1\right) - a_1 \ln\left(k + a_1\right) + k) - (a_2 \ln\left(a_2\right) - a_2 \ln\left(k + a_2\right) + k)
+\tag{3}\]</span></span></p>
+<p>This difference measure allows to identify which samplers or optimization layer is more efficient, quickly reaching a high proportion of monitored interactions (positive values indicate that the first curve is more efficient than the second), while also quantifying the magnitude of this difference in a comparable way between possible comparison pairs. We compared all samplers and optimization layers individually within each independent simulation, given that the monitoring context is different in each one (different metawebs and species ranges).</p>
 </section>
 </section>
 <section id="results" class="level1">
@@ -221,6 +270,9 @@ div.csl-indent {
 <li>Optimisation with interaction richness: same as species richness, less efficient than species range</li>
 <li>Optimisation with richness of possible interactions for the focal species: same as species range, since they’re essentially the same</li>
 </ul>
+<p><a href="figures/efficiency_distribution.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="figures/efficiency_distribution.png" class="img-fluid"></a></p>
+<p><a href="figures/efficiency_occupancy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="figures/efficiency_occupancy.png" class="img-fluid"></a></p>
+<p><a href="figures/efficiency_comparison.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="figures/efficiency_comparison.png" class="img-fluid"></a></p>
 </section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
@@ -305,13 +357,14 @@ Norman, Kari E., and Timothée Poisot. 2025. <span>“Algorithm Selection for Op
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
