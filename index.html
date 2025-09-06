@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-CA" xml:lang="en-CA"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.23">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -52,7 +52,7 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-87a30bb52edbaa1f531be99b429da128.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -171,7 +171,12 @@ window.Quarto = {
   <li><a href="#focal-sampling-on-single-species-optimization" id="toc-focal-sampling-on-single-species-optimization" class="nav-link" data-scroll-target="#focal-sampling-on-single-species-optimization">Focal sampling on single-species &amp; optimization</a></li>
   <li><a href="#efficiency" id="toc-efficiency" class="nav-link" data-scroll-target="#efficiency">Efficiency</a></li>
   </ul></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#lower-sampling-expectations-for-species-interactions-than-species-richness" id="toc-lower-sampling-expectations-for-species-interactions-than-species-richness" class="nav-link" data-scroll-target="#lower-sampling-expectations-for-species-interactions-than-species-richness">Lower sampling expectations for species interactions than species richness</a></li>
+  <li><a href="#differences-between-samplers-and-optimization-layers" id="toc-differences-between-samplers-and-optimization-layers" class="nav-link" data-scroll-target="#differences-between-samplers-and-optimization-layers">Differences between samplers and optimization layers</a></li>
+  <li><a href="#comparison-of-efficiency-parameters-across-simulations" id="toc-comparison-of-efficiency-parameters-across-simulations" class="nav-link" data-scroll-target="#comparison-of-efficiency-parameters-across-simulations">Comparison of efficiency parameters across simulations</a></li>
+  </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -233,7 +238,7 @@ p=\frac{x}{a + x}
 <p><span id="eq-eff-int"><span class="math display">\[
 \int\limits^{k}_{0} \frac{x}{a + x} \, \mathrm{d}x = a \ln\left(a\right) - a \ln\left(k + a\right) + k
 \tag{2}\]</span></span></p>
-<p>Using @eff_int, we can compute the difference in efficiency between two curves as the difference of integrals:</p>
+<p>Using @eq-eff-int, we can compute the difference in efficiency between two curves as the difference of integrals:</p>
 <p><span id="eq-eff-diff"><span class="math display">\[
 d_{1,2} = (a_1 \ln\left(a_1\right) - a_1 \ln\left(k + a_1\right) + k) - (a_2 \ln\left(a_2\right) - a_2 \ln\left(k + a_2\right) + k)
 \tag{3}\]</span></span></p>
@@ -242,37 +247,81 @@ d_{1,2} = (a_1 \ln\left(a_1\right) - a_1 \ln\left(k + a_1\right) + k) - (a_2 \ln
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
-<p>Our results for metaweb sampling highlight a marked difference between the proportions of sampled species and interactions (Figure 1). Sampled species saturated very quickly, with all species sampled with less than 25 sites in a BON across the landscape. Possible interactions, which depend on co-occurrence of species with a feasible interaction in the metaweb, also saturated quickly, reaching over 90% of interactions in the metaweb with 25 sites and increasing asymptotically afterwards. In contrast, realized and detected interactions, which account for the impact of species abundances, reach much lower proportions, both under 25% of the metaweb after 100 sites. While the proportion would keep increasing with a higher number of sites, the speed at which interactions accumulate is notably lower than for species richness and possible interactions, highlighting the need for a much higher expected sampling effort.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="figures/nbon_bands.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Proportion of sampled species and interactions for a given number of sampling sites in a Biodiversity Observation Network (BON) across the simulated landscape. The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The global reference (left) uses total species richness and the total number of interactions in the metaweb as the maximum reference to calculate the proportion while the per-element reference (right) uses the maximum number of an interaction actually present in the simulated landscape."><img src="figures/nbon_bands.png" class="img-fluid figure-img" alt="Proportion of sampled species and interactions for a given number of sampling sites in a Biodiversity Observation Network (BON) across the simulated landscape. The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The global reference (left) uses total species richness and the total number of interactions in the metaweb as the maximum reference to calculate the proportion while the per-element reference (right) uses the maximum number of an interaction actually present in the simulated landscape."></a></p>
-<figcaption>Proportion of sampled species and interactions for a given number of sampling sites in a Biodiversity Observation Network (BON) across the simulated landscape. The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The global reference (left) uses total species richness and the total number of interactions in the metaweb as the maximum reference to calculate the proportion while the per-element reference (right) uses the maximum number of an interaction actually present in the simulated landscape.</figcaption>
+<section id="lower-sampling-expectations-for-species-interactions-than-species-richness" class="level3">
+<h3 class="anchored" data-anchor-id="lower-sampling-expectations-for-species-interactions-than-species-richness">Lower sampling expectations for species interactions than species richness</h3>
+<p>Our results for metaweb sampling highlight a marked difference between the proportions of sampled species and interactions (<a href="#fig-nbons" class="quarto-xref">Figure&nbsp;1</a>). Sampled species saturated very quickly, with all species sampled with less than 25 sites in a BON across the landscape. Possible interactions, which depend on co-occurrence of species with a feasible interaction in the metaweb, also saturated quickly, reaching over 90% of interactions in the metaweb with 25 sites and increasing asymptotically afterwards. In contrast, realized and detected interactions, which account for the impact of species abundances, reach much lower proportions, both under 25% of the metaweb after 100 sites. While the proportion would keep increasing with a higher number of sites, the speed at which interactions accumulate is notably lower than for species richness and possible interactions, highlighting the need for a much higher expected sampling effort.</p>
+<div id="fig-nbons" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nbons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figures/nbon_bands.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Proportion of sampled species and interactions for a given number of sampling sites in a Biodiversity Observation Network (BON) across the simulated landscape. The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The global reference (left) uses total species richness and the total number of interactions in the metaweb as the maximum reference to calculate the proportion while the per-element reference (right) uses the maximum number of an interaction actually present in the simulated landscape."><img src="figures/nbon_bands.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nbons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Proportion of sampled species and interactions for a given number of sampling sites in a Biodiversity Observation Network (BON) across the simulated landscape. The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The global reference (left) uses total species richness and the total number of interactions in the metaweb as the maximum reference to calculate the proportion while the per-element reference (right) uses the maximum number of an interaction actually present in the simulated landscape.
+</figcaption>
 </figure>
 </div>
-<p>Our focal sampling experiment showed the Uncertainty Sampling algorithm to be most efficient at optimizing BON-design based on a known species range and while aiming to maximize the sampling of interactions of a single focal species (Figure 2). Simple Random sampling, as a proxy for uninformed sampling, performed the worst among the algorithms tested. Weighted Balanced Acceptance performed notably less than Uncertainty Sampling at maximizing the efficiency for the focal species, although it maintained a better spatial balance across the landscape.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="figures/focal_samplers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Efficiency of three sampler algorithms at sampling realized interactions for a given focal species within Biodiversity Observation Networks (BONs). The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The right panels illustrate examples of BONs of 50 sites (coloured points) generated by each sampler over the focal species range (present at pixels in yellow)."><img src="figures/focal_samplers.png" class="img-fluid figure-img" alt="Efficiency of three sampler algorithms at sampling realized interactions for a given focal species within Biodiversity Observation Networks (BONs). The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The right panels illustrate examples of BONs of 50 sites (coloured points) generated by each sampler over the focal species range (present at pixels in yellow)."></a></p>
-<figcaption>Efficiency of three sampler algorithms at sampling realized interactions for a given focal species within Biodiversity Observation Networks (BONs). The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The right panels illustrate examples of BONs of 50 sites (coloured points) generated by each sampler over the focal species range (present at pixels in yellow).</figcaption>
+</section>
+<section id="differences-between-samplers-and-optimization-layers" class="level3">
+<h3 class="anchored" data-anchor-id="differences-between-samplers-and-optimization-layers">Differences between samplers and optimization layers</h3>
+<p>Our focal sampling experiment showed the Uncertainty Sampling algorithm to be most efficient at optimizing BON-design based on a known species range and while aiming to maximize the sampling of interactions of a single focal species (<a href="#fig-samplers" class="quarto-xref">Figure&nbsp;2</a>). Simple Random sampling, as a proxy for uninformed sampling, performed the worst among the algorithms tested. Weighted Balanced Acceptance performed notably less than Uncertainty Sampling at maximizing the efficiency for the focal species, although it maintained a better spatial balance across the landscape.</p>
+<div id="fig-samplers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-samplers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figures/focal_samplers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Efficiency of three sampler algorithms at sampling realized interactions for a given focal species within Biodiversity Observation Networks (BONs). The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The right panels illustrate examples of BONs of 50 sites (coloured points) generated by each sampler over the focal species range (present at pixels in yellow)."><img src="figures/focal_samplers.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-samplers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Efficiency of three sampler algorithms at sampling realized interactions for a given focal species within Biodiversity Observation Networks (BONs). The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The right panels illustrate examples of BONs of 50 sites (coloured points) generated by each sampler over the focal species range (present at pixels in yellow).
+</figcaption>
 </figure>
 </div>
-<p>Optimizing on the known species range, our proxy for an attainable level of information an interested user might have, was a more efficient strategy to retrieve the focal species’ interactions than optimization based on species richness (or interaction richness), effectively sampling more than half of the species’ interactions. In contrast, optimization based on the location of realized interactions, our best-case scenario requiring a higher level information, expectedly performed better, retrieving most of the species’ interactions.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="figures/focal_optimized.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Efficiency of three optimization layers at sampling realized interactions for a given focal species within Biodiversity Observation Networks (BONs). The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The right panels illustrate examples of BONs of 50 sites (coloured points) generated by each sampler over the focal species range (present at pixels in yellow)."><img src="figures/focal_optimized.png" class="img-fluid figure-img" alt="Efficiency of three optimization layers at sampling realized interactions for a given focal species within Biodiversity Observation Networks (BONs). The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The right panels illustrate examples of BONs of 50 sites (coloured points) generated by each sampler over the focal species range (present at pixels in yellow)."></a></p>
-<figcaption>Efficiency of three optimization layers at sampling realized interactions for a given focal species within Biodiversity Observation Networks (BONs). The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The right panels illustrate examples of BONs of 50 sites (coloured points) generated by each sampler over the focal species range (present at pixels in yellow).</figcaption>
+<p>Optimizing on the known species range, our proxy for an attainable level of information an interested user might have, was a more efficient strategy to retrieve the focal species’ interactions than optimization based on species richness (or interaction richness), effectively sampling more than half of the species’ interactions (<a href="#fig-layers" class="quarto-xref">Figure&nbsp;3</a>). In contrast, optimization based on the location of realized interactions, our best-case scenario requiring a higher level information, expectedly performed better, retrieving most of the species’ interactions.</p>
+<div id="fig-layers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figures/focal_optimized.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Efficiency of three optimization layers at sampling realized interactions for a given focal species within Biodiversity Observation Networks (BONs). The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The right panels illustrate examples of BONs of 50 sites (coloured points) generated by each sampler over the focal species range (present at pixels in yellow)."><img src="figures/focal_optimized.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Efficiency of three optimization layers at sampling realized interactions for a given focal species within Biodiversity Observation Networks (BONs). The central line indicates indicates the median proportion for a given number of sites while the shaded bands delimit the 5th and 95th percentile across replicates. The right panels illustrate examples of BONs of 50 sites (coloured points) generated by each sampler over the focal species range (present at pixels in yellow).
+</figcaption>
 </figure>
 </div>
-<p>Also explored but not tested with all sampler/optimization layer possibilities (potential supp. mat?):</p>
-<ul>
-<li>4 species with different degree: proportion of interactions monitored was sometimes higher for a species with intermediate degree than for the species with highest degree (which makes sense given rare interactions). Otherwise, both the proportion and absolute number tended to be low for species with low or very low degree.</li>
-<li>Optimization for possible &amp; detected interactions: not an interesting result. Possible interactions saturate way too fast, while detected interactions are always lower than realized interactions and don’t make sense as a pre-detection optimization target</li>
-<li>Optimisation with interaction richness: same as species richness, less efficient than species range</li>
-<li>Optimisation with richness of possible interactions for the focal species: same as species range, since they’re essentially the same</li>
-</ul>
-<p><a href="figures/efficiency_distribution.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="figures/efficiency_distribution.png" class="img-fluid"></a></p>
-<p><a href="figures/efficiency_occupancy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="figures/efficiency_occupancy.png" class="img-fluid"></a></p>
-<p><a href="figures/efficiency_comparison.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="figures/efficiency_comparison.png" class="img-fluid"></a></p>
+</section>
+<section id="comparison-of-efficiency-parameters-across-simulations" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-of-efficiency-parameters-across-simulations">Comparison of efficiency parameters across simulations</h3>
+<p>The distribution of efficiency parameters across independent simulations confirmed the interpretations based on <a href="#fig-samplers" class="quarto-xref">Figure&nbsp;2</a>, <a href="#fig-layers" class="quarto-xref">Figure&nbsp;3</a>, but also highlighted a wide range of outcomes in efficiency between simulations. Among samplers, the median efficiency parameter indicated a better performance (lower parameter value) for Uncertainty Sampling, followed by Weighted Balanced Acceptance and Simple Random (<a href="#fig-eff-distrib" class="quarto-xref">Figure&nbsp;4</a>A). The actual efficiency values spanned a similar range across the possible sampler options with all simulations combined. Among optimization layers, optimizing on the focal species range performed better than on the probabilistic range, followed by species richness, although all three options spanned similar ranges with all simulations combined (<a href="#fig-eff-distrib" class="quarto-xref">Figure&nbsp;4</a>B). In contrast, optimizing based on the realized interactions distinctly and consistently performed better across all simulations.</p>
+<div id="fig-eff-distrib" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eff-distrib-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figures/efficiency_distribution.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Distribution and density of efficiency parameters across 100 independent simulations for the three sampler options tested on the focal species range (A) and for the four optimization layer options using Uncertainty Sampling as the sampler (B). Uncertainty Sampling on panel A and Focal species range on panel B therefore represent the same data."><img src="figures/efficiency_distribution.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eff-distrib-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Distribution and density of efficiency parameters across 100 independent simulations for the three sampler options tested on the focal species range (A) and for the four optimization layer options using Uncertainty Sampling as the sampler (B). Uncertainty Sampling on panel A and Focal species range on panel B therefore represent the same data.
+</figcaption>
+</figure>
+</div>
+<p>The fact that multiple options span similar ranges of efficiency values across independent simulations highlights the need to compare the efficiency within a given simulation. Comparing options one-by-one clearly highlighted a most efficient one in all case (<a href="#fig-eff-comp" class="quarto-xref">Figure&nbsp;5</a>, Supp. Mat.), consistent with the showcased single-simulation example (<a href="#fig-samplers" class="quarto-xref">Figure&nbsp;2</a>, <a href="#fig-layers" class="quarto-xref">Figure&nbsp;3</a>). Uncertainty Sampling was more efficient than Weighted Balanced Acceptance in 98 of 100 simulations, and both were more efficient than Simple Random in all simulations (<a href="#fig-eff-comp" class="quarto-xref">Figure&nbsp;5</a>). Optimizing on the focal species range was always more efficient than on the probabilistic range or species richness (with probabilistic range more efficient than species richness in all but one simulation), but always less efficient optimizing on realized interactions.</p>
+<div id="fig-eff-comp" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eff-comp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figures/efficiency_comparison_reduced.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Within-simulation comparison of efficiency between samplers and optimization layers. The comparison values is based on the difference of the definite integrals of the efficiency samplers curves described in Equation&nbsp;3. Negative values (in blue) indicate that the compared option lead to a less efficient sampling than its reference, while positive values (in orange) indicate it was more efficient. References were chosen for narrative purposes and to simplify the number of comparisons displayed. All one-by-one comparisons are available in Supp. Mat."><img src="figures/efficiency_comparison_reduced.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eff-comp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Within-simulation comparison of efficiency between samplers and optimization layers. The comparison values is based on the difference of the definite integrals of the efficiency samplers curves described in <a href="#eq-eff-diff" class="quarto-xref">Equation&nbsp;3</a>. Negative values (in blue) indicate that the compared option lead to a less efficient sampling than its reference, while positive values (in orange) indicate it was more efficient. References were chosen for narrative purposes and to simplify the number of comparisons displayed. All one-by-one comparisons are available in Supp. Mat.
+</figcaption>
+</figure>
+</div>
+<p>While the simulations clearly highlight which sampler or optimization layer is most efficient across all simulations, efficiency parameters and differences vary over a wide range of values. We verified if this could be tied to the occupancy of the focal species in simulated landscape, measured as the number of cells where the species is present. We examined the relationship between occupancy and efficiency. Optimizing using Uncertainty Sampling on the focal species range and on realized interactions is especially efficient at low occupancy, as it targets the fewer cells where the focal species is present. As species occupancy increases, the difference between options decreases. When the focal species has high occupancy and is present almost everywhere across the landscape, Weighted Balanced Acceptance and Simple Random perform similarly to Uncertainty Sampling, as balancing sites across space or choosing at random becomes equivalent to targeting the species range. Optimizing based on species richness became more efficient as occupancy increased. A possible explanation is that at high occupancy, species range is not a restricting element and thus targeting sites with high richness directly leads to targeting sites with more interaction partners. On the contrary, at low occupancy, species range is an important restriction, and optimizing on richness of all species might target sites where the focal species is absent. Optimizing on the probabilistic species range behave similarly to species richness; at high occupancy, it is very likely the species will be present at the sites with high probabilities and therefore the sampler can more effectively filter out sites where the species is absent. At low occupancy, the focal species will be present in fewer locations with high probabilities, but might be absent from locations with intermediate probabilities, making it more challenging for the sampler to pick apart.</p>
+<div id="fig-eff-occup" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eff-occup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figures/efficiency_occupancy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Relationship between the occupancy of the focal species and sampling efficiency for all optimization options. These results come from 100 independent simulations, and therefore 100 different sets of metawebs, species ranges, and occupancy of the focal species."><img src="figures/efficiency_occupancy.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eff-occup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Relationship between the occupancy of the focal species and sampling efficiency for all optimization options. These results come from 100 independent simulations, and therefore 100 different sets of metawebs, species ranges, and occupancy of the focal species.
+</figcaption>
+</figure>
+</div>
+</section>
 </section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
