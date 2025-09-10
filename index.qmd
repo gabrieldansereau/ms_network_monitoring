@@ -130,11 +130,13 @@ We tested three sampling algorithms for comparison: simple random sampling (to
 represent uninformed sampling), weighted balanced acceptance sampling (aiming to
 balance sites across space while weighting favorably for species ranges) and
 uncertainty sampling (which targets locations with a higher value in the layer
-provided). Next, we tested three information layers for optimization: one with
+provided). Next, we tested four information layers for optimization: one with
 the focal species range (our attainable information knowledge for the observer),
-one with the location of realized interactions for the focal species (to
-represent a best-case scenario) and one with species richness across the
-landscape (to represent a holistic level of information for the system).
+one with the probabilistic range (for a less informed case, similar to the
+output of a species distribution model), one with the location of realized
+interactions for the focal species (to represent a best-case scenario) and one
+with species richness across the landscape (to represent a holistic level of
+information for the system).
 
 Using the approach described in the previous section, we generated a single\*
 set of metaweb, species ranges, and locations for realized interactions
