@@ -212,63 +212,6 @@ layers individually within each independent simulation, given that the
 monitoring context is different in each one (different metawebs and species
 ranges).
 
-+---------+---------+---------+---------+---------+---------+---------+
-| Simul   | Indep   | S ites  | Rep     | S       | Layer   | Summary |
-| ation   | endent  |         | licates | amplers |         | measure |
-|         |         |         | per     |         |         |         |
-|         |         |         | number  |         |         |         |
-+=========+=========+=========+=========+=========+=========+=========+
-| nbon    | 100     | 1 -100  | 100     | -   B   | -       | -       |
-|         |         |         |         |     ala |         | Species |
-|         |         |         |         | ncedAcc |         | -   P   |
-|         |         |         |         | eptance |         | ossible |
-|         |         |         |         |         |         | -   R   |
-|         |         |         |         |         |         | ealized |
-|         |         |         |         |         |         | -   D   |
-|         |         |         |         |         |         | etected |
-+---------+---------+---------+---------+---------+---------+---------+
-| focal   | 1       | 1 -500  | 100     | -       | -       | -   R   |
-|         |         |         |         |   Simpl |   Focal | ealized |
-|         |         |         |         | eRandom |         |         |
-|         |         |         |         | -   W   | species |         |
-|         |         |         |         | eighted | range - |         |
-|         |         |         |         |     Bal | Prob    |         |
-|         |         |         |         | anceAcc | ab      |         |
-|         |         |         |         | eptance | ilistic |         |
-|         |         |         |         | -   Un  | range - |         |
-|         |         |         |         |     cer | R       |         |
-|         |         |         |         | taintyS | ealized |         |
-|         |         |         |         | ampling | int     |         |
-|         |         |         |         |         | erac    |         |
-|         |         |         |         |         | tions - |         |
-|         |         |         |         |         | Species |         |
-|         |         |         |         |         |         |         |
-|         |         |         |         |         | r       |         |
-|         |         |         |         |         | ichness |         |
-+---------+---------+---------+---------+---------+---------+---------+
-| effic   | 100     | 1 -500  | 50      | -       | -       | -   E   |
-| iency   |         |         |         |   Simpl |   Focal |     ff  |
-|         |         |         |         | eRandom |         | iciency |
-|         |         |         |         | -   W   | species |         |
-|         |         |         |         | eighted | range - | ## pa   |
-|         |         |         |         |     Bal | Prob    | rameter |
-|         |         |         |         | anceAcc | ab      |         |
-|         |         |         |         | eptance | ilistic | D       |
-|         |         |         |         | -   Un  | range - | efinite |
-|         |         |         |         |     cer | R       |         |
-|         |         |         |         | taintyS | ealized | inte    |
-|         |         |         |         | ampling | int     | grals - |
-|         |         |         |         |         | erac    | D       |
-|         |         |         |         |         | tions - | if      |
-|         |         |         |         |         | Species | ference |
-|         |         |         |         |         |         | of      |
-|         |         |         |         |         | r       |         |
-|         |         |         |         |         | ichness | in      |
-|         |         |         |         |         |         | tegrals |
-+---------+---------+---------+---------+---------+---------+---------+
-
-: Variation of parameters across simulations
-
 # Results
 
 ### Lower sampling expectations for species interactions than species richness
