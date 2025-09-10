@@ -61,6 +61,9 @@
   set enum(indent: 10pt, body-indent: 9pt)
   set list(indent: 10pt, body-indent: 9pt)
 
+  // Configure tables.
+  set table(inset: 6pt, stroke: none)
+
   // Code
   show raw: set text(font: "Iosevka", rgb("#232323"))
 
