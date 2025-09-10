@@ -16,8 +16,9 @@ affiliations:
       city: Montréal
       region: QC
       country: Canada
+citeproc: true
 bibliography: references.bib
-bibliographystyle: springer-basic-author-date
+csl: https://www.zotero.org/styles/springer-basic-author-date
 abstract: Networks
 keywords:
     - networks
