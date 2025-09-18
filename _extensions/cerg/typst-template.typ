@@ -103,7 +103,7 @@
         text(12pt, weight: "semibold", super(affiliation.number))
         h(2pt)
         text(12pt, affiliation.name)
-      }).join("; ", last: "; ")
+      }).join(linebreak())
     })
   }
   v(2mm, weak: true)

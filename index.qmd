@@ -1,20 +1,49 @@
 ---
-title: Network monitoring
+title: Optimizing sampling and monitoring of species interactions within Biodiversity Observation Networks
 authors:
   - name: Gabriel Dansereau
     affiliation:
         - ref: udem
+        - ref: qcbs
     email: gabriel.dansereau@umontreal.ca
     roles:
         - writing
         - editing
     corresponding: true
+  - name: Michael D. Catchen
+    affiliation:
+        - ref: udem
+        - ref: qcbs
+    roles:
+        - editing
+  - name: Ceres Barros
+    affiliation:
+        - ref: cfs
+    roles:
+        - editing
+  - name: Timothée Poisot
+    affiliation:
+        - ref: udem
+        - ref: qcbs
+    roles:
+        - editing
 affiliations:
     - id: udem
       name: Université de Montréal
       department: Département de sciences biologiques
       city: Montréal
       region: QC
+      country: Canada
+    - id: qcbs
+      name: Québec Centre for Biodiversity Science
+      city: Montréal
+      region: QC
+      country: Canada
+    - id: cfs
+      name: Canadian Forest Service
+      department: Natural Resources Canada
+      city: Victoria
+      region: BC
       country: Canada
 citeproc: true
 bibliography: references.bib
@@ -39,6 +68,12 @@ design and optimization.
         considered when implementing monitoring networks
     -   As interactions are inherently challenging to sample, developing methods
         for optimizing strategies is even more relevant.
+-   Previous work
+    -   Lot of research on sampling of networks and interactions
+    -   Less so in a spatial context
+    -   None on using network info to optimize biodiversity monitoring in the
+        context of the GBF
+    -   Bring back to context of documenting metaweb
 -   Key questions
     -   How should we implement monitoring programs *across space* to
         efficiently capture network composition and changes as essential
@@ -117,7 +152,7 @@ where an observer would target one species and aim to retrieve all of its
 interactions (here known from the metaweb), but might have different information
 to optimize its sampling. Observation network design and efficiency needs to be
 evaluated beyond spatial balance, and also regarding their efficiency at meeting
-biodiversity monitoring objectives [@Norman2025AlgSel]. Thus, the idea of our
+biodiversity monitoring objectives [@Norman2025SitSel]. Thus, the idea of our
 focal sampling exploration is to represent a simplified case with a clear
 objective (retrieving a species' interactions) and where we do have prior
 knowledge about the system, either through empirical data or model predictions,
@@ -371,7 +406,7 @@ potentially more impactful than improving knowledge or reducing uncertainty over
 species ranges.
 
 When does the choice of sampler or optimization layer matter the most? Here we
-concur with @Norman2025AlgSel that ecologically-relevant metrics are required to
+concur with @Norman2025SitSel that ecologically-relevant metrics are required to
 evaluate the performance of monitoring designs, beyond spatial balance. However,
 while they found that many sampling algorithms performed similarly for
 biodiversity monitoring, our results highlighted better options when the
