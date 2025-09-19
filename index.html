@@ -8,7 +8,7 @@
 
 <meta name="keywords" content="networks, monitoring">
 
-<title>Network monitoring</title>
+<title>Optimizing sampling and monitoring of species interactions within Biodiversity Observation Networks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -95,14 +95,17 @@ window.Quarto = {
 };
 </script>
 
-<meta name="citation_title" content="Network monitoring">
+<meta name="citation_title" content="Optimizing sampling and monitoring of species interactions within Biodiversity Observation Networks">
 <meta name="citation_abstract" content="Networks">
 <meta name="citation_keywords" content="networks,monitoring">
 <meta name="citation_author" content="Gabriel Dansereau">
+<meta name="citation_author" content="Michael D. Catchen">
+<meta name="citation_author" content="Ceres Barros">
+<meta name="citation_author" content="Timothée Poisot">
 <meta name="citation_language" content="en-CA">
 <meta name="citation_reference" content="citation_title=Emergence of Structural Patterns in Neutral Trophic Networks;,citation_author=Elsa Canard;,citation_author=Nicolas Mouquet;,citation_author=Lucile Marescot;,citation_author=Kevin J. Gaston;,citation_author=Dominique Gravel;,citation_author=David Mouillot;,citation_publication_date=2012-08-10;,citation_cover_date=2012-08-10;,citation_year=2012;,citation_fulltext_html_url=https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0038295;,citation_issue=8;,citation_doi=10.1371/journal.pone.0038295;,citation_issn=1932-6203;,citation_volume=7;,citation_language=en-US;,citation_journal_title=PLOS ONE;,citation_journal_abbrev=PLOS ONE;,citation_publisher=Public Library of Science;">
 <meta name="citation_reference" content="citation_title=The missing link: Discerning true from false negatives when sampling species interaction networks;,citation_author=Michael D. Catchen;,citation_author=Timothée Poisot;,citation_author=Laura J. Pollock;,citation_author=Andrew Gonzalez;,citation_publication_date=2023-01-19;,citation_cover_date=2023-01-19;,citation_year=2023;,citation_fulltext_html_url=https://ecoevorxiv.org/repository/view/4929/;,citation_language=en-US;">
-<meta name="citation_reference" content="citation_title=Algorithm selection for optimal ecological monitoring design;,citation_author=Kari E. Norman;,citation_author=Timothée Poisot;,citation_publication_date=2025-02-11;,citation_cover_date=2025-02-11;,citation_year=2025;,citation_fulltext_html_url=https://ecoevorxiv.org/repository/view/8545/;,citation_language=en-US;,citation_publisher=EcoEvoRxiv;">
+<meta name="citation_reference" content="citation_title=Site selection algorithms for optimal ecological monitoring design;,citation_author=Kari E. Norman;,citation_author=Timothée Poisot;,citation_publication_date=2025-09-01;,citation_cover_date=2025-09-01;,citation_year=2025;,citation_fulltext_html_url=https://www.sciencedirect.com/science/article/pii/S1470160X25010362;,citation_doi=10.1016/j.ecolind.2025.114104;,citation_issn=1470-160X;,citation_volume=178;,citation_journal_title=Ecological Indicators;,citation_journal_abbrev=Ecological Indicators;,citation_publisher=EcoEvoRxiv;">
 </head>
 
 <body class="quarto-light">
@@ -110,15 +113,15 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Network monitoring</h1>
+      <h1 class="title">Optimizing sampling and monitoring of species interactions within Biodiversity Observation Networks</h1>
           </div>
 
     
     <div class="quarto-title-meta-container">
       <div class="quarto-title-meta-column-start">
             <div class="quarto-title-meta-author">
-          <div class="quarto-title-meta-heading">Author</div>
-          <div class="quarto-title-meta-heading">Affiliation</div>
+          <div class="quarto-title-meta-heading">Authors</div>
+          <div class="quarto-title-meta-heading">Affiliations</div>
           
                 <div class="quarto-title-meta-contents">
             <p class="author">Gabriel Dansereau <a href="mailto:gabriel.dansereau@umontreal.ca" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
@@ -126,6 +129,39 @@ window.Quarto = {
                 <div class="quarto-title-meta-contents">
                     <p class="affiliation">
                         Université de Montréal
+                      </p>
+                    <p class="affiliation">
+                        Québec Centre for Biodiversity Science
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Michael D. Catchen </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Université de Montréal
+                      </p>
+                    <p class="affiliation">
+                        Québec Centre for Biodiversity Science
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Ceres Barros </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Canadian Forest Service
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Timothée Poisot </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Université de Montréal
+                      </p>
+                    <p class="affiliation">
+                        Québec Centre for Biodiversity Science
                       </p>
                   </div>
                     </div>
@@ -201,6 +237,13 @@ window.Quarto = {
 <li>Yet, interactions represent an biodiversity component which should be considered when implementing monitoring networks</li>
 <li>As interactions are inherently challenging to sample, developing methods for optimizing strategies is even more relevant.</li>
 </ul></li>
+<li>Previous work
+<ul>
+<li>Lot of research on sampling of networks and interactions</li>
+<li>Less so in a spatial context</li>
+<li>None on using network info to optimize biodiversity monitoring in the context of the GBF</li>
+<li>Bring back to context of documenting metaweb</li>
+</ul></li>
 <li>Key questions
 <ul>
 <li>How should we implement monitoring programs <em>across space</em> to efficiently capture network composition and changes as essential components of biodiversity?</li>
@@ -220,7 +263,7 @@ window.Quarto = {
 </section>
 <section id="focal-sampling-on-single-species-optimization" class="level2">
 <h2 class="anchored" data-anchor-id="focal-sampling-on-single-species-optimization">Focal sampling on single-species &amp; optimization</h2>
-<p>In complement to the metaweb sampling approach, we also investigated the sampling efficiency on a single-species basis. We simulated a focal sampling where an observer would target one species and aim to retrieve all of its interactions (here known from the metaweb), but might have different information to optimize its sampling. Observation network design and efficiency needs to be evaluated beyond spatial balance, and also regarding their efficiency at meeting biodiversity monitoring objectives <span class="citation" data-cites="Norman2025AlgSel">(<a href="#ref-Norman2025AlgSel" role="doc-biblioref">Norman and Poisot 2025</a>)</span>. Thus, the idea of our focal sampling exploration is to represent a simplified case with a clear objective (retrieving a species’ interactions) and where we do have prior knowledge about the system, either through empirical data or model predictions, which can be used to optimize sampling.</p>
+<p>In complement to the metaweb sampling approach, we also investigated the sampling efficiency on a single-species basis. We simulated a focal sampling where an observer would target one species and aim to retrieve all of its interactions (here known from the metaweb), but might have different information to optimize its sampling. Observation network design and efficiency needs to be evaluated beyond spatial balance, and also regarding their efficiency at meeting biodiversity monitoring objectives <span class="citation" data-cites="Norman2025SitSel">(<a href="#ref-Norman2025SitSel" role="doc-biblioref">Norman and Poisot 2025</a>)</span>. Thus, the idea of our focal sampling exploration is to represent a simplified case with a clear objective (retrieving a species’ interactions) and where we do have prior knowledge about the system, either through empirical data or model predictions, which can be used to optimize sampling.</p>
 <p>Optimizing focal sampling relies on two elements: the sampler algorithm used and the information provided for optimization. Species range represents an attainable level of information an interested observer could have, for instance based on expert knowledge or species distribution models. Therefore, we assumed the observer knew the species range across the landscape (presence or absence). We tested three sampling algorithms for comparison: simple random sampling (to represent uninformed sampling), weighted balanced acceptance sampling (aiming to balance sites across space while weighting favorably for species ranges) and uncertainty sampling (which targets locations with a higher value in the layer provided). Next, we tested four information layers for optimization: one with the focal species range (our attainable information knowledge for the observer), one with the probabilistic range (for a less informed case, similar to the output of a species distribution model), one with the location of realized interactions for the focal species (to represent a best-case scenario) and one with species richness across the landscape (to represent a holistic level of information for the system).</p>
 <p>Using the approach described in the previous section, we generated a single* set of metaweb, species ranges, and locations for realized interactions (*to showcase a specific example, and counter-verified with separate sets which yielded conceptually similar results, as described in the next section). We selected the species with the highest degree (number of interactions) in the metaweb as the focal species for the simulation. We then generated BONs of 1 to 500 sites (at interval increments of 5 sites) using the three possible algorithms and optimization layers, with 100 replicates for every number of sites. For each BON generated, we extracted the number of unique realized interactions sampled across all sites (essentially the monitored degree for the focal species)</p>
 </section>
@@ -316,7 +359,7 @@ Figure&nbsp;5: Relationship between the occupancy of the focal species and sampl
 <h1>Discussion</h1>
 <p>What should be realistic expectations for sampling and monitoring of species interactions? Our simulations highlight they should be much lower than for species richness once considering that interaction realization and detection depend on species abundance. This means we can expect the monitoring of species interaction within a BON to require a higher monitoring effort than the one required for monitoring species and community composition.</p>
 <p>We can improve coverage with the right optimization method, but efficiently doing so requires a clear and attainable sampling or monitoring objective. For instance, adopting a single-species perspective can yield relevant results while relying on attainable levels of information. Optimizing on a known species range proved an efficient strategy to retrieve its interactions, better than optimization based on more holistic-information such as species or interaction richness. Optimizing based on the location of the realized interactions was even more efficient, but our simulations represent a best case scenario likely beyond reach in an applied context. Nonetheless, it highlights that the most important efficiency gains will come from better knowledge of where interactions are realized. Better incorporating considerations for species abundance, the factor influencing interaction realization in our simulations, will be crucial and potentially more impactful than improving knowledge or reducing uncertainty over species ranges.</p>
-<p>When does the choice of sampler or optimization layer matter the most? Here we concur with <span class="citation" data-cites="Norman2025AlgSel">Norman and Poisot (<a href="#ref-Norman2025AlgSel" role="doc-biblioref">2025</a>)</span> that ecologically-relevant metrics are required to evaluate the performance of monitoring designs, beyond spatial balance. However, while they found that many sampling algorithms performed similarly for biodiversity monitoring, our results highlighted better options when the monitoring target is highly localized. We observed the most important differences for species with low occupancy, where Uncertainty Sampling is relevant to target only the focal species range. Differences were less important at higher occupancy and for species present across the whole landscape, although Uncertainty Sampling still performed better. This result should be expected, as a specialized sampler should be more efficient when a species range is highly localized compared to one balancing sites across the the whole landscape. However, it also applies in broader context, highlighting how some monitoring targets (e.g., species interaction) expected to be highly localized or more likely in specific locations might benefit from targeted monitoring designs. In such case, efficiency gains will depend on improvements in our capacity to predict the location of those phenomena and on our ability to continuously evaluate and update predictions based on the information acquired.</p>
+<p>When does the choice of sampler or optimization layer matter the most? Here we concur with <span class="citation" data-cites="Norman2025SitSel">Norman and Poisot (<a href="#ref-Norman2025SitSel" role="doc-biblioref">2025</a>)</span> that ecologically-relevant metrics are required to evaluate the performance of monitoring designs, beyond spatial balance. However, while they found that many sampling algorithms performed similarly for biodiversity monitoring, our results highlighted better options when the monitoring target is highly localized. We observed the most important differences for species with low occupancy, where Uncertainty Sampling is relevant to target only the focal species range. Differences were less important at higher occupancy and for species present across the whole landscape, although Uncertainty Sampling still performed better. This result should be expected, as a specialized sampler should be more efficient when a species range is highly localized compared to one balancing sites across the the whole landscape. However, it also applies in broader context, highlighting how some monitoring targets (e.g., species interaction) expected to be highly localized or more likely in specific locations might benefit from targeted monitoring designs. In such case, efficiency gains will depend on improvements in our capacity to predict the location of those phenomena and on our ability to continuously evaluate and update predictions based on the information acquired.</p>
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
@@ -327,8 +370,8 @@ Canard E, Mouquet N, Marescot L, et al (2012) Emergence of <span>Structural Patt
 <div id="ref-Catchen2023MisLin" class="csl-entry" role="listitem">
 Catchen MD, Poisot T, Pollock LJ, Gonzalez A (2023) The missing link: Discerning true from false negatives when sampling species interaction networks. <a href="https://ecoevorxiv.org/repository/view/4929/">https://ecoevorxiv.org/repository/view/4929/</a>. Accessed 19 Jan 2023
 </div>
-<div id="ref-Norman2025AlgSel" class="csl-entry" role="listitem">
-Norman KE, Poisot T (2025) <a href="https://ecoevorxiv.org/repository/view/8545/">Algorithm selection for optimal ecological monitoring design</a>
+<div id="ref-Norman2025SitSel" class="csl-entry" role="listitem">
+Norman KE, Poisot T (2025) Site selection algorithms for optimal ecological monitoring design. Ecological Indicators 178:114104. <a href="https://doi.org/10.1016/j.ecolind.2025.114104">https://doi.org/10.1016/j.ecolind.2025.114104</a>
 </div>
 </div>
 </section>
