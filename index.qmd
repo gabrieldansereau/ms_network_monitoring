@@ -91,6 +91,22 @@ implemented in `SpeciesInteractionSamplers.jl`.
 
 First, we simulate networks with variation in species and interaction
 composition across a simulated landscape. To do so, we generate autocorrelated
+ranges representing the distribution of species across the landscape using
+neutral landscape models [NLMs; @Gardner1987NeuMod; @Etherington2015NlmPyt].
+NLMs are used to generate landscapes replicating realistic autocorrelated
+distributions without underlying biotic or abiotic factors, and therefore
+represent useful baselines to explore ecological processes in a spatial context
+[@Hesselbarth2024ComMet]. NLMs have been used to generate realistic landscapes
+in contexts relating to biodiversity distribution and preservation, for instance
+to compare avian diversity between conservation approaches in coffee-growing
+landscapes [@Valente2022LanLan] or to assess the potential of a suggested
+umbrella species in an ecotone [@Duchardt2023UsiNeu]. NLMs have also been used
+with species interactions, for example to evaluate the effect of landscape
+structure in cross-species disease transmission between interacting species
+[@Forero-Munoz2025SpaLan]. In our simulations, we generated neutral landscapes
+of 100 x 100 pixels for 75 species, creating communities of known composition
+and species richness at every location in our simulated landscape.
+
 We then generate a metaweb using the niche model [@Williams2000SimRul] to define
 the **feasible interactions** between the species. Combining the species ranges
 and the metaweb information, we verify where species with feasible interactions
@@ -113,8 +129,9 @@ landscape and measure their efficiency at monitoring the generated networks when
 increasing the number of sites in the BON. We test different algorithms to
 spread monitoring sites across the landscape and optimize given different
 information such as species ranges, species richness or presence of realized
-interactions. Across our simulations, we used landscapes of 100 x 100 pixels, 75
-species, and a connectance of 0.2 to generate metawebs using the niche model.
+interactions. ~~Across our simulations, we used landscapes of 100 x 100 pixels,
+75 species~~, and a connectance of 0.2 to generate metawebs using the niche
+model.
 
 ## Evaluating metaweb sampling
 
