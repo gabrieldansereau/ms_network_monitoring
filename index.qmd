@@ -84,30 +84,29 @@ design and optimization.
 
 # Methods
 
-We explored network sampling using simulations to generate networks, species
-ranges, and biodiversity observations networks (BONs). We followed the approach
-introduced by @Catchen2023MisLin to simulate interaction realization and
-detection, implemented in `SpeciesInteractionSamplers.jl`.
+We used simulations to generate networks, species ranges, and biodiversity
+observations networks (BONs). We followed the approach introduced by
+@Catchen2023MisLin to simulate interaction realization and detection,
+implemented in `SpeciesInteractionSamplers.jl`.
 
-First, we simulate networks with variation across space. To do so, we generate
-autocorrelated ranges representing the distribution of species across a
-simulated landscape and generate a metaweb using the niche model to define the
-feasible interactions between the species. Combining the species ranges and the
-metaweb information, we obtain the list of **possible interactions** in our
-landscape and inside every pixel based on the co-occurrence of species with
-feasible interactions. Next, we incorporate a consideration for species
-abundances, which influence both interaction realization and detection. For
-example, rare and low-abundance species are less likely to interact in a
-location because they are less likely to encounter one another, especially
-compared to abundant species, leading to neutrally forbidden links
-[@Catchen2023MisLin; @Canard2012EmeStr]. We generate an abundance profile for
-our set of species (based on a Normalized Log Normal distribution), then draw
-**realized interactions** at each location given the abundance of species.
-Finally, we define the set of **detected interactions** by conditioning the
-detection of realized interactions on the abundance distribution (even if an
-interaction is realized in a location, we need to be there at that moment to
-detect, which is again less likely for low probability events;
-@Catchen2023MisLin).
+First, we simulate networks with variation in species and interaction
+composition across a simulated landscape. To do so, we generate autocorrelated
+We then generate a metaweb using the niche model [@Williams2000SimRul] to define
+the **feasible interactions** between the species. Combining the species ranges
+and the metaweb information, we verify where species with feasible interactions
+co-occur, which returns the list of **possible interactions** at every location
+in our landscape. Next, we incorporate a consideration for species abundances,
+which influence both interaction realization and detection. For example, rare
+and low-abundance species are less likely to interact in a location because they
+are less likely to encounter one another, especially compared to abundant
+species, leading to neutrally forbidden links [@Catchen2023MisLin;
+@Canard2012EmeStr]. We generate an abundance profile for our set of species
+(based on a Normalized Log Normal distribution), then draw **realized
+interactions** at each location given the abundance of species. Finally, we
+define the set of **detected interactions** by conditioning the detection of
+realized interactions on the abundance distribution (even if an interaction is
+realized in a location, we need to be there at that moment to detect, which is
+again less likely for low probability events; @Catchen2023MisLin).
 
 Second, we design Biodiversity Observation Networks (BONs) across the simulated
 landscape and measure their efficiency at monitoring the generated networks when
@@ -138,11 +137,10 @@ number of site).
 
 We ran simulations with 100 fully-independent replicates (different metaweb,
 species ranges, abundance distribution, realized interactions) for each number
-of site in a BON and for the two interaction references, yielding 10,000
-simulations in total. Prior exploratory simulations showed the number of sites
-in the BON to be the main element affecting the proportion of sampled species or
-interactions compared to other model parameters such as metaweb connectance and
-landscape autocorrelation.
+of site in a BON, yielding 10,000 simulations in total. Exploratory simulations
+showed the number of sites in the BON to be the main element affecting the
+proportion of sampled species or interactions compared to other model parameters
+such as metaweb connectance and landscape autocorrelation.
 
 ## Focal sampling on single-species & optimization
 
@@ -175,17 +173,18 @@ interactions for the focal species (to represent a best-case scenario) and one
 with species richness across the landscape (to represent a holistic level of
 information for the system).
 
-Using the approach described in the previous section, we generated a single\*
-set of metaweb, species ranges, and locations for realized interactions (\*to
-showcase a specific example, and counter-verified with separate sets which
-yielded conceptually similar results, as described in the next section). We
-selected the species with the highest degree (number of interactions) in the
-metaweb as the focal species for the simulation. We then generated BONs of 1 to
-500 sites (at interval increments of 5 sites) using the three possible
-algorithms and optimization layers, with 100 replicates for every number of
-sites. For each BON generated, we extracted the number of unique realized
-interactions sampled across all sites (essentially the monitored degree for the
-focal species)
+Using the approach described in the previous section, we generated a single set
+of metaweb, species ranges, and locations for realized interactions (to showcase
+a specific example, and counter-verified with separate sets which yielded
+conceptually similar results, as described in the next section). We selected the
+species with the highest degree (number of interactions) in the metaweb as the
+focal species for the simulation. We then generated BONs of 1 to 500 sites (at
+interval increments of 5 sites) using the three possible algorithms (simple
+random, weighted balanced acceptance, uncertainty sampling) and four
+optimization layers (focal species range, probabilistic range, realized
+interactions, species richness), with 100 replicates for every number of sites.
+For each BON generated, we extracted the number of unique realized interactions
+sampled across all sites (the monitored degree for the focal species).
 
 ## Efficiency
 
@@ -237,7 +236,7 @@ Using @eq-eff-int, we can compute the difference in efficiency between two
 curves as the difference of integrals:
 
 $$
-d_{1,2} = (a_1 \ln\left(a_1\right) - a_1 \ln\left(k + a_1\right) + k) - (a_2 \ln\left(a_2\right) - a_2 \ln\left(k + a_2\right) + k)
+d_{1,2} = a_1 \ln\left(a_1\right) - a_1 \ln\left(k + a_1\right) - a_2 \ln\left(a_2\right) + a_2 \ln\left(k + a_2\right)
 $$ {#eq-eff-diff}
 
 This difference measure allows to identify which samplers or optimization layer
