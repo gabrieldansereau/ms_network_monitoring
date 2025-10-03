@@ -85,9 +85,12 @@ design and optimization.
 # Methods
 
 We used simulations to generate networks, species ranges, and biodiversity
-observations networks (BONs). We followed the approach introduced by
-@Catchen2023MisLin to simulate interaction realization and detection,
+observations networks (BONs). We followed the approach and process-based model
+introduced by @Catchen2023MisLin to simulate interaction realization and
+detection while accounting for spatial variation in species occurrences,
 implemented in `SpeciesInteractionSamplers.jl`.
+
+## Generating interaction networks with spatial variation
 
 First, we simulate networks with variation in species and interaction
 composition across a simulated landscape. To do so, we generate autocorrelated
@@ -107,7 +110,7 @@ structure in cross-species disease transmission between interacting species
 of 100 x 100 pixels for 75 species, creating communities of known composition
 and species richness at every location in our simulated landscape.
 
-Next, we defined the **feasible interactions** between the species by generating
+Next, we define the **feasible interactions** between the species by generating
 a metaweb using the niche model [@Williams2000SimRul]. The model defines
 interactions by assigning species a niche position and feeding range, similarly
 to body-size relationships between predator and preys, and generates networks
@@ -116,9 +119,9 @@ with structural properties similar to empirical food webs [@Williams2000SimRul;
 including in the context of investigating interaction sampling
 [@Poisot2012DisSpe; @Wood2015EffSpa].
 
-Combining the species ranges and the metaweb information, we verify where
-species with feasible interactions co-occur, which returns the list of
-**possible interactions** at every location in our landscape. Next, we
+Combining the species ranges and the metaweb, we verify where species with
+feasible interactions co-occur, which returns the list of **possible
+interactions** [@Catchen2023MisLin] at every location in our landscape. We then
 incorporate a consideration for species abundances, which influence both
 interaction realization and detection. For example, rare and low-abundance
 species are less likely to interact in a location because they are less likely
@@ -132,14 +135,43 @@ distribution (even if an interaction is realized in a location, we need to be
 there at that moment to detect, which is again less likely for low probability
 events; @Catchen2023MisLin).
 
-Second, we design Biodiversity Observation Networks (BONs) across the simulated
-landscape and measure their efficiency at monitoring the generated networks when
-increasing the number of sites in the BON. We test different algorithms to
-spread monitoring sites across the landscape and optimize given different
-information such as species ranges, species richness or presence of realized
-interactions. ~~Across our simulations, we used landscapes of 100 x 100 pixels,
-75 species~~, and a connectance of 0.2 to generate metawebs using the niche
-model.
+## Designing Biodiversity Observation Networks
+
+We design Biodiversity Observation Networks (BONs) across the simulated
+landscape and measure their efficiency at monitoring the generated interaction
+networks when increasing the number of sites in the BON. @Norman2025SitSel
+presented an overview of the design and site selection process accounting for
+ecological monitoring goals. The design process uses a site selection algorithm
+to designate candidate sites for the monitoring network. Key features of the
+site selection algorithms highlighted by [@Norman2025SitSel] include the ability
+to balance sites across space for equal representation [see
+@Benedetti2017SpaBal; @Kermorvant2019SpaBal for reviews], to stratify across
+regions or populations, to include auxiliary site information (environmental or
+biological) to weight inclusion probability, and to produce master samples
+including current monitoring site or from which to select a subset of sites for
+a specific monitoring project [@vanDam-Bates2018UsiBal; @Robertson2024WelSam].
+Here, we used the Balanced Acceptance Sampling algorithm [@Robertson2013BasBal]
+to design BONs when aiming to balance sites across our simulated landscapes,
+mostly for its efficiency and its ability to weight site inclusion probabilities
+based on a provided layer. To push optimization further given available
+information, we also used the Uncertainty Sampling algorithm [@Lewis1994SeqAlg],
+an active learning method from the machine learning field aiming to improve a
+model by targeting its least certain elements [@Settles2009ActLea]. Instead of
+focusing on uncertainty, we used this concept to target the sites with the
+highest values in a layer provided for optimization, with the idea that it could
+lead to the highest information gain for the BON. Examples of active learning
+relating to biodiversity monitoring and sampling site selection include
+improving species range estimation from a smaller number of actively selected
+sites [@Lange2023ActLea], minimizing field data collection costs based on
+distances between samples [@Malek2019OptFie], and identifying uncertain labels
+for classification to improve bioacoustic monitoring performance across
+stratified samples [@McEwen2025StrAct].
+
+We test different algorithms to spread monitoring sites across the landscape and
+optimize given different information such as species ranges, species richness or
+presence of realized interactions. ~~Across our simulations, we used landscapes
+of 100 x 100 pixels, 75 species~~, and a connectance of 0.2 to generate metawebs
+using the niche model.
 
 ## Evaluating metaweb sampling
 
@@ -148,17 +180,17 @@ document a metaweb of interactions, comparing it with the efficiency to document
 species richness. We generated spatially balanced Biodiversity Observation
 Networks (BONs) across our landscape, defining sites where to sample species and
 interactions. We tested all number of sites between 1 and 100 and used the
-`BalancedAcceptance` method, which aims to distribute sampling evenly across
-space (for a given number of sampling sites). We then evaluated the sampling
-efficiency of each BON in terms of overall species richness and compared to the
-generated metaweb for each interaction type. For species richness, we assumed we
-sampled all species present in a sampled location, combined this information
-across all sampled sites to determine the number of species encountered through
-sampling, and compared the result with the total species richness in the
-landscape (75 species). For interactions, we aggregated each interaction type
-separately (possible, realized and detected) for a given BON and evaluated the
-proportion of the metaweb recovered through sampling (and therefore for a given
-number of site).
+Balanced Acceptance Sampling method [@Robertson2013BasBal], which aims to
+distribute sampling evenly across space (for a given number of sampling sites).
+We then evaluated the sampling efficiency of each BON in terms of overall
+species richness and compared to the generated metaweb for each interaction
+type. For species richness, we assumed we sampled all species present in a
+sampled location, combined this information across all sampled sites to
+determine the number of species encountered through sampling, and compared the
+result with the total species richness in the landscape (75 species). For
+interactions, we aggregated each interaction type separately (possible, realized
+and detected) for a given BON and evaluated the proportion of the metaweb
+recovered through sampling (and therefore for a given number of site).
 
 We ran simulations with 100 fully-independent replicates (different metaweb,
 species ranges, abundance distribution, realized interactions) for each number
