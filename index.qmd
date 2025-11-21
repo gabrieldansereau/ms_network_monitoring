@@ -150,6 +150,7 @@ regions or populations, to include auxiliary site information (environmental or
 biological) to weight inclusion probability, and to produce master samples
 including current monitoring site or from which to select a subset of sites for
 a specific monitoring project [@vanDam-Bates2018UsiBal; @Robertson2024WelSam].
+
 Here, we used the Balanced Acceptance Sampling algorithm [@Robertson2013BasBal]
 to design BONs when aiming to balance sites across our simulated landscapes,
 mostly for its efficiency and its ability to weight site inclusion probabilities
@@ -451,15 +452,15 @@ doing so requires a clear and attainable sampling or monitoring objective. For
 instance, adopting a single-species perspective can yield relevant results while
 relying on attainable levels of information. Optimizing on a known species range
 proved an efficient strategy to retrieve its interactions, better than
-optimization based on more holistic-information such as species or interaction
-richness. Optimizing based on the location of the realized interactions was even
-more efficient, but our simulations represent a best case scenario likely beyond
-reach in an applied context. Nonetheless, it highlights that the most important
-efficiency gains will come from better knowledge of where interactions are
-realized. Better incorporating considerations for species abundance, the factor
-influencing interaction realization in our simulations, will be crucial and
-potentially more impactful than improving knowledge or reducing uncertainty over
-species ranges.
+optimization based on more holistic, community-level information such as species
+or interaction richness. Optimizing based on the location of the realized
+interactions was even more efficient, but our simulations represent a best case
+scenario beyond reach in an applied context. Nonetheless, it highlights that the
+most important efficiency gains will come from better knowledge of where
+interactions are likely to take place. Better incorporating considerations for
+species abundance, the factor influencing interaction realization in our
+simulations, will be crucial and potentially more impactful than improving
+knowledge or reducing uncertainty over species ranges.
 
 When does the choice of sampler or optimization layer matter the most? Here we
 concur with @Norman2025SitSel that ecologically-relevant metrics are required to
