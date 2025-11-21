@@ -85,10 +85,11 @@ design and optimization.
 # Methods
 
 We used simulations to generate networks, species ranges, and biodiversity
-observations networks (BONs). We followed the approach and process-based model
-introduced by @Catchen2023MisLin to simulate interaction realization and
-detection while accounting for spatial variation in species occurrences,
-implemented in `SpeciesInteractionSamplers.jl`.
+observations networks (BONs). We followed the approach and process-based,
+spatio-temporal model introduced by @Catchen2023MisLin [building on
+@Cirtwill2019QuaFra] to simulate interaction realization and detection while
+accounting for spatial variation in species occurrences, implemented in
+`SpeciesInteractionSamplers.jl`.
 
 ## Generating interaction networks with spatial variation
 
@@ -110,30 +111,41 @@ structure in cross-species disease transmission between interacting species
 of 100 x 100 pixels for 75 species, creating communities of known composition
 and species richness at every location in our simulated landscape.
 
-Next, we define the **feasible interactions** between the species by generating
-a metaweb using the niche model [@Williams2000SimRul]. The model defines
-interactions by assigning species a niche position and feeding range, similarly
-to body-size relationships between predator and preys, and generates networks
-with structural properties similar to empirical food webs [@Williams2000SimRul;
+Next, using the spatio-temporal model presented by @Catchen2023MisLin, we define
+the **feasible interactions** between the species by generating a metaweb using
+the niche model [@Williams2000SimRul]. The model defines interactions by
+assigning species a niche position and feeding range, similarly to body-size
+relationships between predator and preys, and generates networks with structural
+properties similar to empirical food webs [@Williams2000SimRul;
 @Gravel2013InfFoo; @Delmas2019AnaEco]. It is widely used as a generative model,
 including in the context of investigating interaction sampling
 [@Poisot2012DisSpe; @Wood2015EffSpa].
 
 Combining the species ranges and the metaweb, we verify where species with
 feasible interactions co-occur, which returns the list of **possible
-interactions** [@Catchen2023MisLin] at every location in our landscape. We then
-incorporate a consideration for species abundances, which influence both
-interaction realization and detection. For example, rare and low-abundance
-species are less likely to interact in a location because they are less likely
-to encounter one another, especially compared to abundant species, leading to
-neutrally forbidden links [@Catchen2023MisLin; @Canard2012EmeStr]. We generate
-an abundance profile for our set of species (based on a Normalized Log Normal
-distribution), then draw **realized interactions** at each location given the
-abundance of species. Finally, we define the set of **detected interactions** by
-conditioning the detection of realized interactions on the abundance
-distribution (even if an interaction is realized in a location, we need to be
-there at that moment to detect, which is again less likely for low probability
-events; @Catchen2023MisLin).
+interactions** [@Catchen2023MisLin] at every location in our landscape. Next, to
+define **realized interactions**, we incorporate a consideration for species
+abundances, which influence both interaction realization and detection. For
+example, rare and low-abundance species are less likely to interact in a
+location because they are less likely to encounter one another, especially
+compared to abundant species, leading to neutrally forbidden links
+[@Catchen2023MisLin; @Canard2012EmeStr]. The neutral model introduced by
+@Catchen2023MisLin first generates a distribution of species relative abundances
+from a log-normal distribution, then models interaction realization as a
+stochastic Poisson Process, drawing realized interactions from a Poisson
+distribution parameterized on the relatives abundances of interacting species
+and a fixed realization energy parameter [see @Catchen2023MisLin for full
+details].
+
+Finally, we define the set of **detected interactions** by also conditioning the
+detection of realized interactions on the species abundances (even if an
+interaction is realized in a location, we need to be there at that moment to
+detect, which is again less likely for low probability events; see
+@Catchen2023MisLin for implementation). The result of this model is a landscape
+with spatial variation in species and interaction composition and detection,
+where species composition, realized interactions, and detected interactions are
+based on the process model and known at all locations, allowing to compare the
+efficiency of sampling strategies.
 
 ## Designing Biodiversity Observation Networks
 
