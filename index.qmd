@@ -273,7 +273,7 @@ simulations, we used the following single-parameter equation which generates
 similar efficiency curves:
 
 $$
-p=\frac{x}{e^a + x}
+p=\frac{x}{a + x}
 $$ {#eq-eff}
 
 where $p$ is the proportion of monitored interactions, $x$ is the number of
@@ -281,15 +281,15 @@ sites in the BON and $a$ is the efficiency parameter we use for comparison.
 Here, $a$ is the single parameter describing the shape of the curve, and can be
 compared across samplers, optimization layers or focal species degree. The lower
 this parameter, the faster we reach a high proportion of monitored interactions.
-We used $e^a$ as searching for parameter values on an exponential scale allowed
-for more gradual control over the curve shape.
 
 For each independent simulation, sampler and optimization layer option, we
 performed a grid search across possible values of $a$ to identify the curve
-yielding the best fit with the simulation's result. We performed a grid search
-of 10,000 evenly spaced values between -5 and 15 (limits chosen to go beyond the
-fitted values), and selected the value of $a$ yielding the curve minimizing the
-sum of squared errors to the values from the simulation.
+yielding the best fit with the simulation's result. We searched for parameter
+values on an exponential scale as it allowed for more gradual control over the
+curve shape, evaluating 10,000 evenly spaced values between $e^{-5}$ and
+$e^{15}$ (limits chosen to go beyond the fitted values), and selected the value
+of $a$ yielding the curve minimizing the sum of squared errors to the simulation
+results.
 
 To compare the efficiency curves within a given simulation (i.e., between
 samplers and optimization layers for a given metaweb and set of species ranges),
@@ -406,8 +406,9 @@ simulations.
 simulations for the three sampler options tested on the focal species range (A)
 and for the four optimization layer options using Uncertainty Sampling as the
 sampler (B). Uncertainty Sampling on panel A and Focal species range on panel B
-therefore represent the same
-data.](figures/efficiency_distribution.png){#fig-eff-distrib}
+therefore represent the same data. The efficiency parameter is the natural log
+of parameter $a$ in @eq-eff, describing the best-fit sampling efficiency curve
+for a given simulation.](figures/efficiency_distribution.png){#fig-eff-distrib}
 
 The fact that multiple options span similar ranges of efficiency values across
 independent simulations highlights the need to compare the efficiency within a
@@ -459,8 +460,9 @@ probabilities, making it more challenging for the sampler to pick apart.
 ![Relationship between the occupancy of the focal species and sampling
 efficiency for all optimization options. These results come from 100 independent
 simulations, and therefore 100 different sets of metawebs, species ranges, and
-occupancy of the focal
-species.](figures/efficiency_occupancy.png){#fig-eff-occup}
+occupancy of the focal species. The efficiency parameter is the natural log of
+parameter $a$ in @eq-eff, describing the best-fit sampling efficiency curve for
+a given simulation.](figures/efficiency_occupancy.png){#fig-eff-occup}
 
 # Discussion
 
