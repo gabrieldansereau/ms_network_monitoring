@@ -86,7 +86,7 @@ design and optimization.
 
 We used simulations to generate networks, species ranges, and biodiversity
 observations networks (BONs). We followed the approach and process-based,
-spatio-temporal model introduced by [@Catchen2023MisLin; building on
+spatio-temporal model introduced by @Catchen2023MisLin [building on
 @Cirtwill2019QuaFra] to simulate interaction realization and detection while
 accounting for spatial variation in species occurrences, implemented in
 `SpeciesInteractionSamplers.jl`.
@@ -288,11 +288,10 @@ number of species encountered through sampling, and compared the result with the
 total species richness in the landscape (75 species). For interactions, we
 aggregated each interaction type separately (possible, realized and detected)
 for a given BON and evaluated the proportion of the metaweb recovered through
-sampling (and therefore for a given number of site).
-
-We ran simulations with 100 fully-independent replicates (different metaweb,
-species ranges, abundance distribution, realized interactions) for each number
-of site in a BON, yielding 10,000 simulations in total.
+sampling (and therefore for a given number of site). We ran simulations with 100
+fully-independent replicates (different metaweb, species ranges, abundance
+distribution, realized interactions) for each number of site in a BON, yielding
+10,000 simulations in total.
 
 ### Simulation study II: Optimizing a focal sampling on a single-species
 
@@ -325,9 +324,9 @@ interactions for the focal species (to represent a best-case scenario) and one
 with species richness across the landscape (to represent a holistic level of
 information for the system).
 
-Using the approach described in the previous section, we generated a single set
-of metaweb, species ranges, and locations for realized interactions (to showcase
-a specific example, and counter-verified with separate sets which yielded
+Using the approach described in the previous section, we generated a set of
+metaweb, species ranges, and locations for realized interactions (to showcase a
+specific example, and counter-verified with separate sets which yielded
 conceptually similar results, as described in the next section). We selected the
 species with the highest degree (number of interactions) in the metaweb as the
 focal species for the simulation. We then generated BONs of 1 to 500 sites (at
@@ -340,33 +339,32 @@ sampled across all sites (the monitored degree for the focal species).
 
 ### Simulation study III: Comparing sampling efficiency across simulations
 
-Next, we aimed to verify whether our results were constant when replicating
-simulations with different simulated metawebs and species ranges. We ran 100
-independent simulations, each with 50 replicates for every number of sites (once
-again from 1 to 500 sites at interval increments of 5 sites). However, doing so
-raised the issue of how to describe and compare the efficiency of the simulated
-monitoring across samplers, optimization layers or focal species degree, given
-how the generated metawebs and landscapes might vary between independent
-simulations, and especially how to describe the relationship between the number
-of monitoring sites and the proportion of monitored interactions.
+We verified whether our results were constant when replicating simulations with
+different simulated metawebs and species ranges. We ran 100 independent
+simulations, each with 50 replicates for every number of sites (once again from
+1 to 500 sites at interval increments of 5 sites). Doing so raised the issue of
+describing and comparing the efficiency of the simulated monitoring across
+samplers, optimization layers or focal species degree, with generated metawebs
+and landscapes varying between independent simulations, hence the need for the
+comparison measures described earlier in @eq-eff and @eq-diff.
 
 For each independent simulation, sampler and optimization layer option, we
-performed a grid search across possible values of $a$ to identify the curve
-yielding the best fit with the simulation's result. We searched for parameter
-values on an exponential scale as it allowed for more gradual control over the
-curve shape, evaluating 10,000 evenly spaced values between $e^{-5}$ and
-$e^{15}$ (limits chosen to go beyond the fitted values), and selected the value
-of $a$ yielding the curve minimizing the sum of squared errors to the simulation
-results.
+performed a grid search across possible values of $a$ (from @eq-eff) to identify
+the curve yielding the best fit with the simulation's result. We searched for
+parameter values on an exponential scale as it allowed for more gradual control
+over the curve shape, evaluating 10,000 evenly spaced values between $e^{-5}$
+and $e^{15}$ (limits chosen to go beyond the fitted values), and selected the
+value of $a$ yielding the curve minimizing the sum of squared errors to the
+simulation results.
 
-This difference measure allows to identify which samplers or optimization layer
-is more efficient, quickly reaching a high proportion of monitored interactions
-(positive values indicate that the first curve is more efficient than the
-second), while also quantifying the magnitude of this difference in a comparable
-way between possible comparison pairs. We compared all samplers and optimization
-layers individually within each independent simulation, given that the
-monitoring context is different in each one (different metawebs and species
-ranges).
+We compared all samplers and optimization layers individually within each
+independent simulation, given that the monitoring context is different in each
+one (different metawebs and species ranges), using our difference measure $d$
+([@eq-diff]). The measure allows to identify which samplers or optimization
+layer is more efficient, thus quickly reaching a high proportion of monitored
+interactions (positive values indicate that the first curve is more efficient
+than the second), while also quantifying the magnitude of this difference in a
+comparable way between possible comparison pairs.
 
 # Results
 
@@ -462,7 +460,7 @@ simulation), but always less efficient optimizing on realized interactions.
 
 ![Within-simulation comparison of efficiency between samplers and optimization
 layers. The comparison values is based on the difference of the definite
-integrals of the efficiency samplers curves described in @eq-eff-diff. Negative
+integrals of the efficiency samplers curves described in @eq-diff. Negative
 values (in blue) indicate that the compared option lead to a less efficient
 sampling than its reference, while positive values (in orange) indicate it was
 more efficient. References were chosen for narrative purposes and to simplify
