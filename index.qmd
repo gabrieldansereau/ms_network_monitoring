@@ -84,79 +84,240 @@ design and optimization.
 
 # Methods
 
-We explored network sampling using simulations to generate networks, species
-ranges, and biodiversity observations networks (BONs). We followed the approach
-introduced by @Catchen2023MisLin to simulate interaction realization and
-detection, implemented in `SpeciesInteractionSamplers.jl`.
+We used simulations to generate species interaction networks, species ranges,
+and biodiversity observations networks (BONs) with the goal of evaluating
+monitoring potential for interaction networks within BONs. We first detail the
+steps for the general model we used ([@fig-concept]). We then go over three
+simulation studies we performed to investigate specific elements related to the
+monitoring of species interactions.
 
-First, we simulate networks with variation across space. To do so, we generate
-autocorrelated ranges representing the distribution of species across a
-simulated landscape and generate a metaweb using the niche model to define the
-feasible interactions between the species. Combining the species ranges and the
-metaweb information, we obtain the list of **possible interactions** in our
-landscape and inside every pixel based on the co-occurrence of species with
-feasible interactions. Next, we incorporate a consideration for species
+![Conceptual diagram of the workflow and simulations. The general model (A) was
+used for the simulations, starting from generating landscapes with spatial
+variation in species and interaction composition, designing biodiversity
+observation networks (BONs) and measuring sampling efficiency within and across
+simulations. The simulation studies (B) use the general model to investigate
+specific elements related to sampling interactions with
+BONs.](figures/conceptual_figure.png){#fig-concept}
+
+## General model
+
+We followed the approach and process-based, spatio-temporal model introduced by
+[@Catchen2023MisLin; building on @Cirtwill2019QuaFra] to simulate interaction
+realization and detection while accounting for spatial variation in species
+occurrences, implemented in `SpeciesInteractionSamplers.jl`.
+
+### Step 1: Generating interaction networks with spatial variation
+
+First, we simulate networks with variation in species and interaction
+composition across a simulated landscape ([@fig-concept]). To do so, we generate
+autocorrelated ranges representing the distribution of species across the
+landscape using neutral landscape models [NLMs; @Gardner1987NeuMod;
+@Etherington2015NlmPyt]. NLMs are used to generate landscapes replicating
+realistic autocorrelated distributions without underlying biotic or abiotic
+factors, and therefore represent useful baselines to explore ecological
+processes in a spatial context [@Hesselbarth2024ComMet]. NLMs have been used to
+generate realistic landscapes in contexts relating to biodiversity distribution
+and preservation, for instance to compare avian diversity between conservation
+approaches in coffee-growing landscapes [@Valente2022LanLan] or to assess the
+potential of a suggested umbrella species in an ecotone [@Duchardt2023UsiNeu].
+NLMs have also been used with species interactions, for example to evaluate the
+effect of landscape structure in cross-species disease transmission between
+interacting species [@Forero-Munoz2025SpaLan]. Here, we use NLMs to create
+communities of known composition and species richness at every location in our
+simulated landscape.
+
+Next, using the spatio-temporal model presented by @Catchen2023MisLin, we define
+the **feasible interactions** between the species by generating a metaweb using
+the niche model [@Williams2000SimRul]. The model defines interactions by
+assigning species a niche position and feeding range, similarly to body-size
+relationships between predator and preys, and generates networks with structural
+properties similar to empirical food webs [@Williams2000SimRul;
+@Gravel2013InfFoo; @Delmas2019AnaEco]. It is widely used as a generative model,
+including in the context of investigating interaction sampling
+[@Poisot2012DisSpe; @Wood2015EffSpa].
+
+Combining the species ranges and the metaweb, we verify where species with
+feasible interactions co-occur, which returns the list of **possible
+interactions** [@Catchen2023MisLin] at every location in our landscape. Next, to
+define **realized interactions**, we incorporate a consideration for species
 abundances, which influence both interaction realization and detection. For
 example, rare and low-abundance species are less likely to interact in a
 location because they are less likely to encounter one another, especially
 compared to abundant species, leading to neutrally forbidden links
-[@Catchen2023MisLin; @Canard2012EmeStr]. We generate an abundance profile for
-our set of species (based on a Normalized Log Normal distribution), then draw
-**realized interactions** at each location given the abundance of species.
-Finally, we define the set of **detected interactions** by conditioning the
-detection of realized interactions on the abundance distribution (even if an
+[@Catchen2023MisLin; @Canard2012EmeStr]. The neutral model introduced by
+@Catchen2023MisLin first generates a distribution of species relative abundances
+from a log-normal distribution, then models interaction realization as a
+stochastic Poisson Process, drawing realized interactions from a Poisson
+distribution parameterized on the relatives abundances of interacting species
+and a fixed realization energy parameter [see @Catchen2023MisLin for full
+details].
+
+Finally, we define the set of **detected interactions** by also conditioning the
+detection of realized interactions on the species abundances (even if an
 interaction is realized in a location, we need to be there at that moment to
-detect, which is again less likely for low probability events;
-@Catchen2023MisLin).
+detect, which is again less likely for low probability events; see
+@Catchen2023MisLin for implementation). The result of this model is a landscape
+with spatial variation in species and interaction composition and detection,
+where species composition, realized interactions, and detected interactions are
+based on the process model and known at all locations, allowing to compare the
+efficiency of sampling strategies.
 
-Second, we design Biodiversity Observation Networks (BONs) across the simulated
-landscape and measure their efficiency at monitoring the generated networks when
-increasing the number of sites in the BON. We test different algorithms to
-spread monitoring sites across the landscape and optimize given different
-information such as species ranges, species richness or presence of realized
-interactions. Across our simulations, we used landscapes of 100 x 100 pixels, 75
-species, and a connectance of 0.2 to generate metawebs using the niche model.
+### Step 2: Designing Biodiversity Observation Networks
 
-## Evaluating metaweb sampling
+We design Biodiversity Observation Networks (BONs) across the simulated
+landscape and measure their efficiency at monitoring the generated interaction
+networks. @Norman2025SitSel presented an overview of the design and site
+selection process accounting for ecological monitoring goals. The design process
+uses a site selection algorithm to designate candidate sites for the monitoring
+network. Key features of the site selection algorithms highlighted by
+[@Norman2025SitSel] include the ability to balance sites across space for equal
+representation [see @Benedetti2017SpaBal; @Kermorvant2019SpaBal for reviews], to
+stratify across regions or populations, to include auxiliary site information
+(environmental or biological) to weight inclusion probability, and to produce
+master samples including current monitoring site or from which to select a
+subset of sites for a specific monitoring project [@vanDam-Bates2018UsiBal;
+@Robertson2024WelSam].
 
-First, we investigated the efficiency of sampling networks across space to
-document a metaweb of interactions, comparing it with the efficiency to document
-species richness. We generated spatially balanced Biodiversity Observation
-Networks (BONs) across our landscape, defining sites where to sample species and
-interactions. We tested all number of sites between 1 and 100 and used the
-`BalancedAcceptance` method, which aims to distribute sampling evenly across
-space (for a given number of sampling sites). We then evaluated the sampling
-efficiency of each BON in terms of overall species richness and compared to the
-generated metaweb for each interaction type. For species richness, we assumed we
-sampled all species present in a sampled location, combined this information
-across all sampled sites to determine the number of species encountered through
-sampling, and compared the result with the total species richness in the
-landscape (75 species). For interactions, we aggregated each interaction type
-separately (possible, realized and detected) for a given BON and evaluated the
-proportion of the metaweb recovered through sampling (and therefore for a given
-number of site).
+Using our model simulations, we can test different algorithms to spread
+monitoring sites across the landscape and optimize given different information
+such as species ranges, species richness or presence of realized interactions.
+For example, we can use the Balanced Acceptance Sampling algorithm
+[@Robertson2013BasBal] to design BONs when aiming to balance sites across our
+simulated landscapes, mostly for its efficiency and its ability to weight site
+inclusion probabilities based on a provided layer. On the other hand, to
+optimize given available information, we can use an algorithm such as
+Uncertainty Sampling [@Lewis1994SeqAlg], an active learning method from the
+machine learning field aiming to improve a model by targeting its least certain
+elements [@Settles2009ActLea]. Instead of focusing on uncertainty, we can use
+this concept to target the sites with the highest values in a layer provided for
+optimization, with the idea that it could lead to the highest information gain
+for the BON. Examples of active learning relating to biodiversity monitoring and
+sampling site selection include improving species range estimation from a
+smaller number of actively selected sites [@Lange2023ActLea], minimizing field
+data collection costs based on distances between samples [@Malek2019OptFie], and
+identifying uncertain labels for classification to improve bioacoustic
+monitoring performance across stratified samples [@McEwen2025StrAct].
 
-We ran simulations with 100 fully-independent replicates (different metaweb,
-species ranges, abundance distribution, realized interactions) for each number
-of site in a BON and for the two interaction references, yielding 10,000
-simulations in total. Prior exploratory simulations showed the number of sites
-in the BON to be the main element affecting the proportion of sampled species or
-interactions compared to other model parameters such as metaweb connectance and
-landscape autocorrelation.
+### Step 3: Evaluating sampling efficiency with comparable measures
 
-## Focal sampling on single-species & optimization
+Our simulations require evaluating sampling efficiency at three levels
+(highlighted in [@fig-concept]) : at a landscape scale for a given BON and
+number of sites (a snapshot description measure), as an efficiency curve
+describing the efficiency with an increasing number of sites (a snapshot
+ensemble summary measure), and as a difference score to compare optimization
+options (an ensemble comparison measure).
 
-In complement to the metaweb sampling approach, we also investigated the
-sampling efficiency on a single-species basis. We simulated a focal sampling
-where an observer would target one species and aim to retrieve all of its
-interactions (here known from the metaweb), but might have different information
-to optimize its sampling. Observation network design and efficiency needs to be
-evaluated beyond spatial balance, and also regarding their efficiency at meeting
-biodiversity monitoring objectives [@Norman2025SitSel]. Thus, the idea of our
-focal sampling exploration is to represent a simplified case with a clear
-objective (retrieving a species' interactions) and where we do have prior
-knowledge about the system, either through empirical data or model predictions,
-which can be used to optimize sampling.
+On the first level, we use the **proportion of sampled elements** (species or
+interactions, noted $p$) to evaluate how efficient a given BON is on a landscape
+scale. In simulated landscapes, species and interaction composition is known
+everywhere in our simulated landscapes; thus we can determine what can be
+sampled for each generated BON (e.g. one made of 50 spatially-balanced sites).
+We can then evaluate their efficiencies as the proportion of sampled elements
+compared to the true richness (of species or interactions), again known in the
+simulations. This can be seen as a snapshot view of a single BON efficiency.
+
+On the second level, we define an **efficiency parameter** ($a$) describing how
+the sampling efficiency changes as we increase the number of sites in a BON.
+Ideally, we need one summary measure to represent this ensemble of snapshots and
+summarize the potential BON-efficiency for a given landscape and optimization
+strategies. Moreover, this measure needs to be comparable across samplers,
+optimization layers and species degrees, given how the generated metawebs and
+landscapes might vary between independent simulations. Since the exact
+proportion of monitored interactions is known in our simulations, we used the
+following single-parameter equation which generates similar efficiency curves:
+
+$$
+p=\frac{x}{a + x}
+$$ {#eq-eff}
+
+where $p$ is the proportion of monitored interactions, $x$ is the number of
+sites in the BON and $a$ is the efficiency parameter we use for comparison.
+Here, $a$ is the single parameter describing the shape of the curve, and can be
+compared across samplers, optimization layers or focal species degree. The lower
+this parameter, the faster we reach a high proportion of monitored interactions.
+We can identify the value of $a$ yielding the curve with the best fit to the
+observed data, as described in our Simulation study III.
+
+On the third level, we define a **difference measure** ($d$) to compare
+optimization algorithms and layers for the same simulated landscape. We have
+efficiency curve parameters $a$, which we can compare between options on a
+greater or lower basis, but the order of magnitude of the difference is not
+necessarily comparable across sets of simulations, hence the need for a more
+formal measure. To compare the efficiency curves within a given simulation
+(i.e., between samplers and optimization layers for a given metaweb and set of
+species ranges), we used the definite integral of @eq-eff between 0 and $k$, the
+maximum number of sampling sites in the landscape (10,000), which takes the
+form:
+
+$$
+\int\limits^{k}_{0} \frac{x}{a + x} \, \mathrm{d}x = a \ln\left(a\right) - a \ln\left(k + a\right) + k
+$$ {#eq-int}
+
+Using @eq-int, we can compute the difference in efficiency between two curves as
+the difference of integrals:
+
+$$
+d_{1,2} = a_1 \ln\left(a_1\right) - a_1 \ln\left(k + a_1\right) - a_2 \ln\left(a_2\right) + a_2 \ln\left(k + a_2\right)
+$$ {#eq-diff}
+
+This difference measure allows to identify which samplers or optimization layer
+is more efficient, quickly reaching a high proportion of monitored interactions
+(positive values indicate that the first curve is more efficient than the
+second), while also quantifying the magnitude of this difference in a comparable
+way between possible comparison pairs. We can then compare all samplers and
+optimization layers individually within each independent simulation, given that
+the monitoring context is different in each one (different metawebs and species
+ranges).
+
+## Simulation studies
+
+We performed three simulation studies to investigate the efficiency of
+monitoring species interactions within BONs. Across our simulations, we used
+landscapes of 100 x 100 pixels, 75 species, and a connectance of 0.2 to generate
+metawebs using the niche model. The connectance and number of species are within
+the range of values of well-characterized empirical food webs
+[@Williams2000SimRul; @Dunne2002NetStr; @Dunne2004NetStr;
+@Smith-Ramesh2017GloSyn] commonly used for reference [@Williams2008SucIts;
+@Baiser2010ConDet; @Wood2015EffSpa]. Exploratory simulations showed the number
+of sites in the BON to be the main element affecting the proportion of sampled
+species or interactions compared to other model parameters such as metaweb
+connectance and landscape autocorrelation. The activation energy parameter
+expectedly influenced results as covered in @Catchen2023MisLin when presenting
+the model.
+
+### Simulation study I: Evaluating metaweb sampling with spatial balance compared to species richness
+
+Our first simulation study aimed to investigate the efficiency of sampling
+networks across space to document a metaweb of interactions, comparing it with
+the efficiency to document species richness. We generated spatially balanced
+Biodiversity Observation Networks (BONs) across our simulated landscape,
+defining sites where to sample species and interactions, and testing all number
+of sites between 1 and 100. We then evaluated the sampling efficiency of each
+BON in terms of overall species richness and compared to the generated metaweb
+for each interaction type. For species richness, we assumed we sampled all
+species present in a sampled location, combined this information across all
+sampled sites to determine the number of species encountered through sampling,
+and compared the result with the total species richness in the landscape (75
+species). For interactions, we aggregated each interaction type separately
+(possible, realized and detected) for a given BON and evaluated the proportion
+of the metaweb recovered through sampling (and therefore for a given number of
+sites). We ran simulations with 100 fully-independent replicates (different
+metaweb, species ranges, abundance distribution, realized interactions) for each
+number of site in a BON, yielding 10,000 simulations in total.
+
+### Simulation study II: Optimizing a focal sampling on a single-species
+
+Next, we investigated sampling efficiency using a focal species perspective. We
+simulated a focal sampling where an observer would target one species and aim to
+retrieve all of its interactions (here known from the metaweb), but might have
+different information to optimize its sampling. Observation network design and
+efficiency needs to be evaluated beyond spatial balance, and also regarding
+their efficiency at meeting biodiversity monitoring objectives
+[@Norman2025SitSel]. Thus, the idea of our focal sampling exploration is to
+represent a simplified case with a clear objective (retrieving a species'
+interactions) and where we do have prior knowledge about the system, either
+through empirical data or model predictions, which can be used to optimize
+sampling.
 
 Optimizing focal sampling relies on two elements: the sampler algorithm used and
 the information provided for optimization. Species range represents an
@@ -175,83 +336,54 @@ interactions for the focal species (to represent a best-case scenario) and one
 with species richness across the landscape (to represent a holistic level of
 information for the system).
 
-Using the approach described in the previous section, we generated a single\*
-set of metaweb, species ranges, and locations for realized interactions (\*to
-showcase a specific example, and counter-verified with separate sets which
-yielded conceptually similar results, as described in the next section). We
-selected the species with the highest degree (number of interactions) in the
-metaweb as the focal species for the simulation. We then generated BONs of 1 to
-500 sites (at interval increments of 5 sites) using the three possible
-algorithms and optimization layers, with 100 replicates for every number of
-sites. For each BON generated, we extracted the number of unique realized
-interactions sampled across all sites (essentially the monitored degree for the
-focal species)
+Using the approach described in the previous section, we generated a set of
+metaweb, species ranges, and locations for realized interactions (to showcase a
+specific example, and counter-verified with separate sets which yielded
+conceptually similar results, as described in the next section). We selected the
+species with the highest degree (number of interactions) in the metaweb as the
+focal species for the simulation. We then generated BONs of 1 to 500 sites (at
+interval increments of 5 sites) using the three possible algorithms (simple
+random, weighted balanced acceptance, uncertainty sampling) and four
+optimization layers (focal species range, probabilistic range, realized
+interactions, species richness), with 100 replicates for every number of sites.
+For each BON generated, we extracted the number of unique realized interactions
+sampled across all sites (the monitored degree for the focal species).
 
-## Efficiency
+### Simulation study III: Comparing sampling efficiency across simulations
 
-Next, we aimed to verify whether our results were constant when replicating
-simulations with different simulated metawebs and species ranges. We ran 100
-independent simulations, each with 50 replicates for every number of sites (once
-again from 1 to 500 sites at interval increments of 5 sites). However, doing so
-raised the issue of how to describe and compare the efficiency of the simulated
-monitoring across samplers, optimization layers or focal species degree, given
-how the generated metawebs and landscapes might vary between independent
-simulations, and especially how to describe the relationship between the number
-of monitoring sites and the proportion of monitored interactions.
-
-Since the exact proportion of monitored interactions is known in our
-simulations, we used the following single-parameter equation which generates
-similar efficiency curves:
-
-$$
-p=\frac{x}{a + x}
-$$ {#eq-eff}
-
-where $p$ is the proportion of monitored interactions, $x$ is the number of
-sites in the BON and $a$ is the efficiency parameter we use for comparison.
-Here, $a$ is the single parameter describing the shape of the curve, and can be
-compared across samplers, optimization layers or focal species degree. The lower
-this parameter, the faster we reach a high proportion of monitored interactions.
+We verified whether our results were constant when replicating simulations with
+different simulated metawebs and species ranges. We ran 100 independent
+simulations, each with 50 replicates for every number of sites (once again from
+1 to 500 sites at interval increments of 5 sites). Doing so raised the issue of
+describing and comparing the efficiency of the simulated monitoring across
+samplers, optimization layers or focal species degree, as generated metawebs and
+landscapes varying between independent simulations, hence the need for the
+comparison measures described earlier in @eq-eff and @eq-diff. We used the
+efficiency parameter $a$ ([@eq-eff]) to describe efficiencies between
+independent simulations and the difference measure $d$ ([@eq-diff]) to compare
+efficiencies of optimization options within a specific landscape.
 
 For each independent simulation, sampler and optimization layer option, we
-performed a grid search across possible values of $a$ to identify the curve
-yielding the best fit with the simulation's result. Upon exploratory analysis,
-we observed that searching for values of $a$ on an exponential scale allowed for
-more gradual control over the curve shape, and therefore we searched we searched
-directly for values of $e^a$ (effectively replacing $a$ by $e^a$ in @eq-eff). We
-performed a grid search of 10,000 evenly spaced values between -5 and 15 (limits
-chosen to go beyond the fitted values), and selected the value of $a$ yielding
-the curve minimizing the sum of squared errors to the values from the
-simulation.
+performed a grid search across possible values of $a$ (from @eq-eff) to identify
+the curve yielding the best fit with the simulation's result. We searched for
+parameter values on an exponential scale as it allowed for more gradual control
+over the curve shape, evaluating 10,000 evenly spaced values between $e^{-5}$
+and $e^{15}$ (limits chosen to go beyond the fitted values), and selected the
+value of $a$ yielding the curve minimizing the sum of squared errors to the
+simulation results.
 
-To compare the efficiency curves within a given simulation (i.e., between
-samplers and optimization layers for a given metaweb and set of species ranges),
-we used the definite integral of @eq-eff between 0 and $k$, the maximum number
-of sampling sites in the landscape (10,000), which takes the form:
-
-$$
-\int\limits^{k}_{0} \frac{x}{a + x} \, \mathrm{d}x = a \ln\left(a\right) - a \ln\left(k + a\right) + k
-$$ {#eq-eff-int}
-
-Using @eq-eff-int, we can compute the difference in efficiency between two
-curves as the difference of integrals:
-
-$$
-d_{1,2} = (a_1 \ln\left(a_1\right) - a_1 \ln\left(k + a_1\right) + k) - (a_2 \ln\left(a_2\right) - a_2 \ln\left(k + a_2\right) + k)
-$$ {#eq-eff-diff}
-
-This difference measure allows to identify which samplers or optimization layer
-is more efficient, quickly reaching a high proportion of monitored interactions
-(positive values indicate that the first curve is more efficient than the
-second), while also quantifying the magnitude of this difference in a comparable
-way between possible comparison pairs. We compared all samplers and optimization
-layers individually within each independent simulation, given that the
-monitoring context is different in each one (different metawebs and species
-ranges).
+We compared all samplers and optimization layers individually within each
+independent simulation, given that the monitoring context is different in each
+one (different metawebs and species ranges), using our difference measure $d$
+([@eq-diff]). The measure allows to identify which samplers or optimization
+layer is more efficient, thus quickly reaching a high proportion of monitored
+interactions (positive values indicate that the first curve is more efficient
+than the second), while also quantifying the magnitude of this difference in a
+comparable way between possible comparison pairs.
 
 # Results
 
-### Lower sampling expectations for species interactions than species richness
+### Simulation study I: Lower sampling expectations for species interactions than species richness
 
 Our results for metaweb sampling highlight a marked difference between the
 proportions of sampled species and interactions (@fig-nbons). Sampled species
@@ -274,7 +406,7 @@ indicates indicates the median proportion for a given number of sites while the
 shaded bands delimit the 5th and 95th percentile across replicates (100 per
 site, 10,000 in total).](figures/nbon_bands.png){#fig-nbons}
 
-### Differences between samplers and optimization layers
+### Simulation study II: Differences between samplers and optimization layers
 
 Our focal sampling experiment showed the Uncertainty Sampling algorithm to be
 most efficient at optimizing BON-design based on a known species range and while
@@ -305,7 +437,7 @@ of BONs of 50 sites (coloured points) generated by each sampler over the
 landscape (species present at pixels in
 yellow).](figures/focal_joined.png){#fig-joined width="80%"}
 
-### Comparison of efficiency parameters across simulations
+### Simulation study III: Comparison of efficiency parameters across simulations
 
 The distribution of efficiency parameters across independent simulations
 confirmed the interpretations based on [@fig-joined], but also highlighted a
@@ -325,8 +457,9 @@ simulations.
 simulations for the three sampler options tested on the focal species range (A)
 and for the four optimization layer options using Uncertainty Sampling as the
 sampler (B). Uncertainty Sampling on panel A and Focal species range on panel B
-therefore represent the same
-data.](figures/efficiency_distribution.png){#fig-eff-distrib}
+therefore represent the same data. The efficiency parameter is the natural log
+of parameter $a$ in @eq-eff, describing the best-fit sampling efficiency curve
+for a given simulation.](figures/efficiency_distribution.png){#fig-eff-distrib}
 
 The fact that multiple options span similar ranges of efficiency values across
 independent simulations highlights the need to compare the efficiency within a
@@ -342,7 +475,7 @@ simulation), but always less efficient optimizing on realized interactions.
 
 ![Within-simulation comparison of efficiency between samplers and optimization
 layers. The comparison values is based on the difference of the definite
-integrals of the efficiency samplers curves described in @eq-eff-diff. Negative
+integrals of the efficiency samplers curves described in @eq-diff. Negative
 values (in blue) indicate that the compared option lead to a less efficient
 sampling than its reference, while positive values (in orange) indicate it was
 more efficient. References were chosen for narrative purposes and to simplify
@@ -378,8 +511,9 @@ probabilities, making it more challenging for the sampler to pick apart.
 ![Relationship between the occupancy of the focal species and sampling
 efficiency for all optimization options. These results come from 100 independent
 simulations, and therefore 100 different sets of metawebs, species ranges, and
-occupancy of the focal
-species.](figures/efficiency_occupancy.png){#fig-eff-occup}
+occupancy of the focal species. The efficiency parameter is the natural log of
+parameter $a$ in @eq-eff, describing the best-fit sampling efficiency curve for
+a given simulation.](figures/efficiency_occupancy.png){#fig-eff-occup}
 
 # Discussion
 
@@ -395,15 +529,15 @@ doing so requires a clear and attainable sampling or monitoring objective. For
 instance, adopting a single-species perspective can yield relevant results while
 relying on attainable levels of information. Optimizing on a known species range
 proved an efficient strategy to retrieve its interactions, better than
-optimization based on more holistic-information such as species or interaction
-richness. Optimizing based on the location of the realized interactions was even
-more efficient, but our simulations represent a best case scenario likely beyond
-reach in an applied context. Nonetheless, it highlights that the most important
-efficiency gains will come from better knowledge of where interactions are
-realized. Better incorporating considerations for species abundance, the factor
-influencing interaction realization in our simulations, will be crucial and
-potentially more impactful than improving knowledge or reducing uncertainty over
-species ranges.
+optimization based on more holistic, community-level information such as species
+or interaction richness. Optimizing based on the location of the realized
+interactions was even more efficient, but our simulations represent a best case
+scenario beyond reach in an applied context. Nonetheless, it highlights that the
+most important efficiency gains will come from better knowledge of where
+interactions are likely to take place. Better incorporating considerations for
+species abundance, the factor influencing interaction realization in our
+simulations, will be crucial and potentially more impactful than improving
+knowledge or reducing uncertainty over species ranges.
 
 When does the choice of sampler or optimization layer matter the most? Here we
 concur with @Norman2025SitSel that ecologically-relevant metrics are required to

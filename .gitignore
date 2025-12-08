@@ -2,3 +2,5 @@
 docs
 /.quarto/
 Makefile
+
+**/*.quarto_ipynb
