@@ -33,6 +33,9 @@
     text(10pt, it)
   }
 
+  // Let figures float
+  set figure(placement: auto)
+
     // show bibliography: set text(7pt)
 
   // Set the body font.
