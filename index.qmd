@@ -87,35 +87,44 @@ design and optimization.
 We used simulations to generate species interaction networks, species ranges,
 and biodiversity observations networks (BONs) with the goal of evaluating
 monitoring potential for interaction networks within BONs. We first detail the
-steps for the general model we used. We then go over three simulation studies we
-performed to investigate specific elements related to the monitoring of species
-interactions.
+steps for the general model we used ([@fig-concept]). We then go over three
+simulation studies we performed to investigate specific elements related to the
+monitoring of species interactions.
+
+![Conceptual diagram of the workflow and simulations. The general model (A) was
+used for the simulations, starting from generating landscapes with spatial
+variation in species and interaction composition, designing biodiversity
+observation networks (BONs) and measuring sampling efficiency within and across
+simulations. The simulation studies (B) use the general model to investigate
+specific elements related to sampling interactions with
+BONs.](figures/conceptual_figure.png){#fig-concept}
 
 ## General model
 
 We followed the approach and process-based, spatio-temporal model introduced by
-@Catchen2023MisLin [building on @Cirtwill2019QuaFra] to simulate interaction
+[@Catchen2023MisLin; building on @Cirtwill2019QuaFra] to simulate interaction
 realization and detection while accounting for spatial variation in species
 occurrences, implemented in `SpeciesInteractionSamplers.jl`.
 
 ### Step 1: Generating interaction networks with spatial variation
 
 First, we simulate networks with variation in species and interaction
-composition across a simulated landscape. To do so, we generate autocorrelated
-ranges representing the distribution of species across the landscape using
-neutral landscape models [NLMs; @Gardner1987NeuMod; @Etherington2015NlmPyt].
-NLMs are used to generate landscapes replicating realistic autocorrelated
-distributions without underlying biotic or abiotic factors, and therefore
-represent useful baselines to explore ecological processes in a spatial context
-[@Hesselbarth2024ComMet]. NLMs have been used to generate realistic landscapes
-in contexts relating to biodiversity distribution and preservation, for instance
-to compare avian diversity between conservation approaches in coffee-growing
-landscapes [@Valente2022LanLan] or to assess the potential of a suggested
-umbrella species in an ecotone [@Duchardt2023UsiNeu]. NLMs have also been used
-with species interactions, for example to evaluate the effect of landscape
-structure in cross-species disease transmission between interacting species
-[@Forero-Munoz2025SpaLan]. Here, we use NLMs to create communities of known
-composition and species richness at every location in our simulated landscape.
+composition across a simulated landscape ([@fig-concept]). To do so, we generate
+autocorrelated ranges representing the distribution of species across the
+landscape using neutral landscape models [NLMs; @Gardner1987NeuMod;
+@Etherington2015NlmPyt]. NLMs are used to generate landscapes replicating
+realistic autocorrelated distributions without underlying biotic or abiotic
+factors, and therefore represent useful baselines to explore ecological
+processes in a spatial context [@Hesselbarth2024ComMet]. NLMs have been used to
+generate realistic landscapes in contexts relating to biodiversity distribution
+and preservation, for instance to compare avian diversity between conservation
+approaches in coffee-growing landscapes [@Valente2022LanLan] or to assess the
+potential of a suggested umbrella species in an ecotone [@Duchardt2023UsiNeu].
+NLMs have also been used with species interactions, for example to evaluate the
+effect of landscape structure in cross-species disease transmission between
+interacting species [@Forero-Munoz2025SpaLan]. Here, we use NLMs to create
+communities of known composition and species richness at every location in our
+simulated landscape.
 
 Next, using the spatio-temporal model presented by @Catchen2023MisLin, we define
 the **feasible interactions** between the species by generating a metaweb using
@@ -191,11 +200,12 @@ monitoring performance across stratified samples [@McEwen2025StrAct].
 
 ### Step 3: Evaluating sampling efficiency with comparable measures
 
-Our simulations require evaluating sampling efficiency at three levels: at a
-landscape scale for a given BON and number of sites (a snapshot description
-measure), as an efficiency curve describing the efficiency with an increasing
-number of sites (a snapshot ensemble summary measure), and as a difference score
-to compare optimization options (an ensemble comparison measure).
+Our simulations require evaluating sampling efficiency at three levels
+(highlighted in [@fig-concept]) : at a landscape scale for a given BON and
+number of sites (a snapshot description measure), as an efficiency curve
+describing the efficiency with an increasing number of sites (a snapshot
+ensemble summary measure), and as a difference score to compare optimization
+options (an ensemble comparison measure).
 
 On the first level, we use the **proportion of sampled elements** (species or
 interactions, noted $p$) to evaluate how efficient a given BON is on a landscape
