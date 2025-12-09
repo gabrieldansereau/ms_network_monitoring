@@ -102,16 +102,19 @@ BONs.](figures/conceptual_figure.png){#fig-concept}
 ## General model
 
 We followed the approach and process-based, spatio-temporal model introduced by
-[@Catchen2023MisLin; building on @Cirtwill2019QuaFra] to simulate interaction
+@Catchen2023MisLin [building on @Cirtwill2019QuaFra] to simulate interaction
 realization and detection while accounting for spatial variation in species
-occurrences, implemented in `SpeciesInteractionSamplers.jl`.
+occurrences, implemented in `SpeciesInteractionSamplers.jl`. To the generative
+model originally presented, we add the design of Biodiversity Observation
+Networks and the evaluation of sampling efficiency between and across
+simulations for species interactions ([@fig-concept]A).
 
 ### Step 1: Generating interaction networks with spatial variation
 
 First, we simulate networks with variation in species and interaction
-composition across a simulated landscape ([@fig-concept]). To do so, we generate
-autocorrelated ranges representing the distribution of species across the
-landscape using neutral landscape models [NLMs; @Gardner1987NeuMod;
+composition across a simulated landscape ([@fig-concept]A, Step 1). To do so, we
+generate autocorrelated ranges representing the distribution of species across
+the landscape using neutral landscape models [NLMs; @Gardner1987NeuMod;
 @Etherington2015NlmPyt]. NLMs are used to generate landscapes replicating
 realistic autocorrelated distributions without underlying biotic or abiotic
 factors, and therefore represent useful baselines to explore ecological
@@ -201,8 +204,8 @@ monitoring performance across stratified samples [@McEwen2025StrAct].
 ### Step 3: Evaluating sampling efficiency with comparable measures
 
 Our simulations require evaluating sampling efficiency at three levels
-(highlighted in [@fig-concept]) : at a landscape scale for a given BON and
-number of sites (a snapshot description measure), as an efficiency curve
+(highlighted in [@fig-concept], Step 3) : at a landscape scale for a given BON
+and number of sites (a snapshot description measure), as an efficiency curve
 describing the efficiency with an increasing number of sites (a snapshot
 ensemble summary measure), and as a difference score to compare optimization
 options (an ensemble comparison measure).
