@@ -56,10 +56,6 @@ keywords:
 
 # Introduction
 
-Here, we used simulations to test the efficiency of monitoring species
-interactions and species richness within BONs, testing several methods for
-design and optimization.
-
 -   Context
     -   Biodiversity monitoring should encompass all facets of biodiversity
     -   Species interactions are rarely considered in comparison to species
@@ -68,19 +64,110 @@ design and optimization.
         considered when implementing monitoring networks
     -   As interactions are inherently challenging to sample, developing methods
         for optimizing strategies is even more relevant.
+-   Key questions
+    -   How should we implement monitoring programs *across space* to
+        efficiently capture network composition and changes as essential
+        components of biodiversity?
+        -   Is interaction variation different from richness
+    -   Can we monitor species interactions as efficiently as species ranges?
+        What would be realistic expectations for monitoring species
+        interactions?
 -   Previous work
     -   Lot of research on sampling of networks and interactions
     -   Less so in a spatial context
     -   None on using network info to optimize biodiversity monitoring in the
         context of the GBF
     -   Bring back to context of documenting metaweb
--   Key questions
-    -   How should we implement monitoring programs *across space* to
-        efficiently capture network composition and changes as essential
-        components of biodiversity?
-    -   Can we monitor species interactions as efficiently as species ranges?
-        What would be realistic expectations for monitoring species
-        interactions?
+
+-   Network / interaction sampling
+-   Network / interaction sampling in space
+-   BONs and optimization
+
+Biodiversity monitoring should encompass all facets of biodiversity. Article 7
+of the Convention on Biological Diversity calls for Parties to identify and
+monitor important components of biodiversity [@CBD]. Species interactions are
+known as an important component [@Valiente-Banuet2015SpeLos; @Harvey2017BriEco],
+which needs to be taken to a global scale [@Windsor2023UsiEco], and for which we
+have sufficient tools to help guide conservation efforts [@Dansereau2025OveDis].
+
+General
+
+-   Biodiversity monitoring should encompass all facets of biodiversity. Article
+    7 of the Convention on Biological Diversity calls for Parties to identify
+    and monitor important components of biodiversity [@CBD]
+-   Species interactions are known as an important component
+    [@Valiente-Banuet2015SpeLos, @Harvey2017BriEco], which needs to be taken to
+    a global scale [@Windsor2023UsiEco], and for which we have sufficient tools
+    to help guide conservation efforts [@Dansereau2025OveDis].
+-   We lack data about interactions and it's a biodiversity shortfall
+    [@Hortal2015SevSho; @Poisot2021GloKno]
+-   We should take it to a global scale [@Windsor2023UsiEco; @Mestre2022DisFoo]
+
+Sampling interactions
+
+-   Lot of focus on interaction and networks have been on assessing sampling
+    completeness, effect on network properties [@Jordano2016SamNet;
+    @Vizentin-Bugoni2016InfSam; @Henriksen2019EffNet; @Chiu2023QuaEst]
+-   We focused on describing interaction accumulation curves
+    [@Chacoff2012EvaSam]
+-   Some of it is with simulations [@deAguiar2019RevBia]
+-   We need to do it in a spatial context, and have done if less frequently, but
+    kindof have [@McLeod2021SamAsy; @Wood2015EffSpa; @Poisot2012DisSpe]
+-   We have a spatio-temporal model for it [@Cirtwill2019QuaFra;
+    @Catchen2023MisLin]
+-   We know networks vary in space and time
+    -   Because they should [@Poisot2015SpeWhy]
+    -   Because of dispersal [@Thompson2017DisGov]
+    -   They vary across gradients [@Tylianakis2017EcoNet;
+        @Pellissier2018ComSpe]
+    -   We know how they scale across space [@Galiana2018SpaSca;
+        @Galiana2021SpaSca]
+    -   Prey rewiring across space leads to rewiring and reshapes metawebs
+        [@Ceron2022DifPre]
+
+BONs
+
+-   BONs are coordinated networks of monitoring sites, and can be thematic,
+    national or regional [@Navarro2017MonBio]
+-   We should aim for a globally coordinated network [@Gonzalez2023GloBio]
+-   There have been very recent talks over BONs in Canada [@Gonzalez2025BioObs]
+    and [@Kissling2024ModEff]
+-   The Europe BON is mentioning optimal sampling strategies
+    [@Kissling2024ModEff]
+-   Predictions should guide the way forward with the GBF [@Zurell2025PreWay]
+
+Sampling design
+
+-   Sampling design has long focused on spatial balance to achieve
+    representative sampled, with recent efforts aimed at evaluating relevance in
+    terms of ecological goals [@Norman2025SitSel].
+-   There is generally some focus on species richness [@Willig2023ProBio], but
+    probably too much focus on species richness in conservation
+    [@FletcherJr.2025SpeRic]
+-   Biodiversity change is uncoupled from species richness trends
+    [@Hillebrand2018BioCha]
+-   Species interactions should be used here, but are generally not
+    [@Valiente-Banuet2015SpeLos]. They might be better than richness and EBVs
+-   Network responses can be different than richness [@Dore2021RelEff]
+-   Interactions are not even mentioned as a monitoring gap [@Santana2025LarBio]
+-   There are sufficient tools available for networks [@Dansereau2025OveDis]
+-   Simulations can be used, and have already been [@Valiente-Banuet2015SpeLos;
+    @Santini2017AssSui; @deAguiar2019RevBia; @Daugaard2024DepFor]
+
+Remaining key questions are therefore: how should we implement monitoring
+programs across space to efficiently capture network composition and changes, as
+essential components of biodiversity? Can we monitor species interactions as
+efficiently as species ranges? What would be realistic expectations for
+monitoring species interactions?
+
+Here, we used simulations to test the efficiency of monitoring species
+interactions within BONs and explored options for design and optimization. We
+aim to define realistic expectations for monitoring species interactions, in
+comparison to species richness and species ranges. Using simulation studies, we
+compare design and optimization options, examining how to assess and compare
+their efficiencies. We conclude with recommendations on how this should
+influence the design of BONs to improve the monitoring of species interactions
+as an important biodiversity component.
 
 # Methods
 
@@ -102,7 +189,7 @@ BONs.](figures/conceptual_figure.png){#fig-concept}
 ## General model
 
 We followed the approach and process-based, spatio-temporal model introduced by
-@Catchen2023MisLin [building on @Cirtwill2019QuaFra] to simulate interaction
+[@Catchen2023MisLin; building on @Cirtwill2019QuaFra] to simulate interaction
 realization and detection while accounting for spatial variation in species
 occurrences, implemented in `SpeciesInteractionSamplers.jl`. To the generative
 model originally presented, we add the design of Biodiversity Observation
