@@ -95,11 +95,11 @@ designs. Maximising species richness can be an efficient strategy to design
 conservation networks while also capturing functional and phylogenetic diversity
 [@Willig2023ProBio]. However, the use of species richness to measure
 biodiversity change and guide biological conservation has been criticized,
-mainly since trends in species richness do not properly and robustly capture
-local changes through time [@Hillebrand2018BioCha; @Hillebrand2025OpePer], while
-also neglecting species identities and not providing information on persistence
-of biodiversity and ecosystem services [@FletcherJr.2025SpeRic;
-@Aguiar2024UntBio].
+mainly since trends in species richness do not properly capture local changes
+through time as diagnostic indicators should [@Hillebrand2018BioCha;
+@Hillebrand2025OpePer], while also neglecting species identities and not
+providing information on persistence of biodiversity and ecosystem services
+[@FletcherJr.2025SpeRic; @Aguiar2024UntBio].
 
 Species interactions are known to be a central component of biodiversity
 [@Valiente-Banuet2015SpeLos; @Harvey2017BriEco; @McCann2007ProBio] , with their
@@ -632,27 +632,33 @@ interactions?
 Our simulations highlight they should be much lower than for species richness
 once considering that interaction realization and detection depend on species
 abundance. In other words, we can expect the monitoring of species interaction
-within a BON to require a (much) higher monitoring effort than the one required
-for monitoring species and community composition.
+within a BON to require a (much) higher monitoring effort across space than the
+one required for monitoring species and community composition. This is similar
+to observations regarding sampling effort required to document pollinator
+networks [@Chacoff2012EvaSam], yet here framed in the context of BON design and
+monitoring across space .
 
 We can improve coverage with the right optimization method, but efficiently
 doing so requires a clear and attainable sampling or monitoring objective. For
-instance, adopting a single-species perspective (*e.g.* focusing on interactions
-for a keystone species) can yield relevant results while relying on attainable
-levels of information. Optimizing on a known species range proved an efficient
-strategy to retrieve its interactions, better than optimization based on more
-holistic, community-level information such as species or interaction richness.
-Optimizing based on the location of the realized interactions was even more
-efficient. Yet, these simulations represent a best case scenario beyond reach in
-an applied context: it assumes that there is already pre-existing knowledge on
-where interactions have been observed, which is unlikely to exist for most
-interactions, regardless of their relevance for monitoring. Nonetheless, it
-highlights that the most important efficiency gains will come from better
-knowledge of where interactions are likely to take place, which suggests that
-monitoring of interactions will become more efficient over time. Better
-incorporating considerations for species abundance, the factor influencing
-interaction realization in our simulations, will be crucial and potentially more
-impactful than improving knowledge or reducing uncertainty over species ranges.
+instance, adopting a single-species perspective [*e.g.* focusing on interactions
+for a keystone or high degree species; @Pires2017FriPar; @deAguiar2019RevBia]
+can yield relevant results while relying on attainable levels of information.
+Optimizing on a known species range proved an efficient strategy to retrieve its
+interactions, better than optimization based on more holistic, community-level
+information such as species or interaction richness \[identified in contrast by
+@Willig2023ProBio as an efficient target to maximize to conserve multiple
+biodiversity facets\]. Optimizing based on the location of the realized
+interactions was even more efficient. Yet, these simulations represent a best
+case scenario beyond reach in an applied context: it assumes that there is
+already pre-existing knowledge on where interactions have been observed, which
+is unlikely to exist for most interactions, regardless of their relevance for
+monitoring. Nonetheless, it highlights that the most important efficiency gains
+will come from better knowledge of where interactions are likely to take place,
+which suggests that monitoring of interactions will become more efficient over
+time. Better incorporating considerations for species abundance, the factor
+influencing interaction realization in our simulations, will be crucial and
+potentially more impactful than improving knowledge or reducing uncertainty over
+species ranges.
 
 When does the choice of sampler or optimization layer matter the most? Here we
 concur with @Norman2025SitSel that ecologically-relevant metrics are required to
