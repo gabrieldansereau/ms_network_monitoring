@@ -133,8 +133,8 @@ interactions. Much focus has been given on how to assess sampling completeness
 does not always allow to know the list of interactions (and vice versa),
 therefore justifying the need to sample interactions as their own biological
 entities. A central challenge with the sampling of interactions is that it can
-be much less than sampling for species. Sampling effort required to document
-interactions is much higher than for species [e.g. 500% vs 64% in
+be much less efficient than sampling for species. Sampling effort required to
+document interactions is much higher than for species [e.g. 500% vs 64% in
 @Chacoff2012EvaSam]. Evaluating sampling completeness requires assessing the
 proportion of forbidden links due to life history restrictions, which itself
 requires natural history knowledge and an analysis of sampling robustness
@@ -142,7 +142,7 @@ requires natural history knowledge and an analysis of sampling robustness
 are less affected by sampling completeness than network composition or binary
 measure [e.g. number of links, @Vizentin-Bugoni2016InfSam; @Poisot2012DisSpe].
 Small networks are also more sensitive to undersampling than larger ones
-[@Henriksen2019EffNet]. Quantitive frameworks exist to evaluate network
+[@Henriksen2019EffNet]. Quantitative frameworks exist to evaluate network
 taxonomic, functional and phylogenetic diversity from incomplete samples
 [@Chiu2023QuaEst].
 
@@ -158,12 +158,12 @@ used data from specific lakes compare sampling strategies, showing that sampling
 larger to smaller lakes better captures regional metaweb properties. We now have
 frameworks and models to describe and investigate the variation and detection
 interaction networks in space and time [@Poisot2015SpeWhy; @Cirtwill2019QuaFra;
-@Catchen2023MisLin], and therefore the next is to consider how to optimize
-monitoring for species interactions. Simulations have already in the been used
-in the context of optimizing monitoring to: generate communities and evaluate
-the potential of metrics to track biodiversity change [@Santini2017AssSui],
-simulate networks and sampling to evaluate effects on estimated metrics compared
-to a known reference [@deAguiar2019RevBia, although not in a spatial context],
+@Catchen2023MisLin], and therefore the next step is to consider how to optimize
+monitoring for species interactions. Simulations have already been used in the
+context of optimizing monitoring to: generate communities and evaluate the
+potential of metrics to track biodiversity change [@Santini2017AssSui], simulate
+networks and sampling to evaluate effects on estimated metrics compared to a
+known reference [@deAguiar2019RevBia, although not in a spatial context],
 determine optimal sampling frequency for monitoring [@Daugaard2024DepFor], to
 examine the dependence of monitoring efficiency and trends detection given the
 number of monitoring sites, species abundance, detection probability, strength
