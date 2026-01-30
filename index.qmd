@@ -72,133 +72,180 @@ keywords:
 
 # Introduction
 
-Biodiversity monitoring should encompass all facets of biodiversity. Article 7
-of the Convention on Biological Diversity [@UnitedNations1992ConBio] calls for
-Parties to "\[i\]dentify components of biological diversity important for its
-conservation and sustainable use", and "\[m\]onitor, through sampling and other
-techniques, the components of biological diversity". Biodiversity Observation
-Networks (BONs) are promising initiatives to improve monitoring across scales
-and biodiversity facets. BONs are coordinated monitoring networks designed to
-harmonize observation systems, assist reporting on international assessments,
-and reinforce scientific basis in biodiversity monitoring [@Navarro2017MonBio;
-@Gonzalez2023GloBio]. BONs can be thematic (Marine BON, Freshwater BON),
-national (China BON, French BON, Colombia BON) or regional (Asia-Pacific,
-Europe); some represent networks of monitoring sites for systematic monitoring
-(China BON) while others represent biodiversity data hubs (French BON)
-[@Navarro2017MonBio]. BONs aim to monitor biodiversity change, informing on both
-current status and trends [@Gonzalez2025BioObs]. It has been suggested that BONs
-should eventually be interlinked into the Global Biodiversity Observation System
-(GBiOS), a globally connected network providing capacity to monitor biodiversity
-change [@Gonzalez2023GloBio], and guide actions needed for targets and goals of
-the Kunming-Montreal Global Biodiversity framework [@CBD2022DecAdoa]. Additional
-BONs are currently in the development or planification stages, notably in Europe
-[@Kissling2024ModEff] and in Canada [@Gonzalez2025BioObs].
+Biodiversity monitoring should encompass all facets of biodiversity.
+Article 7 of the Convention on Biological Diversity
+[@UnitedNations1992ConBio] calls for Parties to "\[i\]dentify components
+of biological diversity important for its conservation and sustainable
+use", and "\[m\]onitor, through sampling and other techniques, the
+components of biological diversity". Biodiversity Observation Networks
+(BONs) are promising initiatives to improve monitoring across scales and
+biodiversity facets. BONs are coordinated monitoring networks designed
+to harmonize observation systems, assist reporting on international
+assessments, and reinforce scientific basis in biodiversity monitoring
+[@Navarro2017MonBio; @Gonzalez2023GloBio]. BONs can be thematic (Marine
+BON, Freshwater BON), national (China BON, French BON, Colombia BON) or
+regional (Asia-Pacific, Europe); some represent networks of monitoring
+sites for systematic monitoring (China BON) while others represent
+biodiversity data hubs (French BON) [@Navarro2017MonBio]. BONs aim to
+monitor biodiversity change, informing on both current status and trends
+[@Gonzalez2025BioObs]. It has been suggested that BONs should eventually
+be interlinked into the Global Biodiversity Observation System (GBiOS),
+a globally connected network providing capacity to monitor biodiversity
+change [@Gonzalez2023GloBio], and guide actions needed for targets and
+goals of the Kunming-Montreal Global Biodiversity framework
+[@CBD2022DecAdoa]. Additional BONs are currently in the development or
+planification stages, notably in Europe [@Kissling2024ModEff] and in
+Canada [@Gonzalez2025BioObs].
 
-Recent work highlighted the need for improved sampling designs in BONs. Current
-sampling designs over large scales are often too sparse, at too coarse a scale,
-too infrequent, and without temporal replication [@Santana2025LarBio].
-Recommendations for more effective spatial sampling design in Europe included
-stratified random sampling (with stratification across environmental,
-anthropogenic and political layers), incorporation of existing monitoring sites,
-filling of spatial gaps, co-location of monitoring activities
-[@Kissling2024ModEff]. Ecological monitoring design relies on site selection
-algorithms more often discussed regarding their capacity to achieve spatial
-balance and representative samples, and less frequently with an evaluation to
-performance to achieve an ecological monitoring goal [@Norman2025SitSel].
-Species richness is the most commonly used biodiversity measure in monitoring
-contexts [@Hillebrand2018BioCha], including in discussions over sampling
-designs. Maximising species richness can be an efficient strategy to design
-conservation networks while also capturing functional and phylogenetic diversity
-[@Willig2023ProBio]. However, the use of species richness to measure
-biodiversity change and guide biological conservation has been criticized,
-mainly since trends in species richness do not properly capture local changes
-through time as diagnostic indicators should [@Hillebrand2018BioCha;
-@Hillebrand2025OpePer], while also neglecting species identities and not
-providing information on persistence of biodiversity and ecosystem services
+Recent work highlighted the need for improved sampling designs in BONs.
+Current sampling designs over large scales are often too sparse, at too
+coarse a scale, too infrequent, and without temporal replication
+[@Santana2025LarBio]. Recommendations for more effective spatial
+sampling designs in Europe included i) stratified random sampling (with
+stratification across environmental, anthropogenic and political
+gradients or classes
+<!--"layers" sounded too technical to me, but this may not be the best terminology either-->),
+ii) incorporation of existing monitoring sites, iii) filling of spatial
+gaps, iv) and co-location of monitoring activities
+<!--this last point sounds cryptic to me-->[@Kissling2024ModEff]
+<!--i added the numbering to make reading easier-->. Ecological
+monitoring design relies on site selection algorithms more often
+discussed regarding their capacity to achieve spatial balance and
+representative samples, and less frequently with an evaluation to
+performance to achieve an ecological monitoring goal [@Norman2025SitSel]
+<!--this sentence feels like a bit of a jump to me. does it need a "however" or "yet" at the start? how related is it to the points i-iv highlighted before?-->.
+For instance, species richness is the most commonly used biodiversity
+measure in monitoring contexts [@Hillebrand2018BioCha], including in
+discussions over sampling designs, because maximising species richness
+can be an efficient strategy to design conservation networks while also
+capturing functional and phylogenetic diversity [@Willig2023ProBio].
+However, the use of species richness to measure biodiversity change and
+guide biological conservation has been criticized, mainly since trends
+in species richness do not properly capture local changes through time
+as diagnostic indicators <!--can you provide an example here?--> should
+[@Hillebrand2018BioCha; @Hillebrand2025OpePer], while also neglecting
+species identities and functional roles and not providing information on
+persistence of biodiversity and ecosystem services
 [@FletcherJr.2025SpeRic; @Aguiar2024UntBio].
+<!--I felt that species richness was an example of the lack of evaluation of the monitoring goal an so added the "For instance"... was I right?-->
 
-Species interactions are known to be a central component of biodiversity
-[@Valiente-Banuet2015SpeLos; @Harvey2017BriEco; @McCann2007ProBio] , with their
-own spatial and macro-ecological dynamics [@Windsor2023UsiEco;
-@Mestre2022DisFoo; @Baiser2019EcoRul; @Dansereau2024SpaExp]. We now have
-sufficient conceptual tools to better appreciate the value added that species
-interactions provide to efficient management actions [@Dansereau2025OveDis;
-@Moracho2025RebEco]. However, species interactions are still considered to
-undergo a biodiversity shortfall, due to a lack of data at global scales
-[@Hortal2015SevSho] as well as a fragmentation of type of interactions for which
-data are available across locations and environments [@Poisot2021GloKno].
-Species interactions represent a critical component of ecosystem functioning and
-health, yet may be lost faster than species [@Valiente-Banuet2015SpeLos].
-Monitoring interactions is more informative regarding ecosystem functions than
-monitoring species richness or using EBVs [@Jordano2016SamNet]. Network
-responses may be different from species richness [e.g. @Dore2021RelEff],
-emphasizing the need for ecological monitoring to consider interactions, not
-just species richness. Species interactions can also improve our ability to
-predict responses to climate change [@Abrego2021AccSpe]. For both these reasons,
-sampling designs should incorporate considerations for species interactions.
+Species interactions are a central component of biodiversity
+[@Valiente-Banuet2015SpeLos; @Harvey2017BriEco; @McCann2007ProBio], can
+mediate community and ecosystem responses to change
+<!--REF: Trophic interactions modify the temperature dependence of community biomass and ecosystem function | PLOS Biology-->,
+and have their own spatial and macro-ecological dynamics
+[@Windsor2023UsiEco; @Mestre2022DisFoo; @Baiser2019EcoRul;
+@Dansereau2024SpaExp]. We now have sufficient conceptual tools to better
+appreciate the value added that species interactions provide to
+efficient management actions
+<!--I found this a little tricky to read. How about: "We now have sufficient conceptual tools to support the added value of species interactions in designing eficient management actions"-->[@Dansereau2025OveDis;
+@Moracho2025RebEco]. However, species interactions are still considered
+to undergo a biodiversity shortfall <!-- what do you mean?-->, due to a
+lack of data at global scales [@Hortal2015SevSho], as well as the uneven
+data availability across different interaction types, geographical
+locations and environments [@Poisot2021GloKno].
+<!--I think the following sentences could be reorganised for a better flow of ideas. At the moment they feel a little disjoint, or like a list-->
+Species interactions represent a critical component of ecosystem
+functioning and health, yet may be lost (or change) faster than species
+[@Valiente-Banuet2015SpeLos]. Monitoring interactions is more
+informative regarding ecosystem functions than monitoring species
+richness or using EBVs [@Jordano2016SamNet]
+<!--EBVs needs to be defined-->. Network responses may be different from
+species richness [e.g. @Dore2021RelEff], emphasizing the need for
+ecological monitoring to consider interactions, not just species
+richness. Species interactions can also improve our ability to predict
+responses to climate change [@Abrego2021AccSpe]. For both these reasons,
+sampling designs should incorporate considerations for species
+interactions.
 
-Prior investigations of interaction sampling do not address how efficiently we
-should expect to monitor interactions within the BON framework, nor did studies
-on the effectiveness of BONs pay particular attention to the sampling of species
-interactions. Much focus has been given on how to assess sampling completeness
-[e.g. @Chacoff2012EvaSam] and how sampling effort affects network properties
-[e.g., @McLeod2021SamAsy]. Recent empirical [@Caron2024TraMod] and theoretical
-[@Poisot2023GuiPre] results have established that knowing the network structure
-does not always allow to know the list of interactions (and vice versa),
-therefore justifying the need to sample interactions as their own biological
-entities. A central challenge with the sampling of interactions is that it can
-be much less efficient than sampling for species. Sampling effort required to
-document interactions is much higher than for species [e.g. 500% vs 64% in
-@Chacoff2012EvaSam]. Evaluating sampling completeness requires assessing the
-proportion of forbidden links due to life history restrictions, which itself
-requires natural history knowledge and an analysis of sampling robustness
-[@Jordano2016SamNet]. Some quantitative network properties such as connectance
-are less affected by sampling completeness than network composition or binary
-measure [e.g. number of links, @Vizentin-Bugoni2016InfSam; @Poisot2012DisSpe].
+Prior investigations of interaction sampling did not address how
+efficiently we should expect to monitor interactions within the BON
+framework, nor did studies on the effectiveness of BONs pay particular
+attention to the sampling of species interactions. Instead, much focus
+has been given on how to assess sampling completeness [e.g.
+@Chacoff2012EvaSam] and how sampling effort affects network properties
+[e.g., @McLeod2021SamAsy]. Recent empirical [@Caron2024TraMod] and
+theoretical [@Poisot2023GuiPre] results have established that knowing
+the network structure does not always allow to know the list of
+interactions (and vice versa), therefore justifying the need to sample
+interactions as their own biological entities
+<!--to me (and maybe to others too) knowing network structure could include the knowing list of interactions. Perhaps provide a little explanation of why this is not the case, or define what you mean by "network structure" -->.
+A central challenge with the sampling of interactions is that the
+sampling effort required to document interactions is much higher than
+for species [e.g. 500% vs 64% in @Chacoff2012EvaSam]
+<!--I suggested merging the two sentences--> . Also, evaluating sampling
+completeness for interactions is more complex than for species. In
+addition to the analysis of sampling robustness, it requires assessing
+the proportion of forbidden links (i.e. links that cannot occur) due to
+life history or morphological restrictions, which in turn requires
+knowledge of species natural history and traits [@Jordano2016SamNet]
+<!--I reorganised for clarity and flow-->. While, some quantitative
+network properties such as connectance are less affected by sampling
+completeness, others like network composition or binary measure
+<!--is something missing here? binary measure of what?--> [e.g. number
+of links, @Vizentin-Bugoni2016InfSam; @Poisot2012DisSpe] will vary
+widely if interactions are missed
+<!--again, edits to improve flow a bit. some time the text is feeling a bit like a "list of things" and less like a story-->.
 Small networks are also more sensitive to undersampling than larger ones
-[@Henriksen2019EffNet]. Quantitative frameworks exist to evaluate network
-taxonomic, functional and phylogenetic diversity from incomplete samples
-[@Chiu2023QuaEst].
+[@Henriksen2019EffNet]. Quantitative frameworks exist to evaluate
+network taxonomic, functional and phylogenetic diversity from incomplete
+samples [@Chiu2023QuaEst]
+<!--again, this sentence feels somewhat disjoint from the previous and it ends abruptly wrt to what comes next. What do we gain from knowing this information?-->
+.
 
-A much needed element is to consider sampling network and interactions from an
-explicitly spatial perspective with variation in local structure—that is,
-measuring sampling effort from specific sites where interactions are sampled.
-For instance, @Poisot2012DisSpe measured sampling effort based on resampling a
-dataset to document its effect on network composition and properties. Other
-examples focus on scale, notably showing that many network structure metrics are
-robust across spatial scales when accounting for expected increases of richness
-and decreases in connectance [@Wood2015EffSpa]. In contrast, @McLeod2021SamAsy
-used data from specific lakes compare sampling strategies, showing that sampling
-larger to smaller lakes better captures regional metaweb properties. We now have
-frameworks and models to describe and investigate the variation and detection
-interaction networks in space and time [@Poisot2015SpeWhy; @Cirtwill2019QuaFra;
-@Catchen2023MisLin], and therefore the next step is to consider how to optimize
-monitoring for species interactions. Simulations have already been used in the
-context of optimizing monitoring to: generate communities and evaluate the
-potential of metrics to track biodiversity change [@Santini2017AssSui], simulate
-networks and sampling to evaluate effects on estimated metrics compared to a
-known reference [@deAguiar2019RevBia, although not in a spatial context],
-determine optimal sampling frequency for monitoring [@Daugaard2024DepFor], to
-examine the dependence of monitoring efficiency and trends detection given the
-number of monitoring sites, species abundance, detection probability, strength
-of decline, under a range of scenarios and monitoring schemes
-[@Ficetola2018OptMon].
+<!--how is this paragraph flowing from the previous? it sounds like another added challenge and it is not clear why it is separate from the previous ones-->
+
+A much needed element is to consider sampling network and interactions
+<!--what is the difference between sampling networks and interactions? I wonder if we need to make this distinction clear somewhere-->
+from an explicitly spatial perspective with variation in local sampling
+structure —that is, quantifying sampling effort from specific sites
+where interactions are sampled.
+<!-- I feel like "sampling effort" is only one thing within a range of things we could consider spatially in terms of network sampling structure; yet this sentence makes it sound like its the only one -->
+For instance, @Poisot2012DisSpe measured sampling effort based on
+resampling a dataset to document its effect on network composition and
+properties. Other examples focus on scale, notably showing that many
+network structure metrics are robust across spatial scales when
+accounting for expected increases of richness and decreases in
+connectance [@Wood2015EffSpa]
+<!--the link to sampling effort needs to be made more explicit in the previous sentence-->.
+In contrast, @McLeod2021SamAsy used data from specific lakes compare
+sampling strategies, showing that sampling larger to smaller lakes
+better captures regional metaweb properties
+<!--is this still about sampling effort or more about network size variations?-->.
+We now have frameworks and models to describe and investigate the
+variation and detection of interaction networks
+<!--or simply "of interactions"?--> in space and time
+[@Poisot2015SpeWhy; @Cirtwill2019QuaFra; @Catchen2023MisLin], and
+therefore the next step is to consider how to optimize monitoring for
+species interactions. Simulations have already been used in this context
+to: generate communities and evaluate the potential of metrics to track
+biodiversity change [@Santini2017AssSui]; simulate networks and sampling
+to evaluate sampling effects on estimated network properties compared to
+a known reference [@deAguiar2019RevBia, although not in a spatial
+context]; determine optimal sampling frequency for monitoring
+[@Daugaard2024DepFor]; examine the dependence of monitoring efficiency
+and trends detection on the number of monitoring sites, species
+abundance, detection probability and strength of decline, under a range
+of scenarios and monitoring schemes [@Ficetola2018OptMon].
 
 In this manuscript, we address three key questions. First, how should we
-implement monitoring programs across space to efficiently capture network
-composition and changes, as essential components of biodiversity? Second, can we
-monitor species interactions as efficiently as species ranges? Finally, what
-would be realistic expectations for the effectiveness of sampling designs to
-monitor species interactions?
+implement monitoring programs across space to efficiently capture
+network composition and changes, as essential components of
+biodiversity? Second, can we monitor <!--changes in?--> species
+interactions as efficiently as <!--in?--> species ranges? Finally, what
+would be realistic expectations for the effectiveness of sampling
+designs to monitor species interactions
+<!--the meaning of this sentence is not clear to me-->?
 
-We use spatially explicit community simulations to test the efficiency of
-monitoring species interactions within BONs, and explore various algorithmic and
-design options for network optimization. We aim to define realistic expectations
-for monitoring species interactions, in comparison to species richness and
-species ranges. Using simulation studies, we compare design and optimization
-options, examining how to assess and compare their efficiencies. We conclude
-with recommendations on how this should influence the design of BONs to improve
-the monitoring of species interactions as an important biodiversity component.
+We use spatially explicit community simulations to test the efficiency
+of monitoring species interactions within BONs, and explore various
+algorithmic and design options for network sampling optimization. We aim
+to define realistic expectations for monitoring species interactions, in
+comparison to species richness and species ranges. To do so, we compare
+design and optimization options, examining how to assess and compare
+their efficiencies. We conclude with recommendations on how this should
+influence the design of BONs to improve the monitoring of species
+interactions as an important biodiversity component.
 
 # Methods
 
