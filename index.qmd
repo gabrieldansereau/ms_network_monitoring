@@ -19,6 +19,8 @@ authors:
   - name: Ceres Barros
     affiliation:
         - ref: cfs
+        - ref: ubc
+        - ref: ulaval
     roles:
         - editing
   - name: Timothée Poisot
@@ -45,6 +47,18 @@ affiliations:
       city: Victoria
       region: BC
       country: Canada
+    - id: ubc
+      name: Department of Forest Resources Management
+      department: University of British Columbia
+      city: Vancouver
+      region: BC
+      country: Canada
+    - id: ulaval
+      name: Département des sciences du bois et de la forêt
+      department: Université Laval
+      city: Quebec
+      region: QC
+      country: Canada 
 citeproc: true
 bibliography: references.bib
 csl: https://www.zotero.org/styles/springer-basic-author-date
