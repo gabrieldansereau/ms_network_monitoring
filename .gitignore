@@ -4,3 +4,5 @@ docs
 Makefile
 
 **/*.quarto_ipynb
+.Rproj.user
+*.Rproj
