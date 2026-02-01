@@ -15,5 +15,9 @@ format:
       hypothesis: true
   docx: default
   cerg-typst: default
+editor:
+  markdown:
+    wrap: 80
+    canonical: true
 execute:
   freeze: true
