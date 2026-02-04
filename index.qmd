@@ -578,6 +578,11 @@ comparable way between possible comparison pairs.
 
 <!--# the first paragraph seems to suggest that the difference measure 'd' enables comparisons between simulations (i.e. diff spp ranges and metaweb contexts); but this last paragraph suggests different simulations were not compared in terms of efficiency-->
 
+We implemented our simulations in *Julia* v1.11.5 [@Bezanson2017JulFre]. All the
+code used to implement the simulations and perform the analyses is archived on
+Zenodo [@Dansereau2026GabNet]. Full computations were run on compute clusters
+provided by Calcul Québec and the Digital Research Alliance of Canada.
+
 # Results
 
 ### Simulation study I: Lower sampling expectations for species interactions than species richness
