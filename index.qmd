@@ -726,6 +726,8 @@ occupancy of the focal species. The efficiency parameter is the natural log of
 parameter $a$ in @eq-eff, describing the best-fit sampling efficiency curve for
 a given simulation.](figures/efficiency_occupancy.png){#fig-eff-occup}
 
+![Ranges estimations](figures/ranges_overlap.png){#fig-estimations}
+
 # Discussion
 
 *What should be realistic expectations for sampling and monitoring of species
