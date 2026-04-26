@@ -690,7 +690,7 @@ values (in blue) indicate that the compared option led to a less efficient
 sampling than its reference, while positive values (in orange) indicate it was
 more efficient. References were chosen for narrative purposes and to simplify
 the number of comparisons displayed. All one-by-one comparisons are available in
-Supp. Mat.](figures/efficiency_comparison_reduced.png){#fig-eff-comp}
+Supp. Mat.](figures/efficiency_comparison.png){#fig-eff-comp}
 
 While the simulations clearly highlight which sampler or optimization layer is
 most efficient across all simulations, efficiency parameters and differences
