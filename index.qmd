@@ -350,83 +350,59 @@ for classification to improve bioacoustic monitoring performance across
 stratified samples [@McEwen2025StrAct].
 <!--# I think providing these many examples is breaking the flow a bit. I suggest choosing one and perhaps providing a little more detail on it.-->
 
-### Step 3: Evaluating sampling efficiency with comparable measures
+### Step 3: Evaluating sampling efficiency with a comparable measure
 
-Our simulations require evaluating sampling efficiency at three levels
-(highlighted in [@fig-concept], Step 3): at a landscape scale for a given BON
-and number of sites (a snapshot description measure), as an efficiency curve
-describing the efficiency with an increasing number of sites (a snapshot
-ensemble summary measure), and as a difference score to compare optimization
-options (an ensemble comparison measure).
-
-On the first level, we use the **proportion of sampled elements** (species or
-interactions, noted $p$) to evaluate how efficient a given BON is on a landscape
-scale. In simulated landscapes, species and interaction composition are known
-everywhere and thus we can determine the proportion of species and interactions
-that can be sampled for each generated BON (e.g. a BON made of 50
-spatially-balanced sites). This proportion of sampled elements compared to the
-true richness (of species or interactions) can be seen as a 'snapshot' view of a
-given BON's sampling efficiency for that simulated landscape.
-
-On the second level, we define an **efficiency parameter** ($a$) describing how
-sampling efficiency changes as the number of sites increases in a given BON.
-Ideally, we need one summary measure to summarize BON-efficiency for a given
-landscape and optimization strategies across the ensemble of snapshots.
-Moreover, this measure needs to be comparable across
-samplers<!--# isn't a BON a sampler applied to a landscape?-->, optimization
-targets and number of interactions of the focal species, given how the generated
-metawebs and landscapes might vary between independent simulations. Since the
-exact proportion of monitored interactions is known in our simulations, we used
-the following single-parameter equation which generates similar efficiency
-curves:
+As interaction composition is known at all locations in our simulated
+landscapes, we can determine the **proportion of interactions** (noted $p$) of
+the focal species that can be sampled for every generated BON configuration
+(e.g. a BON of 50 sites using a specific site selection algorithm). This
+proportion can be seen as a 'snapshot' view of a given BON configuration's
+sampling efficiency for that simulated landscape. The proportion of sampled
+interactions should increase with the number of sites in the BON ($n$), although
+the exact value of $p$ can fluctuate given randomness in the site selection
+algorithm. To remove this randomness and ensure a consistent comparison across
+independent simulations, we state that the **proportion of sampled interactions
+for a given number of sites in the BON**, noted $p(n)$, follows an accumulation
+curve described by the equation:
 
 $$
-p=\frac{x}{a + x}
+p(n)=\frac{n}{a + n}
 $$ {#eq-eff}
 
-where $p$ is the proportion of monitored interactions, $x$ is the number of
-sites in the BON and $a$ is the efficiency parameter we use for comparison.
-Here, $a$ is the single parameter describing the shape of the curve, and can be
-compared across samplers, optimization targets or focal species with different
-number of interactions in the metaweb. The lower this parameter, the faster we
-reach a high proportion of monitored interactions. We can identify the value of
-$a$ yielding the curve with the best fit to the observed data, as described in
-our Simulation study III.
+where $a$ is the single parameter describing the shape of the sampling curve.
+The lower the value for $a$, the faster we reach a high proportion of monitored
+interactions. We can identify the value of $a$ yielding the curve with the best
+fit to the simulation results, as described in our Simulation study III.
+
+Next, we derive an interpretable efficiency measure based on @eq-eff. Although
+the parameter $a$ can be directly compared across samplers, optimization targets
+and independent simulations, its value is not intuitive in a monitoring context.
+Instead, we use the **number of sites required to sample 80% of the
+interactions**, which can directly be tied to sampling effort and design.
+Solving @eq-eff for $n$, we obtain:
+
+$$
+n(p) = \frac{p \cdot a}{1 - p}
+$$ {#eq-n_at_p}
+
+where $n(p)$ represents the number of sites required to sample a proportion of
+interactions$p$, following an efficiency curve described by the parameter $a$.
+Here, we fix $p=0.80$ (80% of the interactions), an arbitrary threshold
+representing a highly effective monitoring outcome. $n_{0.80}$ measures the
+speed at which interactions are documented and highlights the sampling effort
+required to do so. We use it to describe the sampling efficiency within a
+landscape and to compare site selection algorithms and optimization targets to
+identify which ones are more efficient—i.e. allow reaching a high proportion of
+monitored interactions more quickly.
+
+<!--# isn't a BON a sampler applied to a landscape?-->
 
 <!--# I'm a bit confused about the a parameter. Do you estimate it by solving the equation for a, given known p and x? also, why do we need to know a, if the only thing varying between the snapshots is the number of sampling locations? I think the issue is perhaps that the opening sentence of the paragaph alludes only to varying sample size, not varying samplers/optimization layers etc. I'm also confused about the last sentence. What is the goal of finding the a value that yields the best curve? and what do you mean by "observed" data? aren't the data the propotion of monitored interactions? how is this "observed"?-->
 
-On the third level, we define a **difference measure** ($d$) to compare
-optimization algorithms and targets for the same simulated landscape. We have
-efficiency curve parameters $a$, which we can compare between options on a
-greater or lower basis, but the order of magnitude of the difference is not
-necessarily comparable across sets of simulations, hence the need for a more
-formal measure.
 <!--# okay, these previous sentences really scrambled my brain. What is the difference between "a set of simulations", "a simulation' and "a landscape"? -->
-To compare the efficiency curves within a given simulation (i.e., between
-samplers and optimization targets for a given metaweb and set of species
-ranges)<!--# the definition of "simulation" needs to come earlier, I think-->,
-we used the definite integral of @eq-eff between 0 and $k$, the maximum number
-of sampling sites in the landscape (10,000):
 
-$$
-\int\limits^{k}_{0} \frac{x}{a + x} \, \mathrm{d}x = a \ln\left(a\right) - a \ln\left(k + a\right) + k
-$$ {#eq-int}
+<!--# the definition of "simulation" needs to come earlier, I think-->
 
-and computed the difference in efficiency between any two curves as the
-difference of integrals:
-
-$$
-d_{1,2} = a_1 \ln\left(a_1\right) - a_1 \ln\left(k + a_1\right) - a_2 \ln\left(a_2\right) + a_2 \ln\left(k + a_2\right)
-$$ {#eq-diff}
-
-with positive difference values indicating that the first curve is more
-efficient than the second. This difference measure allows identifying which
-samplers or optimization target are more efficient -- i.e. allow reaching a high
-proportion of monitored interactions more quickly -- while also quantifying the
-magnitude of this difference in a way that is comparable between sampling
-strategies. We can then compare all samplers and optimization targets
-individually within each independent simulation, given that the monitoring
-context is different in each one (different metawebs and species ranges).
 <!--# i think this is getting repetitive and needs streamlining. I think saying once what needs to be compared and the limitations of the raw values of a is sufficient. It just needs to be made crystal clear from the get go.-->
 
 ## Simulation studies
