@@ -103,15 +103,14 @@ sampling designs over large scales are often too sparse, at too coarse a scale,
 too infrequent, and without temporal replication [@Santana2025LarBio].
 Recommendations for more effective spatial sampling designs in Europe included
 i) stratified random sampling (with stratification across environmental,
-anthropogenic and political gradients or
-classes<!--# "layers" sounded too technical to me, but this may not be the best terminology either-->),
-ii) incorporation of existing monitoring sites, iii) filling of spatial gaps,
-iv) and co-location of monitoring activities
-<!--# this last point sounds cryptic to me-->[@Kissling2024ModEff]<!--# i added the numbering to make reading easier-->.
-Ecological monitoring design relies on site selection algorithms more often
-discussed regarding their capacity to achieve spatial balance and representative
-samples, and less frequently with an evaluation to performance to achieve an
-ecological monitoring goal
+anthropogenic and political gradients or classes, ii) incorporation of existing
+monitoring sites, iii) filling of spatial gaps, iv) and co-location of
+monitoring activities
+<!--# this last point sounds cryptic to me-->[@Kissling2024ModEff]. Ecological
+monitoring design relies on site selection algorithms more often discussed
+regarding their capacity to achieve spatial balance and representative samples,
+and less frequently with an evaluation to performance to achieve an ecological
+monitoring goal
 [@Norman2025SitSel]<!--# this sentence feels like a bit of a jump to me. does it need a "however" or "yet" at the start? how related is it to the points i-iv highlighted before?-->.
 For instance, species richness is the most commonly used biodiversity measure in
 monitoring contexts [@Hillebrand2018BioCha], including in discussions over
@@ -340,16 +339,15 @@ landscapes, given its computational efficiency and its ability to weight site
 inclusion probabilities using a layer of weights. On the other hand, active
 learning methods like the Uncertainty Sampling algorithm [@Lewis1994SeqAlg] can
 be used to optimize sampling given information on element uncertainty
-[@Settles2009ActLea]<!--# I tried to keep a similar structuer as with the previous sentence and streamline a bit-->.
-Instead of focusing on uncertainty, we can apply the algorithm to target the
-sites that provide the highest information gain for the BON, given a layer of
-'information' values to maximize. Examples of active learning relating to
-biodiversity monitoring and sampling site selection include improving species
-range estimation from a smaller number of actively selected sites
-[@Lange2023ActLea], minimizing field data collection costs based on distances
-between samples [@Malek2019OptFie], and identifying uncertain labels for
-classification to improve bioacoustic monitoring performance across stratified
-samples [@McEwen2025StrAct].
+[@Settles2009ActLea]. Instead of focusing on uncertainty, we can apply the
+algorithm to target the sites that provide the highest information gain for the
+BON, given a layer of 'information' values to maximize. Examples of active
+learning relating to biodiversity monitoring and sampling site selection include
+improving species range estimation from a smaller number of actively selected
+sites [@Lange2023ActLea], minimizing field data collection costs based on
+distances between samples [@Malek2019OptFie], and identifying uncertain labels
+for classification to improve bioacoustic monitoring performance across
+stratified samples [@McEwen2025StrAct].
 <!--# I think providing these many examples is breaking the flow a bit. I suggest choosing one and perhaps providing a little more detail on it.-->
 
 ### Step 3: Evaluating sampling efficiency with comparable measures
@@ -376,14 +374,11 @@ Ideally, we need one summary measure to summarize BON-efficiency for a given
 landscape and optimization strategies across the ensemble of snapshots.
 Moreover, this measure needs to be comparable across
 samplers<!--# isn't a BON a sampler applied to a landscape?-->, optimization
-layers
-<!--# can we use a less technical/computer description here? e.g. optimization goals/inputs-->
-and species degrees (number of
-interactions)<!--# do you mean as in "interactions", this might be cryptic for broader readership?-->,
-given how the generated metawebs and landscapes might vary between independent
-simulations. Since the exact proportion of monitored interactions is known in
-our simulations, we used the following single-parameter equation which generates
-similar efficiency curves:
+targets and number of interactions of the focal species, given how the generated
+metawebs and landscapes might vary between independent simulations. Since the
+exact proportion of monitored interactions is known in our simulations, we used
+the following single-parameter equation which generates similar efficiency
+curves:
 
 $$
 p=\frac{x}{a + x}
@@ -392,25 +387,23 @@ $$ {#eq-eff}
 where $p$ is the proportion of monitored interactions, $x$ is the number of
 sites in the BON and $a$ is the efficiency parameter we use for comparison.
 Here, $a$ is the single parameter describing the shape of the curve, and can be
-compared across samplers, optimization layers
-<!--# could a less 'computer' term be used here? e.g. optimization constraints?-->
-or focal species
-degree<!--# as in "species interactions"? this may be cryptic to a broader readership and it's a "new" term in the MS-->.
-The lower this parameter, the faster we reach a high proportion of monitored
-interactions. We can identify the value of $a$ yielding the curve with the best
-fit to the observed data, as described in our Simulation study III.
+compared across samplers, optimization targets or focal species with different
+number of interactions in the metaweb. The lower this parameter, the faster we
+reach a high proportion of monitored interactions. We can identify the value of
+$a$ yielding the curve with the best fit to the observed data, as described in
+our Simulation study III.
 
 <!--# I'm a bit confused about the a parameter. Do you estimate it by solving the equation for a, given known p and x? also, why do we need to know a, if the only thing varying between the snapshots is the number of sampling locations? I think the issue is perhaps that the opening sentence of the paragaph alludes only to varying sample size, not varying samplers/optimization layers etc. I'm also confused about the last sentence. What is the goal of finding the a value that yields the best curve? and what do you mean by "observed" data? aren't the data the propotion of monitored interactions? how is this "observed"?-->
 
 On the third level, we define a **difference measure** ($d$) to compare
-optimization algorithms and layers for the same simulated landscape. We have
+optimization algorithms and targets for the same simulated landscape. We have
 efficiency curve parameters $a$, which we can compare between options on a
 greater or lower basis, but the order of magnitude of the difference is not
 necessarily comparable across sets of simulations, hence the need for a more
 formal measure.
 <!--# okay, these previous sentences really scrambled my brain. What is the difference between "a set of simulations", "a simulation' and "a landscape"? -->
 To compare the efficiency curves within a given simulation (i.e., between
-samplers and optimization layers for a given metaweb and set of species
+samplers and optimization targets for a given metaweb and set of species
 ranges)<!--# the definition of "simulation" needs to come earlier, I think-->,
 we used the definite integral of @eq-eff between 0 and $k$, the maximum number
 of sampling sites in the landscape (10,000):
@@ -428,14 +421,12 @@ $$ {#eq-diff}
 
 with positive difference values indicating that the first curve is more
 efficient than the second. This difference measure allows identifying which
-samplers or optimization layer
-<!--# see my previous comment about using a less "computer-y" term--> are more
-efficient -- i.e. allow reaching a high proportion of monitored interactions
-more quickly -- while also quantifying the magnitude of this difference in a way
-that is comparable between sampling strategies. We can then compare all samplers
-and optimization layers individually within each independent simulation, given
-that the monitoring context is different in each one (different metawebs and
-species ranges).
+samplers or optimization target are more efficient -- i.e. allow reaching a high
+proportion of monitored interactions more quickly -- while also quantifying the
+magnitude of this difference in a way that is comparable between sampling
+strategies. We can then compare all samplers and optimization targets
+individually within each independent simulation, given that the monitoring
+context is different in each one (different metawebs and species ranges).
 <!--# i think this is getting repetitive and needs streamlining. I think saying once what needs to be compared and the limitations of the raw values of a is sufficient. It just needs to be made crystal clear from the get go.-->
 
 ## Simulation studies
@@ -467,22 +458,17 @@ efficiency of each BON
 in terms of sampled species richness and metaweb
 interactions<!--# This sentence is confusing and makes it sound like you are comparing spp richness to interactions in the metaweb. GD: tweaked a bit-->.
 For species richness, we assumed that all species present in a sampled location
-were sampled <!--# "we assumed we sampled" seemed harder to read to me--> and
-compared the number of species sampled across all sampled sites against the
-total species richness across the landscape (always 75 species). For
+were sampled and compared the number of species sampled across all sampled sites
+against the total species richness across the landscape (always 75 species). For
 interactions, we aggregated each interaction type separately (possible, realized
 and detected) for a given BON
 <!--#  I think we need to be consistent in the terminology. Before you used "all sample sites" now, just "BON". I suggest using and defining BON  once and then using it throughout -->
-and evaluated the proportion of the metaweb
-interactions<!--# since the metaweb is both spp and interactions, I suggest being explicit about "interactions in the metaweb"-->
-documented through sampling<!--# is "recovered" an appropriate term here?-->. We
-ran simulations with 100 fully-independent replicates (different metaweb,
-species ranges, abundance distribution, realized interactions) for each number
-of sites in a BON, yielding 10,000 simulations in total.
+and evaluated the proportion of the metaweb interactions documented through
+sampling. We ran simulations with 100 fully-independent replicates (different
+metaweb, species ranges, abundance distribution, realized interactions) for each
+number of sites in a BON, yielding 10,000 simulations in total.
 
 ### Simulation study II: Optimizing focal sampling to monitor a given species' interactions
-
-<!--# I would begin with introducing why we want to test focal sampling. For instance:-->
 
 Interaction network sampling and monitoring may be targeted at a focal species
 because of its endangered status [e.g. @Rioux2022TroNic], because it is at the
@@ -513,7 +499,7 @@ We tested three sampling algorithms for comparison: simple random sampling (to
 represent uninformed sampling), weighted balanced acceptance sampling (aiming to
 balance sites across space while weighting favorably for species ranges) and
 uncertainty sampling (which targets locations with higher 'information' values
-in the layer provided). Next, we tested four information layers for
+in the layer provided). Next, we tested four information targets for
 optimization<!--# are these the same as the "uncertainty" layer?-->: one with
 the focal species range (our attainable information knowledge for the observer),
 one with the probabilistic range (for a less informed case, similar to the
@@ -534,8 +520,9 @@ metaweb as the focal species for the simulation<!--# why?--> [as it proved as an
 efficient strategy for sampling and conservation; @Pires2017FriPar;
 @deAguiar2019RevBia]. We then generated BONs of 1 to 500 sites (at interval
 increments of 5 sites) using the three possible algorithms (simple random,
-weighted balanced acceptance, uncertainty sampling) and four optimization layers
-(focal species range, probabilistic range, realized interactions, species
+weighted balanced acceptance, uncertainty sampling) and four optimization
+targets (focal species range, probabilistic range, realized interactions,
+species
 richness)<!--# these are only used with the uncertainty sampling, right?-->,
 with 100 replicates for every number of sites. For each BON generated, we
 extracted the number of unique realized interactions sampled across all sites
@@ -548,8 +535,8 @@ in the generated metawebs and species ranges. We ran 100 independent
 simulations, each with 50 replicates for every number of sites (once again from
 1 to 500 sites at interval increments of 5 sites). Doing so raised the issue of
 describing and comparing the efficiency of the simulated monitoring across
-samplers, optimization layers or focal species degree, as generated metawebs and
-landscapes varied between independent simulations. The comparison measures
+samplers, optimization targets or focal species degree, as generated metawebs
+and landscapes varied between independent simulations. The comparison measures
 described earlier in @eq-eff and @eq-diff were used to provide comparable
 measures of efficiency. Namely, the efficiency parameter $a$ ([@eq-eff]) was
 used to describe the efficiency of all independent
@@ -558,7 +545,7 @@ and the difference measure $d$ ([@eq-diff]) was used to compare the efficiencies
 of different optimization options within a specific landscape and
 simulation<!--# not a specific simulation?-->.
 
-For each independent simulation, sampler and optimization layer option, we
+For each independent simulation, sampler and optimization target option, we
 performed a grid search across possible values of $a$ (from @eq-eff) to identify
 the curve yielding the best fit with the simulation's result. We searched for
 parameter values on an exponential scale as it allowed for more gradual control
@@ -567,11 +554,11 @@ and $e^{15}$ (limits chosen to go beyond the fitted values), and selected the
 value of $a$ yielding the curve minimizing the sum of squared errors to the
 simulation results.
 
-We compared all samplers and optimization layers individually within each
+We compared all samplers and optimization targets individually within each
 independent simulation, given that the monitoring context is different in each
 one (different metawebs and species ranges), using our difference measure $d$
 ([@eq-diff]). The measure allows to identify which samplers or optimization
-layer is more efficient, thus quickly reaching a high proportion of monitored
+target is more efficient, thus quickly reaching a high proportion of monitored
 interactions (positive values indicate that the first curve is more efficient
 than the second), while also quantifying the magnitude of this difference in a
 comparable way between possible comparison pairs.
@@ -610,7 +597,7 @@ indicate the median proportion for a given number of sites, while the shaded
 bands delimit the 5th and 95th percentiles across replicates (100 per number of
 sites; 10,000 in total).](figures/nbon_bands.png){#fig-nbons}
 
-### Simulation study II: Differences between samplers and optimization layers
+### Simulation study II: Differences between samplers and optimization targets
 
 Our focal sampling experiment showed the Uncertainty Sampling algorithm to be
 most efficient at optimizing BON-design based on a known species range and while
@@ -623,24 +610,21 @@ the landscape.
 
 Optimizing on the known species range, our proxy for an attainable level of
 information an interested user might have, was more efficient at sampling the
-focal species' interactions than optimizing based on species
-richness<!--# was interaction richness actually used? or is spp richness used as a proxy for interation richness? please clarify. GD: removed the mention of interaction richness, as it was tested for comparison but is not shown here (same result as species richness, but less attainable measure)-->,
+focal species' interactions than optimizing based on species richness,
 effectively sampling more than half of the species' interactions
 ([@fig-joined]B). In contrast, optimization based on the location of realized
 interactions (our best-case scenario requiring a higher level information)
 expectedly performed better, retrieving most of the species' interactions.
 
-![Efficiency of sampler algorithms (A) and optimization layers (B) at sampling
+![Efficiency of sampler algorithms (A) and optimization targets (B) at sampling
 realized interactions for a given focal species within Biodiversity Observation
-Networks (BONs). Panel A compares three samplers with a fixed optimization layer
-(the species range), while Panel B compares four optimization layers with a
-fixed sampler (Uncertainty Sampling).
-<!--# please state which layer is used in panel A with the uncertainty sampling-->
-Lines indicate the median proportion for a given number of sites, while the
-shaded bands delimit the 5th and 95th percentile across replicates. The panels
-on the right illustrate examples of BONs with 50 sites (coloured points)
-generated by each sampler over the same landscape (species presences are shown
-as pixels in yellow).
+Networks (BONs). Panel A compares three samplers with a fixed optimization
+target (the species range), while Panel B compares four optimization targets
+with a fixed sampler (Uncertainty Sampling). Lines indicate the median
+proportion for a given number of sites, while the shaded bands delimit the 5th
+and 95th percentile across replicates. The panels on the right illustrate
+examples of BONs with 50 sites (coloured points) generated by each sampler over
+the same landscape (species presences are shown as pixels in yellow).
 <!--# was the simulation depicted here picked at random-->](figures/focal_joined.png){#fig-joined
 width="70%"}
 
@@ -654,7 +638,7 @@ Among samplers, the median efficiency parameter indicated a better performance
 (lower parameter value) for Uncertainty Sampling, followed by Weighted Balanced
 Acceptance and Simple Random ([@fig-eff-distrib]A). The actual efficiency values
 spanned a similar range across the possible sampler options with all simulations
-combined. Among optimization layers used with Uncertainty Sampling, optimizing
+combined. Among optimization targets used with Uncertainty Sampling, optimizing
 on the focal species presence/absence range performed better than on the
 probabilistic range, followed by species richness, although all three options
 spanned similar ranges with all simulations combined ([@fig-eff-distrib]B). In
@@ -663,9 +647,9 @@ consistently performed better across all simulations.
 
 ![Distribution and density of efficiency parameters across 100 independent
 simulations for the three sampler options tested on the focal species range (A)
-and for the four optimization layer options using Uncertainty Sampling as the
+and for the four optimization target options using Uncertainty Sampling as the
 sampler (B). 'Uncertainty Sampling' on panel A used the focal species range
-layer, hence it shows the same data as 'Focal species range' on panel B. The
+target, hence it shows the same data as 'Focal species range' on panel B. The
 efficiency parameter is the natural log of parameter $a$ in @eq-eff, describing
 the best-fit sampling efficiency curve for a given
 simulation.](figures/efficiency_distribution.png){#fig-eff-distrib}
@@ -684,7 +668,7 @@ efficient than species richness in all but one simulation), but always less
 efficient than optimizing on realized interactions.
 
 ![Within-simulation comparison of efficiency between samplers and optimization
-layers. The comparison value is based on the difference of the definite
+targets. The comparison value is based on the difference of the definite
 integrals of the efficiency samplers curves described in @eq-diff. Negative
 values (in blue) indicate that the compared option led to a less efficient
 sampling than its reference, while positive values (in orange) indicate it was
@@ -692,7 +676,7 @@ more efficient. References were chosen for narrative purposes and to simplify
 the number of comparisons displayed. All one-by-one comparisons are available in
 Supp. Mat.](figures/efficiency_comparison.png){#fig-eff-comp}
 
-While the simulations clearly highlight which sampler or optimization layer is
+While the simulations clearly highlight which sampler or optimization target is
 most efficient across all simulations, efficiency parameters and differences
 vary over a wide range of values. We verified if this could be tied to the
 occupancy of the focal species in simulated landscape, measured as the number of
@@ -714,10 +698,10 @@ Optimizing on the probabilistic species range resulted in similar outcomes; at
 high occupancy (not to be confused with probability of occurrence) the sampler
 can more effectively filter out sites where the species is absent, since it is
 very likely the species will be present at the sites that have high occurrence
-probability<!--# this way feels easier to me-->. At low occupancy, the focal
-species will be present in fewer locations with high probabilities and might be
-absent from locations with intermediate probabilities, making it harder for the
-sampler to target sites where the species is present.
+probability. At low occupancy, the focal species will be present in fewer
+locations with high probabilities and might be absent from locations with
+intermediate probabilities, making it harder for the sampler to target sites
+where the species is present.
 
 ![Relationship between the occupancy of the focal species and sampling
 efficiency for all optimization options. These results come from 100 independent
@@ -749,10 +733,9 @@ for a keystone or high degree species; @Pires2017FriPar; @deAguiar2019RevBia]
 can yield relevant results while relying on attainable levels of information.
 Optimizing on a known species range proved an efficient strategy to retrieve its
 interactions that was better than optimizing based on more holistic,
-community-level information such as species richness
-<!--# again, I think you only used spp richness, right?--> [identified in
-contrast by @Willig2023ProBio as an efficient target to maximize to conserve
-multiple biodiversity
+community-level information such as species richness [identified in contrast by
+@Willig2023ProBio as an efficient target to maximize to conserve multiple
+biodiversity
 facets]<!--# I think it'd be worthwile to expand/move the sentence in () to it's own sentence; its important to highlight that 'more info' is not always 'better'-->.
 Optimizing based on the location of the realized interactions was, as expected,
 even more efficient. Yet, this represents a best case scenario that is likely
@@ -772,9 +755,7 @@ potentially more impactful than improving knowledge or reducing uncertainty over
 species ranges.
 <!--# Could you expand the previous statement by first drawing on the results (e.g. figures, study case outputs) so that the reader is reminded of how this was shown here?-->
 
-*When does the choice of sampler or optimization layer matter the most?*
-
-<!--# I added a paragraph to follow the structure above-->
+*When does the choice of sampler or optimization target matter the most?*
 
 Here we concur with @Norman2025SitSel that ecologically-relevant metrics are
 required to evaluate the performance of monitoring designs, beyond spatial
