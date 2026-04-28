@@ -459,8 +459,8 @@ Our first simulation study aimed to investigate the efficiency of sampling
 networks across space to document a metaweb of interactions, when compared to
 documenting species richness. We generated spatially balanced BONs across our
 simulated landscape that defined sites to sample species and interactions. We
-varied the number of sites between 1 and 100. We then evaluated the sampling
-efficiency of each BON
+varied the number of sites between 1 and 500 at intervals of 10 sites. We then
+evaluated the sampling efficiency of each BON
 <!--# so here a BON is defined as sampling strategy + no. sites + landscape + species ranges + metaweb? Is this the same as a simulation, or is the simulation the landscape + ranges + metaweb? and are the spp ranges the same as the landscape?-->
 in terms of sampled species richness and metaweb
 interactions<!--# This sentence is confusing and makes it sound like you are comparing spp richness to interactions in the metaweb. GD: tweaked a bit-->.
@@ -471,9 +471,9 @@ interactions, we aggregated each interaction type separately (possible, realized
 and detected) for a given BON
 <!--#  I think we need to be consistent in the terminology. Before you used "all sample sites" now, just "BON". I suggest using and defining BON  once and then using it throughout -->
 and evaluated the proportion of the metaweb interactions documented through
-sampling. We ran simulations with 100 fully-independent replicates (different
+sampling. We ran simulations with 50 fully-independent replicates (different
 metaweb, species ranges, abundance distribution, realized interactions) for each
-number of sites in a BON, yielding 10,000 simulations in total.
+number of sites in a BON, yielding 2,550 independent simulations in total.
 
 ### Simulation study II: Optimizing focal sampling to monitor a given species' interactions
 
@@ -502,11 +502,13 @@ the information provided for optimization. Species range represents an
 attainable level of information an interested observer could have, for instance
 based on expert knowledge or species distribution models. Therefore, we assumed
 the observer knew the species range across the landscape (presence or absence).
-We tested three sampling algorithms for comparison: simple random sampling (to
-represent uninformed sampling), weighted balanced acceptance sampling (aiming to
-balance sites across space while weighting favorably for species ranges) and
-uncertainty sampling (which targets locations with higher 'information' values
-in the layer provided). Next, we tested four information targets for
+We tested four sampling algorithms for comparison: balanced acceptance (to
+represent a spatially balanced sampling design across the entire study area),
+weighted balanced acceptance sampling (aiming to balance sites across space
+while weighting favorably for species ranges), uncertainty sampling (which
+targets locations with higher 'information' values in the layer provided), as
+well as balanced acceptance within the range of the focal species only
+(hereafter called balanced mask). Next, we tested four information targets for
 optimization<!--# are these the same as the "uncertainty" layer?-->: one with
 the focal species range (our attainable information knowledge for the observer),
 one with the probabilistic range (for a less informed case, similar to the
@@ -526,53 +528,40 @@ We selected the species with the highest degree (number of interactions) in the
 metaweb as the focal species for the simulation<!--# why?--> [as it proved as an
 efficient strategy for sampling and conservation; @Pires2017FriPar;
 @deAguiar2019RevBia]. We then generated BONs of 1 to 500 sites (at interval
-increments of 5 sites) using the three possible algorithms (simple random,
-weighted balanced acceptance, uncertainty sampling) and four optimization
-targets (focal species range, probabilistic range, realized interactions,
-species
+increments of 10 sites) using the four possible algorithms (balanced acceptance,
+weighted balanced acceptance, uncertainty sampling, balanced mask) and four
+optimization targets (focal species range, probabilistic range, realized
+interactions, species
 richness)<!--# these are only used with the uncertainty sampling, right?-->,
-with 100 replicates for every number of sites. For each BON generated, we
+with 50 replicates for every number of sites. For each BON generated, we
 extracted the number of unique realized interactions sampled across all sites
 (the sampled degree for the focal species).
 
 ### Simulation study III: Comparing sampling efficiency across different landscapes and metawebs
 
 We verified whether our results were constant across simulations that differed
-in the generated metawebs and species ranges. We ran 100 independent
+in the generated metawebs and species ranges. We ran 200 independent
 simulations, each with 50 replicates for every number of sites (once again from
-1 to 500 sites at interval increments of 5 sites). Doing so raised the issue of
+1 to 500 sites at interval increments of 10 sites). Doing so raised the issue of
 describing and comparing the efficiency of the simulated monitoring across
 samplers, optimization targets or focal species degree, as generated metawebs
 and landscapes varied between independent simulations. The comparison measures
-described earlier in @eq-eff and @eq-diff were used to provide comparable
-measures of efficiency. Namely, the efficiency parameter $a$ ([@eq-eff]) was
-used to describe the efficiency of all independent
-simulations<!--# I would say it's either "compare efficiencies ... between simulations"  or "describe efficiencies ... of simulations"; "describing ... between" feels strange and unclear to me. GD: not fully solved, need to better explain violin plots (all-pooled efficiencies) and difference plots (within-landscape comparison) -->,
-and the difference measure $d$ ([@eq-diff]) was used to compare the efficiencies
-of different optimization options within a specific landscape and
-simulation<!--# not a specific simulation?-->.
-
-For each independent simulation, sampler and optimization target option, we
-performed a grid search across possible values of $a$ (from @eq-eff) to identify
-the curve yielding the best fit with the simulation's result. We searched for
-parameter values on an exponential scale as it allowed for more gradual control
-over the curve shape, evaluating 10,000 evenly spaced values between $e^{-5}$
-and $e^{15}$ (limits chosen to go beyond the fitted values), and selected the
-value of $a$ yielding the curve minimizing the sum of squared errors to the
-simulation results.
-
-We compared all samplers and optimization targets individually within each
-independent simulation, given that the monitoring context is different in each
-one (different metawebs and species ranges), using our difference measure $d$
-([@eq-diff]). The measure allows to identify which samplers or optimization
-target is more efficient, thus quickly reaching a high proportion of monitored
-interactions (positive values indicate that the first curve is more efficient
-than the second), while also quantifying the magnitude of this difference in a
-comparable way between possible comparison pairs.
+described earlier in @eq-eff and @eq-n_at_p were used to provide comparable
+measures of efficiency. Namely, we used the efficiency parameter $a$ ([@eq-eff])
+to describe the efficiency of all independent
+simulations<!--# I would say it's either "compare efficiencies ... between simulations"  or "describe efficiencies ... of simulations"; "describing ... between" feels strange and unclear to me. GD: not fully solved, need to better explain violin plots (all-pooled efficiencies) and difference plots (within-landscape comparison) -->.
+We used the number of sites required to document 80% of the interactions
+($n_{0.80}$, [@eq-n_at_p]) and its confidence interval to compare the
+efficiencies of different optimization options within a specific landscape and
+simulation, given that the monitoring context is different in each one
+(different metawebs and species ranges). The measure allows to identify which
+samplers or optimization target is more efficient, thus quickly reaching a high
+proportion of monitored interactions, while also quantifying the magnitude of
+this difference in a comparable way between possible comparison pairs.
 
 <!--# the first paragraph seems to suggest that the difference measure 'd' enables comparisons between simulations (i.e. diff spp ranges and metaweb contexts); but this last paragraph suggests different simulations were not compared in terms of efficiency-->
 
-We implemented our simulations in *Julia* v1.11.5 [@Bezanson2017JulFre]. All the
+We implemented our simulations in *Julia* v1.11.9 [@Bezanson2017JulFre]. All the
 code used to implement the simulations and perform the analyses is archived on
 Zenodo [@Dansereau2026GabNet]. Full computations were run on compute clusters
 provided by Calcul Québec and the Digital Research Alliance of Canada.
@@ -590,30 +579,31 @@ saturated quickly reaching over 90% of interactions in the metaweb with 25 sites
 and increased asymptotically afterwards. In contrast, realized and detected
 interactions, which account for the impact of species abundances on interaction
 detectability, reached much lower proportions, both remaining under 25% of the
-all metaweb interactions at 100 sampling sites. While the proportion of sampled
-realized and detected interactions would keep increasing with a higher number of
-sites, the speed at which they accumulate is notably lower than for species
-richness or possible interactions, highlighting the need for a much higher
-sampling effort.
+all metaweb interactions at 100 sampling sites and under 50% at 500 sites. While
+the proportion of sampled realized and detected interactions would keep
+increasing with a higher number of sites<!--# use n0.80 for reference? -->, the
+speed at which they accumulate is notably lower than for species richness or
+possible interactions, highlighting the need for a much higher sampling effort.
 
 ![Proportion of sampled species and interactions for a given number of sampling
 sites in a Biodiversity Observation Network (BON) across the simulated landscape
 (Simulation Study I). Proportions were calculated with respect to the total
 species richness and the total number of interactions in the metaweb. Lines
 indicate the median proportion for a given number of sites, while the shaded
-bands delimit the 5th and 95th percentiles across replicates (100 per number of
-sites; 10,000 in total).](figures/nbon_bands.png){#fig-nbons}
+bands delimit the 5th and 95th percentiles across replicates (50 per number of
+sites; 2,550 in total).](figures/nbon_bands.png){#fig-nbons}
 
 ### Simulation study II: Differences between samplers and optimization targets
 
 Our focal sampling experiment showed the Uncertainty Sampling algorithm to be
 most efficient at optimizing BON-design based on a known species range and while
 aiming to maximize the sampling of interactions of a single focal species
-([@fig-joined]A). Simple Random sampling, as a proxy for uninformed sampling,
-performed the worst among the algorithms tested. Weighted Balanced Acceptance
-performed notably worse than Uncertainty Sampling at maximizing the efficiency
-for the focal species, although it maintained a better spatial balance across
-the landscape.
+([@fig-joined]A). Balanced sampling, representing a spatially balanced design
+across space unrelated to focal species, performed the worst among the
+algorithms tested. Weighted Balanced Acceptance, although maintaining a better
+spatial balance across the landscape, performed notably worse than Uncertainty
+Sampling and Balanced Mask at maximizing the efficiency for the focal species.
+Uncertainty Sampling and Balanced Mask performed similarly.
 
 Optimizing on the known species range, our proxy for an attainable level of
 information an interested user might have, was more efficient at sampling the
@@ -623,15 +613,16 @@ effectively sampling more than half of the species' interactions
 interactions (our best-case scenario requiring a higher level information)
 expectedly performed better, retrieving most of the species' interactions.
 
-![Efficiency of sampler algorithms (A) and optimization targets (B) at sampling
-realized interactions for a given focal species within Biodiversity Observation
-Networks (BONs). Panel A compares three samplers with a fixed optimization
-target (the species range), while Panel B compares four optimization targets
-with a fixed sampler (Uncertainty Sampling). Lines indicate the median
-proportion for a given number of sites, while the shaded bands delimit the 5th
-and 95th percentile across replicates. The panels on the right illustrate
-examples of BONs with 50 sites (coloured points) generated by each sampler over
-the same landscape (species presences are shown as pixels in yellow).
+![Efficiency of site selection strategies (A) and optimization targets (B) at
+sampling realized interactions for a given focal species within Biodiversity
+Observation Networks (BONs). Panel A compares four strategies with a fixed
+optimization target (the species range), while Panel B compares four
+optimization targets with a fixed sampler (Uncertainty Sampling). Lines indicate
+the median proportion for a given number of sites, while the shaded bands
+delimit the 5th and 95th percentile across replicates. The panels on the right
+illustrate examples of BONs with 50 sites (coloured points) generated by each
+strategy over the same landscape (species presences are shown as pixels in
+yellow).
 <!--# was the simulation depicted here picked at random-->](figures/focal_joined.png){#fig-joined
 width="70%"}
 
@@ -641,81 +632,68 @@ The distribution of efficiency parameters across independent simulations
 confirmed the interpretations based on [@fig-joined], but also highlighted a
 wide range of outcomes in efficiency between
 simulations<!--# this sounds a bit more like a Discussion sentence to me-->.
-Among samplers, the median efficiency parameter indicated a better performance
-(lower parameter value) for Uncertainty Sampling, followed by Weighted Balanced
-Acceptance and Simple Random ([@fig-eff-distrib]A). The actual efficiency values
-spanned a similar range across the possible sampler options with all simulations
-combined. Among optimization targets used with Uncertainty Sampling, optimizing
-on the focal species presence/absence range performed better than on the
-probabilistic range, followed by species richness, although all three options
-spanned similar ranges with all simulations combined ([@fig-eff-distrib]B). In
-contrast, optimizing based on the realized interactions distinctly and
-consistently performed better across all simulations.
+Among samplers, the median efficiency parameter indicated a better sampling
+performance (lower value for the parameter $a$ and $n_{0.80}$, indicating a
+faster accumulation) for Balanced Mask and Uncertainty Sampling, followed by
+Weighted Balanced Acceptance and Balanced Acceptance ([@fig-eff-comp]A, Supp.
+Mat.). The actual efficiency values spanned a similar range across the possible
+sampler options with all simulations combined. Among optimization targets used
+with Uncertainty Sampling, optimizing on the focal species presence/absence
+range performed better than on the probabilistic range, followed by species
+richness, although all three options spanned similar ranges with all simulations
+combined ([@fig-eff-comp]B, Supp. Mat.). In contrast, optimizing based on the
+realized interactions distinctly and consistently performed better across all
+simulations.
 
-![Distribution and density of efficiency parameters across 100 independent
-simulations for the three sampler options tested on the focal species range (A)
-and for the four optimization target options using Uncertainty Sampling as the
-sampler (B). 'Uncertainty Sampling' on panel A used the focal species range
-target, hence it shows the same data as 'Focal species range' on panel B. The
-efficiency parameter is the natural log of parameter $a$ in @eq-eff, describing
-the best-fit sampling efficiency curve for a given
-simulation.](figures/efficiency_distribution.png){#fig-eff-distrib}
-
-The fact that multiple options span similar ranges of efficiency values across
-independent simulations highlights the need to compare the efficiency within a
-given simulation. Comparing optimization options by simulation clearly
-highlighted a consistently more efficient approach across landscape and metaweb
-contexts ([@fig-eff-comp]; see also Supp. Mat.), consistent with the showcased
+Comparing optimization options by simulation clearly highlighted a consistently
+more efficient approach across landscape and metaweb contexts ([@fig-eff-comp];
+see also Supp. Mat. for possible comparisons), consistent with the showcased
 single-simulation example ([@fig-joined]). Uncertainty Sampling was more
-efficient than Weighted Balanced Acceptance in 98 of 100 simulations, and both
-were more efficient than Simple Random in all simulations ([@fig-eff-comp]).
-Optimizing on the focal species range was always more efficient than on the
-probabilistic range or on species richness (with probabilistic range more
-efficient than species richness in all but one simulation), but always less
-efficient than optimizing on realized interactions.
+efficient than Weighted Balanced Acceptance in 63% of simulations, and both were
+more efficient than Balanced Acceptance in all simulations ([@fig-eff-comp]).
+Optimizing on the focal species range was more efficient than on the
+probabilistic range or on species richness (78% and 90%, respectively), but
+always less efficient than optimizing on realized interactions.
 
 ![Within-simulation comparison of efficiency between samplers and optimization
-targets. The comparison value is based on the difference of the definite
-integrals of the efficiency samplers curves described in @eq-diff. Negative
-values (in blue) indicate that the compared option led to a less efficient
-sampling than its reference, while positive values (in orange) indicate it was
-more efficient. References were chosen for narrative purposes and to simplify
-the number of comparisons displayed. All one-by-one comparisons are available in
-Supp. Mat.](figures/efficiency_comparison.png){#fig-eff-comp}
+targets. The comparison value is based on the number of sites required to
+document 80% of the focal species' interactions ($n_{0.80}$), described in
+@eq-n_at_p. Negative values (in orange) indicate that the compared option led to
+a more efficient sampling than its reference (faster accumulation), while
+positive values (in green) indicate it required a higher sampling effort. Equal
+values (in pink) a within the confidence intervals of one another. References
+were chosen for narrative purposes and to simplify the number of comparisons
+displayed. All one-by-one comparisons are available in Supp.
+Mat.](figures/efficiency_comparison.png){#fig-eff-comp}
 
 While the simulations clearly highlight which sampler or optimization target is
 most efficient across all simulations, efficiency parameters and differences
 vary over a wide range of values. We verified if this could be tied to the
 occupancy of the focal species in simulated landscape, measured as the number of
-cells where the species is present. Optimizing using Uncertainty Sampling on the
-focal species range and on realized interactions is especially efficient at low
-occupancy, as it adequately targets the fewer cells where the focal species is
-present. As species occupancy increases, the difference between optimizing
-approaches decreases. When the focal species has high occupancy across the
-landscape, Weighted Balanced Acceptance and Simple Random algorithms perform
-similarly to Uncertainty Sampling, as balancing sites across space or choosing
-at random becomes equivalent to targeting the species range. Optimizing based on
-species richness also became more efficient as occupancy increased. A possible
-explanation is that at high occupancy, species range is not a restricting
-element and thus targeting sites with high richness directly leads to targeting
-sites with potentially more interaction partners. On the contrary, at low
-occupancy, the species range is an important restriction, and optimizing on
-species richness might target sites where the focal species is absent.
-Optimizing on the probabilistic species range resulted in similar outcomes; at
-high occupancy (not to be confused with probability of occurrence) the sampler
-can more effectively filter out sites where the species is absent, since it is
-very likely the species will be present at the sites that have high occurrence
-probability. At low occupancy, the focal species will be present in fewer
-locations with high probabilities and might be absent from locations with
+cells where the species is present (Supp. Mat.). Optimizing using Uncertainty
+Sampling on the focal species range and on realized interactions is especially
+efficient at low occupancy, as it adequately targets the fewer cells where the
+focal species is present. As species occupancy increases, the difference between
+optimizing approaches decreases. When the focal species has high occupancy
+across the landscape, Weighted Balanced Acceptance and Balanced Acceptance
+algorithms perform similarly to Uncertainty Sampling, as balancing sites across
+space or choosing at random becomes equivalent to targeting the species range.
+Optimizing based on species richness also became more efficient as occupancy
+increased. A possible explanation is that at high occupancy, species range is
+not a restricting element and thus targeting sites with high richness directly
+leads to targeting sites with potentially more interaction partners. On the
+contrary, at low occupancy, the species range is an important restriction, and
+optimizing on species richness might target sites where the focal species is
+absent. Optimizing on the probabilistic species range resulted in similar
+outcomes; at high occupancy (not to be confused with probability of occurrence)
+the sampler can more effectively filter out sites where the species is absent,
+since it is very likely the species will be present at the sites that have high
+occurrence probability. At low occupancy, the focal species will be present in
+fewer locations with high probabilities and might be absent from locations with
 intermediate probabilities, making it harder for the sampler to target sites
 where the species is present.
 
-![Relationship between the occupancy of the focal species and sampling
-efficiency for all optimization options. These results come from 100 independent
-simulations, and therefore 100 different sets of metawebs, species ranges, and
-occupancy of the focal species. The efficiency parameter is the natural log of
-parameter $a$ in @eq-eff, describing the best-fit sampling efficiency curve for
-a given simulation.](figures/efficiency_occupancy.png){#fig-eff-occup}
+### Range estimations
 
 ![Ranges estimations](figures/ranges_overlap.png){#fig-estimations}
 
