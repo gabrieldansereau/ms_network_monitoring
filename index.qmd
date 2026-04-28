@@ -350,7 +350,7 @@ for classification to improve bioacoustic monitoring performance across
 stratified samples [@McEwen2025StrAct].
 <!--# I think providing these many examples is breaking the flow a bit. I suggest choosing one and perhaps providing a little more detail on it.-->
 
-### Step 3: Evaluating sampling efficiency with a comparable measure
+### Step 3: Defining a comparable measure for sampling efficiency
 
 As interaction composition is known at all locations in our simulated
 landscapes, we can determine the **proportion of interactions** (noted $p$) of
@@ -372,7 +372,7 @@ $$ {#eq-eff}
 where $a$ is the single parameter describing the shape of the sampling curve.
 The lower the value for $a$, the faster we reach a high proportion of monitored
 interactions. We can identify the value of $a$ yielding the curve with the best
-fit to the simulation results, as described in our Simulation study III.
+fit with a simulation's results, as described in the next section (Step 4).
 
 Next, we derive an interpretable efficiency measure based on @eq-eff. Although
 the parameter $a$ can be directly compared across samplers, optimization targets
@@ -386,7 +386,7 @@ n(p) = \frac{p \cdot a}{1 - p}
 $$ {#eq-n_at_p}
 
 where $n(p)$ represents the number of sites required to sample a proportion of
-interactions$p$, following an efficiency curve described by the parameter $a$.
+interactions $p$, following an efficiency curve described by the parameter $a$.
 Here, we fix $p=0.80$ (80% of the interactions), an arbitrary threshold
 representing a highly effective monitoring outcome. $n_{0.80}$ measures the
 speed at which interactions are documented and highlights the sampling effort
@@ -404,6 +404,37 @@ monitored interactions more quickly.
 <!--# the definition of "simulation" needs to come earlier, I think-->
 
 <!--# i think this is getting repetitive and needs streamlining. I think saying once what needs to be compared and the limitations of the raw values of a is sufficient. It just needs to be made crystal clear from the get go.-->
+
+### Step 4: Evaluating sampling efficiency and comparing strategies
+
+For each independent simulation (comprised of a focal species, a site selection
+algorithm, and an optimization target, as described in our Simulation studies),
+we performed a grid search across possible values of $a$ (from @eq-eff) to
+identify the value yielding the curve with the best fit to the simulation's
+results. To do so, we extracted the median result (proportion of monitored
+interactions) across replicates for every number of sites in the BONs. We then
+evaluated 10,000 possible values for $a$ and selected the value yielding the
+curve minimizing the sum of squared errors to the simulation results. We
+searched for values of $a$ on an exponential scale as it allowed for more
+gradual control over the curve shape, evaluating 10,000 evenly spaced values
+between $e^{-5}$ and $e^{15}$ (limits chosen to go beyond the fitted values).
+After selecting the best-fit value for $a$, we evaluated the sampling efficiency
+for the simulation using the $n_{0.80}$ measurement described in Step 3 (number
+of sites required to document 80% of the interactions).
+
+Finally, we defined a confidence interval for our efficiency measurement. As the
+best-fit for $a$ is based on the median result across replicates, we used the
+confidence interval of the median to define a lower and upper bound for values
+of $a$. We calculated the order statistics delimiting an 90% equal-tailed
+interval using the normal approximation to the binomial distribution
+[@Gibbons2010NonSta]—e.g., at n=50, the 90% confidence interval for the median
+goes from the 19th and to the 31st value—and extracted the corresponding results
+from our simulations. We then performed separate grid searches for the parameter
+$a$ using the lower and upper confidence intervals bounds of the median,
+similarly delimiting the lower and upper bounds for $a$, and subsequently bounds
+for $n_{0.80}$. This approach returns a confidence interval for the sampling
+efficiency, which we used to compare site selection algorithms and optimization
+layers and to determine which strategies are more efficient and which are equal.
 
 ## Simulation studies
 
