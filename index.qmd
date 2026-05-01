@@ -315,17 +315,22 @@ location because they are less likely to encounter one another when compared to
 abundant species, leading to neutrally forbidden links [@Catchen2023MisLin;
 @Canard2012EmeStr]. The neutral model introduced by @Catchen2023MisLin first
 generates a distribution of species relative abundances from a log-normal
-distribution, then models interaction realization as a stochastic Poisson
-Process, drawing realized interactions from a Poisson distribution parametrized
-on the relatives abundances of interacting species and a fixed realization
-energy parameter [see @Catchen2023MisLin for full details].
+distribution. It then defines an interaction rate between species pairs based on
+the product of their relative abundances, scaled by a fixed realization energy
+parameter ($\epsilon$) determining the total expected number of interactions.
+Finally, they draw realized interactions from a Poisson distribution
+parametrized on the interaction rate [see @Catchen2023MisLin for full details].
 
 Finally, we defined the set of **detected interactions** by also conditioning
 the detection of realized interactions on species abundances. Even if an
 interaction is realized in a location, sampling must occur at the moment of
 interaction for its detection; this is again less likely for low probability
-events, like interactions between rare occurring species; see @Catchen2023MisLin
-for implementation).
+events, like interactions between rare occurring species. @Catchen2023MisLin
+first establish a per-species detection probability conditioned on relative
+abundance and a fixed scaling parameter ($\alpha$), compute the
+interaction-level detection rate as the product of the per-species probability,
+then draws the detected interactions from a Binomial distribution parametrized
+on the number of realized interactions and the interaction detection rates.
 
 The result of the general model is a **landscape configuration** with spatial
 variation in species and interaction composition and detection. Species
@@ -446,18 +451,22 @@ of previous simulation studies on spatial ecological network dynamics, *e.g.*
 @Thompson2017DisGov. We used the following parameters for the spatio-temporal
 model implemented in SpeciesInteractionSamplers.jl [@Catchen2023MisLin]:
 landscape autocorrelation of $h$ = 0.85, Beta distribution with $\alpha$ = 10
-and $\beta$ = 10, relative abundance $\sigma$ = 1.2 and scaling = 50, and
-realization energy $\epsilon$ = 50,000. Exploratory simulations showed that
-model parameters such as metaweb connectance and landscape autocorrelation did
-not have an important effect on the proportion of sampled interactions and the
-accumulation observed when increasing the number of sites in the BON. The
-activation energy parameter did have an effect on the absolute numbers observed,
-consistent with the detailed exploration in @Catchen2023MisLin, which we chose
-to simplify here by using a single fixed value. We implemented our simulations
-in *Julia* v1.11.9 [@Bezanson2017JulFre]. All the code used to implement the
-simulations and perform the analyses is archived on Zenodo
-[@Dansereau2026GabNet]. Full computations were run on compute clusters provided
-by Calcul Québec and the Digital Research Alliance of Canada.
+and $\beta$ = 10, relative abundance $\sigma$ = 1.2, realization energy
+$\epsilon$ = 50,000, and detection scaling $\alpha$ = 50. Exploratory
+simulations showed that model parameters such as metaweb connectance and
+landscape autocorrelation did not have an important effect on the proportion of
+sampled interactions and the accumulation observed when increasing the number of
+sites in the BON. The activation energy $\epsilon$ and detection scaling
+$\alpha$ parameters determine the total number of expected and detected
+interactions [@Catchen2023MisLin], and therefore influenced the absolute numbers
+observed. Here, we chose to use a single fixed value to focus on differences
+between sampling strategies—influenced in the same way by the parameter
+values—and refer readers to @Catchen2023MisLin for the detailed discussion over
+the parameters' effect. We implemented our simulations in *Julia* v1.11.9
+[@Bezanson2017JulFre]. All the code used to implement the simulations and
+perform the analyses is archived on Zenodo [@Dansereau2026GabNet]. Full
+computations were run on compute clusters provided by Calcul Québec and the
+Digital Research Alliance of Canada.
 
 ### Simulation study I: Establishing baseline expectations for the monitoring of interactions
 
