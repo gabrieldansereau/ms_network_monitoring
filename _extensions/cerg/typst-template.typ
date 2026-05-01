@@ -29,7 +29,7 @@
 
   show figure.caption: it => {
     set align(left)
-    set par(leading: 0.55em, hanging-indent: 0pt, justify: false)
+    set par(leading: 0.55em, hanging-indent: 0pt)
     text(10pt, it)
   }
 
@@ -39,7 +39,7 @@
     // show bibliography: set text(7pt)
 
   // Set the body font.
-  set text(font: "Libertinus Serif", size: 12pt)
+  set text(font: "STIX Two Text")
 
   // Configure the page.
   set page(
@@ -68,9 +68,9 @@
   show raw: set text(font: "Iosevka", rgb("#232323"))
 
   // Paragraph options
-  set par(leading: 1em, first-line-indent: 0pt)
-  show heading.where(level: 1): set text(14pt, rgb("#114f54"), font: "Inter", weight: "medium")
-  show heading.where(level: 2): set text(13pt, rgb("#2e5385"), font: "Inter", weight: "regular", style: "italic")
+  set par(leading: 0.8em, spacing: 1.6em, justify: true)
+  show heading.where(level: 1): set text(14pt, rgb("#114f54"),weight: "medium")
+  show heading.where(level: 2): set text(13pt, rgb("#2e5385"),weight: "regular", style: "italic")
   show heading.where(level: 1): it => block(width: 100%)[
     #v(1.2em)
     #block(it.body)
@@ -82,7 +82,7 @@
   ]
 
   // Display the paper's title.
-  text(18pt, rgb("#1d8265"), weight: "light",  font: "Inter", title)
+  text(18pt, rgb("#1d8265"), weight: "medium",  title)
   v(8.35mm, weak: true)
 
   show "\@": "@"
@@ -129,7 +129,7 @@
 
     // Display abstract and index terms.
   if abstract != none [
-    #set par(justify: false, first-line-indent: 0em)
+    #set par(first-line-indent: 0em)
     #set text(weight: 600)
     _Abstract_:
     #set text(weight: 400)
@@ -148,7 +148,7 @@
 
   // Start two column mode and configure paragraph properties.
   // show: columns.with(2, gutter: 14pt)
-  set par(justify: true, first-line-indent: 0em, spacing: 1.5em)
+  // set par(justify: true, first-line-indent: 0em, spacing: 1.5em)
   set page(numbering: "1 of 1")
 
   // Line numbers 
