@@ -700,19 +700,50 @@ respectively), but always less efficient than optimizing on realized
 interactions.
 
 ![Within-simulation comparison of efficiency between samplers and optimization
-targets. The comparison value is based on the number of sites required to
-document 80% of the focal species' interactions ($n_{0.80}$), described in
-@eq-n_at_p. Negative values (in orange) indicate that the compared option led to
-a more efficient sampling than its reference (faster documentation of
-interactions), while positive values (in green) indicate it required a higher
-sampling effort. Equal values (in pink) have overlapping confidence intervals.
-References were chosen for narrative purposes and to simplify the number of
+targets for 200 independent simulations. The comparison value is based on the
+number of sites required to document 80% of the focal species' interactions
+($n_{0.80}$), described in @eq-n_at_p. Negative values (in orange) indicate that
+the compared option led to a more efficient sampling than its reference (faster
+documentation of interactions), while positive values (in green) indicate it
+required a higher sampling effort. Equal values (in pink) have overlapping
+confidence intervals. The reference is the same on the two subpanels (Targeted
+Sampling using the focal species range) and was chosen to simplify the number of
 comparisons displayed. All one-by-one comparisons are available in Supp.
 Mat.](figures/efficiency_comparison.png){#fig-eff-comp}
 
-### Range estimations
+### Simulation Study III: Tolerance to 10% over- and underestimation of the focal species range
 
-![Ranges estimations](figures/ranges_overlap.png){#fig-estimations}
+Our results highlight a tolerance in the precision of the species range
+estimation required for the Balanced Within Range strategy. Overestimating the
+range size from 0 to 50% led to a linear increase in the value of $n_{0.80}$
+compared to the $n_{0.80}$ value obtained using the Balanced Within Range
+strategy on the exact species range ([@fig-estimations]A, right side). The
+$n_{0.80}$ was equal to the true range until a 10% overestimation offset (based
+on overlapping confidence intervals), at which point it started to be higher
+across all simulations, indicating a lesser efficiency ([@fig-estimations]B). In
+contrast, underestimating the species range showed a lesser increase of
+$n_{0.80}$ from 0 to -50% based on the median result across simulations, with a
+wider range of possible outcomes ([@fig-estimations]A, left side). Importantly,
+while the $n_{0.80}$ was also equal until a -10% offset and started to decrease
+beyond, it stayed equal in the majority of simulations (\> 70%) even for
+underestimation of -50% ([@fig-estimations]B). In the remaining simulations (\<
+30%), the $n_{0.80}$ was higher than for the true range (less efficient), except
+for a few cases where it was lower (more efficient).
+
+![Comparison of efficiencies when over- and underestimating the focal species
+range for 200 independent simulations. Results are compared to the Balanced
+Within Range strategy applied on the exact species range, whose $n_{0.80}$ value
+is used as reference (specific to every simulation). In panel A, we use the
+over- and underestimation $n_{0.80}$ in proportion to the reference $n_{0.80}$
+(y axis) given the range estimation offset (x axis) to highlight the linear
+trend and association with the offset percentage for overestimation. The dotted
+line at 1.00 indicates exactly equal $n_{0.80}$. In panel B, we summarize
+comparisons across all simulations to display the proportion of each comparison
+outcome (equal, higher, lower). The solid line represents the actual proportion
+value, while the shaded bands delimit the 90% confidence intervals for the
+proportion calculated using the Wilson interval method [@Brown2001IntEst,
+implemented in HypothesisTests.jl].
+](figures/ranges_overlap.png){#fig-estimations}
 
 # Discussion
 
