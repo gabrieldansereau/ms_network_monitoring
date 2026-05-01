@@ -751,8 +751,8 @@ comparisons across all simulations to display the proportion of each comparison
 outcome (equal, higher, lower). The solid line represents the actual proportion
 value, while the shaded bands delimit the 90% confidence intervals for the
 proportion calculated using the Wilson interval method [@Brown2001IntEst,
-implemented in HypothesisTests.jl].
-](figures/ranges_overlap.png){#fig-estimations}
+implemented in
+HypothesisTests.jl].](figures/ranges_overlap.png){#fig-estimations}
 
 # Discussion
 
@@ -799,27 +799,63 @@ species ranges.
 
 *When does the choice of sampler or optimization target matter the most?*
 
-Here we concur with @Norman2025SitSel that ecologically-relevant metrics are
-required to evaluate the performance of monitoring designs, beyond spatial
-balance. However, while they found that many sampling algorithms performed
-similarly for biodiversity monitoring, our results highlighted better options
-when the monitoring target is highly localized. We observed the most important
-differences for species with low occupancy, where Targeted Sampling very
-effectively targets the focal species range within the entire study area (Supp.
-Mat.). Differences were less important at higher occupancy, as balancing sites
-across space or targeting the species range tends to become equivalent, although
-Targeted Sampling still performed better than Balanced Sampling. Optimizing
-based on species richness also became more efficient as occupancy increased. A
-possible explanation is that at high occupancy, species range is not a
-restricting element and thus targeting sites with high richness directly leads
-to targeting sites with potentially more interaction partners. On the contrary,
-at low occupancy, the species range is an important restriction, and optimizing
-on species richness might target sites where the focal species is absent.
-Nonetheless, these results highlight how some highly-localized monitoring
-targets (e.g., species interactions) might benefit from targeted monitoring
-designs. In such cases, efficiency gains will depend on improvements in our
-capacity to predict the location of those phenomena and on our ability to
-continuously evaluate and update predictions based on the information acquired.
+Ecologically-relevant metrics are required to evaluate the performance of
+monitoring designs, beyond spatial balance [@Norman2025SitSel]. While many
+sampling algorithms can perform similarly for biodiversity monitoring in certain
+contexts [@Norman2025SitSel], our results highlighted better options when we can
+define a specific target for monitoring. In such cases, we can use a Targeted
+Sampling strategy relying on attainable information, as discussed above, but we
+can also use a strategy similar to Balanced Within Range, where we instead
+generate a spatially balanced design across the area believed to be more
+informative. Our results from Simulation Study III are encouraging in this
+sense, as they show we do not need perfect knowledge when using this strategy.
+The tolerance we observed to 10% over- and underestimation of the focal species
+range size offers an important margin that changes the information we can use to
+guide BON design. For instance, our test case of underestimating a species range
+highlights that we could focus mainly on the most certain parts of a species
+range prediction [e.g., using conformal predictions along with species
+distribution models, @Poisot2024ConPre] and expect similar monitoring
+efficiency. On the opposite side, in terms of range size, our overestimation
+test case is more analogous to a model focusing on the potential distribution
+rather than the realized distribution.
+
+We observed the most important differences between strategies for species with
+low occupancy, where Targeted Sampling very effectively targets the focal
+species range within the entire study area (Supp. Mat.). Differences were less
+important at higher occupancy, as balancing sites across space or targeting the
+species range tends to become equivalent, although Targeted Sampling still
+performed better than Balanced Sampling. Optimizing based on species richness
+also became more efficient as occupancy increased. A possible explanation is
+that at high occupancy, species range is not a restricting element and thus
+targeting sites with high richness directly leads to targeting sites with
+potentially more interaction partners. On the contrary, at low occupancy, the
+species range is an important restriction, and optimizing on species richness
+might target sites where the focal species is absent. Nonetheless, these results
+highlight how some highly-localized monitoring targets (e.g., species
+interactions) might benefit from targeted monitoring designs. In such cases,
+efficiency gains will depend on improvements in our capacity to predict the
+location of those phenomena and on our ability to continuously evaluate and
+update predictions based on the information acquired.
+
+*Recommendations for monitoring*
+
+Documenting species interactions extensively requires higher sampling efforts
+than required to document species ranges. While spatially balanced designs are
+efficient in general purpose biodiversity monitoring, species interactions may
+be better served by specifically-optimized monitoring designs. To do so, we show
+the importance of selecting a appropriate target (e.g. a focal species'
+interaction) and using attainable information restricting the phenomenon (here
+the species range) to optimize monitoring designs efficiently. There is a degree
+of tolerance in the level of exact information needed (similar to range over-
+and underestimate), therefore available information should be used as soon as
+possible to guide monitoring.
+
+# Acknowledgements
+
+We thank the members of the *Laboratoire d’Écologie Prédictive et Interprétable
+pour la Crise de la Biodiversité* in Montréal, QC, and of the Predictive Ecology
+team at the *Pacific Forestry Centre* in Victoria, BC, for their constructive
+comments during discussions of this manuscript.
 
 # References
 
