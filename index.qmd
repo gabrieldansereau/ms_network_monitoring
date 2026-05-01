@@ -710,33 +710,6 @@ References were chosen for narrative purposes and to simplify the number of
 comparisons displayed. All one-by-one comparisons are available in Supp.
 Mat.](figures/efficiency_comparison.png){#fig-eff-comp}
 
-While the simulations clearly highlight which sampler or optimization target is
-most efficient across all simulations, efficiency parameters and differences
-vary over a wide range of values. We verified if this could be tied to the
-occupancy of the focal species in simulated landscape, measured as the number of
-cells where the species is present (Supp. Mat.). Optimizing using Targeted
-Sampling on the focal species range and on realized interactions is especially
-efficient at low occupancy, as it adequately targets the fewer cells where the
-focal species is present. As species occupancy increases, the difference between
-optimizing approaches decreases. When the focal species has high occupancy
-across the landscape, Weighted Sampling and Balanced Acceptance algorithms
-perform similarly to Targeted Sampling, as balancing sites across space or
-choosing at random becomes equivalent to targeting the species range. Optimizing
-based on species richness also became more efficient as occupancy increased. A
-possible explanation is that at high occupancy, species range is not a
-restricting element and thus targeting sites with high richness directly leads
-to targeting sites with potentially more interaction partners. On the contrary,
-at low occupancy, the species range is an important restriction, and optimizing
-on species richness might target sites where the focal species is absent.
-Optimizing on the probabilistic species range resulted in similar outcomes; at
-high occupancy (not to be confused with probability of occurrence) the sampler
-can more effectively filter out sites where the species is absent, since it is
-very likely the species will be present at the sites that have high occurrence
-probability. At low occupancy, the focal species will be present in fewer
-locations with high probabilities and might be absent from locations with
-intermediate probabilities, making it harder for the sampler to target sites
-where the species is present.
-
 ### Range estimations
 
 ![Ranges estimations](figures/ranges_overlap.png){#fig-estimations}
