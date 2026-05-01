@@ -443,13 +443,19 @@ the range of values of well-characterized empirical food webs
 @Smith-Ramesh2017GloSyn] commonly used for reference [@Williams2008SucIts;
 @Baiser2010ConDet; @Wood2015EffSpa]. These parameters are also within the range
 of previous simulation studies on spatial ecological network dynamics, *e.g.*
-@Thompson2017DisGov. Exploratory simulations showed the number of sites in the
-BON to be the main element affecting the proportion of sampled interactions
-compared to other model parameters such as metaweb connectance and landscape
-autocorrelation. The activation energy parameter expectedly influenced results
-as covered in @Catchen2023MisLin when presenting the model. We implemented our
-simulations in *Julia* v1.11.9 [@Bezanson2017JulFre]. All the code used to
-implement the simulations and perform the analyses is archived on Zenodo
+@Thompson2017DisGov. We used the following parameters for the spatio-temporal
+model implemented in SpeciesInteractionSamplers.jl [@Catchen2023MisLin]:
+landscape autocorrelation of $h$ = 0.85, Beta distribution with $\alpha$ = 10
+and $\beta$ = 10, relative abundance $\sigma$ = 1.2 and scaling = 50, and
+realization energy $\epsilon$ = 50,000. Exploratory simulations showed that
+model parameters such as metaweb connectance and landscape autocorrelation did
+not have an important effect on the proportion of sampled interactions and the
+accumulation observed when increasing the number of sites in the BON. The
+activation energy parameter did have an effect on the absolute numbers observed,
+consistent with the detailed exploration in @Catchen2023MisLin, which we chose
+to simplify here by using a single fixed value. We implemented our simulations
+in *Julia* v1.11.9 [@Bezanson2017JulFre]. All the code used to implement the
+simulations and perform the analyses is archived on Zenodo
 [@Dansereau2026GabNet]. Full computations were run on compute clusters provided
 by Calcul Québec and the Digital Research Alliance of Canada.
 
