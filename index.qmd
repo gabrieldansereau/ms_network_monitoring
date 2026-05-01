@@ -513,13 +513,13 @@ across the landscape (presence or absence) and tries to optimize the BON design
 to retrieve the interactions. We tested four strategies for comparison: a
 *Balanced Sampling* spreading sites across the entire study area (using Balanced
 Acceptance Sampling, hereafter BAS), a balanced sampling only within the range
-of the focal species (hereafter called *Balanced Mask*), a *Weighted Sampling*
-favouring the species range in site selection among all sites in the study area
-(adjusting the inclusion probability in BAS), and a *Targeted Sampling*
-selecting sites with higher 'information' values in the layer provided (using
-Uncertainty Sampling). Next, we tested four information targets for optimization
-with the Targeted Sampling strategy (all with the Uncertainty Sampling
-algorithm): the exact *focal species range* (our attainable information
+of the focal species (hereafter called *Balanced Within Range*), a *Weighted
+Sampling* favouring the species range in site selection among all sites in the
+study area (adjusting the inclusion probability in BAS), and a *Targeted
+Sampling* selecting sites with higher 'information' values in the layer provided
+(using Uncertainty Sampling). Next, we tested four information targets for
+optimization with the Targeted Sampling strategy (all with the Uncertainty
+Sampling algorithm): the exact *focal species range* (our attainable information
 knowledge for the observer), a *probabilistic range* for the focal species
 (representing a less-informed case, similar to the output of a species
 distribution model), *species richness* across the landscape (to represent a
@@ -536,16 +536,16 @@ metaweb as the focal species for the simulation [as it was previously shown as
 an efficient strategy for sampling and conservation; @Pires2017FriPar;
 @deAguiar2019RevBia]. We then generated BONs of 1 to 500 sites (at interval
 increments of 10 sites) using the three balanced strategies (Balanced Sampling,
-Balanced Mask, Weighted Sampling) and four optimization targets for the Targeted
-Sampling strategy (focal species range, probabilistic range, species richness,
-realized interactions), with 50 replicates for every number of sites. For each
-BON generated, we extracted the number of unique realized interactions sampled
-across all sites for the focal species. We then performed a grid search across
-possible values of $a$ (from @eq-eff) to identify the value yielding the curve
-with the best fit to the simulation's results. To do so, we extracted the median
-result (proportion of sampled interactions) across replicates for every number
-of sites in the BONs. We then evaluated 10,000 evenly spaced values for $a$
-between $e^{-5}$ and $e^{15}$ and selected the value yielding the curve
+Balanced Within Range, Weighted Sampling) and four optimization targets for the
+Targeted Sampling strategy (focal species range, probabilistic range, species
+richness, realized interactions), with 50 replicates for every number of sites.
+For each BON generated, we extracted the number of unique realized interactions
+sampled across all sites for the focal species. We then performed a grid search
+across possible values of $a$ (from @eq-eff) to identify the value yielding the
+curve with the best fit to the simulation's results. To do so, we extracted the
+median result (proportion of sampled interactions) across replicates for every
+number of sites in the BONs. We then evaluated 10,000 evenly spaced values for
+$a$ between $e^{-5}$ and $e^{15}$ and selected the value yielding the curve
 minimizing the sum of squared errors to the simulation results. We searched for
 values of $a$ on an exponential scale as it allowed for more gradual control
 over the curve shape and adjusted the limits to ensure they went beyond the
@@ -580,18 +580,19 @@ simulations.
 
 ### Simulation study III: Assessing the precision required when estimating a species range
 
-Building on the Balanced Mask strategy from Simulation study II, we assessed how
-precisely an observer should know the focal species range to achieve an
-efficient monitoring. To do so, we compared the Balanced Mask strategy, where
-the balanced sampling design is only generated across the exact focal species'
-range, with alternative scenarios where we over- and underestimated the species
-range for the BON design. We tested estimation offsets from 0 to 50% of the true
-range size, at 2% increment intervals, generating balanced designs within the
-over- or underestimated range. For a given landscape configuration, we extracted
-the true range size, calculated the number of sites to add or remove to reach
-the offset percentage, then used the non-thresholded probabilistic range
-(Step 1) to add the absence sites closest to the threshold (for overestimation)
-or remove the presence sites closest to the threshold (for underestimation).
+Building on the Balanced Within Range strategy from Simulation study II, we
+assessed how precisely an observer should know the focal species range to
+achieve an efficient monitoring. To do so, we compared the Balanced Within Range
+strategy, where the balanced sampling design is only generated across the exact
+focal species' range, with alternative scenarios where we over- and
+underestimated the species range for the BON design. We tested estimation
+offsets from 0 to 50% of the true range size, at 2% increment intervals,
+generating balanced designs within the over- or underestimated range. For a
+given landscape configuration, we extracted the true range size, calculated the
+number of sites to add or remove to reach the offset percentage, then used the
+non-thresholded probabilistic range (Step 1) to add the absence sites closest to
+the threshold (for overestimation) or remove the presence sites closest to the
+threshold (for underestimation).
 
 We followed the same approach as in Simulation study II to design BONs and
 measure efficiency using the same 200 simulations with independent landscape
@@ -617,115 +618,122 @@ interactions, which account for the impact of species abundances on interaction
 detectability, reached much lower proportions, both remaining under 25% of the
 all metaweb interactions at 100 sampling sites and under 50% at 500 sites. While
 the proportion of sampled realized and detected interactions would keep
-increasing with a higher number of sites<!--# use n0.80 for reference? -->, the
-speed at which they accumulate is notably lower than for species richness or
-possible interactions, highlighting the need for a much higher sampling effort.
+increasing with a higher number of sites ($n_{0.80}$ around 2100 and 7300,
+respectively), the speed at which they accumulate is notably lower than for
+species richness or possible interactions, highlighting the need for a much
+higher sampling effort.
 
 ![Proportion of sampled species and interactions for a given number of sampling
-sites in a Biodiversity Observation Network (BON) across the simulated landscape
-(Simulation Study I). Proportions were calculated with respect to the total
-species richness and the total number of interactions in the metaweb. Lines
-indicate the median proportion for a given number of sites, while the shaded
-bands delimit the 5th and 95th percentiles across replicates (50 per number of
-sites; 2,550 in total).](figures/nbon_bands.png){#fig-nbons}
+sites in a spatially-balanced Biodiversity Observation Network (BON) across the
+simulated landscape (Simulation Study I). Proportions were calculated with
+respect to the total species richness and the total number of interactions in
+the metaweb. Lines indicate the median proportion for a given number of sites,
+while the shaded bands delimit the 5th and 95th percentiles across replicates
+(50 independent replicates per number of sites; 2,550 in
+total).](figures/nbon_bands.png){#fig-nbons}
 
-### Simulation study II: Differences between sampling strategies and optimization targets
+### Simulation study II: Higher efficiency for Targeted Sampling and Balanced Within Range compared to spatially balanced strategies
 
-Our focal sampling experiment showed the Uncertainty Sampling algorithm to be
-most efficient at optimizing BON-design based on a known species range and while
-aiming to maximize the sampling of interactions of a single focal species
-([@fig-joined]A). Balanced sampling, representing a spatially balanced design
-across space unrelated to focal species, performed the worst among the
-algorithms tested. Weighted Balanced Acceptance, although maintaining a better
-spatial balance across the landscape, performed notably worse than Uncertainty
-Sampling and Balanced Mask at maximizing the efficiency for the focal species.
-Uncertainty Sampling and Balanced Mask performed similarly.
+To better illustrate the results of Simulation Study II, we first showcase the
+results for a representative landscape configuration (metaweb, species ranges,
+realized interactions). The conclusions for this landscape configuration are
+consistent with the most common results across all simulations (200 independent
+simulations with different landscape configurations), which we summarize right
+after the showcased one.
+
+Our focal sampling experiment showed the Balanced Within Range and Targeted
+Sampling strategy to be most efficient at optimizing BON-design based on a known
+species range and while aiming to maximize the sampling of interactions of a
+single focal species ([@fig-samplers]). Balanced sampling, representing a
+spatially balanced design across space unrelated to focal species, performed the
+worst among the algorithms tested. Weighted Sampling, although maintaining a
+better spatial balance across the landscape, performed notably worse than
+Targeted Sampling and Balanced Within Range at maximizing the efficiency for the
+focal species. Targeted Sampling and Balanced Within Range performed similarly.
 
 Optimizing on the known species range, our proxy for an attainable level of
 information an interested user might have, was more efficient at sampling the
-focal species' interactions than optimizing based on species richness,
-effectively sampling more than half of the species' interactions
-([@fig-joined]B). In contrast, optimization based on the location of realized
-interactions (our best-case scenario requiring a higher level information)
-expectedly performed better, retrieving most of the species' interactions.
+focal species' interactions than optimizing based on the probabilistic species
+range or on species richness, effectively sampling more than half of the
+species' interactions ([@fig-layers]). In contrast, optimization based on the
+location of realized interactions (our best-case scenario requiring a higher
+level information) expectedly performed better, retrieving most of the species'
+interactions.
 
-![Efficiency of site selection strategies (A) and optimization targets (B) at
-sampling realized interactions for a given focal species within Biodiversity
-Observation Networks (BONs). Panel A compares four strategies with a fixed
-optimization target (the species range), while Panel B compares four
-optimization targets with a fixed sampler (Uncertainty Sampling). Lines indicate
-the median proportion for a given number of sites, while the shaded bands
-delimit the 5th and 95th percentile across replicates. The panels on the right
-illustrate examples of BONs with 50 sites (coloured points) generated by each
-strategy over the same landscape (species presences are shown as pixels in
-yellow).
-<!--# was the simulation depicted here picked at random-->](figures/focal_joined.png){#fig-joined
-width="70%"}
+![Efficiency of site selection strategies at sampling realized interactions for
+a given focal species within Biodiversity Observation Networks (BONs). This
+figure compares four sampling strategies: three balanced strategies (across the
+entire area, across the focal species range only, and using weights to favour
+the species range) and a targeted strategy using the species ranges as a fixed
+optimization target (the species range). Solid lines indicate the median
+proportion for a given number of sites (50 replicates per number of sites),
+while the shaded bands delimit the 5th and 95th percentile across replicates.
+The panels on the right illustrate examples of BONs with 50 sites (coloured
+points) generated by each strategy over the same landscape (species presences in
+yellow, absence in purple, masked area in white). This showcased example is
+representative of the most common results across independent
+simulations.](figures/focal_samplers.png){#fig-samplers}
 
-### Simulation study III: Comparison of efficiency parameters across simulations
-
-The distribution of efficiency parameters across independent simulations
-confirmed the interpretations based on [@fig-joined], but also highlighted a
-wide range of outcomes in efficiency between
-simulations<!--# this sounds a bit more like a Discussion sentence to me-->.
-Among samplers, the median efficiency parameter indicated a better sampling
-performance (lower value for the parameter $a$ and $n_{0.80}$, indicating a
-faster accumulation) for Balanced Mask and Uncertainty Sampling, followed by
-Weighted Balanced Acceptance and Balanced Acceptance ([@fig-eff-comp]A, Supp.
-Mat.). The actual efficiency values spanned a similar range across the possible
-sampler options with all simulations combined. Among optimization targets used
-with Uncertainty Sampling, optimizing on the focal species presence/absence
-range performed better than on the probabilistic range, followed by species
-richness, although all three options spanned similar ranges with all simulations
-combined ([@fig-eff-comp]B, Supp. Mat.). In contrast, optimizing based on the
-realized interactions distinctly and consistently performed better across all
-simulations.
+![Efficiency of optimization targets at sampling realized interactions for a
+given focal species within Biodiversity Observation Networks (BONs). This figure
+compares four optimization targets with a fixed targeted sampler (Uncertainty
+Sampling). Solid lines indicate the median proportion for a given number of
+sites, while the shaded bands delimit the 5th and 95th percentile across
+replicates. The panels on the right illustrate examples of BONs with 50 sites
+(coloured points) generated by each strategy over the target landscape (areas in
+yellow indicate a higher value for targeting, e.g. presence or richness, while
+areas in purple indicate a lower
+value).](figures/focal_optimized.png){#fig-layers}
 
 Comparing optimization options by simulation clearly highlighted a consistently
 more efficient approach across landscape and metaweb contexts ([@fig-eff-comp];
-see also Supp. Mat. for possible comparisons), consistent with the showcased
-single-simulation example ([@fig-joined]). Uncertainty Sampling was more
-efficient than Weighted Balanced Acceptance in 63% of simulations, and both were
-more efficient than Balanced Acceptance in all simulations ([@fig-eff-comp]).
-Optimizing on the focal species range was more efficient than on the
-probabilistic range or on species richness (78% and 90%, respectively), but
-always less efficient than optimizing on realized interactions.
+see also Supp. Mat. for all pair=by-pair comparisons), consistent with the
+showcased single-simulation example ([@fig-samplers; @fig-layers]). Targeted
+Sampling was more efficient than Weighted Sampling in 63% of simulations (lower
+value for $n_{0.80}$, indicating a faster documentation of interactions), and
+both were more efficient than Balanced Acceptance in all simulations
+([@fig-eff-comp]A). Targeted Sampling and Balanced Within Range were equally
+efficient in all cases. Among optimization targets used with Targeted Sampling
+([@fig-eff-comp]B), optimizing on the focal species range was more efficient
+than on the probabilistic range or on species richness (78% and 90%,
+respectively), but always less efficient than optimizing on realized
+interactions.
 
 ![Within-simulation comparison of efficiency between samplers and optimization
 targets. The comparison value is based on the number of sites required to
 document 80% of the focal species' interactions ($n_{0.80}$), described in
 @eq-n_at_p. Negative values (in orange) indicate that the compared option led to
-a more efficient sampling than its reference (faster accumulation), while
-positive values (in green) indicate it required a higher sampling effort. Equal
-values (in pink) a within the confidence intervals of one another. References
-were chosen for narrative purposes and to simplify the number of comparisons
-displayed. All one-by-one comparisons are available in Supp.
+a more efficient sampling than its reference (faster documentation of
+interactions), while positive values (in green) indicate it required a higher
+sampling effort. Equal values (in pink) have overlapping confidence intervals.
+References were chosen for narrative purposes and to simplify the number of
+comparisons displayed. All one-by-one comparisons are available in Supp.
 Mat.](figures/efficiency_comparison.png){#fig-eff-comp}
 
 While the simulations clearly highlight which sampler or optimization target is
 most efficient across all simulations, efficiency parameters and differences
 vary over a wide range of values. We verified if this could be tied to the
 occupancy of the focal species in simulated landscape, measured as the number of
-cells where the species is present (Supp. Mat.). Optimizing using Uncertainty
+cells where the species is present (Supp. Mat.). Optimizing using Targeted
 Sampling on the focal species range and on realized interactions is especially
 efficient at low occupancy, as it adequately targets the fewer cells where the
 focal species is present. As species occupancy increases, the difference between
 optimizing approaches decreases. When the focal species has high occupancy
-across the landscape, Weighted Balanced Acceptance and Balanced Acceptance
-algorithms perform similarly to Uncertainty Sampling, as balancing sites across
-space or choosing at random becomes equivalent to targeting the species range.
-Optimizing based on species richness also became more efficient as occupancy
-increased. A possible explanation is that at high occupancy, species range is
-not a restricting element and thus targeting sites with high richness directly
-leads to targeting sites with potentially more interaction partners. On the
-contrary, at low occupancy, the species range is an important restriction, and
-optimizing on species richness might target sites where the focal species is
-absent. Optimizing on the probabilistic species range resulted in similar
-outcomes; at high occupancy (not to be confused with probability of occurrence)
-the sampler can more effectively filter out sites where the species is absent,
-since it is very likely the species will be present at the sites that have high
-occurrence probability. At low occupancy, the focal species will be present in
-fewer locations with high probabilities and might be absent from locations with
+across the landscape, Weighted Sampling and Balanced Acceptance algorithms
+perform similarly to Targeted Sampling, as balancing sites across space or
+choosing at random becomes equivalent to targeting the species range. Optimizing
+based on species richness also became more efficient as occupancy increased. A
+possible explanation is that at high occupancy, species range is not a
+restricting element and thus targeting sites with high richness directly leads
+to targeting sites with potentially more interaction partners. On the contrary,
+at low occupancy, the species range is an important restriction, and optimizing
+on species richness might target sites where the focal species is absent.
+Optimizing on the probabilistic species range resulted in similar outcomes; at
+high occupancy (not to be confused with probability of occurrence) the sampler
+can more effectively filter out sites where the species is absent, since it is
+very likely the species will be present at the sites that have high occurrence
+probability. At low occupancy, the focal species will be present in fewer
+locations with high probabilities and might be absent from locations with
 intermediate probabilities, making it harder for the sampler to target sites
 where the species is present.
 
@@ -783,20 +791,22 @@ required to evaluate the performance of monitoring designs, beyond spatial
 balance. However, while they found that many sampling algorithms performed
 similarly for biodiversity monitoring, our results highlighted better options
 when the monitoring target is highly localized. We observed the most important
-differences for species with low occupancy, where Uncertainty Sampling is
-relevant to target only the focal species
-range<!--# this sentence is a little convoluted-->. Differences were less
-important at higher occupancy and for species present across the whole
-landscape, although Uncertainty Sampling still performed better. This result
-should be expected, as a targeted sampler should be relatively more efficient
-when a species range is highly localized compared to one balancing sites across
-the the whole
-landscape<!--# when the spp range is not localized or is still localized? I think the phrasing is a little ambiguous-->.
-Nonetheless, it highlights how some highly-localized monitoring targets (e.g.,
-species interactions) might benefit from targeted monitoring designs. In such
-cases, efficiency gains will depend on improvements in our capacity to predict
-the location of those phenomena and on our ability to continuously evaluate and
-update predictions based on the information acquired.
+differences for species with low occupancy, where Targeted Sampling very
+effectively targets the focal species range within the entire study area (Supp.
+Mat.). Differences were less important at higher occupancy, as balancing sites
+across space or targeting the species range tends to become equivalent, although
+Targeted Sampling still performed better than Balanced Sampling. Optimizing
+based on species richness also became more efficient as occupancy increased. A
+possible explanation is that at high occupancy, species range is not a
+restricting element and thus targeting sites with high richness directly leads
+to targeting sites with potentially more interaction partners. On the contrary,
+at low occupancy, the species range is an important restriction, and optimizing
+on species richness might target sites where the focal species is absent.
+Nonetheless, these results highlight how some highly-localized monitoring
+targets (e.g., species interactions) might benefit from targeted monitoring
+designs. In such cases, efficiency gains will depend on improvements in our
+capacity to predict the location of those phenomena and on our ability to
+continuously evaluate and update predictions based on the information acquired.
 
 # References
 
