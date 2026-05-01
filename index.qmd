@@ -212,22 +212,22 @@ of monitoring efficiency and trends detection on the number of monitoring sites,
 species abundance, detection probability and strength of decline, under a range
 of scenarios and monitoring schemes [@Ficetola2018OptMon].
 
-In this manuscript, we address three key questions. First, how should we
-implement monitoring programs across space to efficiently capture network
-composition and changes, as essential components of biodiversity? Second, can we
-monitor <!--# changes in?--> species interactions as efficiently as <!--# in?-->
-species ranges? Finally, what effectiveness can we realistically expect from
-sampling designs optimized to monitor species
-interactions<!--# the meaning of this sentence is not clear to me. GD: Tweaked a bit, adding optimized-->?
+In this manuscript, we address three key questions. First, what expectations
+should we have for monitoring species interactions across space within
+Biodiversity Observation Networks? Second, what effect does sampling design
+strategies have on the efficiency with which we can document interactions?
+Finally, what available information (e.g. from existing monitoring programs)
+could be used to optimize the design of future BONs for interactions and how
+precise should such information be to expect efficiency improvements?
 
 We use spatially explicit community simulations to test the efficiency of
 monitoring species interactions within BONs, and explore various algorithmic and
 design options for network sampling optimization. We aim to define realistic
-expectations for monitoring species interactions, in comparison to species
-richness and species ranges. To do so, we compare design and optimization
-options, examining how to assess and compare their efficiencies. We conclude
-with recommendations on how this should influence the design of BONs to improve
-the monitoring of species interactions as an important biodiversity component.
+expectations for monitoring species interactions, in comparison to more commonly
+evaluated elements such as species richness and species ranges. We examine how
+to assess and compare monitoring efficiency using simulations. We conclude with
+recommendations on how this should influence the design of BONs to improve the
+monitoring of species interactions as an important biodiversity component.
 
 # Methods
 
@@ -270,12 +270,12 @@ between and across simulations for species interactions ([@fig-concept]).
 First, we simulated networks with variation in species and interaction
 composition across a simulated landscape ([@fig-concept], Step 1), with the
 intent to replicate the ecological context in which biodiversity monitoring
-could take place. To do so, we generated autocorrelated species ranges
-representing the distribution of species across the landscape using neutral
-landscape models [NLMs; @Gardner1987NeuMod; @Etherington2015NlmPyt]. NLMs are
-used to generate landscapes replicating realistic autocorrelated distributions
-without underlying biotic or abiotic factors, and therefore represent useful
-baselines to explore ecological processes in a spatial context
+could take place. To do so, we generated species ranges representing the
+distribution of species across the landscape using neutral landscape models
+[NLMs; @Gardner1987NeuMod; @Etherington2015NlmPyt]. NLMs are used to generate
+landscapes replicating realistic spatially-autocorrelated distributions and
+representing useful baselines to explore ecological processes in a spatial
+context
 [@Hesselbarth2024ComMet]<!--# please clarify whether the autocorrelation is between species, or within a species range due to, e.g., spatial autocorrelation. I would also move this sentence to after the next ones that justify the use of this approach-->.
 NLMs have been used to generate realistic landscapes in contexts relating to
 biodiversity distribution and preservation, for instance to compare avian
@@ -284,8 +284,17 @@ diversity between conservation approaches in coffee-growing landscapes
 in an ecotone [@Duchardt2023UsiNeu]. NLMs have also been used with species
 interactions, for example to evaluate the effect of landscape structure in
 cross-species disease transmission between interacting species
-[@Forero-Munoz2025SpaLan]. Here, we used NLMs to create communities of known
-composition and species richness at every location in our simulated landscape.
+[@Forero-Munoz2025SpaLan]. Here, we generated species ranges following the
+implementation in SpeciesInteractionSamplers.jl [@Catchen2023MisLin], which 1)
+uses the Diamond-Square algorithm [@Fournier1982ComRen; also used similarly and
+described by @Forero-Munoz2025SpaLan] to generate a probabilistic
+spatially-autocorrelated range (default autocorrelation parameter h=0.85); 2)
+draws a threshold based on a Beta distribution (default $\alpha$ = 10, $\beta$ =
+10); 3) converts the probabilistic range into a binary one, considering all
+sites with values higher than the threshold as presence and those with lower
+values as absence, and 4) repeating the process independently for all species
+(here 75 species). In the end, this process generates communities of known
+composition and species richness at every site in the simulated landscape.
 
 Next, using the spatio-temporal model presented by @Catchen2023MisLin, we
 defined the **feasible interactions** between the species by generating a
@@ -458,22 +467,23 @@ Balanced Acceptance Sampling algorithm [@Robertson2013BasBal;
 @Robertson2017ModBal] to generate candidate BONs with a number of sites between
 1 and 500 at intervals of 10 sites, with 50 replicates for each number of sites,
 yielding 2,550 BON designs in total. For every design, we used the general model
-(Step 1) to generate an independent landscape configuration: a specific set of
-metaweb, species ranges, abundance distribution, and realized interactions. In
-every one, we evaluated the sampling efficiency of the BON design in terms of
-sampling interactions from the metaweb and in terms of documenting species
-richness. For species richness, we assumed that all species present at sites in
-the BON were sampled, then compared the number of species sampled in the BON
-against the total species richness across the landscape (always 75 species). For
-interactions, we evaluated each interaction type separately (possible, realized
-and detected), counting the number of distinct interactions sampled in the BON,
-then evaluated each number in proportion to the metaweb (specific to the
-landscape configuration, but generated with the same connectance of 0.2 using
-the niche model). As a whole, these simulations compared four sampling targets
-(species richness, possible interactions, realized interactions, and detected
-interactions), establishing baselines for the monitoring of each.
+(Step 1) to generate an independent landscape configuration: a specific metaweb,
+a set of species ranges, an abundance distribution for the species, and realized
+interactions. In every one, we evaluated the sampling efficiency of the BON
+design in terms of sampling interactions from the metaweb and in terms of
+documenting species richness. For species richness, we assumed that all species
+present at sites in the BON were sampled, then compared the number of species
+sampled in the BON against the total species richness across the landscape
+(always 75 species). For interactions, we evaluated each interaction type
+separately (possible, realized and detected), counting the number of distinct
+interactions sampled in the BON, then evaluated each number in proportion to the
+metaweb (specific to the landscape configuration, but generated with the same
+connectance of 0.2 using the niche model). As a whole, these simulations
+compared four sampling targets (species richness, possible interactions,
+realized interactions, and detected interactions), establishing baselines for
+the monitoring of each.
 
-### Simulation study II: Optimizing focal sampling to monitor a given species' interactions
+### Simulation study II: Evaluating strategies to optimize the monitoring of interactions for a focal species
 
 Interaction network sampling and monitoring may be targeted at a focal species
 because of its endangered status [e.g. @Rioux2022TroNic], because it is at the
@@ -483,85 +493,108 @@ centre of conservation or restoration programmes (e.g.
 from a focal species perspective, by simulating a virtual observer that would
 aim to sample all the interactions of a focal species (here known from the
 metaweb), but might have different information on how to optimize the sampling
-design. <!--# is the following sentence specifict to this case?--> Observation
-network
-<!--# can we stick either BON or "sampling network" and use it throughout?-->design
-and efficiency needs to be evaluated beyond spatial balance, and also regarding
-their efficiency at meeting biodiversity monitoring objectives
-[@Norman2025SitSel]<!--# this sentence suggests design and efficiency are evaluated separately. but measuring efficiency should be an evaluation of the design, no?-->.
-Thus, the idea of our focal sampling exploration is to represent a simplified
-case with a clear objective (retrieving a species' interactions) and where we do
-have prior knowledge about the system, either through empirical data or model
-predictions, which can be used to optimize sampling.
-<!--# these last sentences should come earlier as they sound like a justification for, rather than a way to evaluate design/efficiency-->
+design. Thus, the idea of our focal sampling exploration is to represent a
+simplified case with a clear objective (retrieving a species' interactions) and
+where we do have prior knowledge about the system, either through empirical data
+or model predictions, which can be used to optimize sampling.
 
-Optimizing focal sampling relies on two elements: the sampler algorithm used and
-the information provided for optimization. Species range represents an
-attainable level of information an interested observer could have, for instance
-based on expert knowledge or species distribution models. Therefore, we assumed
-the observer knew the species range across the landscape (presence or absence).
-We tested four sampling algorithms for comparison: balanced acceptance (to
-represent a spatially balanced sampling design across the entire study area),
-weighted balanced acceptance sampling (aiming to balance sites across space
-while weighting favorably for species ranges), uncertainty sampling (which
-targets locations with higher 'information' values in the layer provided), as
-well as balanced acceptance within the range of the focal species only
-(hereafter called balanced mask). Next, we tested four information targets for
-optimization<!--# are these the same as the "uncertainty" layer?-->: one with
-the focal species range (our attainable information knowledge for the observer),
-one with the probabilistic range (for a less informed case, similar to the
-output of a species distribution model), one with the location of realized
-interactions for the focal species (to represent a best-case scenario) and one
-with species richness across the landscape (to represent a holistic level of
-information about the system).
+Optimizing focal sampling relies on two elements: the site selection algorithm
+(sampler) used and the information provided for optimization. A species range
+represents an attainable level of information an interested observer could have,
+for instance based on expert knowledge or species distribution models.
+Therefore, we investigated the case where an observer knows the species range
+across the landscape (presence or absence) and tries to optimize the BON design
+to retrieve the interactions. We tested four strategies for comparison: a
+*Balanced Sampling* spreading sites across the entire study area (using Balanced
+Acceptance Sampling, hereafter BAS), a balanced sampling only within the range
+of the focal species (hereafter called *Balanced Mask*), a *Weighted Sampling*
+favouring the species range in site selection among all sites in the study area
+(adjusting the inclusion probability in BAS), and a *Targeted Sampling*
+selecting sites with higher 'information' values in the layer provided (using
+Uncertainty Sampling). Next, we tested four information targets for optimization
+with the Targeted Sampling strategy (all with the Uncertainty Sampling
+algorithm): the exact *focal species range* (our attainable information
+knowledge for the observer), a *probabilistic range* for the focal species
+(representing a less-informed case, similar to the output of a species
+distribution model), *species richness* across the landscape (to represent a
+holistic level of information about the system, which an observer might have
+based on detailed knowledge about biodiversity in a region) and finally the
+location of *realized interactions* for the focal species across the landscape
+(to represent a best-case scenario, where an observer would know exactly the
+right information to target).
 
-Here, we performed 200 independent simulations with independent landscape
+We performed 200 independent simulations with independent landscape
 configurations (as described in Simulation study I). In each simulation, we
 selected the species with the highest degree (number of interactions) in the
 metaweb as the focal species for the simulation [as it was previously shown as
 an efficient strategy for sampling and conservation; @Pires2017FriPar;
 @deAguiar2019RevBia]. We then generated BONs of 1 to 500 sites (at interval
-increments of 10 sites) using the four possible algorithms (balanced acceptance,
-weighted balanced acceptance, uncertainty sampling, balanced mask) and four
-optimization targets (focal species range, probabilistic range, realized
-interactions, species
-richness)<!--# these are only used with the uncertainty sampling, right?-->,
-with 50 replicates for every number of sites. For each BON generated, we
-extracted the number of unique realized interactions sampled across all sites
-(the sampled degree for the focal species). We performed a grid search across
+increments of 10 sites) using the three balanced strategies (Balanced Sampling,
+Balanced Mask, Weighted Sampling) and four optimization targets for the Targeted
+Sampling strategy (focal species range, probabilistic range, species richness,
+realized interactions), with 50 replicates for every number of sites. For each
+BON generated, we extracted the number of unique realized interactions sampled
+across all sites for the focal species. We then performed a grid search across
 possible values of $a$ (from @eq-eff) to identify the value yielding the curve
 with the best fit to the simulation's results. To do so, we extracted the median
-result (proportion of monitored interactions) across replicates for every number
-of sites in the BONs. We then evaluated 10,000 possible values for $a$ and
-selected the value yielding the curve minimizing the sum of squared errors to
-the simulation results. We searched for values of $a$ on an exponential scale as
-it allowed for more gradual control over the curve shape, evaluating 10,000
-evenly spaced values between $e^{-5}$ and $e^{15}$ (limits chosen to go beyond
-the fitted values). After selecting the best-fit value for $a$, we evaluated the
-sampling efficiency for the simulation using the $n_{0.80}$ measurement
-described in Step 3 (number of sites required to document 80% of the
-interactions).
+result (proportion of sampled interactions) across replicates for every number
+of sites in the BONs. We then evaluated 10,000 evenly spaced values for $a$
+between $e^{-5}$ and $e^{15}$ and selected the value yielding the curve
+minimizing the sum of squared errors to the simulation results. We searched for
+values of $a$ on an exponential scale as it allowed for more gradual control
+over the curve shape and adjusted the limits to ensure they went beyond the
+fitted values on both the lower and higher side. After selecting the best-fit
+value for $a$, we evaluated the sampling efficiency for the simulation using the
+$n_{0.80}$ measurement described in Step 3 (number of sites required to document
+80% of the interactions).
 
-Finally, we defined a confidence interval for our efficiency measurement. As the
-best-fit for $a$ is based on the median result across replicates, we used the
-confidence interval of the median to define a lower and upper bound for values
-of $a$. We calculated the order statistics delimiting an 90% equal-tailed
-interval using the normal approximation to the binomial distribution
-[@Gibbons2010NonSta]—e.g., at n=50, the 90% confidence interval for the median
-goes from the 19th and to the 31st value—and extracted the corresponding results
-from our simulations. We then performed separate grid searches for the parameter
-$a$ using the lower and upper confidence intervals bounds of the median,
-similarly delimiting the lower and upper bounds for $a$, and subsequently bounds
-for $n_{0.80}$. This approach returns a confidence interval for the sampling
-efficiency, which we used to compare site selection algorithms and optimization
-layers within a specific landscape and simulation, given that the monitoring
-context is different in each one (different metawebs and species ranges). Doing
-so, we identified which site selection algorithms or optimization target were
-equal and which were more efficient (thus quickly reaching a high proportion of
-monitored interactions), while also quantifying the magnitude the difference
-between strategies in a comparable way between independent simulations.
+Finally, we defined a confidence interval for our $n_0.80$ efficiency
+measurement. As the best-fit for $a$ is based on the median result across
+replicates, we used the confidence interval of the median to define a lower and
+upper bound for values of $a$. We calculated the order statistics delimiting an
+90% equal-tailed interval using the normal approximation to the binomial
+distribution [@Gibbons2010NonSta]—e.g., at n=50, the 90% confidence interval for
+the median goes from the 19th and to the 31st value—and extracted the
+corresponding results from our simulations. We performed separate grid searches
+for the parameter $a$ using the lower and upper confidence intervals bounds of
+the median, thus delimiting the lower and upper bounds for $a$, and subsequently
+bounds for $n_{0.80}$. This approach returns a confidence interval for the
+sampling efficiency, which we used to compare site selection algorithms and
+optimization targets within a specific landscape configuration, given that the
+monitoring context is unique in each one (different metawebs and species
+ranges). Doing so, we identified which site selection algorithms or optimization
+target were equal and which were more efficient (thus quickly reaching a high
+proportion of monitored interactions), while also quantifying the magnitude the
+difference between strategies in a comparable way between independent
+simulations.
 
 <!--# the first paragraph seems to suggest that the difference measure 'd' enables comparisons between simulations (i.e. diff spp ranges and metaweb contexts); but this last paragraph suggests different simulations were not compared in terms of efficiency-->
+
+<!--# can we stick either BON or "sampling network" and use it throughout?-->
+
+### Simulation study III: Assessing the precision required when estimating a species range
+
+Building on the Balanced Mask strategy from Simulation study II, we assessed how
+precisely an observer should know the focal species range to achieve an
+efficient monitoring. To do so, we compared the Balanced Mask strategy, where
+the balanced sampling design is only generated across the exact focal species'
+range, with alternative scenarios where we over- and underestimated the species
+range for the BON design. We tested estimation offsets from 0 to 50% of the true
+range size, at 2% increment intervals, generating balanced designs within the
+over- or underestimated range. For a given landscape configuration, we extracted
+the true range size, calculated the number of sites to add or remove to reach
+the offset percentage, then used the non-thresholded probabilistic range
+(Step 1) to add the absence sites closest to the threshold (for overestimation)
+or remove the presence sites closest to the threshold (for underestimation).
+
+We followed the same approach as in Simulation study II to design BONs and
+measure efficiency using the same 200 simulations with independent landscape
+configurations. We generated BONs of 1 to 500 sites for all the estimation
+offset ranges (again with 50 replicates at all number of sites) and measured the
+efficiency at documenting interactions. We then compared the $n_{0.80}$ values
+of each estimation offset range to the $n_{0.80}$ for the true species range,
+which we expected would be the most efficient, and used the confidence intervals
+to determine which estimation offsets differed from the true range.
 
 # Results
 
@@ -590,7 +623,7 @@ indicate the median proportion for a given number of sites, while the shaded
 bands delimit the 5th and 95th percentiles across replicates (50 per number of
 sites; 2,550 in total).](figures/nbon_bands.png){#fig-nbons}
 
-### Simulation study II: Differences between samplers and optimization targets
+### Simulation study II: Differences between sampling strategies and optimization targets
 
 Our focal sampling experiment showed the Uncertainty Sampling algorithm to be
 most efficient at optimizing BON-design based on a known species range and while
