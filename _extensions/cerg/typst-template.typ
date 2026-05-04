@@ -38,9 +38,6 @@
 
     // show bibliography: set text(7pt)
 
-  // Set the body font.
-  set text(font: "STIX Two Text")
-
   // Configure the page.
   set page(
     paper: paper-size,
@@ -67,8 +64,11 @@
   // Code
   show raw: set text(font: "Iosevka", rgb("#232323"))
 
+  // Set the body font.
+  // set text(font: "STIX Two Text", size: 11pt)
+
   // Paragraph options
-  set par(leading: 0.8em, spacing: 1.6em, justify: true)
+  set par(leading: 0.8em, spacing: 1.6em, justify: false)
   show heading.where(level: 1): set text(14pt, rgb("#114f54"),weight: "medium")
   show heading.where(level: 2): set text(13pt, rgb("#2e5385"),weight: "regular", style: "italic")
   show heading.where(level: 1): it => block(width: 100%)[
