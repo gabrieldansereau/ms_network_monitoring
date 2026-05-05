@@ -370,8 +370,9 @@ state that the **proportion of sampled interactions for a given number of sites
 in the BON**, noted $p(n)$, follows an accumulation curve described by the
 equation:
 
-$$p(n)=\frac{n}{a + n}$$
- {#eq-eff}
+$$
+p(n)=\frac{n}{a + n}
+$$ {#eq-eff}
 
 where $a$ is the single parameter describing the shape of the sampling curve.
 The lower the value for $a$, the faster we reach a high proportion of monitored
@@ -385,8 +386,9 @@ Instead, we used the **number of sites required to sample 80% of the
 interactions**, which can directly be tied to sampling effort and design.
 Solving @eq-eff for $n$, we obtain:
 
-$$n_p(a) = \frac{p \cdot a}{1 - p}$$
- {#eq-n_at_p}
+$$
+n_p(a) = \frac{p \cdot a}{1 - p}
+$$ {#eq-n_at_p}
 
 where $n_p(a)$ represents the number of sites required to sample a proportion of
 interactions $p$, following an efficiency curve described by the parameter $a$.
