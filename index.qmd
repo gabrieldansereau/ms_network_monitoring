@@ -89,15 +89,13 @@ and reinforce scientific basis in biodiversity monitoring [@Navarro2017MonBio;
 national (China BON, French BON, Colombia BON) or regional (Asia-Pacific,
 Europe); some represent networks of monitoring sites for systematic monitoring
 (China BON) while others represent biodiversity data hubs (French BON)
-[@Xu2017OptMon; @Navarro2017MonBio]. BONs aim to monitor biodiversity change,
-informing on both current status and trends [@Gonzalez2025BioObs]. It has been
-suggested that BONs should eventually be interlinked into the Global
-Biodiversity Observation System (GBiOS), a globally connected network providing
-capacity to monitor biodiversity change [@Gonzalez2023GloBio], and guide actions
-needed for targets and goals of the Kunming-Montreal Global Biodiversity
-framework [@CBD2022DecAdoa]. Additional BONs are currently in the development or
-planification stages, notably in Europe [@Kissling2024ModEff] and in Canada
-[@Gonzalez2025BioObs; @Simard2024ResSui].
+[@Xu2017OptMon; @Navarro2017MonBio]. Additional BONs are currently in the
+development or planification stages, notably in Europe [@Kissling2024ModEff] and
+in Canada [@Gonzalez2025BioObs; @Simard2024ResSui], and could eventually be
+interlinked into the Global Biodiversity Observation System (GBiOS), a globally
+connected network providing capacity to monitor biodiversity change
+[@Gonzalez2023GloBio] and guiding actions needed for targets and goals of the
+Kunming-Montreal Global Biodiversity framework [@CBD2022DecAdoa].
 
 Recent work highlighted the need for improved sampling designs in BONs. Current
 sampling designs over large scales are often too sparse, at too coarse a scale,
@@ -147,7 +145,7 @@ does not always allow to know the list of interactions (and vice versa),
 therefore justifying the need to sample interactions as their own biological
 entities. A central challenge with the sampling of interactions is that the
 sampling effort required to document interactions is much higher than for
-species [e.g. 500% vs 64% in @Chacoff2012EvaSam]. Also, evaluating sampling
+species [e.g. 500% vs 64% in @Chacoff2012EvaSam]. Moreover, evaluating sampling
 completeness for interactions is more complex than for species, as it requires
 assessing the proportion of forbidden links (i.e. links that cannot occur) due
 to life history or morphological restrictions, which in turn requires knowledge
@@ -160,26 +158,21 @@ sensitive to undersampling than larger ones [@Henriksen2019EffNet].
 
 <!--# how is this paragraph flowing from the previous? it sounds like another added challenge and it is not clear why it is separate from the previous ones-->
 
-A much needed element is to consider sampling network and interactions
-<!--# what is the difference between sampling networks and interactions? I wonder if we need to make this distinction clear somewhere-->
-from an explicitly spatial perspective with variation in local sampling
-structure —that is, quantifying sampling effort from specific sites where
-interactions are sampled.
-<!--#  I feel like "sampling effort" is only one thing within a range of things we could consider spatially in terms of network sampling structure; yet this sentence makes it sound like its the only one -->
-For instance, @Poisot2012DisSpe measured sampling effort based on resampling a
-dataset to document its effect on network composition and properties. Other
-examples focus on scale, notably showing that many network structure metrics are
-robust across spatial scales when accounting for expected increases of richness
-and decreases in connectance
-[@Wood2015EffSpa]<!--# the link to sampling effort needs to be made more explicit in the previous sentence-->.
-In contrast, @McLeod2021SamAsy used data from specific lakes compare sampling
-strategies, showing that sampling larger to smaller lakes better captures
-regional metaweb
-properties<!--# is this still about sampling effort or more about network size variations?-->.
-We now have frameworks and models to describe and investigate the variation and
-detection of interaction networks <!--# or simply "of interactions"?--> in space
-and time [@Poisot2015SpeWhy; @Cirtwill2019QuaFra; @Catchen2023MisLin], and
-therefore the next step is to consider how to optimize monitoring for species
+A much needed element to integrate species interactions within BONs is to
+consider variation in local sampling from an explicitly spatial perspective—that
+is, quantifying sampling effort from specific sites where interactions are
+sampled—and determining how to best perform monitoring. Previous evaluation of
+sampling effort were not explicitly spatial in a way that directly ties to
+biodiversity monitoring: they investigated expected variations using dataset
+resampling [to measure the effect on network composition and properties,
+@Poisot2012DisSpe], focused on the effect of scale [showing that many network
+structure metrics are robust across spatial scales, @Wood2015EffSpa] or to
+assess the ability to capture regional properties [showing that sampling larger
+to smaller lakes better captures regional metaweb properties,
+@McLeod2021SamAsy]. We now have frameworks and models to describe and
+investigate the variation and detection of interaction networks in space and
+time [@Poisot2015SpeWhy; @Cirtwill2019QuaFra; @Catchen2023MisLin], and therefore
+the next step is to consider how to optimize monitoring for species
 interactions. Simulations have already been used in this context to: generate
 communities and evaluate the potential of metrics to track biodiversity change
 [@Santini2017AssSui]; simulate networks and sampling to evaluate sampling
@@ -189,6 +182,10 @@ sampling frequency for monitoring [@Daugaard2024DepFor]; examine the dependence
 of monitoring efficiency and trends detection on the number of monitoring sites,
 species abundance, detection probability and strength of decline, under a range
 of scenarios and monitoring schemes [@Ficetola2018OptMon].
+
+<!--# what is the difference between sampling networks and interactions? I wonder if we need to make this distinction clear somewhere-->
+
+<!--#  I feel like "sampling effort" is only one thing within a range of things we could consider spatially in terms of network sampling structure; yet this sentence makes it sound like its the only one -->
 
 In this manuscript, we address three key questions. First, what expectations
 should we have for monitoring species interactions across space within
@@ -373,9 +370,8 @@ state that the **proportion of sampled interactions for a given number of sites
 in the BON**, noted $p(n)$, follows an accumulation curve described by the
 equation:
 
-$$
-p(n)=\frac{n}{a + n}
-$$ {#eq-eff}
+$$p(n)=\frac{n}{a + n}$$
+ {#eq-eff}
 
 where $a$ is the single parameter describing the shape of the sampling curve.
 The lower the value for $a$, the faster we reach a high proportion of monitored
@@ -389,9 +385,8 @@ Instead, we used the **number of sites required to sample 80% of the
 interactions**, which can directly be tied to sampling effort and design.
 Solving @eq-eff for $n$, we obtain:
 
-$$
-n_p(a) = \frac{p \cdot a}{1 - p}
-$$ {#eq-n_at_p}
+$$n_p(a) = \frac{p \cdot a}{1 - p}$$
+ {#eq-n_at_p}
 
 where $n_p(a)$ represents the number of sites required to sample a proportion of
 interactions $p$, following an efficiency curve described by the parameter $a$.
@@ -545,8 +540,8 @@ measurement. As the best-fit for $a$ is based on the median result across
 replicates, we used the confidence interval of the median to define a lower and
 upper bound for values of $a$. We calculated the order statistics delimiting an
 90% equal-tailed interval using the normal approximation to the binomial
-distribution [@Gibbons2010NonSta]—e.g., at n=50, the 90% confidence interval for
-the median goes from the 19th and to the 31st value—and extracted the
+distribution [@Gibbons2010NonSta] —e.g., at n=50, the 90% confidence interval
+for the median goes from the 19th and to the 31st value—and extracted the
 corresponding results from our simulations. We performed separate grid searches
 for the parameter $a$ using the lower and upper confidence intervals bounds of
 the median, thus delimiting the lower and upper bounds for $a$, and subsequently
