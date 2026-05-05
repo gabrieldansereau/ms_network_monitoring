@@ -351,7 +351,6 @@ sampling site selection include improving species range estimation from a
 smaller number of actively selected sites [@Lange2023ActLea] and minimizing
 field data collection costs based on distances between samples
 [@Malek2019OptFie].
-<!--# I think providing these many examples is breaking the flow a bit. I suggest choosing one and perhaps providing a little more detail on it.-->
 
 ### Step 3: Defining a comparable measure for sampling efficiency
 
@@ -373,7 +372,8 @@ $$p(n)=\frac{n}{a + n}$$ {#eq-eff}
 where $a$ is the single parameter describing the shape of the sampling curve.
 The lower the value for $a$, the faster we reach a high proportion of monitored
 interactions. We can identify the value of $a$ yielding the curve with the best
-fit with a simulation's results, as described in the next section (Step 4).
+fit with a simulation's results, as described in [Simulation Study
+II](#sec-simulation-study-II).
 
 Next, we derived an interpretable efficiency measure based on @eq-eff. Although
 the parameter $a$ can be directly compared across samplers, optimization targets
@@ -395,16 +395,6 @@ selection algorithms and optimization targets to identify which ones are more
 efficient—i.e. allow reaching a high proportion of monitored interactions more
 quickly.
 
-<!--# isn't a BON a sampler applied to a landscape?-->
-
-<!--# I'm a bit confused about the a parameter. Do you estimate it by solving the equation for a, given known p and x? also, why do we need to know a, if the only thing varying between the snapshots is the number of sampling locations? I think the issue is perhaps that the opening sentence of the paragaph alludes only to varying sample size, not varying samplers/optimization layers etc. I'm also confused about the last sentence. What is the goal of finding the a value that yields the best curve? and what do you mean by "observed" data? aren't the data the propotion of monitored interactions? how is this "observed"?-->
-
-<!--# okay, these previous sentences really scrambled my brain. What is the difference between "a set of simulations", "a simulation' and "a landscape"? -->
-
-<!--# the definition of "simulation" needs to come earlier, I think-->
-
-<!--# i think this is getting repetitive and needs streamlining. I think saying once what needs to be compared and the limitations of the raw values of a is sufficient. It just needs to be made crystal clear from the get go.-->
-
 ## Simulation studies
 
 We performed three simulation studies to investigate the efficiency of
@@ -419,22 +409,22 @@ of previous simulation studies on spatial ecological network dynamics, *e.g.*
 @Thompson2017DisGov. We used the following parameters for the spatio-temporal
 model implemented in SpeciesInteractionSamplers.jl [@Catchen2023MisLin]:
 landscape autocorrelation of $h$ = 0.85, Beta distribution with $\alpha$ = 10
-and $\beta$ = 10 to threshold landscapes, log-normal variance for relative
-abundances $\sigma$ = 1.2, realization energy $\epsilon$ = 50,000, and detection
-scaling $\alpha$ = 50. Exploratory simulations showed that model parameters such
-as metaweb connectance and landscape autocorrelation did not have an important
-effect on the proportion of sampled interactions and the accumulation observed
-when increasing the number of sites in the BON. The activation energy $\epsilon$
-and detection scaling $\alpha$ parameters determine the total number of expected
-and detected interactions [@Catchen2023MisLin], and therefore influenced the
-absolute numbers observed. Here, we chose to use a single fixed value to focus
-on differences between sampling strategies—influenced in the same way by the
-parameter values—and refer readers to @Catchen2023MisLin for the detailed
-discussion over the parameters' effect. We implemented our simulations in
-*Julia* v1.11.9 [@Bezanson2017JulFre]. All the code used to implement the
-simulations and perform the analyses is archived on Zenodo
-[@Dansereau2026GabNet]. Full computations were run on compute clusters provided
-by Calcul Québec and the Digital Research Alliance of Canada.
+and $\beta$ = 10 to threshold landscapes, variance of log-normal distribution
+for relative abundances $\sigma$ = 1.2, realization energy $\epsilon$ = 50,000,
+and detection scaling $\alpha$ = 50. Exploratory simulations showed that model
+parameters such as metaweb connectance and landscape autocorrelation did not
+have an important effect on the proportion of sampled interactions and the
+accumulation observed when increasing the number of sites in the BON. The
+activation energy $\epsilon$ and detection scaling $\alpha$ parameters determine
+the total number of expected and detected interactions [@Catchen2023MisLin], and
+therefore influenced the absolute numbers observed. Here, we chose to use a
+single fixed value to focus on differences between sampling
+strategies—influenced in the same way by the parameter values—and refer readers
+to @Catchen2023MisLin for the detailed discussion over the parameters' effect.
+We implemented our simulations in *Julia* v1.11.9 [@Bezanson2017JulFre]. All the
+code used to implement the simulations and perform the analyses is archived on
+Zenodo [@Dansereau2026GabNet]. Full computations were run on compute clusters
+provided by Calcul Québec and the Digital Research Alliance of Canada.
 
 ### Simulation study I: Establishing baseline expectations for the monitoring of interactions
 
@@ -466,7 +456,7 @@ compared four sampling targets (species richness, possible interactions,
 realized interactions, and detected interactions), establishing baselines for
 the monitoring of each.
 
-### Simulation study II: Evaluating strategies to optimize the monitoring of interactions for a focal species
+### Simulation study II: Evaluating strategies to optimize the monitoring of interactions for a focal species {#sec-simulation-study-II}
 
 Interaction network sampling and monitoring may be targeted at a focal species
 because of its endangered status [e.g. @Rioux2022TroNic], because it is at the
@@ -550,10 +540,6 @@ target were equal and which were more efficient (thus quickly reaching a high
 proportion of monitored interactions), while also quantifying the magnitude the
 difference between strategies in a comparable way between independent
 simulations.
-
-<!--# the first paragraph seems to suggest that the difference measure 'd' enables comparisons between simulations (i.e. diff spp ranges and metaweb contexts); but this last paragraph suggests different simulations were not compared in terms of efficiency-->
-
-<!--# can we stick either BON or "sampling network" and use it throughout?-->
 
 ### Simulation study III: Assessing the precision required when estimating a species range
 
