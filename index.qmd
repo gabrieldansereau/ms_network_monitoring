@@ -105,80 +105,58 @@ too infrequent, and without temporal replication [@Santana2025LarBio].
 Recommendations for more effective spatial sampling designs in Europe included
 i) stratified random sampling (with stratification across environmental,
 anthropogenic and political gradients or classes, ii) incorporation of existing
-monitoring sites, iii) filling of spatial gaps, iv) and co-location of
-monitoring activities
-<!--# this last point sounds cryptic to me-->[@Kissling2024ModEff]. Ecological
-monitoring design relies on site selection algorithms more often discussed
-regarding their capacity to achieve spatial balance and representative samples,
-and less frequently with an evaluation to performance to achieve an ecological
-monitoring goal
-[@Norman2025SitSel]<!--# this sentence feels like a bit of a jump to me. does it need a "however" or "yet" at the start? how related is it to the points i-iv highlighted before?-->.
-For instance, species richness is the most commonly used biodiversity measure in
-monitoring contexts [@Hillebrand2018BioCha], including in discussions over
-sampling designs, because maximising species richness can be an efficient
-strategy to design conservation networks while also capturing functional and
-phylogenetic diversity [@Willig2023ProBio]. However, the use of species richness
-to measure biodiversity change and guide biological conservation has been
+monitoring sites, iii) filling of spatial gaps [@Kissling2024ModEff]. Yet,
+ecological monitoring design relies on site selection algorithms more often
+discussed regarding their capacity to achieve spatial balance and representative
+samples, and less frequently with an evaluation to performance to achieve an
+ecological monitoring goal [@Norman2025SitSel]. For instance, species richness
+is the most commonly used biodiversity measure in monitoring contexts
+[@Hillebrand2018BioCha], including in discussions over sampling designs, as
+maximizing richness can also efficiently capture functional and phylogenetic
+diversity in conservation networks. However, the use of species richness to
+measure biodiversity change and guide biological conservation has also been
 criticized, mainly since trends in species richness do not properly capture
-local changes through time as diagnostic indicators
-<!--# can you provide an example here?--> should [@Hillebrand2018BioCha;
-@Hillebrand2025OpePer], while also neglecting species identities and functional
-roles and not providing information on persistence of biodiversity and ecosystem
-services [@FletcherJr.2025SpeRic; @Aguiar2024UntBio].
+local changes, neglecting species identities and functional roles, and do not
+providing information on persistence of biodiversity and ecosystem services
+[@Hillebrand2018BioCha; @FletcherJr.2025SpeRic; @Aguiar2024UntBio].
 
 Species interactions are a central component of biodiversity
-[@Valiente-Banuet2015SpeLos; @Harvey2017BriEco; @McCann2007ProBio], can mediate
-community and ecosystem responses to change
-<!--# REF: Trophic interactions modify the temperature dependence of community biomass and ecosystem function | PLOS Biology-->
-[@Garzke2019TroInt], and have their own spatial and macro-ecological dynamics
-[@Windsor2023UsiEco; @Mestre2022DisFoo; @Baiser2019EcoRul;
-@Dansereau2024SpaExp]. We now have sufficient conceptual tools to support the
-added value of species interactions in designing efficient management actions
-[@Dansereau2025OveDis; @Moracho2025RebEco]. However, species interactions are
-still considered to undergo a biodiversity shortfall<!--#  what do you mean?-->,
-due to a lack of data at global scales [@Hortal2015SevSho], as well as the
-uneven data availability across different interaction types, geographical
-locations and environments [@Poisot2021GloKno].
-<!--# I think the following sentences could be reorganised for a better flow of ideas. At the moment they feel a little disjoint, or like a list-->
-Species interactions represent a critical component of ecosystem functioning and
-health, yet may be lost (or change) faster than species
-[@Valiente-Banuet2015SpeLos]. Monitoring interactions is more informative
-regarding ecosystem functions than monitoring species richness
-[@Jordano2016SamNet]. Network responses may be different from species richness
-[e.g. @Dore2021RelEff], emphasizing the need for ecological monitoring to
-consider interactions, not just species richness. Species interactions can also
+[@Valiente-Banuet2015SpeLos; @Harvey2017BriEco; @McCann2007ProBio], critical for
+ecosystem functioning and health, yet are undervalued in biodiversity monitoring
+and conservation [@Jordano2016ChaEco; @Dansereau2025OveDis]. Interactions
+mediate community and ecosystem responses to change [@Garzke2019TroInt] and can
 improve our ability to predict responses to climate change [@Abrego2021AccSpe].
-For both these reasons, sampling designs should incorporate considerations for
-species interactions.
+They have their own spatial and macro-ecological dynamics [@Windsor2023UsiEco;
+@Mestre2022DisFoo; @Baiser2019EcoRul; @Dansereau2024SpaExp], and may be lost (or
+change) faster than species [@Valiente-Banuet2015SpeLos; @Dore2021RelEff].
+Despite a lack of data at global scales and uneven data availability across
+different interaction types and environments[@Hortal2015SevSho;
+@Poisot2021GloKno], we now have sufficient conceptual tools to support the added
+value of species interactions in designing efficient management actions
+[@Dansereau2025OveDis; @Moracho2025RebEco].
 
 Prior investigations of interaction sampling did not address how efficiently we
 should expect to monitor interactions within the BON framework, nor did studies
 on the effectiveness of BONs pay particular attention to the sampling of species
 interactions. Instead, much focus has been given on how to assess sampling
-completeness [e.g. @Chacoff2012EvaSam] and how sampling effort affects network
-properties [e.g., @McLeod2021SamAsy]. Recent empirical [@Caron2024TraMod] and
-theoretical [@Poisot2023GuiPre] results have established that knowing the
-network structure does not always allow to know the list of interactions (and
-vice versa), therefore justifying the need to sample interactions as their own
-biological
-entities<!--# to me (and maybe to others too) knowing network structure could include the knowing list of interactions. Perhaps provide a little explanation of why this is not the case, or define what you mean by "network structure" -->.
-A central challenge with the sampling of interactions is that the sampling
-effort required to document interactions is much higher than for species [e.g.
-500% vs 64% in @Chacoff2012EvaSam]. Also, evaluating sampling completeness for
-interactions is more complex than for species. In addition to the analysis of
-sampling robustness, it requires assessing the proportion of forbidden links
-(i.e. links that cannot occur) due to life history or morphological
-restrictions, which in turn requires knowledge of species natural history and
-traits [@Jordano2016SamNet]. While some quantitative network properties such as
-connectance are less affected by sampling completeness, network composition and
-binary measurements derived from it
-<!--# is something missing here? binary measure of what?--> [e.g. number of
-links, @Vizentin-Bugoni2016InfSam; @Poisot2012DisSpe] will vary widely if
-interactions are missed. Small networks are also more sensitive to undersampling
-than larger ones [@Henriksen2019EffNet]. Quantitative frameworks exist to
-evaluate network taxonomic, functional and phylogenetic diversity from
-incomplete samples
-[@Chiu2023QuaEst]<!--# again, this sentence feels somewhat disjoint from the previous and it ends abruptly wrt to what comes next. What do we gain from knowing this information?-->.
+completeness and diversity metrics [e.g. @Chacoff2012EvaSam; @Chiu2023QuaEst]
+and how sampling effort affects network properties [e.g., @McLeod2021SamAsy].
+Recent empirical [@Caron2024TraMod] and theoretical [@Poisot2023GuiPre] results
+have established that knowing the network structure (i.e. network properties)
+does not always allow to know the list of interactions (and vice versa),
+therefore justifying the need to sample interactions as their own biological
+entities. A central challenge with the sampling of interactions is that the
+sampling effort required to document interactions is much higher than for
+species [e.g. 500% vs 64% in @Chacoff2012EvaSam]. Also, evaluating sampling
+completeness for interactions is more complex than for species, as it requires
+assessing the proportion of forbidden links (i.e. links that cannot occur) due
+to life history or morphological restrictions, which in turn requires knowledge
+of species natural history and traits [@Jordano2016SamNet]. While some
+quantitative network properties such as connectance are less affected by
+sampling completeness, network composition and binary measurements derived from
+it will vary widely if interactions are missed [e.g. number of links,
+@Vizentin-Bugoni2016InfSam; @Poisot2012DisSpe]. Small networks are also more
+sensitive to undersampling than larger ones [@Henriksen2019EffNet].
 
 <!--# how is this paragraph flowing from the previous? it sounds like another added challenge and it is not clear why it is separate from the previous ones-->
 
@@ -275,26 +253,25 @@ distribution of species across the landscape using neutral landscape models
 [NLMs; @Gardner1987NeuMod; @Etherington2015NlmPyt]. NLMs are used to generate
 landscapes replicating realistic spatially-autocorrelated distributions and
 representing useful baselines to explore ecological processes in a spatial
-context
-[@Hesselbarth2024ComMet]<!--# please clarify whether the autocorrelation is between species, or within a species range due to, e.g., spatial autocorrelation. I would also move this sentence to after the next ones that justify the use of this approach-->.
-NLMs have been used to generate realistic landscapes in contexts relating to
-biodiversity distribution and preservation, for instance to compare avian
-diversity between conservation approaches in coffee-growing landscapes
-[@Valente2022LanLan] or to assess the potential of a suggested umbrella species
-in an ecotone [@Duchardt2023UsiNeu]. NLMs have also been used with species
-interactions, for example to evaluate the effect of landscape structure in
-cross-species disease transmission between interacting species
-[@Forero-Munoz2025SpaLan]. Here, we generated species ranges following the
-implementation in SpeciesInteractionSamplers.jl [@Catchen2023MisLin], which 1)
-uses the Diamond-Square algorithm [@Fournier1982ComRen; also used similarly and
-described by @Forero-Munoz2025SpaLan] to generate a probabilistic
-spatially-autocorrelated range (default autocorrelation parameter h=0.85); 2)
-draws a threshold based on a Beta distribution (default $\alpha$ = 10, $\beta$ =
-10); 3) converts the probabilistic range into a binary one, considering all
-sites with values higher than the threshold as presence and those with lower
-values as absence, and 4) repeating the process independently for all species
-(here 75 species). In the end, this process generates communities of known
-composition and species richness at every site in the simulated landscape.
+context [@Hesselbarth2024ComMet]. NLMs have been used to generate realistic
+landscapes in contexts relating to biodiversity distribution and preservation,
+for instance to compare avian diversity between conservation approaches in
+coffee-growing landscapes [@Valente2022LanLan] or to assess the potential of a
+suggested umbrella species in an ecotone [@Duchardt2023UsiNeu]. NLMs have also
+been used with species interactions, for example to evaluate the effect of
+landscape structure in cross-species disease transmission between interacting
+species [@Forero-Munoz2025SpaLan]. Here, we generated species ranges following
+the implementation in SpeciesInteractionSamplers.jl [@Catchen2023MisLin],
+which 1) uses the Diamond-Square algorithm [@Fournier1982ComRen; also used
+similarly and described by @Forero-Munoz2025SpaLan] to generate a probabilistic
+spatially-autocorrelated range for a species (default autocorrelation parameter
+h=0.85); 2) draws a threshold based on a Beta distribution (default $\alpha$ =
+10, $\beta$ = 10); 3) converts the probabilistic range into a binary one,
+considering all sites with values higher than the threshold as presence and
+those with lower values as absence, and 4) repeating the process independently
+for all species (here 75 species). In the end, this process generates
+communities of known composition and species richness at every site in the
+simulated landscape.
 
 Next, using the spatio-temporal model presented by @Catchen2023MisLin, we
 defined the **feasible interactions** between the species by generating a
