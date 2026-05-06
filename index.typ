@@ -483,15 +483,15 @@
 
 = Introduction
 <introduction>
-Biodiversity monitoring should encompass all facets of biodiversity. Article 7 of the Convention on Biological Diversity \(United Nations 1992) calls for Parties to "\[i\]dentify components of biological diversity important for its conservation and sustainable use", and "\[m\]onitor, through sampling and other techniques, the components of biological diversity". Biodiversity Observation Networks (BONs) are promising initiatives to improve monitoring across scales and biodiversity facets. BONs are coordinated monitoring networks designed to harmonize observation systems, assist reporting on international assessments, and reinforce scientific basis in biodiversity monitoring \(Navarro et al. 2017; Gonzalez et al. 2023). BONs can be thematic (Marine BON, Freshwater BON), national (China BON, French BON, Colombia BON) or regional (Asia-Pacific, Europe); some represent networks of monitoring sites for systematic monitoring (China BON) while others represent biodiversity data hubs (French BON) \(Xu et al. 2017; Navarro et al. 2017). Additional BONs are currently in the development or planification stages, notably in Europe \(Kissling et al. 2024) and in Canada \(Simard 2024; Gonzalez et al. 2025), and could eventually be interlinked into the Global Biodiversity Observation System (GBiOS), a globally connected network providing capacity to monitor biodiversity change \(Gonzalez et al. 2023) and guiding actions needed for targets and goals of the Kunming-Montreal Global Biodiversity framework \(CBD 2022).
+Biodiversity monitoring should encompass all facets of biodiversity. Article 7 of the Convention on Biological Diversity @UnitedNations1992ConBio calls for Parties to "\[i\]dentify components of biological diversity important for its conservation and sustainable use", and "\[m\]onitor, through sampling and other techniques, the components of biological diversity". Biodiversity Observation Networks (BONs) are promising initiatives to improve monitoring across scales and biodiversity facets. BONs are coordinated monitoring networks designed to harmonize observation systems, assist reporting on international assessments, and reinforce scientific basis in biodiversity monitoring @Navarro2017MonBio@Gonzalez2023GloBio. BONs can be thematic (Marine BON, Freshwater BON), national (China BON, French BON, Colombia BON) or regional (Asia-Pacific, Europe); some represent networks of monitoring sites for systematic monitoring (China BON) while others represent biodiversity data hubs (French BON) @Xu2017OptMon@Navarro2017MonBio. Additional BONs are currently in the development or planification stages, notably in Europe @Kissling2024ModEff and in Canada @Gonzalez2025BioObs@Simard2024ResSui, and could eventually be interlinked into the Global Biodiversity Observation System (GBiOS), a globally connected network providing capacity to monitor biodiversity change @Gonzalez2023GloBio and guiding actions needed for targets and goals of the Kunming-Montreal Global Biodiversity framework @CBD2022DecAdoa.
 
-Recent work highlighted the need for improved sampling designs in BONs and proper adjustment to monitoring goals. First, current sampling designs over large scales are often too sparse, at too coarse a scale, too infrequent, and without temporal replication \(Santana et al. 2025). For example, recommendations for more effective spatial sampling designs in Europe included i) stratified random sampling (with stratification across environmental, anthropogenic and political gradients or classes, ii) incorporation of existing monitoring sites, iii) filling of spatial gaps \(Kissling et al. 2024). Second, ecological monitoring design relies on site selection algorithms more often discussed regarding their capacity to achieve spatial balance and representative samples, and less frequently for achieving an ecological monitoring goal \(Norman and Poisot 2025). Species richness is the most commonly used biodiversity measure in monitoring contexts \(Hillebrand et al. 2018), including in discussions over sampling designs. On one hand, maximizing richness can efficiently capture functional and phylogenetic diversity in conservation networks \(Willig et al. 2023). On the other hand, the use of species richness to measure biodiversity change and guide biological conservation has also been criticized, mainly since trends in species richness do not properly capture local changes, neglecting species identities and functional roles, and do not providing information on persistence of biodiversity and ecosystem services \(Hillebrand et al. 2018; Aguiar et al. 2024; Fletcher Jr. et al. 2025). Thus, there is a need to better adjust BON sampling designs to biodiversity facets beyond species richness.
+Recent work highlighted the need for improved sampling designs in BONs and proper adjustment to monitoring goals. First, current sampling designs over large scales are often too sparse, at too coarse a scale, too infrequent, and without temporal replication @Santana2025LarBio. For example, recommendations for more effective spatial sampling designs in Europe included i) stratified random sampling (with stratification across environmental, anthropogenic and political gradients or classes, ii) incorporation of existing monitoring sites, iii) filling of spatial gaps @Kissling2024ModEff. Second, ecological monitoring design relies on site selection algorithms more often discussed regarding their capacity to achieve spatial balance and representative samples, and less frequently for achieving an ecological monitoring goal @Norman2025SitSel. Species richness is the most commonly used biodiversity measure in monitoring contexts @Hillebrand2018BioCha, including in discussions over sampling designs. On one hand, maximizing richness can efficiently capture functional and phylogenetic diversity in conservation networks @Willig2023ProBio. On the other hand, the use of species richness to measure biodiversity change and guide biological conservation has also been criticized, mainly since trends in species richness do not properly capture local changes, neglecting species identities and functional roles, and do not providing information on persistence of biodiversity and ecosystem services @Hillebrand2018BioCha@FletcherJr.2025SpeRic@Aguiar2024UntBio. Thus, there is a need to better adjust BON sampling designs to biodiversity facets beyond species richness.
 
-Species interactions are a central component of biodiversity \(McCann 2007; Valiente-Banuet et al. 2015; Harvey et al. 2017), critical for ecosystem functioning and health, yet are undervalued in biodiversity monitoring and conservation \(Jordano 2016a; Dansereau et al. 2025). Interactions mediate community and ecosystem responses to change \(Garzke et al. 2019) and can improve our ability to predict responses to climate change \(Abrego et al. 2021). They have their own spatial and macro-ecological dynamics \(Baiser et al. 2019; Mestre et al. 2022; Windsor et al. 2023; Dansereau et al. 2024), and may be lost (or change) faster than species \(Valiente-Banuet et al. 2015; Doré et al. 2021). Despite a lack of data at global scales and uneven data availability across different interaction types and environments\(Hortal et al. 2015; Poisot et al. 2021), we now have sufficient conceptual tools to support the added value of species interactions in designing efficient management actions \(Dansereau et al. 2025; Moracho et al. 2025). Therefore, integrating species interactions into existing monitoring programs, such as BONs, is something we need to undertake in the near future.
+Species interactions are a central component of biodiversity @Valiente-Banuet2015SpeLos@Harvey2017BriEco@McCann2007ProBio, critical for ecosystem functioning and health, yet are undervalued in biodiversity monitoring and conservation @Jordano2016ChaEco@Dansereau2025OveDis. Interactions mediate community and ecosystem responses to change @Garzke2019TroInt and can improve our ability to predict responses to climate change @Abrego2021AccSpe. They have their own spatial and macro-ecological dynamics @Windsor2023UsiEco@Mestre2022DisFoo@Baiser2019EcoRul@Dansereau2024SpaExp, and may be lost (or change) faster than species @Valiente-Banuet2015SpeLos@Dore2021RelEff. Despite a lack of data at global scales and uneven data availability across different interaction types and environments@Hortal2015SevSho@Poisot2021GloKno, we now have sufficient conceptual tools to support the added value of species interactions in designing efficient management actions @Dansereau2025OveDis@Moracho2025RebEco. Therefore, integrating species interactions into existing monitoring programs, such as BONs, is something we need to undertake in the near future.
 
-Prior investigations of interaction sampling did not address how efficiently we should expect to monitor interactions within the BON framework, nor did studies on the effectiveness of BONs pay particular attention to the sampling of species interactions. Instead, much focus has been given on how to assess sampling completeness and diversity metrics \(e.g. Chacoff et al. 2012; Chiu et al. 2023) and how sampling effort affects network properties \(e.g., McLeod et al. 2021). Recent empirical \(Caron et al. 2024) and theoretical \(Poisot 2023) results have established that knowing the network structure (i.e.~network properties) does not always allow to know the list of interactions (and vice versa), therefore justifying the need to sample interactions as their own biological entities. A central challenge to do so is that the sampling effort required to document interactions is much higher than for species \(e.g.~500% vs 64% in Chacoff et al. 2012). Moreover, evaluating sampling completeness for interactions is more complex than for species, as it requires assessing the proportion of forbidden links (i.e.~links that cannot occur) due to life history or morphological restrictions, which in turn requires knowledge of species natural history and traits \(Jordano 2016b). While some quantitative network properties such as connectance are less affected by sampling completeness, network composition and binary measurements derived from it will vary widely if interactions are missed \(e.g.~number of links, Vizentin-Bugoni et al. 2016; Poisot et al. 2012).
+Prior investigations of interaction sampling did not address how efficiently we should expect to monitor interactions within the BON framework, nor did studies on the effectiveness of BONs pay particular attention to the sampling of species interactions. Instead, much focus has been given on how to assess sampling completeness and diversity metrics @Chacoff2012EvaSam@Chiu2023QuaEst and how sampling effort affects network properties @McLeod2021SamAsy. Recent empirical @Caron2024TraMod and theoretical @Poisot2023GuiPre results have established that knowing the network structure (i.e.~network properties) does not always allow to know the list of interactions (and vice versa), therefore justifying the need to sample interactions as their own biological entities. A central challenge to do so is that the sampling effort required to document interactions is much higher than for species @Chacoff2012EvaSam. Moreover, evaluating sampling completeness for interactions is more complex than for species, as it requires assessing the proportion of forbidden links (i.e.~links that cannot occur) due to life history or morphological restrictions, which in turn requires knowledge of species natural history and traits @Jordano2016SamNet. While some quantitative network properties such as connectance are less affected by sampling completeness, network composition and binary measurements derived from it will vary widely if interactions are missed @Vizentin-Bugoni2016InfSam@Poisot2012DisSpe.
 
-One way to define expectations for interaction monitoring within BONs is to consider variation in local sampling from an explicitly spatial perspective---that is, quantifying sampling effort from specific sites where interactions are sampled---and use such expectations to improve monitoring efficiency. Previous evaluation of sampling effort relating to interactions were not explicitly spatial in a way that directly ties to biodiversity monitoring: they investigated expected variations using dataset resampling \(to measure the effect on network composition and properties, Poisot et al. 2012; Henriksen et al. 2019), focused on the effect of scale \(showing that many network structure metrics are robust across spatial scales, Wood et al. 2015), or assessed the ability to capture regional properties \(showing that sampling larger to smaller lakes better captures regional metaweb properties, McLeod et al. 2021). We now have frameworks and models to describe and investigate the variation and detection of interaction networks in space and time \(Poisot et al. 2015; Cirtwill et al. 2019; Catchen et al. 2023), and therefore the next step is to consider how to optimize monitoring for species interactions. Simulations offer opportunities to explore such optimizations: for example, to anticipate sampling effects on estimated network properties compared to a known reference \(de Aguiar et al. 2019), determine optimal sampling frequency for monitoring \(Daugaard et al. 2024), and examine how monitoring efficiency and trends detection is influenced by the number of monitoring sites under a range of scenarios and monitoring schemes \(Ficetola et al. 2018).
+One way to define expectations for interaction monitoring within BONs is to consider variation in local sampling from an explicitly spatial perspective---that is, quantifying sampling effort from specific sites where interactions are sampled---and use such expectations to improve monitoring efficiency. Previous evaluation of sampling effort relating to interactions were not explicitly spatial in a way that directly ties to biodiversity monitoring: they investigated expected variations using dataset resampling @Poisot2012DisSpe@Henriksen2019EffNet, focused on the effect of scale @Wood2015EffSpa, or assessed the ability to capture regional properties @McLeod2021SamAsy. We now have frameworks and models to describe and investigate the variation and detection of interaction networks in space and time @Poisot2015SpeWhy@Cirtwill2019QuaFra@Catchen2023MisLin, and therefore the next step is to consider how to optimize monitoring for species interactions. Simulations offer opportunities to explore such optimizations: for example, to anticipate sampling effects on estimated network properties compared to a known reference @deAguiar2019RevBia, determine optimal sampling frequency for monitoring @Daugaard2024DepFor, and examine how monitoring efficiency and trends detection is influenced by the number of monitoring sites under a range of scenarios and monitoring schemes @Ficetola2018OptMon.
 
 In this manuscript, we address three key questions. First, what expectations should we have for monitoring species interactions across space within Biodiversity Observation Networks? Second, what effect does sampling design strategies have on the efficiency with which we can document interactions? Finally, what available information (e.g.~from existing monitoring programs) could be used to optimize the design of future BONs for interactions and how precise should such information be to expect efficiency improvements?
 
@@ -506,7 +506,7 @@ We used simulations to generate species interaction networks, species ranges, an
 ], caption: figure.caption(
 position: bottom, 
 [
-Conceptual diagram of the workflow and simulations. We used the spatio-temporal model by Catchen et al. (2023) to generate landscapes with spatial variation in species and interaction composition. We then designed biodiversity observation networks (BONs) across the simulated landscapes using a combination of site selection algorithms (samplers) and optimization targets. We measured the efficiency of the BON designs for sampling species interactions using a comparable measure (the number of sites required to document 80% of the interactions) across all simulations.
+Conceptual diagram of the workflow and simulations. We used the spatio-temporal model by #cite(<Catchen2023MisLin>, form: "prose") to generate landscapes with spatial variation in species and interaction composition. We then designed biodiversity observation networks (BONs) across the simulated landscapes using a combination of site selection algorithms (samplers) and optimization targets. We measured the efficiency of the BON designs for sampling species interactions using a comparable measure (the number of sites required to document 80% of the interactions) across all simulations.
 ]), 
 kind: "quarto-float-fig", 
 supplement: "Figure", 
@@ -516,25 +516,25 @@ supplement: "Figure",
 
 == General model
 <general-model>
-We followed the approach and process-based, spatio-temporal model introduced by \(Catchen et al. 2023; building on Cirtwill et al. 2019) to simulate interaction realization and detection while accounting for spatial variation in species occurrences, implemented in #NormalTok("SpeciesInteractionSamplers.jl");. This model broadly captures the different processes involved into turning a #emph[potential] interaction (i.e.~a biologically feasible interaction) into a #emph[realized] one (i.e.~an interaction that took place at a specified location), as outlined in Morales-Castilla et al. (2015). To this generative model, we added the design of Biodiversity Observation Networks and the evaluation of sampling efficiency between and across simulations for species interactions (#ref(<fig-concept>, supplement: [Figure])).
+We followed the approach and process-based, spatio-temporal model introduced by @Catchen2023MisLin@Cirtwill2019QuaFra to simulate interaction realization and detection while accounting for spatial variation in species occurrences, implemented in #NormalTok("SpeciesInteractionSamplers.jl");. This model broadly captures the different processes involved into turning a #emph[potential] interaction (i.e.~a biologically feasible interaction) into a #emph[realized] one (i.e.~an interaction that took place at a specified location), as outlined in #cite(<Morales-Castilla2015InfBio>, form: "prose"). To this generative model, we added the design of Biodiversity Observation Networks and the evaluation of sampling efficiency between and across simulations for species interactions (#ref(<fig-concept>, supplement: [Figure])).
 
 === Step 1: Generating interaction networks with spatial variation
 <step-1-generating-interaction-networks-with-spatial-variation>
-First, we simulated networks with variation in species and interaction composition across a simulated landscape (#ref(<fig-concept>, supplement: [Figure]), Step 1), with the intent to replicate the ecological context in which biodiversity monitoring could take place. To do so, we generated species ranges representing the distribution of species across the landscape using neutral landscape models \[NLMs; Gardner et al. (1987)\; Etherington et al. (2015)\]. NLMs are used to generate landscapes replicating realistic spatially-autocorrelated distributions and representing useful baselines to explore ecological processes in a spatial context \(Hesselbarth et al. 2024). NLMs have been used to generate realistic landscapes in contexts relating to biodiversity distribution and preservation, for instance to compare avian diversity between conservation approaches in coffee-growing landscapes \(Valente et al. 2022) or to assess the potential of a suggested umbrella species in an ecotone \(Duchardt et al. 2023). NLMs have also been used with species interactions, for example to evaluate the effect of landscape structure in cross-species disease transmission between interacting species \(Forero-Muñoz et al. 2025). Here, we generated species ranges following the implementation in SpeciesInteractionSamplers.jl \(Catchen et al. 2023), which 1) uses the Diamond-Square algorithm \(Fournier et al. 1982; also used similarly and described by Forero-Muñoz et al. 2025) to generate a probabilistic spatially-autocorrelated range for a species (default autocorrelation parameter h=0.85); 2) draws a threshold based on a Beta distribution (default $alpha$ = 10, $beta$ = 10); 3) converts the probabilistic range into a binary one, considering all sites with values higher than the threshold as presence and those with lower values as absence, and 4) repeating the process independently for all species (here 75 species). In the end, this process generates communities of known composition and species richness at every site in the simulated landscape.
+First, we simulated networks with variation in species and interaction composition across a simulated landscape (#ref(<fig-concept>, supplement: [Figure]), Step 1), with the intent to replicate the ecological context in which biodiversity monitoring could take place. To do so, we generated species ranges representing the distribution of species across the landscape using neutral landscape models \[NLMs; #cite(<Gardner1987NeuMod>, form: "prose")\; #cite(<Etherington2015NlmPyt>, form: "prose")\]. NLMs are used to generate landscapes replicating realistic spatially-autocorrelated distributions and representing useful baselines to explore ecological processes in a spatial context @Hesselbarth2024ComMet. NLMs have been used to generate realistic landscapes in contexts relating to biodiversity distribution and preservation, for instance to compare avian diversity between conservation approaches in coffee-growing landscapes @Valente2022LanLan or to assess the potential of a suggested umbrella species in an ecotone @Duchardt2023UsiNeu. NLMs have also been used with species interactions, for example to evaluate the effect of landscape structure in cross-species disease transmission between interacting species @Forero-Munoz2025SpaLan. Here, we generated species ranges following the implementation in SpeciesInteractionSamplers.jl @Catchen2023MisLin, which 1) uses the Diamond-Square algorithm @Fournier1982ComRen@Forero-Munoz2025SpaLan to generate a probabilistic spatially-autocorrelated range for a species (default autocorrelation parameter h=0.85); 2) draws a threshold based on a Beta distribution (default $alpha$ = 10, $beta$ = 10); 3) converts the probabilistic range into a binary one, considering all sites with values higher than the threshold as presence and those with lower values as absence, and 4) repeating the process independently for all species (here 75 species). In the end, this process generates communities of known composition and species richness at every site in the simulated landscape.
 
-Next, using the spatio-temporal model presented by Catchen et al. (2023), we defined the #strong[feasible interactions] between the species by generating a metaweb using the niche model \(Williams and Martinez 2000). The niche model defines interactions by assigning species a niche position and feeding range, similarly to body-size relationships between predator and prey, and generates networks with structural properties similar to empirical food webs \(Williams and Martinez 2000; Gravel et al. 2013; Delmas et al. 2019). It is widely used as a generative model, including in the context of investigating interaction sampling \(Poisot et al. 2012; Wood et al. 2015).
+Next, using the spatio-temporal model presented by #cite(<Catchen2023MisLin>, form: "prose"), we defined the #strong[feasible interactions] between the species by generating a metaweb using the niche model @Williams2000SimRul. The niche model defines interactions by assigning species a niche position and feeding range, similarly to body-size relationships between predator and prey, and generates networks with structural properties similar to empirical food webs @Williams2000SimRul@Gravel2013InfFoo@Delmas2019AnaEco. It is widely used as a generative model, including in the context of investigating interaction sampling @Poisot2012DisSpe@Wood2015EffSpa.
 
-Combining the species ranges and the metaweb, we verified where species with feasible interactions co-occur, to build a list of #strong[possible interactions] \(Catchen et al. 2023) at every location in our landscape. Next, we defined #strong[realized interactions] by conditioning possible interactions to species abundances. Rare and low-abundance species are less likely to interact in a location because they are less likely to encounter one another when compared to abundant species, leading to neutrally forbidden links \(Canard et al. 2012; Catchen et al. 2023). The neutral model introduced by Catchen et al. (2023) first generates a distribution of species relative abundances from a log-normal distribution \[followed by many empirical communities, Preston (1948)\; the variance is controlled by a parameter $sigma$\]. It then defines an interaction rate between species pairs based on the product of their relative abundances, scaled by a fixed realization energy parameter ($epsilon.alt$) determining the total expected number of interactions. Finally, they draw realized interactions from a Poisson distribution parametrized on the interaction rate \(see Catchen et al. 2023 for full details).
+Combining the species ranges and the metaweb, we verified where species with feasible interactions co-occur, to build a list of #strong[possible interactions] @Catchen2023MisLin at every location in our landscape. Next, we defined #strong[realized interactions] by conditioning possible interactions to species abundances. Rare and low-abundance species are less likely to interact in a location because they are less likely to encounter one another when compared to abundant species, leading to neutrally forbidden links @Catchen2023MisLin@Canard2012EmeStr. The neutral model introduced by #cite(<Catchen2023MisLin>, form: "prose") first generates a distribution of species relative abundances from a log-normal distribution \[followed by many empirical communities, #cite(<Preston1948ComRar>, form: "prose")\; the variance is controlled by a parameter $sigma$\]. It then defines an interaction rate between species pairs based on the product of their relative abundances, scaled by a fixed realization energy parameter ($epsilon.alt$) determining the total expected number of interactions. Finally, they draw realized interactions from a Poisson distribution parametrized on the interaction rate @Catchen2023MisLin[ for full details].
 
-Finally, we defined the set of #strong[detected interactions] by also conditioning the detection of realized interactions on species abundances. Even if an interaction is realized in a location, sampling must occur at the moment of interaction for its detection; this is again less likely for low probability events, like interactions between rare occurring species. Catchen et al. (2023) first establish a per-species detection probability conditioned on relative abundance and a fixed scaling parameter ($alpha$), compute the interaction-level detection rate as the product of the per-species probability, then draws the detected interactions from a Binomial distribution parametrized on the number of realized interactions and the interaction detection rates.
+Finally, we defined the set of #strong[detected interactions] by also conditioning the detection of realized interactions on species abundances. Even if an interaction is realized in a location, sampling must occur at the moment of interaction for its detection; this is again less likely for low probability events, like interactions between rare occurring species. #cite(<Catchen2023MisLin>, form: "prose") first establish a per-species detection probability conditioned on relative abundance and a fixed scaling parameter ($alpha$), compute the interaction-level detection rate as the product of the per-species probability, then draws the detected interactions from a Binomial distribution parametrized on the number of realized interactions and the interaction detection rates.
 
 The result of the general model is a #strong[landscape configuration] with spatial variation in species and interaction composition and detection. Species composition, realized interactions, and detected interactions are based on the process model and known at all locations, allowing to compare the efficacy and efficiency of sampling strategies at retrieving interactions within the landscape configuration.
 
 === Step 2: Designing Biodiversity Observation Networks
 <step-2-designing-biodiversity-observation-networks>
-We designed #strong[Biodiversity Observation Networks (BONs)] across the simulated landscape and measured their efficiency at monitoring the generated species interaction networks. The objective of this step is to select the sites that will form the monitoring network---a BON being a monitoring network for biodiversity, and for which we here focus specifically on species interactions---similar to BON examples with systematic grid designs at national scales \(e.g.~China BON, Xu et al. 2017; Yi et al. 2022) and subnational ones \(Québec and Alberta in Canada, Simard 2024; Burton et al. 2014). Norman and Poisot (2025) presented an overview of the design and site selection process accounting for ecological monitoring goals. The design process uses a site selection algorithm to designate candidate sites for the monitoring network. Key features of the site selection algorithms include the ability to balance sites across space for equal representation \(see Benedetti et al. 2017; Kermorvant et al. 2019 for reviews), to stratify across regions or populations, to include auxiliary site information (environmental or biological) to weight inclusion probability, and to produce master samples including current monitoring site or from which to select a subset of sites for a specific monitoring project \(van Dam-Bates et al. 2018; Robertson et al. 2024).
+We designed #strong[Biodiversity Observation Networks (BONs)] across the simulated landscape and measured their efficiency at monitoring the generated species interaction networks. The objective of this step is to select the sites that will form the monitoring network---a BON being a monitoring network for biodiversity, and for which we here focus specifically on species interactions---similar to BON examples with systematic grid designs at national scales @Xu2017OptMon@Yi2022ChiBio and subnational ones @Simard2024ResSui@Burton2014FraAda. #cite(<Norman2025SitSel>, form: "prose") presented an overview of the design and site selection process accounting for ecological monitoring goals. The design process uses a site selection algorithm to designate candidate sites for the monitoring network. Key features of the site selection algorithms include the ability to balance sites across space for equal representation @Benedetti2017SpaBal@Kermorvant2019SpaBal[ for reviews], to stratify across regions or populations, to include auxiliary site information (environmental or biological) to weight inclusion probability, and to produce master samples including current monitoring site or from which to select a subset of sites for a specific monitoring project @vanDam-Bates2018UsiBal@Robertson2024WelSam.
 
-Based on the landscape configurations generated in Step 1, we can use #strong[site selection algorithms] (generally referred to as #emph[samplers]) to distribute monitoring sites across the landscape, then measure each design's efficiency at monitoring species interactions. Some algorithms can optimize the location of sites given different information such as species ranges, species richness or presence of realized interactions. For example, we can design BONs using the Balanced Acceptance Sampling algorithm \(Robertson et al. 2013) when the aim is to balance sites across our simulated landscapes, given its computational efficiency and its ability to weight site inclusion probabilities using a layer of weights. On the other hand, active learning methods like the Uncertainty Sampling algorithm \(Lewis and Gale 1994) can be used to optimize sampling given information on element uncertainty \(Settles 2009). Instead of focusing on uncertainty, we can apply the algorithm to target the sites that provide the highest information gain for the BON, given a layer of 'information' values to maximize. Examples of active learning relating to biodiversity monitoring and sampling site selection include improving species range estimation from a smaller number of actively selected sites \(Lange et al. 2023) and minimizing field data collection costs based on distances between samples \(Malek et al. 2019).
+Based on the landscape configurations generated in Step 1, we can use #strong[site selection algorithms] (generally referred to as #emph[samplers]) to distribute monitoring sites across the landscape, then measure each design's efficiency at monitoring species interactions. Some algorithms can optimize the location of sites given different information such as species ranges, species richness or presence of realized interactions. For example, we can design BONs using the Balanced Acceptance Sampling algorithm @Robertson2013BasBal when the aim is to balance sites across our simulated landscapes, given its computational efficiency and its ability to weight site inclusion probabilities using a layer of weights. On the other hand, active learning methods like the Uncertainty Sampling algorithm @Lewis1994SeqAlg can be used to optimize sampling given information on element uncertainty @Settles2009ActLea. Instead of focusing on uncertainty, we can apply the algorithm to target the sites that provide the highest information gain for the BON, given a layer of 'information' values to maximize. Examples of active learning relating to biodiversity monitoring and sampling site selection include improving species range estimation from a smaller number of actively selected sites @Lange2023ActLea and minimizing field data collection costs based on distances between samples @Malek2019OptFie.
 
 === Step 3: Defining a comparable measure for sampling efficiency
 <step-3-defining-a-comparable-measure-for-sampling-efficiency>
@@ -552,21 +552,21 @@ where $n_p \( a \)$ represents the number of sites required to sample a proporti
 
 == Simulation studies
 <simulation-studies>
-We performed three simulation studies to investigate the efficiency of monitoring species interactions within BONs. Across our simulations, we used landscapes of 100 x 100 pixels, 75 species, and a connectance of 0.2 to generate metawebs using the niche model. The connectance and number of species are within the range of values of well-characterized empirical food webs \(Williams and Martinez 2000; Dunne et al. 2002, 2004; Smith-Ramesh et al. 2017) commonly used for reference \(Williams and Martinez 2008; Baiser et al. 2010; Wood et al. 2015). These parameters are also within the range of previous simulation studies on spatial ecological network dynamics, #emph[e.g.] Thompson and Gonzalez (2017). We used the following parameters for the spatio-temporal model implemented in SpeciesInteractionSamplers.jl \(Catchen et al. 2023): landscape autocorrelation of $h$ = 0.85, Beta distribution with $alpha$ = 10 and $beta$ = 10 to threshold landscapes, variance of log-normal distribution for relative abundances $sigma$ = 1.2, realization energy $epsilon.alt$ = 50,000, and detection scaling $alpha$ = 50. Exploratory simulations showed that model parameters such as metaweb connectance and landscape autocorrelation did not have an important effect on the proportion of sampled interactions and the accumulation observed when increasing the number of sites in the BON. The activation energy $epsilon.alt$ and detection scaling $alpha$ parameters determine the total number of expected and detected interactions \(Catchen et al. 2023), and therefore influenced the absolute numbers observed. Here, we chose to use a single fixed value to focus on differences between sampling strategies---influenced in the same way by the parameter values---and refer readers to Catchen et al. (2023) for the detailed discussion over the parameters' effect. We implemented our simulations in #emph[Julia] v1.11.9 \(Bezanson et al. 2017). All the code used to implement the simulations and perform the analyses is archived on Zenodo \(Dansereau 2026). Full computations were run on compute clusters provided by Calcul Québec and the Digital Research Alliance of Canada.
+We performed three simulation studies to investigate the efficiency of monitoring species interactions within BONs. Across our simulations, we used landscapes of 100 x 100 pixels, 75 species, and a connectance of 0.2 to generate metawebs using the niche model. The connectance and number of species are within the range of values of well-characterized empirical food webs @Williams2000SimRul@Dunne2002NetStr@Dunne2004NetStr@Smith-Ramesh2017GloSyn commonly used for reference @Williams2008SucIts@Baiser2010ConDet@Wood2015EffSpa. These parameters are also within the range of previous simulation studies on spatial ecological network dynamics, #emph[e.g.] #cite(<Thompson2017DisGov>, form: "prose"). We used the following parameters for the spatio-temporal model implemented in SpeciesInteractionSamplers.jl @Catchen2023MisLin: landscape autocorrelation of $h$ = 0.85, Beta distribution with $alpha$ = 10 and $beta$ = 10 to threshold landscapes, variance of log-normal distribution for relative abundances $sigma$ = 1.2, realization energy $epsilon.alt$ = 50,000, and detection scaling $alpha$ = 50. Exploratory simulations showed that model parameters such as metaweb connectance and landscape autocorrelation did not have an important effect on the proportion of sampled interactions and the accumulation observed when increasing the number of sites in the BON. The activation energy $epsilon.alt$ and detection scaling $alpha$ parameters determine the total number of expected and detected interactions @Catchen2023MisLin, and therefore influenced the absolute numbers observed. Here, we chose to use a single fixed value to focus on differences between sampling strategies---influenced in the same way by the parameter values---and refer readers to #cite(<Catchen2023MisLin>, form: "prose") for the detailed discussion over the parameters' effect. We implemented our simulations in #emph[Julia] v1.11.9 @Bezanson2017JulFre. All the code used to implement the simulations and perform the analyses is archived on Zenodo @Dansereau2026GabNet. Full computations were run on compute clusters provided by Calcul Québec and the Digital Research Alliance of Canada.
 
 === Simulation study I: Establishing baseline expectations for the monitoring of interactions
 <simulation-study-i-establishing-baseline-expectations-for-the-monitoring-of-interactions>
-Our first simulation study aimed to establish baselines for the monitoring of interactions across space, defining expectations for how we could document a metaweb of interactions using a BON. We aimed to represent the case of existing BONs (e.g.~Québec, China) designed to cover a wide range of taxa and environmental conditions without specific considerations for species interactions. We tested the case of spatially balanced BONs with evenly spread sites across the landscape configurations, which is generally considered an effective way to cover environmental space \(Kermorvant et al. 2019). We used the Balanced Acceptance Sampling algorithm \(Robertson et al. 2013, 2017) to generate candidate BONs with a number of sites between 1 and 500 at intervals of 10 sites, with 50 replicates for each number of sites, yielding 2,550 BON designs in total. For every design, we used the general model (Step 1) to generate an independent landscape configuration: a specific metaweb, a set of species ranges, an abundance distribution for the species, and realized interactions. In every one, we evaluated the sampling efficiency of the BON design in terms of sampling interactions from the metaweb and in terms of documenting species richness. For species richness, we assumed that all species present at sites in the BON were sampled, then compared the number of species sampled in the BON against the total species richness across the landscape (always 75 species). For interactions, we evaluated each interaction type separately (possible, realized and detected), counting the number of distinct interactions sampled in the BON, then evaluated each number in proportion to the metaweb (specific to the landscape configuration, but generated with the same connectance of 0.2 using the niche model). As a whole, these simulations compared four sampling targets (species richness, possible interactions, realized interactions, and detected interactions), establishing baselines for the monitoring of each.
+Our first simulation study aimed to establish baselines for the monitoring of interactions across space, defining expectations for how we could document a metaweb of interactions using a BON. We aimed to represent the case of existing BONs (e.g.~Québec, China) designed to cover a wide range of taxa and environmental conditions without specific considerations for species interactions. We tested the case of spatially balanced BONs with evenly spread sites across the landscape configurations, which is generally considered an effective way to cover environmental space @Kermorvant2019SpaBal. We used the Balanced Acceptance Sampling algorithm @Robertson2013BasBal@Robertson2017ModBal to generate candidate BONs with a number of sites between 1 and 500 at intervals of 10 sites, with 50 replicates for each number of sites, yielding 2,550 BON designs in total. For every design, we used the general model (Step 1) to generate an independent landscape configuration: a specific metaweb, a set of species ranges, an abundance distribution for the species, and realized interactions. In every one, we evaluated the sampling efficiency of the BON design in terms of sampling interactions from the metaweb and in terms of documenting species richness. For species richness, we assumed that all species present at sites in the BON were sampled, then compared the number of species sampled in the BON against the total species richness across the landscape (always 75 species). For interactions, we evaluated each interaction type separately (possible, realized and detected), counting the number of distinct interactions sampled in the BON, then evaluated each number in proportion to the metaweb (specific to the landscape configuration, but generated with the same connectance of 0.2 using the niche model). As a whole, these simulations compared four sampling targets (species richness, possible interactions, realized interactions, and detected interactions), establishing baselines for the monitoring of each.
 
 === Simulation study II: Evaluating strategies to optimize the monitoring of interactions for a focal species
 <sec-simulation-study-II>
-Interaction network sampling and monitoring may be targeted at a focal species because of its endangered status \(e.g. Rioux et al. 2022), because it is at the centre of conservation or restoration programmes (e.g. #link("https://bearconnect.org/")[BearConnect]), or even due to human-nature conflicts \(e.g. Baranowska et al. 2025). Hence, we also investigated sampling efficiency from a focal species perspective, by simulating a virtual observer that would aim to sample all the interactions of a focal species (here known from the metaweb), but might have different information on how to optimize the sampling design. Thus, the idea of our focal sampling exploration is to represent a simplified case with a clear objective (retrieving a species' interactions) and where we do have prior knowledge about the system, either through empirical data or model predictions, which can be used to optimize sampling.
+Interaction network sampling and monitoring may be targeted at a focal species because of its endangered status @Rioux2022TroNic, because it is at the centre of conservation or restoration programmes (e.g. #link("https://bearconnect.org/")[BearConnect]), or even due to human-nature conflicts @Baranowska2025LowCon. Hence, we also investigated sampling efficiency from a focal species perspective, by simulating a virtual observer that would aim to sample all the interactions of a focal species (here known from the metaweb), but might have different information on how to optimize the sampling design. Thus, the idea of our focal sampling exploration is to represent a simplified case with a clear objective (retrieving a species' interactions) and where we do have prior knowledge about the system, either through empirical data or model predictions, which can be used to optimize sampling.
 
 Optimizing focal sampling relies on two elements: the site selection algorithm (sampler) used and the information provided for optimization. A species range represents an attainable level of information an interested observer could have, for instance based on expert knowledge or species distribution models. Therefore, we investigated the case where an observer knows the species range across the landscape (presence or absence) and tries to optimize the BON design to retrieve the interactions. We tested four strategies for comparison: a #emph[Balanced Sampling] spreading sites across the entire study area (using Balanced Acceptance Sampling, hereafter BAS), a balanced sampling only within the range of the focal species (hereafter called #emph[Balanced Within Range]), a #emph[Weighted Sampling] favouring the species range in site selection among all sites in the study area (adjusting the inclusion probability in BAS), and a #emph[Targeted Sampling] selecting sites with higher 'information' values in the layer provided (using Uncertainty Sampling). Next, we tested four information targets for optimization with the Targeted Sampling strategy (all with the Uncertainty Sampling algorithm): the exact #emph[focal species range] (our attainable information knowledge for the observer), a #emph[probabilistic range] for the focal species (representing a less-informed case, similar to the output of a species distribution model), #emph[species richness] across the landscape (to represent a holistic level of information about the system, which an observer might have based on detailed knowledge about biodiversity in a region) and finally the location of #emph[realized interactions] for the focal species across the landscape (to represent a best-case scenario, where an observer would know exactly the right information to target).
 
-We performed 200 independent simulations with independent landscape configurations (as described in Simulation study I). In each simulation, we selected the species with the highest degree (number of interactions) in the metaweb as the focal species for the simulation \(as it was previously shown as an efficient strategy for sampling and conservation, Pires et al. 2017; de Aguiar et al. 2019). We then generated BONs of 1 to 500 sites (at interval increments of 10 sites) using the three balanced strategies (Balanced Sampling, Balanced Within Range, Weighted Sampling) and four optimization targets for the Targeted Sampling strategy (focal species range, probabilistic range, species richness, realized interactions), with 50 replicates for every number of sites. For each BON generated, we extracted the number of unique realized interactions sampled across all sites for the focal species. We then performed a grid search across possible values of $a$ (from #ref(<eq-eff>, supplement: [Equation])) to identify the value yielding the curve with the best fit to the simulation's results. To do so, we extracted the median result (proportion of sampled interactions) across replicates for every number of sites in the BONs. We then evaluated 10,000 evenly spaced values for $a$ between $e^(- 5)$ and $e^15$ and selected the value yielding the curve minimizing the sum of squared errors to the simulation results. We searched for values of $a$ on an exponential scale as it allowed for more gradual control over the curve shape and adjusted the limits to ensure they went beyond the fitted values on both the lower and higher side. After selecting the best-fit value for $a$, we evaluated the sampling efficiency for the simulation using the $n_0.80$ measurement described in Step 3 (number of sites required to document 80% of the interactions).
+We performed 200 independent simulations with independent landscape configurations (as described in Simulation study I). In each simulation, we selected the species with the highest degree (number of interactions) in the metaweb as the focal species for the simulation @Pires2017FriPar@deAguiar2019RevBia. We then generated BONs of 1 to 500 sites (at interval increments of 10 sites) using the three balanced strategies (Balanced Sampling, Balanced Within Range, Weighted Sampling) and four optimization targets for the Targeted Sampling strategy (focal species range, probabilistic range, species richness, realized interactions), with 50 replicates for every number of sites. For each BON generated, we extracted the number of unique realized interactions sampled across all sites for the focal species. We then performed a grid search across possible values of $a$ (from #ref(<eq-eff>, supplement: [Equation])) to identify the value yielding the curve with the best fit to the simulation's results. To do so, we extracted the median result (proportion of sampled interactions) across replicates for every number of sites in the BONs. We then evaluated 10,000 evenly spaced values for $a$ between $e^(- 5)$ and $e^15$ and selected the value yielding the curve minimizing the sum of squared errors to the simulation results. We searched for values of $a$ on an exponential scale as it allowed for more gradual control over the curve shape and adjusted the limits to ensure they went beyond the fitted values on both the lower and higher side. After selecting the best-fit value for $a$, we evaluated the sampling efficiency for the simulation using the $n_0.80$ measurement described in Step 3 (number of sites required to document 80% of the interactions).
 
-Finally, we defined a confidence interval for our $n_0.80$ efficiency measurement. As the best-fit for $a$ is based on the median result across replicates, we used the confidence interval of the median to define a lower and upper bound for values of $a$. We calculated the order statistics delimiting an 90% equal-tailed interval using the normal approximation to the binomial distribution \(Gibbons and Chakraborti 2010) ---e.g., at n=50, the 90% confidence interval for the median goes from the 19th and to the 31st value---and extracted the corresponding results from our simulations. We performed separate grid searches for the parameter $a$ using the lower and upper confidence intervals bounds of the median, thus delimiting the lower and upper bounds for $a$, and subsequently bounds for $n_0.80$. This approach returns a confidence interval for the sampling efficiency, which we used to compare site selection algorithms and optimization targets within a specific landscape configuration, given that the monitoring context is unique in each one (different metawebs and species ranges). Doing so, we identified which site selection algorithms or optimization target were equal and which were more efficient (thus quickly reaching a high proportion of monitored interactions), while also quantifying the magnitude the difference between strategies in a comparable way between independent simulations.
+Finally, we defined a confidence interval for our $n_0.80$ efficiency measurement. As the best-fit for $a$ is based on the median result across replicates, we used the confidence interval of the median to define a lower and upper bound for values of $a$. We calculated the order statistics delimiting an 90% equal-tailed interval using the normal approximation to the binomial distribution @Gibbons2010NonSta ---e.g., at n=50, the 90% confidence interval for the median goes from the 19th and to the 31st value---and extracted the corresponding results from our simulations. We performed separate grid searches for the parameter $a$ using the lower and upper confidence intervals bounds of the median, thus delimiting the lower and upper bounds for $a$, and subsequently bounds for $n_0.80$. This approach returns a confidence interval for the sampling efficiency, which we used to compare site selection algorithms and optimization targets within a specific landscape configuration, given that the monitoring context is unique in each one (different metawebs and species ranges). Doing so, we identified which site selection algorithms or optimization target were equal and which were more efficient (thus quickly reaching a high proportion of monitored interactions), while also quantifying the magnitude the difference between strategies in a comparable way between independent simulations.
 
 === Simulation study III: Assessing the precision required when estimating a species range
 <simulation-study-iii-assessing-the-precision-required-when-estimating-a-species-range>
@@ -651,7 +651,7 @@ Our results highlight a tolerance in the precision of the species range estimati
 ], caption: figure.caption(
 position: bottom, 
 [
-Comparison of efficiencies when over- and underestimating the focal species range for 200 independent simulations. Results are compared to the Balanced Within Range strategy applied on the exact species range, whose $n_0.80$ value is used as reference (specific to every simulation). In panel A, we use the over- and underestimation $n_0.80$ in proportion to the reference $n_0.80$ (y axis) given the range estimation offset (x axis) to highlight the linear trend and association with the offset percentage for overestimation. The dotted line at 1.00 indicates exactly equal $n_0.80$. In panel B, we summarize comparisons across all simulations to display the proportion of each comparison outcome (equal, higher, lower). The solid line represents the actual proportion value, while the shaded bands delimit the 90% confidence intervals for the proportion calculated using the Wilson interval method \(Brown et al. 2001, implemented in HypothesisTests.jl).
+Comparison of efficiencies when over- and underestimating the focal species range for 200 independent simulations. Results are compared to the Balanced Within Range strategy applied on the exact species range, whose $n_0.80$ value is used as reference (specific to every simulation). In panel A, we use the over- and underestimation $n_0.80$ in proportion to the reference $n_0.80$ (y axis) given the range estimation offset (x axis) to highlight the linear trend and association with the offset percentage for overestimation. The dotted line at 1.00 indicates exactly equal $n_0.80$. In panel B, we summarize comparisons across all simulations to display the proportion of each comparison outcome (equal, higher, lower). The solid line represents the actual proportion value, while the shaded bands delimit the 90% confidence intervals for the proportion calculated using the Wilson interval method @Brown2001IntEst[, implemented in HypothesisTests.jl].
 ]), 
 kind: "quarto-float-fig", 
 supplement: "Figure", 
@@ -663,19 +663,19 @@ supplement: "Figure",
 <discussion>
 #emph[What should be realistic expectations for sampling and monitoring of species interactions?]
 
-Our simulations highlight that expectations for monitoring species interactions within spatially-balanced, general-purpose BONs should be much lower than for species richness, especially when considering that interaction realization and detection both depend on species abundance (#ref(<fig-nbons>, supplement: [Figure])). In other words, we can expect the monitoring of species interactions within a BON to require a (much) higher monitoring effort across space than the one required for monitoring species and community composition. Our observations are consistent with previous ones regarding higher sampling effort required to document pollinator networks \(Chacoff et al. 2012), yet here framed in the context of BON design and monitoring across space. Overall, these results reinforce the need for optimizing sampling designs for species interactions beyond and in complement to existing monitoring networks.
+Our simulations highlight that expectations for monitoring species interactions within spatially-balanced, general-purpose BONs should be much lower than for species richness, especially when considering that interaction realization and detection both depend on species abundance (#ref(<fig-nbons>, supplement: [Figure])). In other words, we can expect the monitoring of species interactions within a BON to require a (much) higher monitoring effort across space than the one required for monitoring species and community composition. Our observations are consistent with previous ones regarding higher sampling effort required to document pollinator networks @Chacoff2012EvaSam, yet here framed in the context of BON design and monitoring across space. Overall, these results reinforce the need for optimizing sampling designs for species interactions beyond and in complement to existing monitoring networks.
 
-We can improve interaction coverage with the right optimization method, but efficiently doing so requires a clear and attainable monitoring objective. Adopting a single-species perspective \(#emph[e.g.] focusing on interactions for a keystone or high degree species, Pires et al. 2017; de Aguiar et al. 2019) can yield relevant results while relying on attainable levels of information (Figures #ref(<fig-samplers>, supplement: []), #ref(<fig-layers>, supplement: []), #ref(<fig-eff-comp>, supplement: [])). Through our representative example in #ref(<fig-samplers>, supplement: [Figure]), we showed how Targeted Sampling and Balanced Within Range outperform spatially-balanced designs to monitor interactions for a focal species, while only relying on an attainable level of information (the species range). Two emerging questions that follow up on this result are: 1) what information is most efficient to target sites in sampling designs; and 2) how precisely do we need to estimate such information to expect efficiency improvements? Our simulation studies offer insights into both, as we detail next before concluding with recommendations for monitoring.
+We can improve interaction coverage with the right optimization method, but efficiently doing so requires a clear and attainable monitoring objective. Adopting a single-species perspective @Pires2017FriPar@deAguiar2019RevBia can yield relevant results while relying on attainable levels of information (Figures #ref(<fig-samplers>, supplement: []), #ref(<fig-layers>, supplement: []), #ref(<fig-eff-comp>, supplement: [])). Through our representative example in #ref(<fig-samplers>, supplement: [Figure]), we showed how Targeted Sampling and Balanced Within Range outperform spatially-balanced designs to monitor interactions for a focal species, while only relying on an attainable level of information (the species range). Two emerging questions that follow up on this result are: 1) what information is most efficient to target sites in sampling designs; and 2) how precisely do we need to estimate such information to expect efficiency improvements? Our simulation studies offer insights into both, as we detail next before concluding with recommendations for monitoring.
 
 #emph[What strategies and available information are most efficient to optimize monitoring for species interactions?]
 
-Ecologically-relevant metrics are required to evaluate the performance of monitoring designs, beyond spatial balance \(Norman and Poisot 2025). While many sampling algorithms can perform similarly for biodiversity monitoring in certain contexts \(Norman and Poisot 2025), our results highlighted better options when we can define a specific target for monitoring (#ref(<fig-eff-comp>, supplement: [Figure])). Optimizing on a known species range proved an efficient strategy to retrieve its interactions that was better than optimizing based on more holistic, community-level information such as species richness (Figures #ref(<fig-layers>, supplement: []), #ref(<fig-eff-comp>, supplement: [])) . This contrasts with earlier accounts where designs based on maximising species richness also proved efficient to conserve multiple biodiversity facets \(Willig et al. 2023). Instead, our results highlight that more information about an entire system does not always lead to more efficient monitoring, and that efforts could instead be put towards identifying relevant targets with available information to guide monitoring design.
+Ecologically-relevant metrics are required to evaluate the performance of monitoring designs, beyond spatial balance @Norman2025SitSel. While many sampling algorithms can perform similarly for biodiversity monitoring in certain contexts @Norman2025SitSel, our results highlighted better options when we can define a specific target for monitoring (#ref(<fig-eff-comp>, supplement: [Figure])). Optimizing on a known species range proved an efficient strategy to retrieve its interactions that was better than optimizing based on more holistic, community-level information such as species richness (Figures #ref(<fig-layers>, supplement: []), #ref(<fig-eff-comp>, supplement: [])) . This contrasts with earlier accounts where designs based on maximising species richness also proved efficient to conserve multiple biodiversity facets @Willig2023ProBio. Instead, our results highlight that more information about an entire system does not always lead to more efficient monitoring, and that efforts could instead be put towards identifying relevant targets with available information to guide monitoring design.
 
-Optimizing based on the location of the realized interactions was, as expected, even more efficient than targeting the species range (Figures #ref(<fig-layers>, supplement: []), #ref(<fig-eff-comp>, supplement: [])). Yet, this represents a best case scenario that is likely beyond reach in an applied context: it assumes that there is already pre-existing knowledge on where species interactions can be observed, which is unlikely to exist for most interactions, species and locations across the globe, regardless of their relevance for monitoring. Nonetheless, it highlights that the most important efficiency gains will come from better knowledge of where interactions are likely to take place. On one hand, better incorporating factors influencing interaction realization and detection, such as species abundance in our simulations, will be crucial and potentially more impactful than improving knowledge or reducing uncertainty over species ranges (Figures #ref(<fig-layers>, supplement: []), #ref(<fig-eff-comp>, supplement: [])). On the other hand, our result also suggest that monitoring will become more efficient over time as we keep gathering knowledge on interactions, especially if local knowledge of the system and species under focus is incorporated. Such opportunities should emerge in recent BON initiatives intending to integrate Indigenous and local community knowledge for an inclusive view of biodiversity change recognizing multiple ways of knowing \(e.g.~CAN BON, Gonzalez et al. 2025). Overall, we should not wait for perfect knowledge: establishing operational monitoring frameworks to inform biodiversity conservation and management is possible as we keep gathering new information, and better ensures we translate knowledge into action \(Buxton et al. 2021; Dansereau et al. 2025).
+Optimizing based on the location of the realized interactions was, as expected, even more efficient than targeting the species range (Figures #ref(<fig-layers>, supplement: []), #ref(<fig-eff-comp>, supplement: [])). Yet, this represents a best case scenario that is likely beyond reach in an applied context: it assumes that there is already pre-existing knowledge on where species interactions can be observed, which is unlikely to exist for most interactions, species and locations across the globe, regardless of their relevance for monitoring. Nonetheless, it highlights that the most important efficiency gains will come from better knowledge of where interactions are likely to take place. On one hand, better incorporating factors influencing interaction realization and detection, such as species abundance in our simulations, will be crucial and potentially more impactful than improving knowledge or reducing uncertainty over species ranges (Figures #ref(<fig-layers>, supplement: []), #ref(<fig-eff-comp>, supplement: [])). Integrating abundances into network evaluations could be based on species regional abundances @RejiChacko2025SpeLos and would echo similar calls for integration of abundances and processes into conservation @FletcherJr.2025SpeRic@Dornelas2023LooBac@Tobias2025BioCon. On the other hand, our result also suggest that monitoring will become more efficient over time as we keep gathering knowledge on interactions, especially if local knowledge of the system and species under focus is incorporated. Such opportunities should emerge in recent BON initiatives integrating Indigenous and local community knowledge for an inclusive view of biodiversity change and recognizing multiple ways of knowing @Gonzalez2025BioObs. Overall, we should not wait for perfect knowledge: establishing operational monitoring frameworks to inform biodiversity conservation and management is possible as we keep gathering new information, and better ensures we translate knowledge into action @Dansereau2025OveDis@Buxton2021KeyInf.
 
 #emph[How precise should estimations be to expect improvements in monitoring efficiency?]
 
-A similarly-efficient alternative to targeted sampling is to follow an approach such as our Balanced Within Range strategy, where we generate a spatially balanced design across the area believed to be more informative. Our results from Simulation Study III are encouraging in this sense, as they show we do not need perfect knowledge when using this strategy (#ref(<fig-estimations>, supplement: [Figure])). The tolerance we observed to 10% over- and underestimation of the focal species range size offers an important margin that changes the information we can use to guide BON design. For instance, our test case of underestimating a species range highlights that we could focus mainly on the most certain parts of a species range prediction \(e.g., using conformal predictions along with species distribution models, Poisot 2024) and expect similar monitoring efficiency. On the opposite side, in terms of range size, our overestimation test case is more analogous to a model focusing on the potential distribution rather than the realized distribution.
+A similarly-efficient alternative to targeted sampling is to follow an approach such as our Balanced Within Range strategy, where we generate a spatially balanced design across the area believed to be more informative. Our results from Simulation Study III are encouraging in this sense, as they show we do not need perfect knowledge when using this strategy (#ref(<fig-estimations>, supplement: [Figure])). The tolerance we observed to 10% over- and underestimation of the focal species range size offers an important margin that changes the information we can use to guide BON design. For instance, our test case of underestimating a species range highlights that we could focus mainly on the most certain parts of a species range prediction @Poisot2024ConPre and expect similar monitoring efficiency. On the opposite side, in terms of range size, our overestimation test case is more analogous to a model focusing on the potential distribution rather than the realized distribution.
 
 #emph[Recommendations for monitoring]
 
@@ -688,347 +688,11 @@ GD was funded by the NSERC Postgraduate Scholarship -- Doctoral (grant ES D -- 5
 = References
 <references>
 #block[
-#block[
-Abrego N, Roslin T, Huotari T, et al (2021) Accounting for species interactions is necessary for predicting how arctic arthropod communities respond to climate change. Ecography 44:885--896. #link("https://doi.org/10.1111/ecog.05547")
-
-] <ref-Abrego2021AccSpe>
-#block[
-Aguiar LMS, Diniz UM, Bueno-Rocha ID, et al (2024) Untangling biodiversity interactions: A meta network on pollination in Earth's most diverse tropical savanna. Ecology and Evolution 14:e11094. #link("https://doi.org/10.1002/ece3.11094")
-
-] <ref-Aguiar2024UntBio>
-#block[
-Baiser B, Gravel D, Cirtwill AR, et al (2019) Ecogeographical rules and the macroecology of food webs. Global Ecol Biogeogr geb.12925. #link("https://doi.org/10.1111/geb.12925")
-
-] <ref-Baiser2019EcoRul>
-#block[
-Baiser B, Russell GJ, Lockwood JL (2010) Connectance determines invasion success via trophic interactions in model food webs. Oikos 119:1970--1976. #link("https://doi.org/10.1111/j.1600-0706.2010.18557.x")
-
-] <ref-Baiser2010ConDet>
-#block[
-Baranowska W, Bartoszewicz M, Nowak S, et al (2025) Low contribution of livestock in the grey wolf diet in the area with high availability of free-ranging cattle and horses. Eur J Wildl Res 71:48. #link("https://doi.org/10.1007/s10344-025-01926-3")
-
-] <ref-Baranowska2025LowCon>
-#block[
-Benedetti R, Piersimoni F, Postiglione P (2017) Spatially Balanced Sampling: A Review and A Reappraisal. International Statistical Review 85:439--454. #link("https://doi.org/10.1111/insr.12216")
-
-] <ref-Benedetti2017SpaBal>
-#block[
-Bezanson J, Edelman A, Karpinski S, Shah VB (2017) Julia: A fresh approach to numerical computing. SIAM Rev 59:65--98. #link("https://doi.org/10.1137/141000671")
-
-] <ref-Bezanson2017JulFre>
-#block[
-Brown LD, Cai TT, DasGupta A (2001) Interval Estimation for a Binomial Proportion. Statistical Science 16:101--133. #link("https://doi.org/10.1214/ss/1009213286")
-
-] <ref-Brown2001IntEst>
-#block[
-Burton AC, Huggard D, Bayne E, et al (2014) A framework for adaptive monitoring of the cumulative effects of human footprint on biodiversity. Environ Monit Assess 186:3605--3617. #link("https://doi.org/10.1007/s10661-014-3643-7")
-
-] <ref-Burton2014FraAda>
-#block[
-Buxton RT, Bennett JR, Reid AJ, et al (2021) Key information needs to move from knowledge to action for biodiversity conservation in Canada. Biological Conservation 256:108983. #link("https://doi.org/10.1016/j.biocon.2021.108983")
-
-] <ref-Buxton2021KeyInf>
-#block[
-Canard E, Mouquet N, Marescot L, et al (2012) Emergence of Structural Patterns in Neutral Trophic Networks. PLOS ONE 7:e38295. #link("https://doi.org/10.1371/journal.pone.0038295")
-
-] <ref-Canard2012EmeStr>
-#block[
-Caron D, Brose U, Lurgi M, et al (2024) Trait-matching models predict pairwise interactions across regions, not food web properties. Global Ecology and Biogeography 33:e13807. #link("https://doi.org/10.1111/geb.13807")
-
-] <ref-Caron2024TraMod>
-#block[
-Catchen MD, Poisot T, Pollock LJ, Gonzalez A (2023) The missing link: Discerning true from false negatives when sampling species interaction networks. #link("https://ecoevorxiv.org/repository/view/4929/"). Accessed 19 Jan 2023
-
-] <ref-Catchen2023MisLin>
-#block[
-CBD (2022) #link("https://www.cbd.int/doc/decisions/cop-15/cop-15-dec-04-en.pdf")[Decision adopted by the conference of the parties to the convention on biological diversity 15/4. Kunming-montreal global biodiversity framework]
-
-] <ref-CBD2022DecAdoa>
-#block[
-Chacoff NP, Vázquez DP, Lomáscolo SB, et al (2012) Evaluating sampling completeness in a desert plant--pollinator network. Journal of Animal Ecology 81:190--200. #link("https://doi.org/10.1111/j.1365-2656.2011.01883.x")
-
-] <ref-Chacoff2012EvaSam>
-#block[
-Chiu C-H, Chao A, Vogel S, et al (2023) Quantifying and estimating ecological network diversity based on incomplete sampling data. Philosophical Transactions of the Royal Society B: Biological Sciences 378:20220183. #link("https://doi.org/10.1098/rstb.2022.0183")
-
-] <ref-Chiu2023QuaEst>
-#block[
-Cirtwill AR, Eklöf A, Roslin T, et al (2019) A quantitative framework for investigating the reliability of empirical network construction. Methods in Ecology and Evolution 10:902--911. #link("https://doi.org/10.1111/2041-210X.13180")
-
-] <ref-Cirtwill2019QuaFra>
-#block[
-Dansereau G (2026) #link("https://doi.org/10.5281/zenodo.18484358")[Gabrieldansereau/NetworkMonitoring: V0.1.0]
-
-] <ref-Dansereau2026GabNet>
-#block[
-Dansereau G, Barros C, Poisot T (2024) Spatially explicit predictions of food web structure from regional-level data. Philosophical Transactions of the Royal Society B: Biological Sciences 379:20230166. #link("https://doi.org/10.1098/rstb.2023.0166")
-
-] <ref-Dansereau2024SpaExp>
-#block[
-Dansereau G, Braga J, Ficetola GF, et al (2025) Overcoming the disconnect between species interaction networks and biodiversity conservation. Trends in Ecology & Evolution 40:840--851. #link("https://doi.org/10.1016/j.tree.2025.05.010")
-
-] <ref-Dansereau2025OveDis>
-#block[
-Daugaard U, Merkli S, Merz E, et al (2024) The dependence of forecasts on sampling frequency as a guide to optimizing monitoring in community ecology. Ecosphere 15:e4786. #link("https://doi.org/10.1002/ecs2.4786")
-
-] <ref-Daugaard2024DepFor>
-#block[
-de Aguiar MAM, Newman EA, Pires MM, et al (2019) Revealing biases in the sampling of ecological interaction networks. PeerJ 7:e7566. #link("https://doi.org/10.7717/peerj.7566")
-
-] <ref-deAguiar2019RevBia>
-#block[
-Delmas E, Besson M, Brice M-H, et al (2019) Analysing ecological networks of species interactions. Biological Reviews 94:16--36. #link("https://doi.org/10.1111/brv.12433")
-
-] <ref-Delmas2019AnaEco>
-#block[
-Doré M, Fontaine C, Thébault E (2021) Relative effects of anthropogenic pressures, climate, and sampling design on the structure of pollination networks at the global scale. Global Change Biology 27:1266--1280. #link("https://doi.org/10.1111/gcb.15474")
-
-] <ref-Dore2021RelEff>
-#block[
-Duchardt CJ, Monroe AP, Edmunds DR, et al (2023) Using neutral landscape models to evaluate the umbrella species concept in an ecotone. Landsc Ecol 38:1447--1462. #link("https://doi.org/10.1007/s10980-022-01586-7")
-
-] <ref-Duchardt2023UsiNeu>
-#block[
-Dunne JA, Williams RJ, Martinez ND (2002) Network structure and biodiversity loss in food webs: Robustness increases with connectance. Ecology Letters 5:558--567. #link("https://doi.org/10.1046/j.1461-0248.2002.00354.x")
-
-] <ref-Dunne2002NetStr>
-#block[
-Dunne JA, Williams RJ, Martinez, Neo D. (2004) Network structure and robustness of marine food webs. Mar Ecol Prog Ser 273:291--302. #link("https://doi.org/10.3354/meps273291")
-
-] <ref-Dunne2004NetStr>
-#block[
-Etherington TR, Holland EP, O'Sullivan D (2015) NLMpy: A python software package for the creation of neutral landscape models within a general numerical framework. Methods in Ecology and Evolution 6:164--168. #link("https://doi.org/10.1111/2041-210X.12308")
-
-] <ref-Etherington2015NlmPyt>
-#block[
-Ficetola GF, Romano A, Salvidio S, Sindaco R (2018) Optimizing monitoring schemes to detect trends in abundance over broad scales. Animal Conservation 21:221--231. #link("https://doi.org/10.1111/acv.12356")
-
-] <ref-Ficetola2018OptMon>
-#block[
-Fletcher Jr. RJ, Green RE, Bladon EK, et al (2025) Beyond Species Richness for Biological Conservation. Conservation Letters 18:e13124. #link("https://doi.org/10.1111/conl.13124")
-
-] <ref-FletcherJr.2025SpeRic>
-#block[
-Forero-Muñoz NR, Dansereau G, Viard F, et al (2025) Spatial landscape structure influences cross-species transmission in a rabies-like virus model. Microorganisms 13:416. #link("https://doi.org/10.3390/microorganisms13020416")
-
-] <ref-Forero-Munoz2025SpaLan>
-#block[
-Fournier A, Fussell D, Carpenter L (1982) Computer rendering of stochastic models. Commun ACM 25:371--384. #link("https://doi.org/10.1145/358523.358553")
-
-] <ref-Fournier1982ComRen>
-#block[
-Gardner RH, Milne BT, Turnei MG, O'Neill RV (1987) Neutral models for the analysis of broad-scale landscape pattern. Landscape Ecol 1:19--28. #link("https://doi.org/10.1007/BF02275262")
-
-] <ref-Gardner1987NeuMod>
-#block[
-Garzke J, Connor SJ, Sommer U, O'Connor MI (2019) Trophic interactions modify the temperature dependence of community biomass and ecosystem function. PLOS Biology 17:e2006806. #link("https://doi.org/10.1371/journal.pbio.2006806")
-
-] <ref-Garzke2019TroInt>
-#block[
-Gibbons JD, Chakraborti S (2010) #link("https://books.google.com?id=kh3SBQAAQBAJ")[Nonparametric Statistical Inference]. CRC Press
-
-] <ref-Gibbons2010NonSta>
-#block[
-Gonzalez A, O'Connor MI, Bates AE, et al (2025) A Biodiversity Observation Network to support conservation action and mainstream knowledge in Canada. FACETS 10:1--19. #link("https://doi.org/10.1139/facets-2024-0206")
-
-] <ref-Gonzalez2025BioObs>
-#block[
-Gonzalez A, Vihervaara P, Balvanera P, et al (2023) A global biodiversity observing system to unite monitoring and guide action. Nat Ecol Evol 1--5. #link("https://doi.org/10.1038/s41559-023-02171-0")
-
-] <ref-Gonzalez2023GloBio>
-#block[
-Gravel D, Poisot T, Albouy C, et al (2013) Inferring food web structure from predator--prey body size relationships. Methods in Ecology and Evolution 4:1083--1090. #link("https://doi.org/10.1111/2041-210X.12103")
-
-] <ref-Gravel2013InfFoo>
-#block[
-Harvey E, Gounand I, Ward CL, Altermatt F (2017) Bridging ecology and conservation: From ecological networks to ecosystem function. Journal of Applied Ecology 54:371--379. #link("https://doi.org/10.1111/1365-2664.12769")
-
-] <ref-Harvey2017BriEco>
-#block[
-Henriksen MV, Chapple DG, Chown SL, McGeoch MA (2019) The effect of network size and sampling completeness in depauperate networks. Journal of Animal Ecology 88:211--222. #link("https://doi.org/10.1111/1365-2656.12912")
-
-] <ref-Henriksen2019EffNet>
-#block[
-Hesselbarth MHK, Nowosad J, de Flamingh A, et al (2024) Computational Methods in Landscape Ecology. Curr Landscape Ecol Rep 10:2. #link("https://doi.org/10.1007/s40823-024-00104-6")
-
-] <ref-Hesselbarth2024ComMet>
-#block[
-Hillebrand H, Blasius B, Borer ET, et al (2018) Biodiversity change is uncoupled from species richness trends: Consequences for conservation and monitoring. Journal of Applied Ecology 55:169--184. #link("https://doi.org/10.1111/1365-2664.12959")
-
-] <ref-Hillebrand2018BioCha>
-#block[
-Hortal J, de Bello F, Diniz-Filho JAF, et al (2015) Seven Shortfalls that Beset Large-Scale Knowledge of Biodiversity. Annu Rev Ecol Evol Syst 46:523--549. #link("https://doi.org/10.1146/annurev-ecolsys-112414-054400")
-
-] <ref-Hortal2015SevSho>
-#block[
-Jordano P (2016a) Chasing Ecological Interactions. PLOS Biology 14:e1002559. #link("https://doi.org/10.1371/journal.pbio.1002559")
-
-] <ref-Jordano2016ChaEco>
-#block[
-Jordano P (2016b) Sampling networks of ecological interactions. Functional Ecology 30:1883--1893. #link("https://doi.org/10.1111/1365-2435.12763")
-
-] <ref-Jordano2016SamNet>
-#block[
-Kermorvant C, D'Amico F, Bru N, et al (2019) Spatially balanced sampling designs for environmental surveys. Environ Monit Assess 191:524. #link("https://doi.org/10.1007/s10661-019-7666-y")
-
-] <ref-Kermorvant2019SpaBal>
-#block[
-Kissling WD, Breeze TD, Liquete C, et al (2024) #link("https://ecoevorxiv.org/repository/view/7993/")[Towards a modern and efficient European biodiversity observation network fit for multiple policies]
-
-] <ref-Kissling2024ModEff>
-#block[
-Lange C, Cole E, Van Horn G, Mac Aodha O (2023) #link("https://proceedings.neurips.cc/paper_files/paper/2023/hash/82eec786fdfbbfa53450c5feb7d1ac92-Abstract-Conference.html")[Active Learning-Based Species Range Estimation]. Advances in Neural Information Processing Systems 36:41892--41913
-
-] <ref-Lange2023ActLea>
-#block[
-Lewis DD, Gale WA (1994) A sequential algorithm for training text classifiers. In: Proceedings of the 17th annual international ACM SIGIR conference on Research and development in information retrieval. Springer-Verlag, Berlin, Heidelberg, pp 3--12
-
-] <ref-Lewis1994SeqAlg>
-#block[
-Malek S, Miglietta F, Gobakken T, et al (2019) Optimizing Field Data Collection for Individual Tree Attribute Predictions Using Active Learning Methods. Remote Sensing 11:949. #link("https://doi.org/10.3390/rs11080949")
-
-] <ref-Malek2019OptFie>
-#block[
-McCann K (2007) Protecting biostructure. Nature 446:29--29. #link("https://doi.org/10.1038/446029a")
-
-] <ref-McCann2007ProBio>
-#block[
-McLeod A, Leroux SJ, Gravel D, et al (2021) Sampling and asymptotic network properties of spatial multi-trophic networks. Oikos 130:2250--2259. #link("https://doi.org/10.1111/oik.08650")
-
-] <ref-McLeod2021SamAsy>
-#block[
-Mestre F, Gravel D, García-Callejas D, et al (2022) Disentangling food-web environment relationships: A review with guidelines. Basic and Applied Ecology 61:102--115. #link("https://doi.org/10.1016/j.baae.2022.03.011")
-
-] <ref-Mestre2022DisFoo>
-#block[
-Moracho E, Normand S, Ordonez A (2025) Rebuilding ecological networks: A multi-scale approach to global restoration. Biological Conservation 312:111477. #link("https://doi.org/10.1016/j.biocon.2025.111477")
-
-] <ref-Moracho2025RebEco>
-#block[
-Morales-Castilla I, Matias MG, Gravel D, Araújo MB (2015) Inferring biotic interactions from proxies. Trends in Ecology & Evolution 30:347--356. #link("https://doi.org/10.1016/j.tree.2015.03.014")
-
-] <ref-Morales-Castilla2015InfBio>
-#block[
-Navarro LM, Fernández N, Guerra C, et al (2017) Monitoring biodiversity change through effective global coordination. Current Opinion in Environmental Sustainability 29:158--169. #link("https://doi.org/10.1016/j.cosust.2018.02.005")
-
-] <ref-Navarro2017MonBio>
-#block[
-Norman KE, Poisot T (2025) Site selection algorithms for optimal ecological monitoring design. Ecological Indicators 178:114104. #link("https://doi.org/10.1016/j.ecolind.2025.114104")
-
-] <ref-Norman2025SitSel>
-#block[
-Pires MM, Marquitti FMD, Guimarães PR (2017) The friendship paradox in species-rich ecological networks: Implications for conservation and monitoring. Biological Conservation 209:245--252. #link("https://doi.org/10.1016/j.biocon.2017.02.026")
-
-] <ref-Pires2017FriPar>
-#block[
-Poisot T (2023) Guidelines for the prediction of species interactions through binary classification. Methods in Ecology and Evolution 14:1333--1345. #link("https://doi.org/10.1111/2041-210X.14071")
-
-] <ref-Poisot2023GuiPre>
-#block[
-Poisot T (2024) #link("https://ecoevorxiv.org/repository/view/8041/")[Conformal Prediction quantifies the uncertainty of Species Distribution Models]
-
-] <ref-Poisot2024ConPre>
-#block[
-Poisot T, Bergeron G, Cazelles K, et al (2021) Global knowledge gaps in species interaction networks data. Journal of Biogeography 48:1552--1563. #link("https://doi.org/10.1111/jbi.14127")
-
-] <ref-Poisot2021GloKno>
-#block[
-Poisot T, Canard E, Mouillot D, et al (2012) The dissimilarity of species interaction networks. Ecology Letters 15:1353--1361. #link("https://doi.org/10.1111/ele.12002")
-
-] <ref-Poisot2012DisSpe>
-#block[
-Poisot T, Stouffer DB, Gravel D (2015) Beyond species: Why ecological interaction networks vary through space and time. Oikos 124:243--251. #link("https://doi.org/10.1111/oik.01719")
-
-] <ref-Poisot2015SpeWhy>
-#block[
-Preston FW (1948) The Commonness, And Rarity, of Species. Ecology 29:254--283. #link("https://doi.org/10.2307/1930989")
-
-] <ref-Preston1948ComRar>
-#block[
-Rioux È, Pelletier F, St-Laurent M-H (2022) Trophic niche partitioning between two prey and their incidental predators revealed various threats for an endangered species. Ecology and Evolution 12:e8742. #link("https://doi.org/10.1002/ece3.8742")
-
-] <ref-Rioux2022TroNic>
-#block[
-Robertson BL, Brown JA, McDonald T, Jaksons P (2013) BAS: Balanced acceptance sampling of natural resources. Biometrics 69:776--784
-
-] <ref-Robertson2013BasBal>
-#block[
-Robertson BL, McDonald T, Price CJ, Brown JA (2017) A modification of balanced acceptance sampling. Statistics & Probability Letters 129:107--112. #link("https://doi.org/10.1016/j.spl.2017.05.004")
-
-] <ref-Robertson2017ModBal>
-#block[
-Robertson B, Price C, Reale M (2024) Well-spread samples with dynamic sample sizes. Biometrics 80:ujae026. #link("https://doi.org/10.1093/biomtc/ujae026")
-
-] <ref-Robertson2024WelSam>
-#block[
-Santana J, Porto M, Morán-Ordóñez A, et al (2025) Large Biodiversity Monitoring Gaps Remain Across Europe. Conservation Letters 18:e13134. #link("https://doi.org/10.1111/conl.13134")
-
-] <ref-Santana2025LarBio>
-#block[
-Settles B (2009) #link("https://minds.wisconsin.edu/handle/1793/60660")[Active Learning Literature Survey]. University of Wisconsin-Madison Department of Computer Sciences
-
-] <ref-Settles2009ActLea>
-#block[
-Simard A (2024) #link("https://rmnat.org/download/245251/?tmstv=1732556516")[Le Réseau de suivi de la biodiversité: Un outil pour mesurer l'effet des changements climatiques sur notre patrimoine naturel]. Natura 4:13--22
-
-] <ref-Simard2024ResSui>
-#block[
-Smith-Ramesh LM, Moore AC, Schmitz OJ (2017) Global synthesis suggests that food web connectance correlates to invasion resistance. Global Change Biology 23:465--473. #link("https://doi.org/10.1111/gcb.13460")
-
-] <ref-Smith-Ramesh2017GloSyn>
-#block[
-Thompson PL, Gonzalez A (2017) Dispersal governs the reorganization of ecological networks under environmental change. Nat Ecol Evol 1:1--8. #link("https://doi.org/10.1038/s41559-017-0162")
-
-] <ref-Thompson2017DisGov>
-#block[
-United Nations (1992) #link("https://www.cbd.int/convention/text")[Convention on Biological Diversity (text with annexes)]. United Nations, New Yoek
-
-] <ref-UnitedNations1992ConBio>
-#block[
-Valente JJ, Bennett RE, Gómez C, et al (2022) Land-sparing and land-sharing provide complementary benefits for conserving avian biodiversity in coffee-growing landscapes. Biological Conservation 270:109568. #link("https://doi.org/10.1016/j.biocon.2022.109568")
-
-] <ref-Valente2022LanLan>
-#block[
-Valiente-Banuet A, Aizen MA, Alcántara JM, et al (2015) Beyond species loss: The extinction of ecological interactions in a changing world. Functional Ecology 29:299--307. #link("https://doi.org/10.1111/1365-2435.12356")
-
-] <ref-Valiente-Banuet2015SpeLos>
-#block[
-van Dam-Bates P, Gansell O, Robertson B (2018) Using balanced acceptance sampling as a master sample for environmental surveys. Methods in Ecology and Evolution 9:1718--1726. #link("https://doi.org/10.1111/2041-210X.13003")
-
-] <ref-vanDam-Bates2018UsiBal>
-#block[
-Vizentin-Bugoni J, Maruyama PK, Debastiani VJ, et al (2016) Influences of sampling effort on detected patterns and structuring processes of a Neotropical plant--hummingbird network. Journal of Animal Ecology 85:262--272. #link("https://doi.org/10.1111/1365-2656.12459")
-
-] <ref-Vizentin-Bugoni2016InfSam>
-#block[
-Williams RJ, Martinez ND (2000) Simple rules yield complex food webs. Nature 404:180--183. #link("https://doi.org/10.1038/35004572")
-
-] <ref-Williams2000SimRul>
-#block[
-Williams RJ, Martinez ND (2008) Success and its limits among structural models of complex food webs. Journal of Animal Ecology 77:512--519. #link("https://doi.org/10.1111/j.1365-2656.2008.01362.x")
-
-] <ref-Williams2008SucIts>
-#block[
-Willig MR, Presley SJ, Klingbeil BT, et al (2023) Protecting biodiversity via conservation networks: Taxonomic, functional, and phylogenetic considerations. Biological Conservation 278:109876. #link("https://doi.org/10.1016/j.biocon.2022.109876")
-
-] <ref-Willig2023ProBio>
-#block[
-Windsor FM, van den Hoogen J, Crowther TW, Evans DM (2023) Using ecological networks to answer questions in global biogeography and ecology. Journal of Biogeography 50:57--69. #link("https://doi.org/10.1111/jbi.14447")
-
-] <ref-Windsor2023UsiEco>
-#block[
-Wood SA, Russell R, Hanson D, et al (2015) Effects of spatial scale of sampling on food web structure. Ecology and Evolution 5:3769--3782. #link("https://doi.org/10.1002/ece3.1640")
-
-] <ref-Wood2015EffSpa>
-#block[
-Xu H, Cao M, Wu Y, et al (2017) Optimized monitoring sites for detection of biodiversity trends in China. Biodivers Conserv 26:1959--1971. #link("https://doi.org/10.1007/s10531-017-1339-3")
-
-] <ref-Xu2017OptMon>
-#block[
-Yi J, Ma F, Li J, et al (2022) China Biodiversity Observation Network for better global sustainability developments. Eco-Environment & Health 1:201--203. #link("https://doi.org/10.1016/j.eehl.2022.11.001")
-
-] <ref-Yi2022ChiBio>
 ] <refs>
 
 
+
+#set bibliography(style: "springer-basic-author-date")
+
+#bibliography(("references.bib"))
 
