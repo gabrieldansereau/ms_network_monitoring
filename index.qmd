@@ -773,17 +773,20 @@ interactions are likely to take place. On one hand, better incorporating factors
 influencing interaction realization and detection, such as species abundance in
 our simulations, will be crucial and potentially more impactful than improving
 knowledge or reducing uncertainty over species ranges (Figures [-@fig-layers;
--@fig-eff-comp]). On the other hand, our result also suggest that monitoring
-will become more efficient over time as we keep gathering knowledge on
-interactions, especially if local knowledge of the system and species under
-focus is incorporated. Such opportunities should emerge in recent BON
-initiatives intending to integrate Indigenous and local community knowledge for
-an inclusive view of biodiversity change recognizing multiple ways of knowing
-[e.g. CAN BON, @Gonzalez2025BioObs]. Overall, we should not wait for perfect
-knowledge: establishing operational monitoring frameworks to inform biodiversity
-conservation and management is possible as we keep gathering new information,
-and better ensures we translate knowledge into action [@Dansereau2025OveDis;
-@Buxton2021KeyInf].
+-@fig-eff-comp]). Integrating abundances into network evaluations could be based
+on species regional abundances [@RejiChacko2025SpeLos] and would echo similar
+calls for integration of abundances and processes into conservation
+[@FletcherJr.2025SpeRic; @Dornelas2023LooBac; @Tobias2025BioCon]. On the other
+hand, our result also suggest that monitoring will become more efficient over
+time as we keep gathering knowledge on interactions, especially if local
+knowledge of the system and species under focus is incorporated. Such
+opportunities should emerge in recent BON initiatives integrating Indigenous and
+local community knowledge for an inclusive view of biodiversity change and
+recognizing multiple ways of knowing [e.g. CAN BON, @Gonzalez2025BioObs].
+Overall, we should not wait for perfect knowledge: establishing operational
+monitoring frameworks to inform biodiversity conservation and management is
+possible as we keep gathering new information, and better ensures we translate
+knowledge into action [@Dansereau2025OveDis; @Buxton2021KeyInf].
 
 *How precise should estimations be to expect improvements in monitoring
 efficiency?*
