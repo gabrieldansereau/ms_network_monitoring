@@ -74,6 +74,7 @@ bibliography: references.bib
 # csl: https://www.zotero.org/styles/springer-basic-author-date
 bibliographystyle: springer-basic-author-date
 keep-typ: true
+# citecolor: "#0074d9"
 ---
 
 # Introduction

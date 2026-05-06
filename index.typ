@@ -279,12 +279,16 @@
   // works.
   bibliography-file: none,
 
+  // Additional arguments from YAML
+  citecolor: none,
+
   // The paper's content.
   body
 ) = {
   // Set document metadata.
   set document(title: title, author: authors.map(author => author.name))
 
+  // Set figure captions
   show figure.caption: it => {
     set align(left)
     set par(leading: 0.55em, hanging-indent: 0pt)
@@ -321,6 +325,13 @@
 
   // Code
   show raw: set text(font: "Iosevka", rgb("#232323"))
+
+  // References
+  // Not working with citecolor option
+  // show ref: set text(fill: rgb(content-to-string(citecolor))) if citecolor != none
+  // show cite: set text(fill: rgb(content-to-string(citecolor))) if citecolor != none
+  show cite: set text(fill: blue)
+
 
   // Set the body font.
   // set text(font: "STIX Two Text", size: 11pt)
