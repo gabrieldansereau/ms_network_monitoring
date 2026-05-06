@@ -40,8 +40,6 @@
   // Let figures float
   set figure(placement: auto)
 
-    // show bibliography: set text(7pt)
-
   // Configure the page.
   set page(
     paper: paper-size,
@@ -74,6 +72,9 @@
   // show cite: set text(fill: rgb(content-to-string(citecolor))) if citecolor != none
   show cite: set text(fill: blue)
 
+  // Bibliography
+  // show bibliography: set text(7pt)
+  set bibliography(title: "References")
 
   // Set the body font.
   // set text(font: "STIX Two Text", size: 11pt)
