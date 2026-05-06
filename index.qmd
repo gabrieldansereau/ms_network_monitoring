@@ -818,10 +818,15 @@ possible to guide monitoring.
 
 # Acknowledgements
 
-We thank the members of the *Laboratoire d’Écologie Prédictive et Interprétable
-pour la Crise de la Biodiversité* in Montréal, QC, and of the Predictive Ecology
-team at the *Pacific Forestry Centre* in Victoria, BC, for their constructive
-comments during discussions of this manuscript.
+GD was funded by the NSERC Postgraduate Scholarship – Doctoral (grant ES D –
+558643) and the FRQNT doctoral scholarship (grant no. 301750). TP was funded
+through award no. 223764/Z/21/Z from the Wellcome Trust, by the Discovery Grant
+program of NSERC, through a donation from the Courtois Foundation. MDC is funded
+by an IVADO Postdoctoral Fellowship. We thank the members of the *Laboratoire
+d’Écologie Prédictive et Interprétable pour la Crise de la Biodiversité* in
+Montréal, QC, and of the Predictive Ecology team at the *Pacific Forestry
+Centre* in Victoria, BC, for their constructive comments during discussions of
+this manuscript.
 
 # References
 
