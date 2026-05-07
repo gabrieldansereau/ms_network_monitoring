@@ -33,7 +33,7 @@
   // Set figure captions
   show figure.caption: it => {
     set align(left)
-    set par(leading: 0.55em, hanging-indent: 0pt)
+    set par(leading: 0.65em, hanging-indent: 0pt)
     text(10pt, it)
   }
 
@@ -77,25 +77,29 @@
   set bibliography(title: "References")
 
   // Set the body font.
-  // set text(font: "STIX Two Text", size: 11pt)
+  set text(font: "STIX Two Text", size: 11pt)
 
   // Paragraph options
-  set par(leading: 0.8em, spacing: 1.6em, justify: false)
+  set par(leading: 0.9em, spacing: 1.6em, justify: false, linebreaks: "optimized")
   show heading.where(level: 1): set text(14pt, rgb("#114f54"),weight: "medium")
   show heading.where(level: 2): set text(13pt, rgb("#2e5385"),weight: "regular", style: "italic")
   show heading.where(level: 1): it => block(width: 100%)[
-    #v(1.2em)
+    #v(0.5em)
     #block(it.body)
-    #v(1em)
+    #v(0.8em)
   ]
   show heading.where(level: 2): it => block(width: 100%)[
     #block(it.body)
-    #v(1em)
+    #v(0.8em)
+  ]
+  show heading.where(level: 3): it => block(width: 100%)[
+    #block(it.body)
+    #v(0.8em)
   ]
 
   // Display the paper's title.
   text(18pt, rgb("#1d8265"), weight: "medium",  title)
-  v(8.35mm, weak: true)
+  v(6mm, weak: true)
 
   show "\@": "@"
 
@@ -137,7 +141,7 @@
     })
   }
 
-  v(8.35mm, weak: true)
+  v(6mm, weak: true)
 
     // Display abstract and index terms.
   if abstract != none [
@@ -164,7 +168,7 @@
   set page(numbering: "1 of 1")
 
   // Line numbers 
-  set par.line(numbering: "1")
+  // set par.line(numbering: "1")
 
   // Display the paper's contents.
   body
