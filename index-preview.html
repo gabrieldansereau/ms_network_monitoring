@@ -1,32 +1,121 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-CA" xml:lang="en-CA"><head>
+    <meta charset="utf-8">
+    <meta name="generator" content="quarto-1.10.3">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="keywords" content="biodiversity monitoring, species interaction networks, biodiversity observation networks, sampling design">
 
-<meta name="keywords" content="biodiversity monitoring, species interaction networks, biodiversity observation networks, sampling design">
+    <title>Optimizing sampling and monitoring of species interactions within Biodiversity Observation Networks</title>
+    <style>
+      /* Default styles provided by pandoc.
+      ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+      */
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: min(4vw, 1.5em);}
+      div.column{flex: auto; overflow-x: auto;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+        vertical-align: middle;
+      }
+    </style>
 
-<title>Optimizing sampling and monitoring of species interactions within Biodiversity Observation Networks</title>
-<style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-</style>
+    <style>
+      body.hypothesis-enabled #quarto-embed-header {
+        padding-right: 36px;
+      }
 
+      #quarto-embed-header {
+        height: 3em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px;
+      }
 
+      #quarto-embed-header h6 {
+        font-size: 1.1em;
+        padding-top: 0.6em;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: 400;
+      }
+
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
+        font-size: 0.8em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .quarto-back-container {
+        padding-left: 0.5em;
+        display: flex;
+      }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
+    </style>
+
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const titleBannerEl = window.document.querySelector("body > #title-block-header");
+      if (titleBannerEl) {
+        titleBannerEl.style.paddingTop = header.clientHeight + "px";
+      }
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      // Use the article root if the `back` call doesn't work. This isn't perfect
+      // but should typically work
+      window.quartoBackToArticle = () => {
+        var currentUrl = window.location.href;
+        window.history.back();
+        setTimeout(() => {
+            // if location was not changed in 100 ms, then there is no history back
+            if(currentUrl === window.location.href){              
+                // redirect to site root
+                window.location.href = "index.html";
+            }
+        }, 100);
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
+    
+<script src="site_libs/manuscript-notebook/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -41,44 +130,13 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<script async="" src="https://hypothes.is/embed.js"></script>
+     <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
     document.body.classList.add('hypothesis-enabled');
   });
-</script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta name="citation_title" content="Optimizing sampling and monitoring of species interactions within Biodiversity Observation Networks">
+</script>   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script> 
+      <meta name="citation_title" content="Optimizing sampling and monitoring of species interactions within Biodiversity Observation Networks">
 <meta name="citation_abstract" content="Optimal monitoring strategies should be designed to efficiently monitor all essential facets of biodiversity. Yet, species interactions are often overlooked in monitoring designs compared to spatial coverage and species richness, partly due to the inherent difficulty of sampling and monitoring interactions compared to species distributions. Here, we used simulations to test the efficiency of monitoring species interactions within Biodiversity Observations Networks (BONs). We tested several methods for designing and optimizing BONs to monitor species interactions and examined efficiency when increasing the number of monitored sites. We showed that the required sampling effort is considerably higher for interactions, especially when considering that interaction realization and detection realistically depend on species abundance. Thus, expectations to monitor a relevant proportion of interactions within a BON should be lower than expectations to monitor its species. However, from a single-species perspective, optimizing monitoring designs based on a known species range proved an efficient strategy to retrieve its interactions, outperforming designs based on total species or interaction richness. Further efficiency gains required detailed knowledge of where realized interactions occurred, highlighting the need for better knowledge of where interactions are likely to take place and integration of factors influencing interaction realization, such as species abundances. Our results were consistent even when the total species range was over- or underestimated by 10%, which shows a tolerance in the precision of the information required for optimization. Therefore, our results highlight how attainable levels of information can lead to efficiency improvements when designing BONs. With the right target and optimization strategy, available information, such as species ranges, can guide observation network designs to monitor species interactions as central biodiversity components.">
 <meta name="citation_keywords" content="biodiversity monitoring,species interaction networks,biodiversity observation networks,sampling design">
 <meta name="citation_author" content="Gabriel Dansereau">
@@ -192,9 +250,16 @@ window.Quarto = {
 <meta name="citation_reference" content="citation_title=Predicting the way forward for the Global Biodiversity Framework;,citation_author=Damaris Zurell;,citation_author=Greta Bocedi;,citation_author=Santiago J. E. Velazco;,citation_author=Andrew Gonzalez;,citation_author=Andy Purvis;,citation_author=Brendan Wintle;,citation_author=Cory Merow;,citation_author=Carolyn Lundquist;,citation_author=Gurutzeta Guillera-Arroita;,citation_author=Josef Settele;,citation_author=Josep M. Serra-Diaz;,citation_author=Juliano Sarmento Cabral;,citation_author=Justin M. J. Travis;,citation_author=Katrin Schifferle;,citation_author=Lauren Buckley;,citation_author=Natalie J. Briscoe;,citation_author=Nick J. B. Isaac;,citation_author=Pedro R. Peres-Neto;,citation_author=Raya Keuth;,citation_author=Samuel J. L. Gascoigne;,citation_author=Simon Ferrier;,citation_author=Mark C. Urban;,citation_publication_date=2025-10-14;,citation_cover_date=2025-10-14;,citation_year=2025;,citation_fulltext_html_url=https://www.pnas.org/doi/abs/10.1073/pnas.2501695122;,citation_issue=41;,citation_doi=10.1073/pnas.2501695122;,citation_volume=122;,citation_journal_title=Proceedings of the National Academy of Sciences;,citation_publisher=Proceedings of the National Academy of Sciences;">
 </head>
 
-<body class="quarto-light">
+  <body class="quarto-notebook quarto-light">
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      
+      <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6><i class="bi bi-journal-code"></i> Article Notebook</h6>
 
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+            <a href="./index.qmd" class="btn btn-primary quarto-download-embed" download="index.qmd">Download Source</a>
+          </div>
+
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Optimizing sampling and monitoring of species interactions within Biodiversity Observation Networks</h1>
@@ -264,7 +329,7 @@ window.Quarto = {
               </div>
       </div>
       <div class="quarto-title-meta-column-end quarto-other-formats-target">
-      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></p></div><div class="quarto-title-meta-contents"><p><a href="index.pdf"><i class="bi bi-file-pdf"></i>Typst (cerg)</a></p></div></div></div>
+      </div>
     </div>
 
     <div>
@@ -318,14 +383,9 @@ window.Quarto = {
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-
-
-  
-
-
-<section id="introduction" class="level1">
+       <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>Biodiversity monitoring should encompass all facets of biodiversity. Article 7 of the Convention on Biological Diversity <span class="citation" data-cites="UnitedNations1992ConBio">[@UnitedNations1992ConBio]</span> calls for Parties to “[i]dentify components of biological diversity important for its conservation and sustainable use”, and “[m]onitor, through sampling and other techniques, the components of biological diversity”. Biodiversity Observation Networks (BONs) are promising initiatives to improve monitoring across scales and biodiversity facets. BONs are coordinated monitoring networks designed to harmonize observation systems, assist reporting on international assessments, and reinforce scientific basis in biodiversity monitoring <span class="citation" data-cites="Navarro2017MonBio Gonzalez2023GloBio">[@Navarro2017MonBio; @Gonzalez2023GloBio]</span>. BONs can be thematic (Marine BON, Freshwater BON), national (China BON, French BON, Colombia BON) or regional (Asia-Pacific, Europe); some represent networks of monitoring sites for systematic monitoring (China BON) while others represent biodiversity data hubs (French BON) <span class="citation" data-cites="Xu2017OptMon Navarro2017MonBio">[@Xu2017OptMon; @Navarro2017MonBio]</span>. Additional BONs are currently in the development or planification stages, notably in Europe <span class="citation" data-cites="Kissling2024ModEff">[@Kissling2024ModEff]</span> and in Canada <span class="citation" data-cites="Gonzalez2025BioObs Simard2024ResSui">[@Gonzalez2025BioObs; @Simard2024ResSui]</span>, and could eventually be interlinked into the Global Biodiversity Observation System (GBiOS), a globally connected network providing capacity to monitor biodiversity change <span class="citation" data-cites="Gonzalez2023GloBio">[@Gonzalez2023GloBio]</span> and guiding actions needed for targets and goals of the Kunming-Montreal Global Biodiversity framework <span class="citation" data-cites="CBD2022DecAdoa">[@CBD2022DecAdoa]</span>.</p>
 <p>Recent work highlighted the need for improved sampling designs in BONs and proper adjustment to monitoring goals. First, current sampling designs over large scales are often too sparse, at too coarse a scale, too infrequent, and without temporal replication <span class="citation" data-cites="Santana2025LarBio">[@Santana2025LarBio]</span>. For example, recommendations for more effective spatial sampling designs in Europe included i) stratified random sampling (with stratification across environmental, anthropogenic and political gradients or classes, ii) incorporation of existing monitoring sites, iii) filling of spatial gaps <span class="citation" data-cites="Kissling2024ModEff">[@Kissling2024ModEff]</span>. Second, ecological monitoring design relies on site selection algorithms more often discussed regarding their capacity to achieve spatial balance and representative samples, and less frequently for achieving an ecological monitoring goal <span class="citation" data-cites="Norman2025SitSel">[@Norman2025SitSel]</span>. Species richness is the most commonly used biodiversity measure in monitoring contexts <span class="citation" data-cites="Hillebrand2018BioCha">[@Hillebrand2018BioCha]</span>, including in discussions over sampling designs. On one hand, maximizing richness can efficiently capture functional and phylogenetic diversity in conservation networks <span class="citation" data-cites="Willig2023ProBio">[@Willig2023ProBio]</span>. On the other hand, the use of species richness to measure biodiversity change and guide biological conservation has also been criticized, mainly since trends in species richness do not properly capture local changes, neglecting species identities and functional roles, and do not providing information on persistence of biodiversity and ecosystem services <span class="citation" data-cites="Hillebrand2018BioCha FletcherJr.2025SpeRic Aguiar2024UntBio">[@Hillebrand2018BioCha; @FletcherJr.2025SpeRic; @Aguiar2024UntBio]</span>. Thus, there is a need to better adjust BON sampling designs to biodiversity facets beyond species richness.</p>
@@ -480,10 +540,8 @@ Figure&nbsp;6: Comparison of efficiencies when over- and underestimating the foc
 <h1>Acknowledgements</h1>
 <p>GD was funded by the NSERC Postgraduate Scholarship – Doctoral (grant ES D – 558643) and the FRQNT doctoral scholarship (grant no. 301750). TP was funded through award no. 223764/Z/21/Z from the Wellcome Trust, by the Discovery Grant program of NSERC, through a donation from the Courtois Foundation. MDC is funded by an IVADO Postdoctoral Fellowship. We thank the members of the <em>Laboratoire d’Écologie Prédictive et Interprétable pour la Crise de la Biodiversité</em> in Montréal, QC, and of the Predictive Ecology team at the <em>Pacific Forestry Centre</em> in Victoria, BC, for their constructive comments during discussions of this manuscript.</p>
 </section>
-
-</main>
-<!-- /main column -->
-<script id="quarto-html-after-body" type="application/javascript">
+     </main>
+<!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -882,9 +940,7 @@ Figure&nbsp;6: Comparison of efficiencies when over- and underestimating the foc
       }
     }
   });
-  </script>
-</div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+  </script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
@@ -915,9 +971,6 @@ Figure&nbsp;6: Comparison of efficiencies when over- and underestimating the foc
   };
   
 })();
-          </script>
-
-
-
-
+          </script> 
+  
 </body></html>
