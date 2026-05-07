@@ -259,7 +259,7 @@ intent to replicate the ecological context in which biodiversity monitoring
 could take place. To do so, we generated species ranges representing the
 distribution of species across the landscape using neutral landscape models
 (NLMs, `#citeb(<Gardner1987NeuMod>)`{=typst}
-`#citeb(<Etherington2015NlmPyt>)`{=typst}. NLMs are used to generate landscapes
+`#citeb(<Etherington2015NlmPyt>)`{=typst}). NLMs are used to generate landscapes
 replicating realistic spatially-autocorrelated distributions and representing
 useful baselines to explore ecological processes in a spatial context
 [@Hesselbarth2024ComMet]. NLMs have been used to generate realistic landscapes
@@ -731,6 +731,9 @@ proportion calculated using the Wilson interval method [@Brown2001IntEst
 implemented in
 HypothesisTests.jl].](figures/ranges_overlap.png){#fig-estimations}
 
+```{=typst}
+#pagebreak()
+```
 # Discussion
 
 *What should be realistic expectations for sampling and monitoring of species
