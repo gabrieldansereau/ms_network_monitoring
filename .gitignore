@@ -3,6 +3,7 @@ docs
 /.quarto/
 Makefile
 coverletter*
+submission
 
 **/*.quarto_ipynb
 .Rproj.user
