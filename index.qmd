@@ -56,7 +56,7 @@ affiliations:
     - id: ulaval
       name: Département des sciences du bois et de la forêt
       department: Université Laval
-      city: Quebec
+      city: Québec
       region: QC
       country: Canada 
 abstract: Optimal monitoring strategies should be designed to efficiently monitor all essential facets of biodiversity. Yet, species interactions are often overlooked in monitoring designs compared to spatial coverage and species richness, partly due to the inherent difficulty of sampling and monitoring interactions compared to species distributions. Here, we used simulations to test the efficiency of monitoring species interactions within Biodiversity Observations Networks (BONs). We tested several methods for designing and optimizing BONs to monitor species interactions and examined efficiency when increasing the number of monitored sites. We showed that the required sampling effort is considerably higher for interactions, especially when considering that interaction realization and detection realistically depend on species abundance. Thus, expectations to monitor a relevant proportion of interactions within a BON should be lower than expectations to monitor its species. However, from a single-species perspective, optimizing monitoring designs based on a known species range proved an efficient strategy to retrieve its interactions, outperforming designs based on total species or interaction richness. Further efficiency gains required detailed knowledge of where realized interactions occurred, highlighting the need for better knowledge of where interactions are likely to take place and integration of factors influencing interaction realization, such as species abundances. Our results were consistent even when the total species range was over- or underestimated by 10%, which shows a tolerance in the precision of the information required for optimization. Therefore, our results highlight how attainable levels of information can lead to efficiency improvements when designing BONs. With the right target and optimization strategy, available information, such as species ranges, can guide observation network designs to monitor species interactions as central biodiversity components.
@@ -685,17 +685,17 @@ than on the probabilistic range or on species richness (78% and 90%,
 respectively), but always less efficient than optimizing on realized
 interactions.
 
-![Within-simulation comparison of efficiency between samplers and optimization
-targets for 200 independent simulations. The comparison value is based on the
-number of sites required to document 80% of the focal species' interactions
-($n_{0.80}$), described in @eq-n_at_p. Negative values (in orange) indicate that
-the compared option led to a more efficient sampling than its reference (faster
-documentation of interactions), while positive values (in green) indicate it
-required a higher sampling effort. Equal values (in pink) have overlapping
-confidence intervals. The reference is the same on the two subpanels (Targeted
-Sampling using the focal species range) and was chosen to simplify the number of
-comparisons displayed. All one-by-one comparisons are available in Supp.
-Mat.](figures/efficiency_comparison.png){#fig-eff-comp}
+![Within-simulation comparison of efficiency between site selection strategies
+and optimization targets for 200 independent simulations. The comparison value
+is based on the number of sites required to document 80% of the focal species'
+interactions ($n_{0.80}$), described in @eq-n_at_p. Negative values (in orange)
+indicate that the compared option led to a more efficient sampling than its
+reference (faster documentation of interactions), while positive values (in
+green) indicate it required a higher sampling effort. Equal values (in pink)
+have overlapping confidence intervals. The reference is the same on the two
+subpanels (Targeted Sampling using the focal species range) and was chosen to
+simplify the number of comparisons displayed. All one-by-one comparisons are
+available in Supp. Mat.](figures/efficiency_comparison.png){#fig-eff-comp}
 
 ### Simulation Study III: Tolerance to 10% over- and underestimation of the focal species range
 
