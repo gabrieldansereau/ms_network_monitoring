@@ -9,6 +9,8 @@
 
 - Thank the editor
 
+--------------------------------------------------------------------------------
+
 ## Reviewer 1
 
 > This is an interesting manuscript that addresses the challenge of sampling
@@ -28,27 +30,36 @@
 
 - Thank the reviewer
 
-> 
->
-> --------------------------------------------------------------------------------
->
 > lines 420 - 424: Is this paragraph intended to explain Figure 3 BON Examples?
 > I couldn't find the mentioned summary in the text; this section should be
 > modified for clarity. Also the captions of figure 3 and 4 should mention that
 > they are showing examples.
 
-- Yes, explaining Figures 3-4.
-- Summary of results is Figure 5
+Yes, this paragraph refers to the showcased example in Figures 3 and 4,
+representative of the most common results across all independent landscape
+configurations. We clarified this by specifically mentioning Figures 3 and 4 in
+this paragraph. The summary we referred to is Figure 5, which directly presents
+across the 200 independent configurations. We now mention Figure 5 in the
+paragraph as well. We added a mention in the captions to clarify that Figures 3
+and 4 are showing examples, as suggested.
 
 > Figure 5 caption: The caption is difficult to follow, particularly the
 > sentence: "The comparison value is based on the number of sites required to
 > document 80% of the focal species' interactions (n_0.80), described in
 > Equation 2." .It is unclear whether this statement refers to the x-axis or to
 > another component of the figure. The comparison metric should be explained
-> more explicitly.\
+> more explicitly.
 
-- Explain n0.80 first
-- Then mention x-axis is the difference of n0.80 values
+The statement and "comparison value" indeed refer to the x-axis. We agree this
+was unclear, especially given that x-axis value is the *difference* between two
+$n_{0.80}$ values for the options being compared. We changed the sentence to
+explicitly mention the comparison: "*The comparison value (x-axis) is the
+difference between the* $n_{0.80}$ *(number of sites required to document 80% of
+the focal species' interactions, see Equation 2) for a given strategy or target
+and the* $n_{0.80}$ *of its reference.*" We believe that further explaining the
+measure is not necessary, as the $n_{0.80}$ value is already described in the
+Methods and Equation 2, and would make the caption even more difficult to
+follow.
 
 > In addition, the interpretation of the comparison summary is confusing. For
 > example, the category *"Balanced within range"* appears to be lower than the
@@ -65,23 +76,73 @@
 > outcomes relative to the reference. At minimum, the caption should explain
 > more clearly why some scenarios are represented by two bars.
 
-- Reference is centred on 0, indicate exact same n0.80
-- Equal values have overlapping confidence intervals, regardless of the sign
-- Lower values are negative, beyond the confidence intervals, indicate a more
-  efficient sampling
-- Higher are opposite
-- Confidence intervals vary per simulation (variance), hence we cannot delimit
-  with single bars
-- Scenarios represented by two bars/marker sets to highlight only potential
-  results
+We apologize for the confusion, which resulted in part from the lack of clarity
+over the difference measure mentioned in the previous point. To better explain,
+we need to distinguish three elements: the $n_{0.80}$ value, the comparison
+value (position on the x-axis) and the overlap of the confidence intervals (the
+marker colour and associated category). First, the $n_{0.80}$ measures the
+number of sites required to sample 80% of the interactions. It may go beyond the
+number of sites evaluated in our simulations (1-500) because it is derived from
+an accumulation curve fitted to the simulation results (described in details in
+the Methods, section *Step 3: Defining a comparable measure for sampling
+efficiency*). Next, a difference value of 0 (x-axis on Figure 5) indicates that
+the option under comparison (e.g. Balanced Within Range) had the exact same
+$n_{0.80}$ as the reference. Positive values indicate that the $n_{0.80}$ was
+higher while negative values indicate it was lower. However, the order of
+magnitude of the difference is specific to each independent simulation—the
+$n_{0.80}$ values compared may be 500 and 600 in one simulation but 3000 and
+4000 in another—thus, we cannot represent a single bar or "regions" for the
+categories. Therefore, we use the confidence intervals of the
+$n_{0.80}$(described in the Methods) to classify the results in the three
+categories : Equal (overlapping intervals between the compared option and the
+reference), Lower and Higher (non overlapping intervals).
+
+To address this concisely, we updated Figure 5's caption to:
+
+- First describe what the positive and negative values represent
+- Then describe the colours, categories, and classification based on the
+  confidence intervals
+- Finally describe the right side summary panels, which display the percentage
+  of simulations falling into each comparison category (these were not
+  previously described in the caption).
+
+The last addition regarding the summary panels also makes it more intuitive that
+some scenarios are represented by two bars because they have results falling
+into two categories (Equal and Higher), whereas others have results in a single
+category (Lower). As the caption is already quite convoluted, we prefer not to
+add an additional explanation for this.
 
 > Finally, the color scheme could be improved. Green is typically associated
 > with favorable outcomes, whereas in this figure the apparently preferred
 > outcome is shown in orange. I suggest reconsidering or inverting the color
 > palette to make the interpretation more intuitive.
 
-- Colour choice is nice
-- Pink-green is the clearest contrast, used for the most common comparison
+We thank the reviewer for this suggestion. We reconsidered and updated the
+colour palette, although in a different way than suggested.
+
+Our colour choice is intended to optimize the contrast between the most common
+comparison results on Figs 5-6, namely "Equal" and "Higher". Pink and green
+offer the clearest contrast and is our preferred option among many tested for
+Figs 5-6. However, the reviewer's comment helped us realize we were using green
+for "Higher" although it represents the least favourable option, which is
+counter-intuitive. This was especially striking on Fig 6 B for the
+overestimation results (right-side on the x-axis).
+
+Given this, we decided to inverse the colours for "Equal" and "Higher". Our new
+palette has: green for "Equal"—the "default" comparison result and a favourable
+outcome in the context of Fig 6 (as over/underestimation is as efficient as the
+using the exact species range), pink for "Higher"—the least favourable outcome,
+and orange for "Lower"—the "most favourable" but surprising outcome, which
+barely occurs and should stand out as a special case whenever it appears. The
+same reasoning also applies on Fig 5—strategies or targets being equal to the
+reference is "good" (i.e. we can use either interchangeably), while having a
+lower $n_{0.80}$ is even better, but rather unexpected.
+
+Note that marker positions are slightly different on Fig 6A as we updated the
+label order in the legend, which triggered a change in the random jitter (x-axis
+position offset) of all markers. We confirm that the results did not change and
+that the markers have the exact same y-axis position. Panel B confirms this, as
+the proportion of simulations associated to each outcome stayed the same.
 
 > Figure 6 Panel B: appears to present essentially the same information as Panel
 > A. Including both panels is therefore somewhat redundant and may create
@@ -89,16 +150,32 @@
 > is not already conveyed in Panel A, I would suggest removing it or more
 > clearly highlighting its distinct purpose and interpretation.
 
-- Panel B is summarized version of A, focusing on comparison result sign
-- Panel A displays the range in absolute value, along with the linear trend
-- Keep only B and move A to supp mat? Looking back, proportion of simulations is
-  most important result, not absolute values and linear trend
+We respectfully disagree with the suggestion to remove Panel B, as we believe
+the two panels play a distinct, complementary role. The reviewer's
+interpretation is correct regarding some the information being shared: Panel B
+essentially summarizes the proportions presented on Panel A in a more accessible
+way, focusing on only on the variation of the proportions between the comparison
+outcomes. Yet, this information is more precise than on Panel A, as the
+proportions are shown at all 2% interval increments. The tolerance to up to 10%
+overestimation, abrupt change beyond this threshold, and contrast with the much
+slower, progressive shift in the underestimation case all serve as key results
+in our manuscript, which Panel B clearly supports. Nonetheless, we reworded some
+sentences in this paragraph to mention the abrupt and progressive changes, and
+we hope it better highlights Panel B's purpose.
+
+Meanwhile, we also want to reinforce the relevance of Panel A, whose role is to
+display the magnitude of the change in efficiency with over/underestimation
+compared to the reference $n_{0.80}$. The key result is the clear linear trend
+with overestimation, following the addition of non-informative sites, which
+contrasts with the high variance observed with underestimation. We realized that
+the implications of these findings were barely discussed; therefore, we briefly
+expanded on them in the second-to-last section of the Discussion.
 
 > Lines 504 - 513: Here you repeat the concept that species interactions require
 > more sampling effort. Likewise, the connection to the BON framework is
 > reiterated multiple times.
 
-- Rephrase to minimize redundancy while keeping result
+We streamlined this section to remove redundancy.
 
 > Lines 518: I would suggest removing the phrase "Through our representative
 > example in Figure 3". In the Discussion, the focus should be on interpreting
@@ -106,7 +183,11 @@
 > figures. The statement would read more smoothly if it referred directly to the
 > result or pattern observed, without explicitly citing the figure.
 
-- Makes sense. Remove references to Figures in Discussion
+We removed the figure citation in this paragraph and updated the text to refer
+to the result observed. We followed this recommendation throughout the
+discussion, keeping figure citations for cases where results are taken as
+specific examples or where we want to clearly highlight the result supporting a
+statement.
 
 > Lines 521–524: This section introduces a question that is immediately answered
 > in the following paragraph, creating unnecessary repetition. This rhetorical
@@ -114,9 +195,9 @@
 > effective in a scientific discussion. I suggest stating the main point
 > directly and integrating the explanation into a single, concise argument.
 
-- Replace rhetorical questions by: ... leaving open questions of determining the
-  information most efficient to target sites in sampling designs and the
-  precision required.
+We agree that this point could be stated in a more effective way. We removed the
+rhetorical questions and directed stated the need for further investigation to
+ensure an actual implementation of the monitoring strategies.
 
 ## Reviewer 2
 
