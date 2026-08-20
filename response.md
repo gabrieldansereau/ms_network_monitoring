@@ -1,3 +1,27 @@
+---
+bibliography: references.bib
+---
+
+Dear Editor,
+
+Here is our point-by-point response to the comments from the reviewers, which
+were highly useful to improve our manuscript and make our approach easier to
+understand. We integrated several of their suggestions in our revised
+manuscript. Notably, we added a new paragraph to our Discussion where we discuss
+the general applicability of our approach. Given these changes, our manuscript
+is further beyond the word limit (10,297 words), which we felt was necessary to
+give enough details regarding our Methods and discuss their limitations. We are
+open to making additional cuts should it be required.
+
+Thank you for giving us this opportunity to submit a revised version of our
+manuscript.
+
+Sincerely,
+
+The Authors
+
+--------------------------------------------------------------------------------
+
 ## Associate Editor
 
 > We have now received two reviews for your manuscript. Apologies that this
@@ -7,7 +31,7 @@
 > to improve aspects of the work. Thank you very much for your patience and I
 > look forward to seeing the revised manuscript.
 
-- Thank the editor
+We thank the editor for letting us submit a revised version of our manuscript.
 
 --------------------------------------------------------------------------------
 
@@ -28,7 +52,7 @@
 > Overall, the work is well executed. My comments below are primarily focused on
 > improving the presentation and clarity of the manuscript.
 
-- Thank the reviewer
+We thank the reviewer for their positive comments and helpful suggestions.
 
 > lines 420 - 424: Is this paragraph intended to explain Figure 3 BON Examples?
 > I couldn't find the mentioned summary in the text; this section should be
@@ -39,9 +63,9 @@ Yes, this paragraph refers to the showcased example in Figures 3 and 4,
 representative of the most common results across all independent landscape
 configurations. We clarified this by specifically mentioning Figures 3 and 4 in
 this paragraph. The summary we referred to is Figure 5, which directly presents
-across the 200 independent configurations. We now mention Figure 5 in the
-paragraph as well. We added a mention in the captions to clarify that Figures 3
-and 4 are showing examples, as suggested.
+the comparison results across the 200 independent configurations. We now mention
+Figure 5 in the paragraph as well. We added a mention in the captions to clarify
+that Figures 3 and 4 are showing examples, as suggested.
 
 > Figure 5 caption: The caption is difficult to follow, particularly the
 > sentence: "The comparison value is based on the number of sites required to
@@ -131,11 +155,11 @@ overestimation results (right-side on the x-axis).
 Given this, we decided to inverse the colours for "Equal" and "Higher". Our new
 palette has: green for "Equal"—the "default" comparison result and a favourable
 outcome in the context of Fig 6 (as over/underestimation is as efficient as the
-using the exact species range), pink for "Higher"—the least favourable outcome,
-and orange for "Lower"—the "most favourable" but surprising outcome, which
-barely occurs and should stand out as a special case whenever it appears. The
-same reasoning also applies on Fig 5—strategies or targets being equal to the
-reference is "good" (i.e. we can use either interchangeably), while having a
+using the exact species range)—, pink for "Higher"—the least favourable
+outcome—, and orange for "Lower"—the "most favourable" but surprising outcome,
+which barely occurs and should stand out as a special case whenever it appears.
+The same reasoning also applies on Fig 5—strategies or targets being equal to
+the reference is "good" (i.e. we can use either interchangeably), while having a
 lower $n_{0.80}$ is even better, but rather unexpected.
 
 Note that marker positions are slightly different on Fig 6A as we updated the
@@ -199,6 +223,8 @@ We agree that this point could be stated in a more effective way. We removed the
 rhetorical questions and directed stated the need for further investigation to
 ensure an actual implementation of the monitoring strategies.
 
+--------------------------------------------------------------------------------
+
 ## Reviewer 2
 
 > The manuscript entitled "Optimizing sampling and monitoring of species
@@ -209,7 +235,7 @@ ensure an actual implementation of the monitoring strategies.
 > construction were listed and explained, but the use of different definitions
 > of interactions may confuse the reader in some parts (listed below).
 
-- Thank the reviewer
+We thank the reviewer for their constructive comments on our work.
 
 > Also, The authors should inform the reader at the beginning of the methods
 > section that they only consider higher-degree trophic interactions. I guess a
@@ -219,8 +245,18 @@ ensure an actual implementation of the monitoring strategies.
 > ecological foundation) but that is a great limitation of the model, and
 > possibly not one of the most relevant interactions in many ecosystems.
 
-- Model is not limited to predator-prey relationship
-- Focus on predator-prey is choice, but can go further than that
+We thank the reviewer for raising this important point, which gives us an
+opportunity to expand on the general applicability of our approach. We did so in
+a new *Results representativity and model applicability* section at the end of
+our Discussion. To answer briefly to the elements mentioned in this comment: as
+we rely on the niche model, we expect the network structures to most closely
+resemble food webs of predator-prey interactions, which we clarified at the
+beginning of the Methods and in our Discussion paragraph. However, our approach
+is not limited to predator-prey interactions and could very well include primary
+consumers and vegetation. The approach is applicable for other network types
+(e.g. bipartite networks) provided that a metaweb of interactions and species
+presence-absence rasters can be obtained and that interaction rates can be
+defined based on species abundances or traits.
 
 > Monitoring efforts always must prioritize cost-effective approaches, and the
 > manuscript message points in that direction. However, it also gives a clear
@@ -229,11 +265,19 @@ ensure an actual implementation of the monitoring strategies.
 > most BONs, which are concerned about community scale because we lack this
 > refinement about species natural history.
 
-- Emphasis on Target choice is a change in focus, but comparable to some BONs
-  (e.g. China-BON)
-- Interactions are costly enough that it might be required
-- Our work explores if it is actually necessary and improvements to expect if we
-  were to do so
+We addressed this comment in the first section of our Discussion. We recognize
+that the emphasis we put on Target choice represents a change in focus, yet we
+would argue that it is comparable to multiple BONs and community-oriented
+monitoring initiatives. Notably, China-BON was designed to maximize site
+complementarity in terms of species coverage [@Xu2017OptMon] and the monitoring
+program led by the Alberta Biodiversity Monitoring Institute included a dynamic
+off-grid ensemble of sites to explore specific research hypotheses
+[@Burton2014FraAda]. Targeted approaches can also play a role in bottom-up BONs
+aiming to assemble information from multiple sources, such as CAN-BON
+[@Gonzalez2025BioObs]. Interactions are costly enough to sample that targeted
+approaches making use of available natural history might be crucial to start
+monitoring integrating them into developing monitoring programs, where they are
+currently lacking [e.g. European BON, @Kissling2024ModEff].
 
 > Another caveat that could be reinforced is the effect of species richness and
 > the limitation of those models for species-rich ecosystems (e.g. tropical
@@ -247,13 +291,24 @@ ensure an actual implementation of the monitoring strategies.
 > idea behind this manuscript is great and well executed, but the authors could
 > add a little more on the cons than the pros of their approach.
 
-- Discuss
+We thank the reviewer for this invitation to discuss the limitations of our
+approach. We did so in the new paragraph in the Discussion.
 
 > Line 149 - NLMs and species interaction samples: Makes sense to indicate the
 > grain size, since spatially-autocorrelated distributions are considered.
 
-- Not spatial
-- Add a comparison?
+Our neutral landscapes have a fixed extent (100 x 100 pixels) but no intrinsic
+physical grain sizes, as in common NLM implementations [@Etherington2015NlmPyt;
+@Etherington2022BinSpa]. Similar to @Simpkins2018AssPer, we did not link them to
+an explicit spatial scale to represent generic species distributions applicable
+over multiple scales. We consider each pixel as a unit where local interactions
+can be sampled, similar to recent representation of networks and metawebs in
+spatial contexts. In a monitoring context, relevant scales could be either
+national (e.g. trophiCH metaweb in Switzerland, @RejiChacko2025SpeLos) or
+continental (e.g. TETRA-EU metaweb in @Braga2019SpaAna), and cover different
+interaction types (e.g. national metaweb of plant-frugivore interactions in New
+Zealand, @Garcia-Callejas2025SpeTra). We rearranged this paragraph to make the
+simulation context clearer from the start.
 
 > Line 154 - what type of realistic spatially-correlated distributions were
 > applied? I'd like to understand if fragmented habitats are considered or if
@@ -261,9 +316,18 @@ ensure an actual implementation of the monitoring strategies.
 > enclaves or hot spots and other abrupt changes between landscape domains
 > (which are a common feature).
 
-- Mention the Diamond-Square algorithm on L163 and examples on Figures 3-4
-- Essentially represents fragmented habitats with potential enclaves and abrupt
-  changes, not continuous
+We updated the paragraph to better describe the generated distributions. To
+answer more directly: the neutral landscapes were generated using the
+Diamond-Square algorithm, a fractal landscape generator producing continuous,
+autocorrelated variation along the simulated surface (controlled by an
+autocorrelation parameter). Fragmentation emerges when the landscapes are
+thresholded to produce habitat classes, creating habitat patches and potential
+enclaves (see the representative example on Figures 3-4). Such models better
+represent fragmented and patchy habitats, similar to natural landscapes
+[@With1997AppNeu; @Wang2008NeuLan]. They do not represent gradients, nor do they
+represent abrupt changes (e.g. straight lines and rectangular) as in
+human-dominated landscapes [although other neutral models exist to do do, see
+@Etherington2015NlmPyt; @Etherington2022BinSpa].
 
 > Line 172 - The feasible interactions are only based on trophic interactions,
 > which depend on natural history information. Thus, how would that work for
@@ -272,9 +336,24 @@ ensure an actual implementation of the monitoring strategies.
 > state clearly that only trophic interactions \> third degree are considered
 > here.
 
-- Implementation without plant-herbivore interactions through niche model
-- Conceptually compatible if a metaweb including herbivore interactions is
-  available, or if we integrate them in some ways
+We recognize that this part required some clarification. The feasible
+interactions represent the trophic interactions of food webs whose structure can
+be reproduced by the niche model. Reviewed food webs recognized as well
+described by the niche model cover various types of interactions, including
+herbivory [@Williams2000SimRul; @Williams2008SucIts; @Hale2024HigRes]. However,
+the model notably underestimates the proportion of herbivores and decreases in
+performance as richness increases [as do alternative topological models,
+@Williams2008SucIts]. This is in part why we limited our simulations to
+parameters within the range of reviewed foods (S = 75 species, C = 0.20). Given
+that the niche model poorly matched an extremely rich, highly-resolved food webs
+[too few basal species and herbivores, @Hale2024HigRes], our conclusions likely
+should not be applied in such cases. We added a mention for this our new
+Discussion paragraph regarding the limitations of our conclusions. Nonetheless,
+we would still highlight that this does not invalidate our entire approach: our
+frameworks remains conceptually compatible to evaluate monitoring expectations
+if a realistic metaweb including herbivore interactions (e.g. an empirical
+metaweb, or assembled using another topological model) was provided instead of
+the ones generated by the niche model.
 
 > Line 179 - detected, realized and possible interactions are all conditioned by
 > species abundances. Rare species interaction should be relevant for risk
@@ -282,38 +361,64 @@ ensure an actual implementation of the monitoring strategies.
 > than the direct consumption of abundant prey, or even if invasive species are
 > not abundant but voracious (e.g. lionfish).
 
-- ?
-- Describe it's a model assumption
-- Briefly discuss implications
+We clarified earlier in the Methods that our approach is applicable when
+interaction rates can be defined based on species abundances or on species
+traits (a new addition to SpeciesInteractionSamplers.jl which we did not explore
+here but detailed in @Catchen2023MisLin). We believe that conditioning encounter
+and detection rates on abundances is most relevant in a BON monitoring context
+when the focus is to comprehensively document the interactions in a study area.
+Rare interactions as described are indeed relevant, but will nonetheless be
+influenced by species abundances, and might be better served by targeted
+monitoring efforts oriented specifically towards species at risk of extinction
+or invasive species.
 
 > Line 202 - the determination of location is key considering that this model
 > could be used for sampling at different scales, and also links with the
 > question about line 149 above
 
-- Discuss
+As mentioned earlier, we clarified that our model is intended to represent
+national and continental monitoring while keeping the flexibility to represent
+multiple scales. Determining the location of interaction realization and
+detection is indeed key, but as we describe in this paragraph, this is an
+advantage of our simulations as an exploratory approach, given that all
+locations are known from the process-based model.
 
 > Line 245 - sampled interactions = detected interactions? Is it possible to
 > clarify or use the same definitions from generated models? This can be
 > confusing.
 
-- No, sampled interactions = realized interactions, hence the additional term
-- Explain focus on sampled interactions as long-term target through repeated
-  monitoring
-- Different intent than Figure 1 with detected interactions, where we aim to
-  show difference in expected scale of magnitude
+In this context, the proportion of "sampled interactions" corresponds to the
+proportion of **realized interactions** of the focal species that can be sampled
+for every generated BON design. In Simulation Studies II and III, we focus on
+realized interactions as long-term targets which would be sampled over time
+following repeated monitoring efforts at sites in the BON. We clarified the
+wording in this section of the Methods (Step 3 of the General Model) and in the
+sections for Simulations study II and III, though we prefer keeping "proportion
+of sampled interactions" elsewhere.
 
 > Line 254 - it is always hard to define thresholds, and 80% seems a good number
 > for interactions, but how realistic should this number be based on real data?
 > Are the authors aware of expected values for a given richness value (the
 > applied 75 taxa) or a range? Are these considered detected interactions?
 
-- Discuss
+We added a reference to two studies where the 80% was used in a similar way.
+@Chacoff2012EvaSam and @Costa2016SamCom both reported the sampling effort
+required to to reach 80%, 90% and 100% of the estimated interactions in
+plant-pollinator and seed dispersal networks. Meanwhile, evaluating the
+proportion of sampled interactions in an empirical context usually requires
+estimating an asymptotic richness values with an estimator such as Chao 2. We
+prefer not to report on values in our Methods section given the widely variable
+contexts, but we note here that 80% is within the range of studies in different
+systems : an average 79% after 5 sampling days in seed dispersal networks
+[@Costa2016SamCom], 82% of interactions in plant-hummingbird networks
+[@Vizentin-Bugoni2016InfSam], 80 ± 17% in host-parasitoid networks
+[@Henriksen2019EffNet], etc. We also note that our 80% threshold only sets the
+reported $n_{0.80}$ value in our results but should generally not change the
+overlap of the confidence intervals used to compare the monitoring strategies.
 
 > Line 276 - Please include exploratory outputs in a supplementary material
 > because only fixed parameters were applied.
-
-- TODO
-
+>
 > Line 281 - Move this explanation before the indication of parameters values,
 > in line 270. I'd prefer to have the details about the simulations before the
 > model explanation, together with the interactions definitions. This way, we
@@ -322,5 +427,13 @@ ensure an actual implementation of the monitoring strategies.
 > a reflection because I deleted some comments after reaching this sentence, but
 > still left some to illustrate how this order affected the reading.
 
-- Need to consider two types of parameter values: ecological ones (connectance,
-  landscape, species) vs SIS.jl specific ones
+We followed the second suggestion and mentioned earlier that we chose to keep
+internal parameters constant to focus only on variation in monitoring outcomes
+due to BON designs. We removed the mention of the exploratory simulations, as
+they were performed early on in the development phase of our simulations, on a
+preliminary version of our analyses, and would not bring much support for the
+current results if provided in supp. mat. Nonetheless, this point ties-in with
+what we added in our new discussion paragraph: as we chose fixed parameters
+within the range of well-characterized empirical food webs, we expect our
+results to be representative of trophic networks well-aligned with the niche
+model.
