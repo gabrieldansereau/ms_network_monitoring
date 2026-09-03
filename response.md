@@ -123,12 +123,12 @@ reference), Lower and Higher (non overlapping intervals).
 
 To address this concisely, we updated Figure 5's caption to:
 
--   First describe what the positive and negative values represent
--   Then describe the colours, categories, and classification based on the
-    confidence intervals
--   Finally describe the right side summary panels, which display the percentage
-    of simulations falling into each comparison category (these were not
-    previously described in the caption).
+- First describe what the positive and negative values represent
+- Then describe the colours, categories, and classification based on the
+  confidence intervals
+- Finally describe the right side summary panels, which display the percentage
+  of simulations falling into each comparison category (these were not
+  previously described in the caption).
 
 The last addition regarding the summary panels also makes it more intuitive that
 some scenarios are represented by two bars because they have results falling
@@ -279,7 +279,7 @@ approaches making use of available natural history might be crucial to start
 monitoring integrating them into developing monitoring programs, where they are
 currently lacking [e.g. European BON, @Kissling2024ModEff].
 
-<!--I think this could be made a tiny bit more explicit in the discussion points added, to make the reviewer happy -- maybe right at the last section in the "recommendations"-->
+<!--# I think this could be made a tiny bit more explicit in the discussion points added, to make the reviewer happy -- maybe right at the last section in the "recommendations"-->
 
 > Another caveat that could be reinforced is the effect of species richness and
 > the limitation of those models for species-rich ecosystems (e.g. tropical
@@ -330,7 +330,7 @@ represent fragmented and patchy habitats, similar to natural landscapes
 represent abrupt changes (e.g. straight lines and rectangular) as in
 human-dominated landscapes [although other neutral models exist to do do, see
 @Etherington2015NlmPyt; @Etherington2022BinSpa].\
-<!--I think you still did not say explicitly that "habitat fragmentation" was not explored here.-->
+<!--# I think you still did not say explicitly that "habitat fragmentation" was not explored here.-->
 
 > Line 172 - The feasible interactions are only based on trophic interactions,
 > which depend on natural history information. Thus, how would that work for
@@ -375,7 +375,7 @@ nonetheless be influenced by species abundances, and might be better served by
 targeted monitoring efforts oriented specifically towards species at risk of
 extinction or invasive species.
 
-<!--perhaps the discussion also warrants a sentence on this. The point raised by the reviewer, in my mind, is simply another demonstration that more effort is needed to sample (rare) species interactions. This is clearly shown by the saturation curves of potential vs realized vs detected interactions and can be pointed out in the discussion somewhere.-->
+<!--# perhaps the discussion also warrants a sentence on this. The point raised by the reviewer, in my mind, is simply another demonstration that more effort is needed to sample (rare) species interactions. This is clearly shown by the saturation curves of potential vs realized vs detected interactions and can be pointed out in the discussion somewhere.-->
 
 > Line 202 - the determination of location is key considering that this model
 > could be used for sampling at different scales, and also links with the
@@ -401,7 +401,7 @@ wording in this section of the Methods (Step 3 of the General Model) and in the
 sections for Simulations study II and III, though we prefer keeping "proportion
 of sampled interactions" elsewhere.
 
-<!-- agree with the rev about confusing use of terminology. See my comments about this in the main text; happy to chat vive-voix if needed-->
+<!--#  agree with the rev about confusing use of terminology. See my comments about this in the main text; happy to chat vive-voix if needed-->
 
 > Line 254 - it is always hard to define thresholds, and 80% seems a good number
 > for interactions, but how realistic should this number be based on real data?
@@ -412,7 +412,7 @@ We added a reference to two studies where the 80% was used in a similar way.
 @Chacoff2012EvaSam and @Costa2016SamCom both reported the sampling effort
 required to to reach 80%, 90% and 100% of the estimated interactions in
 plant-pollinator and seed dispersal networks. Meanwhile, evaluating the
-proportion of sampled <!--feasible?--> interactions in an empirical context
+proportion of sampled <!--# feasible?--> interactions in an empirical context
 usually requires estimating an asymptotic richness values with an estimator such
 as Chao 2. We prefer not to report on values in our Methods section given the
 widely variable contexts, but we note here that 80% is within the range of
