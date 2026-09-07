@@ -265,21 +265,20 @@ defined based on species abundances or traits.
 > most BONs, which are concerned about community scale because we lack this
 > refinement about species natural history.
 
-We addressed this comment in the first section of our Discussion. We recognize
-that the emphasis we put on Target choice represents a change in focus, yet we
-would argue that it is comparable to multiple BONs and community-oriented
-monitoring initiatives. Notably, China-BON was designed to maximize site
-complementarity in terms of species coverage [@Xu2017OptMon] and the monitoring
-program led by the Alberta Biodiversity Monitoring Institute included a dynamic
-off-grid ensemble of sites to explore specific research hypotheses
-[@Burton2014FraAda]. Targeted approaches can also play a role in bottom-up BONs
-aiming to assemble information from multiple sources, such as CAN-BON
-[@Gonzalez2025BioObs]. Interactions are costly enough to sample that targeted
-approaches making use of available natural history might be crucial to start
-monitoring integrating them into developing monitoring programs, where they are
-currently lacking [e.g. European BON, @Kissling2024ModEff].
-
-<!--# I think this could be made a tiny bit more explicit in the discussion points added, to make the reviewer happy -- maybe right at the last section in the "recommendations"-->
+We addressed this comment in the first section of our Discussion and to start
+our Recommendations for monitoring (very last section). We recognize that the
+emphasis we put on Target choice represents a change in focus, yet we would
+argue that it is comparable to multiple BONs and community-oriented monitoring
+initiatives. Notably, China-BON was designed to maximize site complementarity in
+terms of species coverage [@Xu2017OptMon] and the monitoring program led by the
+Alberta Biodiversity Monitoring Institute included a dynamic off-grid ensemble
+of sites to explore specific research hypotheses [@Burton2014FraAda]. Targeted
+approaches can also play a role in bottom-up BONs aiming to assemble information
+from multiple sources, such as CAN-BON [@Gonzalez2025BioObs]. Interactions are
+costly enough to sample that targeted approaches making use of available natural
+history might be crucial to start integrating them into developing monitoring
+programs, where they are currently lacking [e.g. European BON,
+@Kissling2024ModEff].
 
 > Another caveat that could be reinforced is the effect of species richness and
 > the limitation of those models for species-rich ecosystems (e.g. tropical
@@ -322,15 +321,15 @@ We updated the paragraph to better describe the generated distributions. To
 answer more directly: the neutral landscapes were generated using the
 Diamond-Square algorithm, a fractal landscape generator producing continuous,
 autocorrelated variation along the simulated surface (controlled by an
-autocorrelation parameter). Fragmentation emerges when the landscapes are
-thresholded to produce habitat classes, creating habitat patches and potential
-enclaves (see the representative example on Figures 3-4). Such models better
-represent fragmented and patchy habitats, similar to natural landscapes
-[@With1997AppNeu; @Wang2008NeuLan]. They do not represent gradients, nor do they
-represent abrupt changes (e.g. straight lines and rectangular) as in
-human-dominated landscapes [although other neutral models exist to do do, see
-@Etherington2015NlmPyt; @Etherington2022BinSpa].\
-<!--# I think you still did not say explicitly that "habitat fragmentation" was not explored here.-->
+autocorrelation parameter). Although we did not explore it *per se*, habitat
+fragmentation does emerge when the landscapes are thresholded to produce habitat
+classes, creating habitat patches and potential enclaves (see the representative
+example on Figures 3-4). Fractal landscapes are said to represent fragmented and
+patchy habitats, similar to natural landscapes [@With1997AppNeu;
+@Wang2008NeuLan]. They do not represent gradients, nor do they represent abrupt
+changes (e.g. straight lines and rectangular) as in human-dominated landscapes
+[although other neutral models exist to do do, see @Etherington2015NlmPyt;
+@Etherington2022BinSpa].\
 
 > Line 172 - The feasible interactions are only based on trophic interactions,
 > which depend on natural history information. Thus, how would that work for
@@ -375,7 +374,6 @@ nonetheless be influenced by species abundances, and might be better served by
 targeted monitoring efforts oriented specifically towards species at risk of
 extinction or invasive species.
 
-<!--# perhaps the discussion also warrants a sentence on this. The point raised by the reviewer, in my mind, is simply another demonstration that more effort is needed to sample (rare) species interactions. This is clearly shown by the saturation curves of potential vs realized vs detected interactions and can be pointed out in the discussion somewhere.-->
 
 > Line 202 - the determination of location is key considering that this model
 > could be used for sampling at different scales, and also links with the
@@ -392,16 +390,25 @@ locations are known from the process-based model.
 > clarify or use the same definitions from generated models? This can be
 > confusing.
 
-In this context, the proportion of "sampled interactions" corresponds to the
-proportion of **realized interactions** of the focal species that can be sampled
-for every generated BON design. In Simulation Studies II and III, we focus on
-realized interactions as long-term targets which would be sampled over time
-following repeated monitoring efforts at sites in the BON. We clarified the
-wording in this section of the Methods (Step 3 of the General Model) and in the
-sections for Simulations study II and III, though we prefer keeping "proportion
-of sampled interactions" elsewhere.
-
-<!--#  agree with the rev about confusing use of terminology. See my comments about this in the main text; happy to chat vive-voix if needed-->
+We apologize for the confusion and thank the reviewer for pointing it out, which
+led us to clarify the terminology used throughout the Methods and Results. In
+the specific context highlighted by the reviewer (General model, Step 3), the
+proportion of "sampled interactions" corresponds to the proportion of **realized
+interactions** actually occurring in the landscape and that can potentially be
+sampled for every generated BON design. In Simulation Studies II and III, we
+focus on realized interactions of a focal species as long-term targets which
+would be sampled over time following repeated monitoring efforts at sites in the
+BON. We clarified the wording to make the focus on realized interactions
+explicit in several section: in this section of the Methods (Step 3 of the
+General Model), in the sections for Simulations study II and III, in the Results
+section, and on Figures 3-4 (where the y-axis is now "Proportion of realized
+interactions sampled"). Note that we also clarified the terminology in
+Simulation Study I and Figure 2, where we report the **proportion of feasible
+interactions sampled** with spatially balanced plans. This difference is
+intended: Simulation Study I focuses on expectations to document an entire
+metaweb, which is made of feasible interactions, while Simulation Studies II and
+III instead focuses on the realized interactions of a focal species as a target
+for monitoring.
 
 > Line 254 - it is always hard to define thresholds, and 80% seems a good number
 > for interactions, but how realistic should this number be based on real data?
@@ -412,13 +419,13 @@ We added a reference to two studies where the 80% was used in a similar way.
 @Chacoff2012EvaSam and @Costa2016SamCom both reported the sampling effort
 required to to reach 80%, 90% and 100% of the estimated interactions in
 plant-pollinator and seed dispersal networks. Meanwhile, evaluating the
-proportion of sampled <!--# feasible?--> interactions in an empirical context
-usually requires estimating an asymptotic richness values with an estimator such
-as Chao 2. We prefer not to report on values in our Methods section given the
-widely variable contexts, but we note here that 80% is within the range of
-studies in different systems : an average 79% after 5 sampling days in seed
-dispersal networks [@Costa2016SamCom], 82% of interactions in plant-hummingbird
-networks [@Vizentin-Bugoni2016InfSam], 80 ± 17% in host-parasitoid networks
+proportion of realized interactions sampled in an empirical context usually
+requires estimating an asymptotic richness values with an estimator such as Chao
+1. We prefer not to report on values in our Methods section given the widely
+variable contexts, but we note here that 80% is within the range of studies in
+different systems : an average 79% after 5 sampling days in seed dispersal
+networks [@Costa2016SamCom], 82% of interactions in plant-hummingbird networks
+[@Vizentin-Bugoni2016InfSam], 80 ± 17% in host-parasitoid networks
 [@Henriksen2019EffNet], etc. We also note that our 80% threshold only sets the
 reported $n_{0.80}$ value in our results, but should generally not change the
 overlap of the confidence intervals used to compare the monitoring strategies.
@@ -444,3 +451,5 @@ with what we added in our new discussion paragraph: as we chose fixed parameters
 within the range of well-characterized empirical food webs, we expect our
 results to be representative of trophic networks well-aligned with the niche
 model.
+
+## References
