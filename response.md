@@ -374,7 +374,6 @@ nonetheless be influenced by species abundances, and might be better served by
 targeted monitoring efforts oriented specifically towards species at risk of
 extinction or invasive species.
 
-
 > Line 202 - the determination of location is key considering that this model
 > could be used for sampling at different scales, and also links with the
 > question about line 149 above
@@ -410,6 +409,11 @@ metaweb, which is made of feasible interactions, while Simulation Studies II and
 III instead focuses on the realized interactions of a focal species as a target
 for monitoring.
 
+Finally, we also note an additional change to the terminology: we now refer to
+**potential interactions** rather than "possible interactions". We did this
+change to be fully consistent with @Catchen2023MisLin and the latest version of
+SpeciesInteractionSamplers.jl.
+
 > Line 254 - it is always hard to define thresholds, and 80% seems a good number
 > for interactions, but how realistic should this number be based on real data?
 > Are the authors aware of expected values for a given richness value (the
@@ -420,12 +424,12 @@ We added a reference to two studies where the 80% was used in a similar way.
 required to to reach 80%, 90% and 100% of the estimated interactions in
 plant-pollinator and seed dispersal networks. Meanwhile, evaluating the
 proportion of realized interactions sampled in an empirical context usually
-requires estimating an asymptotic richness values with an estimator such as Chao
-1. We prefer not to report on values in our Methods section given the widely
-variable contexts, but we note here that 80% is within the range of studies in
-different systems : an average 79% after 5 sampling days in seed dispersal
-networks [@Costa2016SamCom], 82% of interactions in plant-hummingbird networks
-[@Vizentin-Bugoni2016InfSam], 80 ± 17% in host-parasitoid networks
+requires estimating an asymptotic richness values with an estimator such as
+Chao 1. We prefer not to report on values in our Methods section given the
+widely variable contexts, but we note here that 80% is within the range of
+studies in different systems : an average 79% after 5 sampling days in seed
+dispersal networks [@Costa2016SamCom], 82% of interactions in plant-hummingbird
+networks [@Vizentin-Bugoni2016InfSam], 80 ± 17% in host-parasitoid networks
 [@Henriksen2019EffNet], etc. We also note that our 80% threshold only sets the
 reported $n_{0.80}$ value in our results, but should generally not change the
 overlap of the confidence intervals used to compare the monitoring strategies.

@@ -311,9 +311,9 @@ be used at this step to extend the methodology to other systems and interactions
 types (e.g. bipartite networks).
 
 Combining the species ranges and the metaweb, we verified where species with
-feasible interactions co-occur, to build a list of **possible interactions**
+feasible interactions co-occur, to build a list of **potential interactions**
 [@Catchen2023MisLin] at every location in our landscape. Next, we defined
-**realized interactions** by conditioning possible interactions to species
+**realized interactions** by conditioning potential interactions to species
 abundances. Rare and low-abundance species are less likely to interact in a
 location because they are less likely to encounter one another when compared to
 abundant species, leading to neutrally forbidden links [@Catchen2023MisLin;
@@ -476,14 +476,14 @@ distribution for the species, and realized interactions. In every one, we
 evaluated the sampling efficiency of the spatially balanced BON design in terms
 of sampling interactions from the metaweb and in terms of recording species
 richness. For interactions, we evaluated each interaction type separately
-(possible, realized and detected), counting the number of distinct interactions
+(potential, realized and detected), counting the number of distinct interactions
 sampled in the BON, then evaluated each with regards to the total interactions
 in the metaweb (specific to the landscape configuration, but generated with the
 same connectance of 0.2 using the niche model). For species richness, we assumed
 that all species present at sites in the BON were sampled, then compared the
 number of species sampled in the BON against the total species richness across
 the landscape (always 75 species). As a whole, these simulations compared four
-sampling targets (species richness, possible interactions, realized
+sampling targets (species richness, potential interactions, realized
 interactions, and detected interactions), establishing baselines for the
 monitoring of each.
 
@@ -610,7 +610,7 @@ Our results for the baseline spatially-balanced sampling designs highlight a
 marked difference between the proportions of sampled species and feasible
 interactions (@fig-nbons). Sampled species saturated very quickly, with all
 species sampled within less than 25 sites in a BON across the landscape.
-Possible interactions, which only depend on co-occurrence of species with a
+Potential interactions, which only depend on co-occurrence of species with a
 feasible interaction in the metaweb, also saturated quickly, reaching over 90%
 of the feasible interactions in the metaweb within 25 sites and increasing
 asymptotically afterwards. In contrast, realized and detected interactions,
@@ -620,10 +620,10 @@ metaweb at 100 sampling sites and under 50% at 500 sites. While realized and
 detected interactions would keep increasing with a higher number of sites
 ($n_{0.80}$ around 2100 and 7300, respectively), the speed at which they
 accumulate feasible interactions is notably lower than for species richness or
-possible interactions, highlighting the need for a much higher sampling effort
+potential interactions, highlighting the need for a much higher sampling effort
 for interactions within spatially-balanced BONs.
 
-<!--# The use of "proportion of XXX interactions" is confusing to me. The proportion of sampled interactions is always relative to the metaweb, that is it's always the proportion of sampled *feasible* interactions; but the way you "count" the interaction in a site depedents on more or fewer "conditions" (co-occurrence + abundance adjustments). Phrasing it as "proportion of sampled realized and detected interactions" becomes confusing to me, as it makes me think that you're calculating the proportion of interactions that actually happen in the landscape and are captured in the BON, which I think is not what you're truly measuring here. Presumably, some interactions in the metaweb may never occur (i.e. if spp ranges do not overlap in a landscape, you have fewer potential interactions than feasible interactions). So I propose always referring to the proporion of sampled feasible interations given the total potential, realized and detected interactions. In the preceeding sentence, for example, I would write "While realized and detected interactions would keep increasing with a higher number of sites (...), the speed at which they accumulate feasible interactions is notably lower than for species richness or possible interactions".-->
+<!--# The use of "proportion of XXX interactions" is confusing to me. The proportion of sampled interactions is always relative to the metaweb, that is it's always the proportion of sampled *feasible* interactions; but the way you "count" the interaction in a site depedents on more or fewer "conditions" (co-occurrence + abundance adjustments). Phrasing it as "proportion of sampled realized and detected interactions" becomes confusing to me, as it makes me think that you're calculating the proportion of interactions that actually happen in the landscape and are captured in the BON, which I think is not what you're truly measuring here. Presumably, some interactions in the metaweb may never occur (i.e. if spp ranges do not overlap in a landscape, you have fewer potential interactions than feasible interactions). So I propose always referring to the proporion of sampled feasible interations given the total potential, realized and detected interactions. In the preceeding sentence, for example, I would write "While realized and detected interactions would keep increasing with a higher number of sites (...), the speed at which they accumulate feasible interactions is notably lower than for species richness or potential interactions".-->
 
 <!--# I would also fix the figure y axis title to say "proportion of sampled feasible interations"-->
 
