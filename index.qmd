@@ -169,8 +169,11 @@ to life history or morphological restrictions, which in turn requires knowledge
 of species natural history and traits [@Jordano2016SamNet]. While some network
 properties such as connectance can be approximated with lesser sampling effort,
 network composition assessments regarding the number of species and links are
-directly tied to the number of sites sampled [@Vizentin-Bugoni2016InfSam;
-@Poisot2012DisSpe].
+highly sensitive
+<!--or maybe just 'sensitive' depending on what the cited work shows--> to
+sample size
+<!--or "undersampling", or as you had previously "will vary widely if interactions are missed". I think this is a more direct/explicit way and prefer it.-->
+[@Vizentin-Bugoni2016InfSam; @Poisot2012DisSpe].
 
 One way to define expectations for interaction monitoring within BONs is to
 consider variation in local sampling from a spatially-explicit perspective—that
@@ -627,6 +630,8 @@ for interactions within spatially-balanced BONs.
 
 <!--# I would also fix the figure y axis title to say "proportion of sampled feasible interations"-->
 
+<!--see my comment about the y-axis title: https://github.com/gabrieldansereau/ms_network_monitoring/pull/5#discussion_r3984061201 -->
+
 ![Proportion of sampled species and interactions for a given number of sampling
 sites in a spatially-balanced Biodiversity Observation Network (BON) across the
 simulated landscape (Simulation Study I). Proportions were calculated with
@@ -762,16 +767,17 @@ interactions?*
 
 Our simulations highlight that expectations for monitoring species interactions
 within spatially-balanced, general-purpose BONs should be much lower than for
-species and community composition. When conditioning realization and detection
-on species abundances, interactions require a (much) higher monitoring effort
-across space, especially to detect rare interactions involving less-abundant
-species. Our observations are consistent with previous ones regarding higher
-sampling effort required to document pollinator networks [@Chacoff2012EvaSam],
-yet here framed in the context of BON design and monitoring across space.
-Overall, these results reinforce the need for optimizing sampling designs for
-species interactions beyond and in complement to existing monitoring networks,
-and for recognizing them as a gap to fill in developing monitoring programs
-[e.g. European BON, @Kissling2024ModEff].
+species and community composition. When interaction realization and detection
+are conditioned on species abundances, we need (much) higher monitoring efforts
+to detect interactions, especially rare interactions involving less-abundant
+species <!--minor edits to make this crystal clear to the reviewer--> . Our
+observations are consistent with previous ones regarding higher sampling effort
+required to document pollinator networks [@Chacoff2012EvaSam], yet here framed
+in the context of BON design and monitoring across space. Overall, these results
+reinforce the need for optimizing sampling designs for species interactions
+beyond and in complement to existing monitoring networks, and for recognizing
+them as a gap to fill in developing monitoring programs [e.g. European BON,
+@Kissling2024ModEff].
 
 We can improve interaction coverage with the right optimization method, but
 efficiently doing so requires a clear and attainable monitoring objective.
@@ -895,17 +901,21 @@ socio-ecological considerations into monitoring designs [@Madeira2024MulBio;
 *Recommendations for monitoring*
 
 Species interactions are costly enough to sample that targeted approaches making
-use of available natural history might be crucial to integrate them into
-developing monitoring programs, where they are currently lacking [e.g. European
-BON and CAN BON, @Kissling2024ModEff; @Gonzalez2025BioObs]. While spatially
-balanced designs are efficient for more generic biodiversity monitoring
-purposes, species interactions may be better sampled using optimized monitoring
-designs targeting focal species, or locations where species are known to exist.
-In this manuscript, we showed the importance of selecting a appropriate target
-(e.g. a focal species' interaction) and using attainable information restricting
-the phenomenon (here the species range) to optimize monitoring designs
-efficiently. There is a degree of tolerance to the level of information
-precision needed for optimization (similar to range over- and underestimation),
+use of available natural history information (e.g. species ranges or preferred
+habitats) might be crucial to integrate them into developing monitoring
+programs, where they are currently lacking [e.g. European BON and CAN BON,
+@Kissling2024ModEff; @Gonzalez2025BioObs]. While spatially balanced designs are
+efficient for more generic biodiversity monitoring purposes, species
+interactions may be better sampled using optimized monitoring designs targeting
+focal species, or locations where species are known to exist. In this
+manuscript, we demonstrate how this can be achived by selecting a appropriate
+target (e.g. the interactions of a focal species) and using attainable
+information (here the species range) to optimize monitoring designs efficiently
+<!--this sentence felt a little disconnected from the one opening the paragraph. I tried to make a mire explicit linkage. I also streamlined this last bit a little-->.
+We show that there is a degree of tolerance to the level of information
+precision needed for optimization (which we explored via range over- and
+underestimation
+<!--the similar felt a little off to me because the over/understimation of a range is tied to the type of information we chose. We could've chosen something completely different like habitat type or productivity, where the pricision variation could be on spatial grain, unit rounding of type of habitat classification-->),
 highlighting that available information, albeit imperfect, can already be used
 to guide species interaction monitoring.
 
