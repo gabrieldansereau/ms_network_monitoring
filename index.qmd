@@ -160,7 +160,6 @@ that knowing the network structure (i.e. network properties) does not always
 allow knowing the list of interactions (and vice versa), therefore justifying
 the need to sample interactions as their own biological entities. A central
 challenge to do so is that the sampling effort required to detect
-<!--#  documenting (in my brain at least) involves a more descriptive task-->
 interactions is much higher than for species (e.g. 500% vs 64% in
 `#citeb(<Chacoff2012EvaSam>)`{=typst}). Moreover, evaluating sampling
 completeness for interactions is more complex than for species, as it requires
@@ -202,7 +201,7 @@ monitoring sites under a range of scenarios and monitoring schemes
 In this manuscript, we address three key questions. First, what expectations
 should we have for monitoring species interactions across space within
 Biodiversity Observation Networks? Second, what effect do sampling design
-strategies have on the efficiency with which we can document interactions?
+strategies have on the efficiency with which we can detect interactions?
 Finally, what available information (e.g. from existing monitoring programs)
 could be used to optimize the design of future BONs for interactions and how
 precise should such information be to expect efficiency improvements?
@@ -235,7 +234,7 @@ variation in species and interaction composition. We then designed biodiversity
 observation networks (BONs) across the simulated landscapes using a combination
 of site selection algorithms (samplers) and optimization targets. We measured
 the efficiency of the BON designs for sampling species interactions using a
-comparable measure (the number of sites required to document 80% of the
+comparable measure (the number of sites required to detect 80% of the
 interactions, $n_{0.80}$) across all simulations. Note that $a$ is a single
 parameter describing the shape of the sampling curve and returning the best fit
 with a simulation's results, as described in [Simulation Study
@@ -428,7 +427,7 @@ interactions $p$, following an efficiency curve described by the parameter $a$.
 Here, we fixed $p=0.80$ (80% of the interactions), a threshold representing a
 highly effective monitoring outcome (similarly used by @Chacoff2012EvaSam;
 @Costa2016SamCom), for which we obtain $n_{0.80} = 4 \cdot a$ using @eq-n_at_p.
-$n_{0.80}$ measures the speed at which realized interactions can be documented,
+$n_{0.80}$ measures the speed at which realized interactions can be detected,
 and therefore the sampling efficiency of a BON design within a given landscape.
 We then used $n_{0.80}$ values to compare site selection algorithms and
 optimization targets in terms of their efficiency—i.e. which allow reaching a
@@ -462,33 +461,33 @@ provided by Calcul Québec and the Digital Research Alliance of Canada.
 ### Simulation study I: Establishing baseline expectations for the monitoring of interactions
 
 Our first simulation study aimed to establish baselines for the monitoring of
-interactions across space, defining expectations for how we could document a
-metaweb of interactions using "an existing" BON. This is, we aimed to represent
-the case of testing the interaction sampling efficiency of BONs designed to
-cover a wide range of taxa and environmental conditions but not necessarily
-species interactions (e.g. Québec, China BONs). For this, we designed and tested
-spatially balanced BONs which is generally considered an effective way to cover
-environmental space [@Kermorvant2019SpaBal]. We used the Balanced Acceptance
-Sampling algorithm [@Robertson2013BasBal; @Robertson2017ModBal] with equal
-inclusion probabilities across the landscapes to generate candidate BONs with a
-number of sites between 1 and 500 at intervals of 10 sites, with 50 replicates
-for each number of sites, yielding 2,550 BON designs in total. For every design
-we used the general model (Step 1) to generate an independent landscape
-configuration: a specific metaweb, a set of species ranges, an abundance
-distribution for the species, and realized interactions. In every one, we
-evaluated the sampling efficiency of the spatially balanced BON design in terms
-of sampling interactions from the metaweb and in terms of recording species
-richness. For interactions, we evaluated each interaction type separately
-(potential, realized and detected), counting the number of distinct interactions
-sampled in the BON, then evaluated each with regards to the total interactions
-in the metaweb (specific to the landscape configuration, but generated with the
-same connectance of 0.2 using the niche model). For species richness, we assumed
-that all species present at sites in the BON were sampled, then compared the
-number of species sampled in the BON against the total species richness across
-the landscape (always 75 species). As a whole, these simulations compared four
-sampling targets (species richness, potential interactions, realized
-interactions, and detected interactions), establishing baselines for the
-monitoring of each.
+interactions across space, defining expectations for how we could detect
+interactions in a metaweb using "an existing" BON. This is, we aimed to
+represent the case of testing the interaction sampling efficiency of BONs
+designed to cover a wide range of taxa and environmental conditions but not
+necessarily species interactions (e.g. Québec, China BONs). For this, we
+designed and tested spatially balanced BONs which is generally considered an
+effective way to cover environmental space [@Kermorvant2019SpaBal]. We used the
+Balanced Acceptance Sampling algorithm [@Robertson2013BasBal;
+@Robertson2017ModBal] with equal inclusion probabilities across the landscapes
+to generate candidate BONs with a number of sites between 1 and 500 at intervals
+of 10 sites, with 50 replicates for each number of sites, yielding 2,550 BON
+designs in total. For every design we used the general model (Step 1) to
+generate an independent landscape configuration: a specific metaweb, a set of
+species ranges, an abundance distribution for the species, and realized
+interactions. In every one, we evaluated the sampling efficiency of the
+spatially balanced BON design in terms of sampling interactions from the metaweb
+and in terms of recording species richness. For interactions, we evaluated each
+interaction type separately (potential, realized and detected), counting the
+number of distinct interactions sampled in the BON, then evaluated each with
+regards to the total interactions in the metaweb (specific to the landscape
+configuration, but generated with the same connectance of 0.2 using the niche
+model). For species richness, we assumed that all species present at sites in
+the BON were sampled, then compared the number of species sampled in the BON
+against the total species richness across the landscape (always 75 species). As
+a whole, these simulations compared four sampling targets (species richness,
+potential interactions, realized interactions, and detected interactions),
+establishing baselines for the monitoring of each.
 
 ### Simulation study II: Evaluating strategies to optimize the monitoring of interactions for a focal species {#sec-simulation-study-II}
 
@@ -556,7 +555,7 @@ allowed for more gradual control over the curve shape and adjusted the limits to
 ensure they went beyond the fitted values on both the lower and higher side.
 After selecting the best-fit value for $a$, we evaluated the sampling efficiency
 for the simulation using the $n_{0.80}$ measurement described in Step 3 (number
-of sites required to document 80% of the realized interactions).
+of sites required to detect 80% of the realized interactions).
 
 Finally, we defined a confidence interval for our $n_0.80$ efficiency
 measurement. As the best-fit for $a$ depends on the median result across
@@ -599,7 +598,7 @@ measure efficiency using the same 200 simulations with independent landscape
 configurations. We generated BONs of 1 to 500 sites for all the estimation
 offset ranges (again with 50 replicates at all number of sites), randomly
 re-assigning the BON sites across the adjusted ranges independently from the
-original one, and measured the efficiency at documenting interactions. We then
+original one, and measured the efficiency at detecting interactions. We then
 compared the $n_{0.80}$ values of each estimation offset range to the $n_{0.80}$
 for the true species range, which we expected would be the most efficient, and
 used the confidence intervals to determine which estimation offsets differed
@@ -700,7 +699,7 @@ approach across landscape and metaweb contexts ([@fig-eff-comp]; see also Supp.
 Mat. for all pairwise comparisons), in line with with the single-simulation
 example ([@fig-samplers; @fig-layers]). Targeted Sampling was more efficient
 than Weighted Sampling in 63% of simulations (lower value for $n_{0.80}$,
-indicating a faster documentation of realized interactions), and both were more
+indicating a faster detection of realized interactions), and both were more
 efficient than Balanced Acceptance in all simulations ([@fig-eff-comp]A).
 Targeted Sampling and Balanced Within Range were equally efficient in all cases.
 Among optimization targets used with Targeted Sampling ([@fig-eff-comp]B),
@@ -711,11 +710,11 @@ always less efficient than optimizing on realized interactions.
 ![Within-simulation comparison of efficiency between site selection strategies
 and optimization targets for 200 independent simulations. The comparison value
 (x-axis) is the difference between the $n_{0.80}$ (number of sites required to
-document 80% of the focal species' realized interactions; see @eq-n_at_p) for a
+detect 80% of the focal species' realized interactions; see @eq-n_at_p) for a
 given strategy (A) or target (B) and the $n_{0.80}$ of the reference
 strategy/target (in parenthesis). Positive values indicate a higher sampling
 effort than the reference, while negative values indicate a lower effort and
-more efficient sampling (faster documentation of interactions). Overlapping
+more efficient sampling (faster detection of interactions). Overlapping
 $n_{80}$ confidence intervals indicated no difference between compared options
 (Equal, green), whereas non-overlapping confidence intervals indicated positive
 (Higher, pink) or negative (Lower, orange) differences. The right-side summary
@@ -770,14 +769,14 @@ within spatially-balanced, general-purpose BONs should be much lower than for
 species and community composition. When interaction realization and detection
 are conditioned on species abundances, we need (much) higher monitoring efforts
 to detect interactions, especially rare interactions involving less-abundant
-species <!--minor edits to make this crystal clear to the reviewer--> . Our
+species <!--minor edits to make this crystal clear to the reviewer-->. Our
 observations are consistent with previous ones regarding higher sampling effort
-required to document pollinator networks [@Chacoff2012EvaSam], yet here framed
-in the context of BON design and monitoring across space. Overall, these results
-reinforce the need for optimizing sampling designs for species interactions
-beyond and in complement to existing monitoring networks, and for recognizing
-them as a gap to fill in developing monitoring programs [e.g. European BON,
-@Kissling2024ModEff].
+required to detect interactions in pollinator networks [@Chacoff2012EvaSam], yet
+here framed in the context of BON design and monitoring across space. Overall,
+these results reinforce the need for optimizing sampling designs for species
+interactions beyond and in complement to existing monitoring networks, and for
+recognizing them as a gap to fill in developing monitoring programs [e.g.
+European BON, @Kissling2024ModEff].
 
 We can improve interaction coverage with the right optimization method, but
 efficiently doing so requires a clear and attainable monitoring objective.
