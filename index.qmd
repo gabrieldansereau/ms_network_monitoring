@@ -782,18 +782,17 @@ them as a gap to fill in developing monitoring programs [e.g. European BON,
 We can improve interaction coverage with the right optimization method, but
 efficiently doing so requires a clear and attainable monitoring objective.
 Adopting a single-species perspective (e.g. focusing on interactions for a
-keystone or high degree species,
-`#citeb(<Pires2017FriPar>)#citeb(<deAguiar2019RevBia>)`{=typst}) can yield
-relevant results while relying on attainable levels of information. For example,
-the Targeted Sampling and Balanced Within Range strategies can outperform
-spatially-balanced designs to monitor interactions for a focal species, while
-only relying on a known species range. While these strategies diverge from
-spatially-balanced designs, they are similar in intent to targeted design
-approaches taken by implemented BONs to improve community monitoring [e.g.,
-complementarity-based site selection, @Xu2017OptMon; dynamic off-grid
-monitoring, @Burton2014FraAda] and are compatible with BONs focused on
-assembling information from several sources in a bottom-up approach [e.g.
-CAN-BON, @Gonzalez2025BioObs].
+keystone or high degree species, `#citeb(<Pires2017FriPar>)`{=typst}
+`#citeb(<deAguiar2019RevBia>)`{=typst}) can yield relevant results while relying
+on attainable levels of information. For example, the Targeted Sampling and
+Balanced Within Range strategies can outperform spatially-balanced designs to
+monitor interactions for a focal species, while only relying on a known species
+range. While these strategies diverge from spatially-balanced designs, they are
+similar in intent to targeted design approaches taken by implemented BONs to
+improve community monitoring [e.g., complementarity-based site selection,
+@Xu2017OptMon; dynamic off-grid monitoring, @Burton2014FraAda] and are
+compatible with BONs focused on assembling information from several sources in a
+bottom-up approach [e.g. CAN-BON, @Gonzalez2025BioObs].
 
 *What strategies and available information are most efficient to optimize
 monitoring for species interactions?*
@@ -854,7 +853,7 @@ information needed to guide BON design. For instance, our test case of
 underestimating a species range highlights that we could focus mainly on the
 most certain parts of a predicted species range (e.g. using conformal prediction
 and credible presence outcomes along with species distribution models,
-`#citeb(<Poisot2026ConPre>)`{=typst}) and expect similar monitoring efficiency.
+`#citeb(<Poisot2026ChaOne>)`{=typst}) and expect similar monitoring efficiency.
 In certain cases, efficiency could be maintained even with highly restricted
 ranges (up to 50% estimation offsets), although such strategies would warrant
 further investigation before implementation given the high variance and wider
@@ -887,8 +886,8 @@ In these cases, spatially balanced monitoring plans may be more effective.
 Nonetheless, our simulation approach is compatible with other network
 generators, including variations over the classical niche model or generators
 for different network types (e.g. bipartite and plant-pollinator,
-`#citeb(<Frund2016SamBia>#citeb(<Pires2011FooWeb>)`{=typst}, as well as
-documented or predicted metawebs. For instance, the niche model could be
+`#citeb(<Frund2016SamBia>)`{=typst} `#citeb(<Pires2011FooWeb>)`{=typst}), as
+well as documented or predicted metawebs. For instance, the niche model could be
 parameterized for specific, size-structured empirical systems
 [@Gravel2013InfFoo], while herbivory interactions could be included using
 documented food webs in place of a simulated metaweb [@Hale2024HigRes]. Future
