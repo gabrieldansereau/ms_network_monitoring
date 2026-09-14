@@ -4,6 +4,7 @@ docs
 Makefile
 coverletter*
 submission
+index.typ
 
 **/*.quarto_ipynb
 .Rproj.user
