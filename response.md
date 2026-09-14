@@ -7,11 +7,12 @@ Dear Editor,
 Here is our point-by-point response to the comments from the reviewers, which
 were highly useful to improve our manuscript and make our approach easier to
 understand. We integrated several of their suggestions in our revised
-manuscript. Notably, we added a new paragraph to our Discussion where we discuss
-the general applicability of our approach. Given these changes, our manuscript
-is further beyond the word limit (10,297 words ), which we felt was necessary to
-give enough details regarding our Methods and discuss their limitations. We are
-open to making additional cuts should it be required.
+manuscript. Notably, we clarified the terminology used throughout the manuscript
+and added a new section to our Discussion where we discuss the general
+applicability of our approach. Given these changes, our manuscript is further
+beyond the word limit (10,297 words), which we felt was necessary to give enough
+details regarding our Methods and discuss their limitations. We are open to
+making additional cuts should it be required.
 
 Thank you for giving us this opportunity to submit a revised version of our
 manuscript.
@@ -247,16 +248,16 @@ We thank the reviewer for their constructive comments on our work.
 
 We thank the reviewer for raising this important point, which gives us an
 opportunity to expand on the general applicability of our approach. We did so in
-a new *Results representativity and model applicability* section at the end of
-our Discussion. To answer briefly to the elements mentioned in this comment: as
-we rely on the niche model, we expect the network structures to most closely
-resemble food webs of predator-prey interactions, which we clarified at the
-beginning of the Methods and in our Discussion paragraph. However, our approach
-is not limited to predator-prey interactions and could very well include primary
-consumers and vegetation. The approach is applicable for other network types
-(e.g. bipartite networks) provided that a metaweb of interactions and species
-presence-absence rasters can be obtained and that interaction rates can be
-defined based on species abundances or traits.
+a new *Results and model applicability* section at the end of our Discussion. To
+answer briefly to the elements mentioned in this comment: as we rely on the
+niche model, we expect the network structures to most closely resemble food webs
+of predator-prey interactions, which we clarified at the beginning of the
+Methods and in our Discussion paragraph. However, our approach is not limited to
+predator-prey interactions and could very well include primary consumers and
+vegetation. The approach is applicable for other network types (e.g. bipartite
+networks) provided that a metaweb of interactions and species presence-absence
+rasters can be obtained and that interaction rates can be defined based on
+species abundances or traits.
 
 > Monitoring efforts always must prioritize cost-effective approaches, and the
 > manuscript message points in that direction. However, it also gives a clear
@@ -293,7 +294,9 @@ lacking [e.g. European BON, @Kissling2024ModEff].
 > add a little more on the cons than the pros of their approach.
 
 We thank the reviewer for this invitation to discuss the limitations of our
-approach. We did so in the new paragraph in the Discussion.
+approach. We did so in the new paragraph and section in the Discussion,
+specifically addressing the effect of species richness and species-rich
+ecosystems.
 
 > Line 149 - NLMs and species interaction samples: Makes sense to indicate the
 > grain size, since spatially-autocorrelated distributions are considered.
@@ -393,21 +396,20 @@ We apologize for the confusion and thank the reviewer for pointing it out, which
 led us to clarify the terminology used throughout the Methods and Results. In
 the specific context highlighted by the reviewer (General model, Step 3), the
 proportion of "sampled interactions" corresponds to the proportion of **realized
-interactions** actually occurring in the landscape and that can potentially be
-sampled for every generated BON design. In Simulation Studies II and III, we
-focus on realized interactions of a focal species as long-term targets which
-would be sampled over time following repeated monitoring efforts at sites in the
-BON. We clarified the wording to make the focus on realized interactions
-explicit in several section: in this section of the Methods (Step 3 of the
-General Model), in the sections for Simulations study II and III, in the Results
-section, and on Figures 3-4 (where the y-axis is now "Proportion of realized
-interactions sampled"). Note that we also clarified the terminology in
-Simulation Study I and Figure 2, where we report the **proportion of feasible
-interactions sampled** with spatially balanced plans. This difference is
-intended: Simulation Study I focuses on expectations to document an entire
-metaweb, which is made of feasible interactions, while Simulation Studies II and
-III instead focuses on the realized interactions of a focal species as a target
-for monitoring.
+interactions** actually occurring in the landscape and that can be sampled for
+every generated BON design. In Simulation Studies II and III, we focus on
+realized interactions of a focal species as long-term targets which would be
+sampled over time following repeated monitoring efforts at sites in the BON. We
+clarified the wording to make the focus on realized interactions explicit in
+several section: in this section of the Methods (Step 3 of the General Model),
+in the sections for Simulations study II and III, in the Results section, and on
+Figures 3-4 (where the y-axis is now "Proportion of realized interactions
+sampled"). Note that we also clarified the terminology in Simulation Study I and
+Figure 2, where we report the **proportion of feasible interactions sampled**
+with spatially balanced plans. This difference is intended: Simulation Study I
+focuses on expectations to document an entire metaweb, which is made of feasible
+interactions, while Simulation Studies II and III instead focuses on the
+realized interactions of a focal species as a target for monitoring.
 
 Finally, we also note an additional change to the terminology: we now refer to
 **potential interactions** rather than "possible interactions". We did this
@@ -421,7 +423,7 @@ SpeciesInteractionSamplers.jl.
 
 We added a reference to two studies where the 80% was used in a similar way.
 @Chacoff2012EvaSam and @Costa2016SamCom both reported the sampling effort
-required to to reach 80%, 90% and 100% of the estimated interactions in
+required to reach 80%, 90% and 100% of the estimated interactions in
 plant-pollinator and seed dispersal networks. Meanwhile, evaluating the
 proportion of realized interactions sampled in an empirical context usually
 requires estimating an asymptotic richness values with an estimator such as
