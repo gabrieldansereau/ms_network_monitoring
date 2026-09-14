@@ -633,11 +633,13 @@ for interactions within spatially-balanced BONs.
 
 ![Proportion of sampled species and interactions for a given number of sampling
 sites in a spatially-balanced Biodiversity Observation Network (BON) across the
-simulated landscape (Simulation Study I). Proportions were calculated with
-respect to the total species richness and the total number of interactions in
-the metaweb ('feasible interactions'). Lines indicate the median proportion for
-a given number of sites, while the shading delimits the 5th and 95th percentiles
-across replicates (50 independent replicates per number of sites; 2,550 in
+simulated landscapes (Simulation Study I). We counted the number of distinct
+species and interactions (separately per interaction type) that can be sampled
+in every generated BON. Proportions were calculated with respect to the total
+species richness and the total number of interactions in the metaweb ('feasible
+interactions'). Lines indicate the median proportion for a given number of
+sites, while the shading delimits the 5th and 95th percentiles across replicates
+(50 independent replicates per number of sites; 2,550 in
 total).](figures/nbon_bands.png){#fig-nbons}
 
 ### Simulation study II: Higher efficiency for Targeted Sampling and Balanced Within Range compared to spatially balanced strategies
