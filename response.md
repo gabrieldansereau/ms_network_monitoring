@@ -79,7 +79,7 @@ The statement and "comparison value" indeed refer to the x-axis. We agree this
 was unclear, especially given that x-axis value is the *difference* between two
 $n_{0.80}$ values for the options being compared. We changed the sentence to
 explicitly mention the comparison: "*The comparison value (x-axis) is the
-difference between the* $n_{0.80}$ *(number of sites required to document 80% of
+difference between the* $n_{0.80}$ *(number of sites required to detect 80% of
 the focal species' interactions, see Equation 2) for a given strategy or target
 and the* $n_{0.80}$ *of its reference.*" We believe that further explaining the
 measure is not necessary, as the $n_{0.80}$ value is already described in the
@@ -371,7 +371,7 @@ interaction rates can be defined based on species abundances or on species
 traits (a new addition to SpeciesInteractionSamplers.jl which we did not explore
 here, but is detailed in @Catchen2023MisLin). We believe that conditioning
 encounter and detection rates on abundances is most relevant in a BON monitoring
-context when the focus is to comprehensively document the interactions in a
+context when the focus is to comprehensively detect the interactions in a
 study area. Rare interactions as described are indeed relevant, but will
 nonetheless be influenced by species abundances, and might be better served by
 targeted monitoring efforts oriented specifically towards species at risk of
@@ -407,9 +407,10 @@ Figures 3-4 (where the y-axis is now "Proportion of realized interactions
 sampled"). Note that we also clarified the terminology in Simulation Study I and
 Figure 2, where we report the **proportion of feasible interactions sampled**
 with spatially balanced plans. This difference is intended: Simulation Study I
-focuses on expectations to document an entire metaweb, which is made of feasible
-interactions, while Simulation Studies II and III instead focuses on the
-realized interactions of a focal species as a target for monitoring.
+focuses on expectations to detect the interactions of an entire metaweb, which
+is made of feasible interactions, while Simulation Studies II and III instead
+focuses on the realized interactions of a focal species as a target for
+monitoring.
 
 Finally, we also note an additional change to the terminology: we now refer to
 **potential interactions** rather than "possible interactions". We did this
