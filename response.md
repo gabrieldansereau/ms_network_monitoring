@@ -9,7 +9,7 @@ were highly useful to improve our manuscript and make our approach easier to
 understand. We integrated several of their suggestions in our revised
 manuscript. Notably, we added a new paragraph to our Discussion where we discuss
 the general applicability of our approach. Given these changes, our manuscript
-is further beyond the word limit (10,297 words), which we felt was necessary to
+is further beyond the word limit (10,297 words ), which we felt was necessary to
 give enough details regarding our Methods and discuss their limitations. We are
 open to making additional cuts should it be required.
 
@@ -276,9 +276,9 @@ of sites to explore specific research hypotheses [@Burton2014FraAda]. Targeted
 approaches can also play a role in bottom-up BONs aiming to assemble information
 from multiple sources, such as CAN-BON [@Gonzalez2025BioObs]. Interactions are
 costly enough to sample that targeted approaches making use of available natural
-history might be crucial to start integrating them into developing monitoring
-programs, where they are currently lacking [e.g. European BON,
-@Kissling2024ModEff].
+history (species ranges and habitat preferences) might be crucial to start
+integrating them into developing monitoring programs, where they are currently
+lacking [e.g. European BON, @Kissling2024ModEff].
 
 > Another caveat that could be reinforced is the effect of species richness and
 > the limitation of those models for species-rich ecosystems (e.g. tropical

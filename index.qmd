@@ -159,20 +159,17 @@ properties (e.g. `#citeb(<McLeod2021SamAsy>)`{=typst}). Recent empirical
 that knowing the network structure (i.e. network properties) does not always
 allow knowing the list of interactions (and vice versa), therefore justifying
 the need to sample interactions as their own biological entities. A central
-challenge to do so is that the sampling effort required to detect
-interactions is much higher than for species (e.g. 500% vs 64% in
+challenge to do so is that the sampling effort required to detect interactions
+is much higher than for species (e.g. 500% vs 64% in
 `#citeb(<Chacoff2012EvaSam>)`{=typst}). Moreover, evaluating sampling
 completeness for interactions is more complex than for species, as it requires
 assessing the proportion of forbidden links (i.e. links that cannot occur) due
 to life history or morphological restrictions, which in turn requires knowledge
 of species natural history and traits [@Jordano2016SamNet]. While some network
 properties such as connectance can be approximated with lesser sampling effort,
-network composition assessments regarding the number of species and links are
-highly sensitive
-<!--or maybe just 'sensitive' depending on what the cited work shows--> to
-sample size
-<!--or "undersampling", or as you had previously "will vary widely if interactions are missed". I think this is a more direct/explicit way and prefer it.-->
-[@Vizentin-Bugoni2016InfSam; @Poisot2012DisSpe].
+network composition assessments regarding the number of species and links will
+vary widely if interactions are missed [@Vizentin-Bugoni2016InfSam;
+@Poisot2012DisSpe].
 
 One way to define expectations for interaction monitoring within BONs is to
 consider variation in local sampling from a spatially-explicit perspective—that
@@ -625,12 +622,6 @@ accumulate feasible interactions is notably lower than for species richness or
 potential interactions, highlighting the need for a much higher sampling effort
 for interactions within spatially-balanced BONs.
 
-<!--# The use of "proportion of XXX interactions" is confusing to me. The proportion of sampled interactions is always relative to the metaweb, that is it's always the proportion of sampled *feasible* interactions; but the way you "count" the interaction in a site depedents on more or fewer "conditions" (co-occurrence + abundance adjustments). Phrasing it as "proportion of sampled realized and detected interactions" becomes confusing to me, as it makes me think that you're calculating the proportion of interactions that actually happen in the landscape and are captured in the BON, which I think is not what you're truly measuring here. Presumably, some interactions in the metaweb may never occur (i.e. if spp ranges do not overlap in a landscape, you have fewer potential interactions than feasible interactions). So I propose always referring to the proporion of sampled feasible interations given the total potential, realized and detected interactions. In the preceeding sentence, for example, I would write "While realized and detected interactions would keep increasing with a higher number of sites (...), the speed at which they accumulate feasible interactions is notably lower than for species richness or potential interactions".-->
-
-<!--# I would also fix the figure y axis title to say "proportion of sampled feasible interations"-->
-
-<!--see my comment about the y-axis title: https://github.com/gabrieldansereau/ms_network_monitoring/pull/5#discussion_r3984061201 -->
-
 ![Proportion of sampled species and interactions for a given number of sampling
 sites in a spatially-balanced Biodiversity Observation Network (BON) across the
 simulated landscapes (Simulation Study I). We counted the number of distinct
@@ -771,14 +762,13 @@ within spatially-balanced, general-purpose BONs should be much lower than for
 species and community composition. When interaction realization and detection
 are conditioned on species abundances, we need (much) higher monitoring efforts
 to detect interactions, especially rare interactions involving less-abundant
-species <!--minor edits to make this crystal clear to the reviewer-->. Our
-observations are consistent with previous ones regarding higher sampling effort
-required to detect interactions in pollinator networks [@Chacoff2012EvaSam], yet
-here framed in the context of BON design and monitoring across space. Overall,
-these results reinforce the need for optimizing sampling designs for species
-interactions beyond and in complement to existing monitoring networks, and for
-recognizing them as a gap to fill in developing monitoring programs [e.g.
-European BON, @Kissling2024ModEff].
+species. Our observations are consistent with previous ones regarding higher
+sampling effort required to detect interactions in pollinator networks
+[@Chacoff2012EvaSam], yet here framed in the context of BON design and
+monitoring across space. Overall, these results reinforce the need for
+optimizing sampling designs for species interactions beyond and in complement to
+existing monitoring networks, and for recognizing them as a gap to fill in
+developing monitoring programs [e.g. European BON, @Kissling2024ModEff].
 
 We can improve interaction coverage with the right optimization method, but
 efficiently doing so requires a clear and attainable monitoring objective.
@@ -910,14 +900,11 @@ interactions may be better sampled using optimized monitoring designs targeting
 focal species, or locations where species are known to exist. In this
 manuscript, we demonstrate how this can be achived by selecting a appropriate
 target (e.g. the interactions of a focal species) and using attainable
-information (here the species range) to optimize monitoring designs efficiently
-<!--this sentence felt a little disconnected from the one opening the paragraph. I tried to make a mire explicit linkage. I also streamlined this last bit a little-->.
+information (here the species range) to optimize monitoring designs efficiently.
 We show that there is a degree of tolerance to the level of information
 precision needed for optimization (which we explored via range over- and
-underestimation
-<!--the similar felt a little off to me because the over/understimation of a range is tied to the type of information we chose. We could've chosen something completely different like habitat type or productivity, where the pricision variation could be on spatial grain, unit rounding of type of habitat classification-->),
-highlighting that available information, albeit imperfect, can already be used
-to guide species interaction monitoring.
+underestimation, highlighting that available information, albeit imperfect, can
+already be used to guide species interaction monitoring.
 
 # Acknowledgements
 
