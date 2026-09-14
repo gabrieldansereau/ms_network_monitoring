@@ -862,31 +862,30 @@ exploration of potential areas of interest and exploitation of more certain ones
 
 *Results and model applicability*
 
-We expect our sampling results to be representative for networks well aligned
-with the niche model, such as food webs of predator-prey interactions, yet our
-simulation approach could be extended to other systems. The niche model performs
-well at reproducing structure within the range of parameters we used here
-[@Williams2000SimRul; @Williams2008SucIts]; therefore, we expect our
-site-selection strategies and optimization test results to hold in similar
-systems. In contrast, the niche model tends to underestimate the proportion of
-herbivores and can perform worse at high species richness, poorly matching
-extremely rich and highly resolved food webs [@Williams2008SucIts;
-@Hale2024HigRes]. Our conclusions were not tested in such systems, where
-identifying target species for focal monitoring may in any case be challenging.
-In these cases, spatially balanced monitoring plans may be more effective.
-Nonetheless, our simulation approach is compatible with other network
-generators, including variations over the classical niche model or generators
-for different network types (e.g. bipartite and plant-pollinator,
-`#citeb(<Frund2016SamBia>)`{=typst} `#citeb(<Pires2011FooWeb>)`{=typst}), as
-well as documented or predicted metawebs. For instance, the niche model could be
-parameterized for specific, size-structured empirical systems
-[@Gravel2013InfFoo], while herbivory interactions could be included using
-documented food webs in place of a simulated metaweb [@Hale2024HigRes]. Future
-studies could explore multilayer networks with high potential to inform
-conservation and management by integrating several interaction types,
-information across levels of biological organization, as well as
-socio-ecological considerations into monitoring designs [@Madeira2024MulBio;
-@deJuan2023UndSoc].
+We developed our results using the niche model, which aligns well with food webs
+of predator-prey interactions, yet our simulation approach could be extended to
+other systems. The niche model performs well at reproducing food web structure
+within the range of parameters we used here [@Williams2000SimRul;
+@Williams2008SucIts]; therefore, we expect our site-selection strategies and
+optimization test results to hold in similar systems. In contrast, the niche
+model tends to underestimate the proportion of herbivores and can perform worse
+at high species richness, poorly matching extremely rich and highly resolved
+food webs [@Williams2008SucIts; @Hale2024HigRes]. Our conclusions were not
+tested in such systems, where identifying target species for focal monitoring
+may in any case be challenging. In these cases, spatially balanced monitoring
+plans may be more effective. Nonetheless, our simulation approach is compatible
+with other network generators, including variations over the classical niche
+model or generators for different network types (e.g. bipartite and
+plant-pollinator, `#citeb(<Frund2016SamBia>)`{=typst}
+`#citeb(<Pires2011FooWeb>)`{=typst}), as well as documented or predicted
+metawebs. For instance, the niche model could be parameterized for specific,
+size-structured empirical systems [@Gravel2013InfFoo], while herbivory
+interactions could be included using documented food webs in place of a
+simulated metaweb [@Hale2024HigRes]. Future studies could explore multilayer
+networks with high potential to inform conservation and management by
+integrating several interaction types, information across levels of biological
+organization, as well as socio-ecological considerations into monitoring designs
+[@Madeira2024MulBio; @deJuan2023UndSoc].
 
 *Recommendations for monitoring*
 
